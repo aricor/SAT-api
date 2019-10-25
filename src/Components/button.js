@@ -1,63 +1,36 @@
 //https://magnusbenoni.com/radio-buttons-react/
 
-import React, { Component } from "react";
+import React from "react";
+import {Button } from "reactstrap"; 
 
-export default class Multiplechoice extends React.Component {
-  constructor() {
-    super();
 
-    this.state = {
-      size: ""
-    };
+const ButtonComponent = props => {
+  return (
+    <div>
+      <p><b> {props.question} </b></p>
+      <div className="choice">
+      <Button outline color="primary">A</Button>{' '} 
+      {props.choice1}
+      </div>
+      <div className="choice">
+      <Button outline color="primary">B</Button>{' '} 
+      {props.choice2}
+      </div>
+      <div className="choice">
+      <Button outline color="primary">C</Button>{' '} 
+      {props.choice3}
+      <div className="choice">
+      <Button outline color="primary">D</Button>{' '} 
+      {props.choice4}
+      </div>
+      </div>
+    </div>
 
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  handleChange(event) {
-    this.setState({
-      size: event.target.value
-    });
-  }
-
-  handleSubmit(event) {
-    event.preventDefault();
-
-    alert(`You chose that " ${this.state.size} ".`);
-  }
-
-  render() {
-    return (
-      <form onSubmit={this.handleSubmit}>
-        <h1>Custom Radio Buttons</h1>
-        <label class="container">
-          {" "}
-          One
-          <input type="radio" checked="checked" name="radio" />
-          <span class="checkmark"></span>
-        </label>
-        <label class="container">
-          Two
-          <input type="radio" name="radio" />
-          <span class="checkmark"></span>
-        </label>
-        <label class="container">
-          Three
-          <input type="radio" name="radio" />
-          <span class="checkmark"></span>
-        </label>
-        <label class="container">
-          Four
-          <input type="radio" name="radio" />
-          <span class="checkmark"></span>
-        </label>
-
-        {/* </body> */}
-
-        <button type="submit" className="submit-button">
-          Make your choice
-        </button>
-      </form>
-    );
-  }
+  );
 }
+
+export default ButtonComponent; 
+
+
+
+
