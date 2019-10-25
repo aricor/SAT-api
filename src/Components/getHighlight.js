@@ -10,11 +10,7 @@ export default class Highlight extends Component {
         //this.ToggleButton = this.ToggleButton.bind(this);
         this.saveSelection = this.saveSelection.bind(this);
       }
-      ToggleButton() {
-        this.setState(function(prevState) {
-          return {isToggleOn: !prevState.isToggleOn};
-        });
-      }
+
 
    
       saveSelection = () => {
