@@ -11,9 +11,9 @@ export default class TestScreen extends React.Component {
             <Timer/>            
             <div className="testContainer">
                 <div className="passageSection">
-                <div className="passagename">
+                <div className="passagename d-flex justify-content-center">
                 <b>
-                This passage is from James Joyce, The Dubliners originally published in 1914                
+                    This passage is from James Joyce, The Dubliners originally published in 1914                
                 </b>
                 </div>
                 <Highlight/>
