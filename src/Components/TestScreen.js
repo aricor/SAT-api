@@ -18,45 +18,55 @@ export default class TestScreen extends React.Component {
                     "1. As presented in the passage, Mr. Kearney is best described as",  
                     choice1: {
                         id: 1, 
-                        text:"independent and strong willed.",
-                        selected: false 
+                        text:"independent and strong willed.", 
                     },
                     choice2: {
                         id:2, 
                         text:"paternal and affectionate.",  
-                        selected: false
                     },
                     choice3: {
                         id:3, 
                         text: "serious and family oriented.",  
-                        selected: false
                     },
                     choice4: {
                         id:4, 
                         text: "boring and simple minded.",  
-                        selected:false
+                    } 
+               
+                },
+                {
+                    question: 
+                    "1. As presented in the passage, Mr. Kearney is best described as",  
+                    choice1: {
+                        id: 1, 
+                        text:"independent and strong willed.", 
+                    },
+                    choice2: {
+                        id:2, 
+                        text:"paternal and affectionate.",  
+                    },
+                    choice3: {
+                        id:3, 
+                        text: "serious and family oriented.",  
+                    },
+                    choice4: {
+                        id:4, 
+                        text: "boring and simple minded.",  
+                    },
+                    choice5: {
+                        id:5, 
+                        text: "boring and simple minded.",  
                     } 
                
                 }
-            ]
+            ],
+            selectedChoice: '',
         };
-        this.handleButtonclick = this.onClick(this);
     }
 
-    onClick(selected) {
-        this.setState(
-            prevState => ({
-                ...prevState, 
-                questions: prevState.questions.map(question => ({
-
-                }))
-            })
-        )
-
-    }
     render() {
         const {testData, submitHandler} = this.props;
-        const {questions} = this.state; 
+        const {questions, selectedChoice} = this.state; 
         return (
         <div className="appContainer">
             <Timer/>            
@@ -69,12 +79,16 @@ export default class TestScreen extends React.Component {
                 </div>
                 <div className="questionSection">
                     <div className="article2">
-                    <ButtonComponent 
-                    question={questions[0].question}
-                    choice1={questions[0].choice1.text}
-                    choice2={questions[0].choice2.text}
-                    choice3={questions[0].choice3.text}
-                    choice4={questions[0].choice4.text}
+                    <ButtonComponent
+                        onClick={(selectedId) => this.setState({
+                            selectedChoice: selectedId
+                        })}
+                        selectedChoice={selectedChoice}
+                        question={questions[0].question}
+                        choice1={questions[0].choice1}
+                        choice2={questions[0].choice2}
+                        choice3={questions[0].choice3}
+                        choice4={questions[0].choice4}
                     />
                     </div>
                 </div>
