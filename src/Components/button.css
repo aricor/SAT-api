@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 
 .container {
     display: block;
@@ -61,3 +62,10 @@
       border-radius: 50%;
       background: white;
   }
+=======
+.btn-circle {
+  border-radius: 50%;
+  text-align: center;
+  border-width: 2px;
+}
+>>>>>>> Stashed changes
