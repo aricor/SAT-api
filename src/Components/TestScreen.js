@@ -64,6 +64,25 @@ export default class TestScreen extends React.Component {
         };
     }
 
+    renderAllQuestions() {
+        const {questions, selectedChoice} = this.state; 
+        return questions.map(question => {
+            return (
+                <ButtonComponent
+                        onClick={(selectedId) => this.setState({
+                            selectedChoice: selectedId
+                        })}
+                        selectedChoice={selectedChoice}
+                        question={question.question}
+                        choice1={question.choice1}
+                        choice2={question.choice2}
+                        choice3={question.choice3}
+                        choice4={question.choice4}
+                    />
+            )
+        })
+    }
+
     render() {
         const {testData, submitHandler} = this.props;
         const {questions, selectedChoice} = this.state; 
@@ -90,6 +109,8 @@ export default class TestScreen extends React.Component {
                         choice3={questions[0].choice3}
                         choice4={questions[0].choice4}
                     />
+
+                    { this.renderAllQuestions() }
                     </div>
                 </div>
             </div>
