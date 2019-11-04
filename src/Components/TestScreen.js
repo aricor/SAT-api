@@ -3,7 +3,11 @@ import styles from "./testscreen.css"
 import Timer from './timer'
 import Highlight from './getHighlight'
 import ButtonComponent from './button'
+const qa = ({
+        
+})
 export default class TestScreen extends React.Component {
+
     constructor(props) {
         super(props);
         this.state = {
@@ -13,18 +17,22 @@ export default class TestScreen extends React.Component {
                     question: 
                     "1. As presented in the passage, Mr. Kearney is best described as",  
                     choice1: {
+                        id: 1, 
                         text:"independent and strong willed.",
                         selected: false 
                     },
                     choice2: {
+                        id:2, 
                         text:"paternal and affectionate.",  
                         selected: false
                     },
                     choice3: {
+                        id:3, 
                         text: "serious and family oriented.",  
                         selected: false
                     },
                     choice4: {
+                        id:4, 
                         text: "boring and simple minded.",  
                         selected:false
                     } 
@@ -32,6 +40,19 @@ export default class TestScreen extends React.Component {
                 }
             ]
         };
+        this.handleButtonclick = this.onClick(this);
+    }
+
+    onClick(selected) {
+        this.setState(
+            prevState => ({
+                ...prevState, 
+                questions: prevState.questions.map(question => ({
+
+                }))
+            })
+        )
+
     }
     render() {
         const {testData, submitHandler} = this.props;
