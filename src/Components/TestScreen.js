@@ -12,18 +12,22 @@ export default class TestScreen extends React.Component {
                 {
                     question: 
                     "1. As presented in the passage, Mr. Kearney is best described as",  
-                    choice1: 
-                    "independent and strong willed.",
-                    
-                    
-                    choice2: 
-                     "paternal and affectionate.",  
- 
-                    choice3: 
-                      "serious and family oriented.",  
-                
-                    choice4: 
-                        "boring and simple minded.",  
+                    choice1: {
+                        text:"independent and strong willed.",
+                        selected: false 
+                    },
+                    choice2: {
+                        text:"paternal and affectionate.",  
+                        selected: false
+                    },
+                    choice3: {
+                        text: "serious and family oriented.",  
+                        selected: false
+                    },
+                    choice4: {
+                        text: "boring and simple minded.",  
+                        selected:false
+                    } 
                
                 }
             ]
@@ -46,10 +50,10 @@ export default class TestScreen extends React.Component {
                     <div className="article2">
                     <ButtonComponent 
                     question={questions[0].question}
-                    choice1={questions[0].choice1}
-                    choice2={questions[0].choice2}
-                    choice3={questions[0].choice3}
-                    choice4={questions[0].choice4}
+                    choice1={questions[0].choice1.text}
+                    choice2={questions[0].choice2.text}
+                    choice3={questions[0].choice3.text}
+                    choice4={questions[0].choice4.text}
                     />
                     </div>
                 </div>
