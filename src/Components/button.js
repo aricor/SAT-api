@@ -1,4 +1,3 @@
-//https://magnusbenoni.com/radio-buttons-react/
 
 import React from "react";
 import {Button } from "reactstrap"; 
