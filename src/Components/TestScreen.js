@@ -99,7 +99,7 @@ export default class TestScreen extends React.Component {
                 </div>
                 <div className="questionSection">
                     <div className="article2">
-                    { this.renderAllQuestions() }
+                    {this.renderAllQuestions()}
                     </div>
                 </div>
             </div>
