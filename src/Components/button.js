@@ -9,22 +9,6 @@ const ButtonComponent = props => {
     <div>
       <p><b> {props.question} </b></p>
       <div className="choice">
-<<<<<<< Updated upstream
-      <Button outline color="primary">A</Button>{' '} 
-      {props.choice1}
-      </div>
-      <div className="choice">
-      <Button outline color="primary">B</Button>{' '} 
-      {props.choice2}
-      </div>
-      <div className="choice">
-      <Button outline color="primary">C</Button>{' '} 
-      {props.choice3}
-      <div className="choice">
-      <Button outline color="primary">D</Button>{' '} 
-      {props.choice4}
-      </div>
-=======
         <div className='mb-2' >
         {
           props.choices.map( choice => {
@@ -41,7 +25,6 @@ const ButtonComponent = props => {
         }
           {props.choices.text}
         </div>
->>>>>>> Stashed changes
       </div>
     </div>
 

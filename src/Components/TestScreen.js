@@ -4,9 +4,6 @@ import Timer from './timer'
 import Highlight from './getHighlight'
 import ButtonComponent from './button'
 export default class TestScreen extends React.Component {
-<<<<<<< Updated upstream
-    
-=======
 
     constructor(props) {
         super(props);
@@ -89,7 +86,6 @@ export default class TestScreen extends React.Component {
         })
     }
 
->>>>>>> Stashed changes
     render() {
         const {testData, submitHandler} = this.props
         return <div className="appContainer">
@@ -97,32 +93,13 @@ export default class TestScreen extends React.Component {
             <div className="testContainer">
                 <div className="passageSection">
                 <div className="passagename">
-                <b>
-                This passage is from James Joyce, The Dubliners originally published in 1914                
-                </b>
+                <b>{this.state.title}</b>
                 </div>
                 <Highlight/>
                 </div>
                 <div className="questionSection">
                     <div className="article2">
-<<<<<<< Updated upstream
-                    <ButtonComponent question="1. As presented in the passage, Mr. Kearney is best
-described as" choice1="independent and strong willed." choice2="paternal and aectionate." choice3="serious and family oriented." choice4="boring and simple minded." />
-
-                    <ButtonComponent question="1. As presented in the passage, Mr. Kearney is best
-                        described as" choice1="independent and strong willed." choice2="paternal and aectionate." choice3="serious and family oriented." choice4="boring and simple minded." />
-
-<ButtonComponent question="1. As presented in the passage, Mr. Kearney is best
-                        described as" choice1="independent and strong willed." choice2="paternal and aectionate." choice3="serious and family oriented." choice4="boring and simple minded." />
-
-<ButtonComponent question="1. As presented in the passage, Mr. Kearney is best
-                        described as" choice1="independent and strong willed." choice2="paternal and aectionate." choice3="serious and family oriented." choice4="boring and simple minded." />
-
-<ButtonComponent question="1. As presented in the passage, Mr. Kearney is best
-                        described as" choice1="independent and strong willed." choice2="paternal and aectionate." choice3="serious and family oriented." choice4="boring and simple minded." />
-=======
                     { this.renderAllQuestions() }
->>>>>>> Stashed changes
                     </div>
                 </div>
             </div>
