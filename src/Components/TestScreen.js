@@ -41,7 +41,7 @@ export default class TestScreen extends React.Component {
                 {
                     question: 
                     "1. As presented in the passage, Mr. Kearney is best described as",  
-                    choice: [
+                    choices: [
                         {
                             opt: 'A',
                             id: 1, 
@@ -78,9 +78,9 @@ export default class TestScreen extends React.Component {
                         onClick={(selectedId) => this.setState({
                             selectedChoice: selectedId
                         })}
-                        selectedChoice={questions.selectedChoice}
-                        question={questions.question}
-                        choices={questions.choices}
+                        selectedChoice={question.selectedChoice}
+                        question={question.question}
+                        choices={question.choices}
                     />
             )
         })
