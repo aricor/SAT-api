@@ -11,6 +11,7 @@ export default class TestScreen extends React.Component {
             title: "This passage is from James Joyce, The Dubliners originally published in 1914",
             questions: [
                 {
+                    id: 1,
                     question: 
                     "1. As presented in the passage, Mr. Kearney is best described as",  
                     choices: [
@@ -39,28 +40,29 @@ export default class TestScreen extends React.Component {
                
                 },
                 {
+                    id: 2,
                     question: 
-                    "1. As presented in the passage, Mr. Kearney is best described as",  
+                    "2. As presented in the passage, Mr. Kearney is best described as",  
                     choices: [
                         {
                             opt: 'A',
                             id: 1, 
-                            text:"independent and strong willed.", 
+                            text:"2independent and strong willed.", 
                         },
                         {
                             opt: 'B',
                             id:2, 
-                            text:"paternal and affectionate.",  
+                            text:"2paternal and affectionate.",  
                         },
                         {
                             opt: 'C',
                             id:3, 
-                            text: "serious and family oriented.",  
+                            text: "2serious and family oriented.",  
                         },
                         {
                             opt: 'D',
                             id:4, 
-                            text: "boring and simple minded.",  
+                            text: "2boring and simple minded.",  
                         } 
                     ],
                     selectedChoice: '',
@@ -71,13 +73,21 @@ export default class TestScreen extends React.Component {
     }
 
     renderAllQuestions() {
-        const {questions, selectedChoice} = this.state; 
-        return questions.map(question => {
+        const {questions} = this.state; 
+        return questions.map((question, index) => {
             return (
                 <ButtonComponent
-                        onClick={(selectedId) => this.setState({
-                            selectedChoice: selectedId
-                        })}
+                        key={question.id}
+                        onClick={(selectedId) => {
+                            question.selectedChoice = selectedId; // update the selectedChoice of this question with the clicked choice
+                            this.setState({
+                                questions: [
+                                    ...questions.slice(0, index), // questions array before updated question - stay exactly the same
+                                    question, // updated question - it's updated with the selectedChoice
+                                    ...questions.slice(index+1, questions.length), // questions array after updated question - stays exactly the same
+                                ]
+                            });
+                        }}
                         selectedChoice={question.selectedChoice}
                         question={question.question}
                         choices={question.choices}

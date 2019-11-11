@@ -12,13 +12,15 @@ const ButtonComponent = props => {
         <div className='mb-2' >
         {
           props.choices.map( choice => {
+            const selected = props.selectedChoice === choice.id;
             return(
               <div className="mt-2">
                 <Button
-                onClick={() => props.onClick(choice.id)}  
-                className="btn-circle" 
-                outline={choice.selectedChoice !== choice.id} 
-                color="primary">
+                  key={choice.id}
+                  onClick={() => props.onClick(choice.id)}  
+                  className="btn-circle" 
+                  outline={!selected} 
+                  color="primary">
                   {choice.opt}
               </Button>
               <span className="m-2">
