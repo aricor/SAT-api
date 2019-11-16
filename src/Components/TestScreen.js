@@ -11,6 +11,8 @@ export default class TestScreen extends React.Component {
         super(props);
         this.state = {
             title: "This passage is from James Joyce, The Dubliners originally published in 1914",
+            isTestSubmitted: false,
+            numberOfCorrectAnswers: 0,
             questions: [
                 {
                     id: 1,
@@ -110,31 +112,54 @@ export default class TestScreen extends React.Component {
         })
     }
 
-
     checkingAllQuestions() {
-        choices.every(function(choice) {
-            return choice.check === true; 
-        })
-    }
-    /* i've been trying to connect onclick with the submit button but failed*/
-    /*    checkingAllQuestions() {
-        const {choices} = this.state; 
-        return choices.every(function(choice) => {
-            return (
-                <Button 
-                    class="btn btn-primary"
-                    onClick {
-                        choice.check === true; 
-                    }>
-                        Submit
-                </Button>
+        const {questions} = this.state; 
+        let numberOfCorrectAnswers = 0;
+        questions.map((question) => {
+            //find function
+            const correctAnswer = question.choices.find((choice) => choice.check === true);
+            if(correctAnswer.id === question.selectedChoice) {
+                numberOfCorrectAnswers = numberOfCorrectAnswers + 1;
+            }
+        });
 
-            )
-        })
-    } */
+        alert("Number of Correct Answers: " + numberOfCorrectAnswers);
+
+        this.setState({
+            isTestSubmitted: true,
+            numberOfCorrectAnswers: numberOfCorrectAnswers,
+        });
+    }
+
+    renderTestResult(percentageOfCorrectAnswers) {
+        if(percentageOfCorrectAnswers > 50) {
+            return <h3>PASSED</h3>
+        } else {
+            return <h3>FAILED</h3>
+        }
+    }
 
     render() {
-        const {testData, submitHandler} = this.props
+        const {
+            isTestSubmitted,
+            numberOfCorrectAnswers,
+            questions,
+        } = this.state;
+
+        const percentageOfCorrectAnswers = (numberOfCorrectAnswers*100)/questions.length;
+
+        if(isTestSubmitted) {
+            return (
+                <div className="appContainer">
+                    <h1>Test Submitted!</h1>
+                    <h2>Number of Question is: {questions.length}</h2>
+                    <h2>Number of Correct Answers is: {numberOfCorrectAnswers}</h2>
+                    <h2>Percentage of Correct Answers: {percentageOfCorrectAnswers} %</h2>
+                    {this.renderTestResult(percentageOfCorrectAnswers)}
+                </div>
+            );
+        }
+
         return <div className="appContainer">
             <Timer/>            
             <div className="testContainer">
@@ -147,7 +172,7 @@ export default class TestScreen extends React.Component {
                 <div className="questionSection">
                     <div className="article2">
                     {this.renderAllQuestions()}
-                    <button class="btn btn-primary">Submit</button>
+                    <button class="btn btn-primary" onClick={() => this.checkingAllQuestions()}>Submit</button>
                     </div>
                 </div>
             </div>
