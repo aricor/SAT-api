@@ -3,6 +3,8 @@ import styles from "./testscreen.css"
 import Timer from './timer'
 import Highlight from './getHighlight'
 import ButtonComponent from './button'
+import {Button } from "reactstrap"
+
 export default class TestScreen extends React.Component {
 
     constructor(props) {
@@ -19,21 +21,25 @@ export default class TestScreen extends React.Component {
                             opt: 'A',
                             id: 1, 
                             text:"independent and strong willed.", 
+                            check: false, 
                         },
                         {
                             opt: 'B',
                             id:2, 
                             text:"paternal and affectionate.",  
+                            check:false, 
                         },
                         {
                             opt: 'C',
                             id:3, 
                             text: "serious and family oriented.",  
+                            check:true, 
                         },
                         {
                             opt: 'D',
                             id:4, 
                             text: "boring and simple minded.",  
+                            check:false, 
                         } 
                     ],
                     selectedChoice: '',
@@ -48,21 +54,29 @@ export default class TestScreen extends React.Component {
                             opt: 'A',
                             id: 1, 
                             text:"2independent and strong willed.", 
+                            check: false, 
+
                         },
                         {
                             opt: 'B',
                             id:2, 
                             text:"2paternal and affectionate.",  
+                            check: false, 
+
                         },
                         {
                             opt: 'C',
                             id:3, 
                             text: "2serious and family oriented.",  
+                            check: false, 
+
                         },
                         {
                             opt: 'D',
                             id:4, 
                             text: "2boring and simple minded.",  
+                            check: true, 
+
                         } 
                     ],
                     selectedChoice: '',
@@ -96,6 +110,29 @@ export default class TestScreen extends React.Component {
         })
     }
 
+
+    checkingAllQuestions() {
+        choices.every(function(choice) {
+            return choice.check === true; 
+        })
+    }
+    /* i've been trying to connect onclick with the submit button but failed*/
+    /*    checkingAllQuestions() {
+        const {choices} = this.state; 
+        return choices.every(function(choice) => {
+            return (
+                <Button 
+                    class="btn btn-primary"
+                    onClick {
+                        choice.check === true; 
+                    }>
+                        Submit
+                </Button>
+
+            )
+        })
+    } */
+
     render() {
         const {testData, submitHandler} = this.props
         return <div className="appContainer">
@@ -110,6 +147,7 @@ export default class TestScreen extends React.Component {
                 <div className="questionSection">
                     <div className="article2">
                     {this.renderAllQuestions()}
+                    <button class="btn btn-primary">Submit</button>
                     </div>
                 </div>
             </div>
