@@ -1,7 +1,7 @@
-//https://magnusbenoni.com/radio-buttons-react/
 
 import React from "react";
 import {Button } from "reactstrap"; 
+import './button.css';
 
 
 const ButtonComponent = props => {
@@ -9,20 +9,28 @@ const ButtonComponent = props => {
     <div>
       <p><b> {props.question} </b></p>
       <div className="choice">
-      <Button outline color="primary">A</Button>{' '} 
-      {props.choice1}
-      </div>
-      <div className="choice">
-      <Button outline color="primary">B</Button>{' '} 
-      {props.choice2}
-      </div>
-      <div className="choice">
-      <Button outline color="primary">C</Button>{' '} 
-      {props.choice3}
-      <div className="choice">
-      <Button outline color="primary">D</Button>{' '} 
-      {props.choice4}
-      </div>
+        <div className='mb-2' >
+        {
+          props.choices.map( choice => {
+            const selected = props.selectedChoice === choice.id;
+            return(
+              <div className="mt-2">
+                <Button
+                  key={choice.id}
+                  onClick={() => props.onClick(choice.id)}  
+                  className="btn-circle" 
+                  outline={!selected} 
+                  color="primary">
+                  {choice.opt}
+              </Button>
+              <span className="m-2">
+                {choice.text}
+              </span>
+            </div>
+            )
+          })
+        }
+        </div>
       </div>
     </div>
 
