@@ -13,103 +13,190 @@ export default class TestScreen extends React.Component {
             title: "This passage is from James Joyce, The Dubliners originally published in 1914",
             isTestSubmitted: false,
             numberOfCorrectAnswers: 0,
-            questions: [
+            sections: [
                 {
-                    id: 1,
-                    question: 
-                    "1. As presented in the passage, Mr. Kearney is best described as",  
-                    choices: [
+                    id:1, 
+                    questions: [
                         {
-                            opt: 'A',
-                            id: 1, 
-                            text:"independent and strong willed.", 
-                            check: false, 
+                            id: 1,
+                            question: 
+                            "1. As presented in the passage, Mr. Kearney is best described as",  
+                            choices: [
+                                {
+                                    opt: 'A',
+                                    id: 1, 
+                                    text:"independent and strong willed.", 
+                                    check: false, 
+                                },
+                                {
+                                    opt: 'B',
+                                    id:2, 
+                                    text:"paternal and affectionate.",  
+                                    check:false, 
+                                },
+                                {
+                                    opt: 'C',
+                                    id:3, 
+                                    text: "serious and family oriented.",  
+                                    check:true, 
+                                },
+                                {
+                                    opt: 'D',
+                                    id:4, 
+                                    text: "boring and simple minded.",  
+                                    check:false, 
+                                } 
+                            ],
+                            selectedChoice: '',
+                       
                         },
                         {
-                            opt: 'B',
+                            id: 2,
+                            question: 
+                            "2. As presented in the passage, Mr. Kearney is best described as",  
+                            choices: [
+                                {
+                                    opt: 'A',
+                                    id: 1, 
+                                    text:"2independent and strong willed.", 
+                                    check: false, 
+        
+                                },
+                                {
+                                    opt: 'B',
+                                    id:2, 
+                                    text:"2paternal and affectionate.",  
+                                    check: false, 
+        
+                                },
+                                {
+                                    opt: 'C',
+                                    id:3, 
+                                    text: "2serious and family oriented.",  
+                                    check: false, 
+        
+                                },
+                                {
+                                    opt: 'D',
+                                    id:4, 
+                                    text: "2boring and simple minded.",  
+                                    check: true, 
+        
+                                } 
+                            ],
+                            selectedChoice: '',
+                       
+                        },
+
+                        {
                             id:2, 
-                            text:"paternal and affectionate.",  
-                            check:false, 
+                                                questions: [
+                        {
+                            id: 1,
+                            question: 
+                            "1. As presented in the passage, Mr. Kearney is best described as",  
+                            choices: [
+                                {
+                                    opt: 'A',
+                                    id: 1, 
+                                    text:"independent and strong willed.", 
+                                    check: false, 
+                                },
+                                {
+                                    opt: 'B',
+                                    id:2, 
+                                    text:"paternal and affectionate.",  
+                                    check:false, 
+                                },
+                                {
+                                    opt: 'C',
+                                    id:3, 
+                                    text: "serious and family oriented.",  
+                                    check:true, 
+                                },
+                                {
+                                    opt: 'D',
+                                    id:4, 
+                                    text: "boring and simple minded.",  
+                                    check:false, 
+                                } 
+                            ],
+                            selectedChoice: '',
+                       
                         },
                         {
-                            opt: 'C',
-                            id:3, 
-                            text: "serious and family oriented.",  
-                            check:true, 
-                        },
-                        {
-                            opt: 'D',
-                            id:4, 
-                            text: "boring and simple minded.",  
-                            check:false, 
-                        } 
+                            id: 2,
+                            question: 
+                            "2. As presented in the passage, Mr. Kearney is best described as",  
+                            choices: [
+                                {
+                                    opt: 'A',
+                                    id: 1, 
+                                    text:"2independent and strong willed.", 
+                                    check: false, 
+        
+                                },
+                                {
+                                    opt: 'B',
+                                    id:2, 
+                                    text:"2paternal and affectionate.",  
+                                    check: false, 
+        
+                                },
+                                {
+                                    opt: 'C',
+                                    id:3, 
+                                    text: "2serious and family oriented.",  
+                                    check: false, 
+        
+                                },
+                                {
+                                    opt: 'D',
+                                    id:4, 
+                                    text: "2boring and simple minded.",  
+                                    check: true, 
+        
+                                } 
+                            ],
+                            selectedChoice: '',
+                        }
                     ],
-                    selectedChoice: '',
-               
                 },
-                {
-                    id: 2,
-                    question: 
-                    "2. As presented in the passage, Mr. Kearney is best described as",  
-                    choices: [
-                        {
-                            opt: 'A',
-                            id: 1, 
-                            text:"2independent and strong willed.", 
-                            check: false, 
+            ], 
 
-                        },
-                        {
-                            opt: 'B',
-                            id:2, 
-                            text:"2paternal and affectionate.",  
-                            check: false, 
-
-                        },
-                        {
-                            opt: 'C',
-                            id:3, 
-                            text: "2serious and family oriented.",  
-                            check: false, 
-
-                        },
-                        {
-                            opt: 'D',
-                            id:4, 
-                            text: "2boring and simple minded.",  
-                            check: true, 
-
-                        } 
-                    ],
-                    selectedChoice: '',
-               
-                },
-            ],
         };
     }
 
     renderAllQuestions() {
-        const {questions} = this.state; 
-        return questions.map((question, index) => {
+        const {sections} = this.state; 
+        return sections.map((section, index1) => {
             return (
-                <ButtonComponent
-                        key={question.id}
-                        onClick={(selectedId) => {
-                            question.selectedChoice = selectedId; // update the selectedChoice of this question with the clicked choice
-                            this.setState({
-                                questions: [
-                                    ...questions.slice(0, index), // questions array before updated question - stay exactly the same
-                                    question, // updated question - it's updated with the selectedChoice
-                                    ...questions.slice(index+1, questions.length), // questions array after updated question - stays exactly the same
-                                ]
-                            });
-                        }}
-                        selectedChoice={question.selectedChoice}
-                        question={question.question}
-                        choices={question.choices}
-                    />
+                {
+                    section.questions((subquestion, index2) => {
+                        return (
+                                <ButtonComponent
+                                key={subquestion.id}
+                                onClick={(selectedId) => {
+                                    subquestion.selectedChoice = selectedId; // update the selectedChoice of this question with the clicked choice
+                                    this.setState({
+                                        questions: [
+                                            ...section.questions.slice(0, index2), // questions array before updated question - stay exactly the same
+                                            subquestion, // updated question - it's updated with the selectedChoice
+                                            ...section.questions.slice(index2+1, section.questions.length), // questions array after updated question - stays exactly the same
+                                        ]
+                                    });
+                                }}
+                                selectedChoice={subquestion.selectedChoice}
+                                question={subquestion.question}
+                                choices={subquestion.choices}
+                        />
+                        )
+
+                    })
+                }
             )
         })
+
     }
 
     checkingAllQuestions() {
@@ -123,7 +210,7 @@ export default class TestScreen extends React.Component {
             }
         });
 
-        alert("Number of Correct Answers: " + numberOfCorrectAnswers);
+        //alert("Number of Correct Answers: " + numberOfCorrectAnswers);
 
         this.setState({
             isTestSubmitted: true,
