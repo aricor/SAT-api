@@ -4,6 +4,7 @@ import Timer from './timer'
 import Highlight from './getHighlight'
 import ButtonComponent from './button'
 import {Button } from "reactstrap"
+import ProgressBar from "./progressbar"
 
 export default class TestScreen extends React.Component {
 
@@ -176,6 +177,11 @@ export default class TestScreen extends React.Component {
                     </div>
                 </div>
             </div>
+            <div className = "progressbar">
+                    <div>
+                        <ProgressBar/>
+                    </div>
+                </div>
         </div>
     }
 }
