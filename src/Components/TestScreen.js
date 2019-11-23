@@ -87,10 +87,11 @@ export default class TestScreen extends React.Component {
                             selectedChoice: '',
                        
                         },
-
-                        {
-                            id:2, 
-                                                questions: [
+                    ]
+                },
+                {
+                    id:2, 
+                    questions: [
                         {
                             id: 1,
                             question: 
@@ -122,7 +123,7 @@ export default class TestScreen extends React.Component {
                                 } 
                             ],
                             selectedChoice: '',
-                       
+                    
                         },
                         {
                             id: 2,
@@ -163,7 +164,6 @@ export default class TestScreen extends React.Component {
                     ],
                 },
             ], 
-
         };
     }
 
@@ -171,29 +171,32 @@ export default class TestScreen extends React.Component {
         const {sections} = this.state; 
         return sections.map((section, index1) => {
             return (
-                {
-                    section.questions((subquestion, index2) => {
-                        return (
-                                <ButtonComponent
-                                key={subquestion.id}
-                                onClick={(selectedId) => {
-                                    subquestion.selectedChoice = selectedId; // update the selectedChoice of this question with the clicked choice
-                                    this.setState({
-                                        questions: [
-                                            ...section.questions.slice(0, index2), // questions array before updated question - stay exactly the same
-                                            subquestion, // updated question - it's updated with the selectedChoice
-                                            ...section.questions.slice(index2+1, section.questions.length), // questions array after updated question - stays exactly the same
-                                        ]
-                                    });
-                                }}
-                                selectedChoice={subquestion.selectedChoice}
-                                question={subquestion.question}
-                                choices={subquestion.choices}
-                        />
-                        )
+                <div>
+                    <h4> SECTION {section.id}</h4>
+                    {
+                        section.questions.map((subquestion, index2) => {
+                            return (
+                                    <ButtonComponent
+                                    key={subquestion.id}
+                                    onClick={(selectedId) => {
+                                        subquestion.selectedChoice = selectedId; // update the selectedChoice of this question with the clicked choice
+                                        this.setState({
+                                            questions: [
+                                                ...section.questions.slice(0, index2), // questions array before updated question - stay exactly the same
+                                                subquestion, // updated question - it's updated with the selectedChoice
+                                                ...section.questions.slice(index2+1, section.questions.length), // questions array after updated question - stays exactly the same
+                                            ]
+                                        });
+                                    }}
+                                    selectedChoice={subquestion.selectedChoice}
+                                    question={subquestion.question}
+                                    choices={subquestion.choices}
+                            />
+                            )
 
-                    })
-                }
+                        })
+                    }
+                </div>
             )
         })
 
@@ -233,16 +236,12 @@ export default class TestScreen extends React.Component {
             questions,
         } = this.state;
 
-        const percentageOfCorrectAnswers = (numberOfCorrectAnswers*100)/questions.length;
 
         if(isTestSubmitted) {
             return (
                 <div className="appContainer">
                     <h1>Test Submitted!</h1>
                     <h2>Number of Question is: {questions.length}</h2>
-                    <h2>Number of Correct Answers is: {numberOfCorrectAnswers}</h2>
-                    <h2>Percentage of Correct Answers: {percentageOfCorrectAnswers} %</h2>
-                    {this.renderTestResult(percentageOfCorrectAnswers)}
                 </div>
             );
         }
