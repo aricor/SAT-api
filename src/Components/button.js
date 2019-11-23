@@ -3,7 +3,7 @@ import React from "react";
 import {Button } from "reactstrap"; 
 import './button.css';
 import {Toggle} from "./togglestate";
-
+// I want to select and unselect an answer so I created togglestate component and then put this inside the button component 
 const ButtonComponent = props => {
   return (
     <div>
