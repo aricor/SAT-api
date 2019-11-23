@@ -24,25 +24,32 @@ export default class TestScreen extends React.Component {
                             opt: 'A',
                             id: 1, 
                             text:"independent and strong willed.", 
-                            check: false, 
+                            check: false,
+                            active: false,  
                         },
                         {
                             opt: 'B',
                             id:2, 
                             text:"paternal and affectionate.",  
                             check:false, 
+                            active: false,  
+
                         },
                         {
                             opt: 'C',
                             id:3, 
                             text: "serious and family oriented.",  
                             check:true, 
+                            active: false,  
+
                         },
                         {
                             opt: 'D',
                             id:4, 
                             text: "boring and simple minded.",  
                             check:false, 
+                            active: false,  
+
                         } 
                     ],
                     selectedChoice: '',
@@ -58,6 +65,8 @@ export default class TestScreen extends React.Component {
                             id: 1, 
                             text:"2independent and strong willed.", 
                             check: false, 
+                            active: false,  
+
 
                         },
                         {
@@ -65,6 +74,7 @@ export default class TestScreen extends React.Component {
                             id:2, 
                             text:"2paternal and affectionate.",  
                             check: false, 
+                            active: false,  
 
                         },
                         {
@@ -72,6 +82,7 @@ export default class TestScreen extends React.Component {
                             id:3, 
                             text: "2serious and family oriented.",  
                             check: false, 
+                            active: false,  
 
                         },
                         {
@@ -79,6 +90,7 @@ export default class TestScreen extends React.Component {
                             id:4, 
                             text: "2boring and simple minded.",  
                             check: true, 
+                            active: false,  
 
                         } 
                     ],

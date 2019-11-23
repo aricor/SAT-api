@@ -2,7 +2,7 @@
 import React from "react";
 import {Button } from "reactstrap"; 
 import './button.css';
-
+import {Toggle} from "./togglestate";
 
 const ButtonComponent = props => {
   return (
@@ -15,12 +15,15 @@ const ButtonComponent = props => {
             const selected = props.selectedChoice === choice.id;
             return(
               <div className="mt-2">
-                <Button
+                <Button>
+                  <Toggle 
                   key={choice.id}
                   onClick={() => props.onClick(choice.id)}  
                   className="btn-circle" 
                   outline={!selected} 
                   color="primary">
+                  </Toggle>
+
                   {choice.opt}
               </Button>
               <span className="m-2">
