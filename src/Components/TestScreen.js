@@ -13,6 +13,7 @@ export default class TestScreen extends React.Component {
             title: "This passage is from James Joyce, The Dubliners originally published in 1914",
             isTestSubmitted: false,
             numberOfCorrectAnswers: 0,
+            currentSection: 0,
             sections: [
                 {
                     id:1, 
@@ -168,8 +169,8 @@ export default class TestScreen extends React.Component {
     }
 
     renderAllQuestions() {
-        const {sections} = this.state; 
-        return sections.map((section, index1) => {
+        const {sections, currentSection} = this.state; 
+        const section = sections[currentSection];
             return (
                 <div>
                     <h4> SECTION {section.id}</h4>
@@ -198,11 +199,19 @@ export default class TestScreen extends React.Component {
                     }
                 </div>
             )
-        })
 
     }
 
     checkingAllQuestions() {
+
+        /*
+         * TODO VI
+         * 
+         * if it's last page, you do the navigation to finished page logic which needs to be fixed
+         * if it's NOT last page, you should update the currentSection in state
+         * 
+         */
+
         const {questions} = this.state; 
         let numberOfCorrectAnswers = 0;
         questions.map((question) => {
@@ -212,8 +221,6 @@ export default class TestScreen extends React.Component {
                 numberOfCorrectAnswers = numberOfCorrectAnswers + 1;
             }
         });
-
-        //alert("Number of Correct Answers: " + numberOfCorrectAnswers);
 
         this.setState({
             isTestSubmitted: true,
@@ -229,12 +236,30 @@ export default class TestScreen extends React.Component {
         }
     }
 
+    checkNotAllSectionQuestionsAnswered() {
+        /*
+         * TODO VI
+         * Check if one of the questions of the current section is not answered
+         * hint: you can use the "some" or "every" function
+         */ 
+        let result = true;
+        return result;
+    }
+
     render() {
         const {
             isTestSubmitted,
             numberOfCorrectAnswers,
             questions,
         } = this.state;
+
+        /*
+         * 
+         * TODO VI
+         * check if the current section is the last one
+         * 
+         */
+        const isLastSection = false;
 
 
         if(isTestSubmitted) {
@@ -258,7 +283,8 @@ export default class TestScreen extends React.Component {
                 <div className="questionSection">
                     <div className="article2">
                     {this.renderAllQuestions()}
-                    <button class="btn btn-primary" onClick={() => this.checkingAllQuestions()}>Submit</button>
+                    {this.checkNotAllSectionQuestionsAnswered() && <h5>You did not answer all the questions of this section</h5>}
+                    <button class="btn btn-primary" onClick={() => this.checkingAllQuestions()}>{isLastSection ? 'Submit' : 'Next'}</button>
                     </div>
                 </div>
             </div>
