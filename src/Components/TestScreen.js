@@ -1,9 +1,10 @@
-import React from 'react'
-import styles from "./testscreen.css"
-import Timer from './timer'
-import Highlight from './getHighlight'
-import ButtonComponent from './button'
-import {Button } from "reactstrap"
+import React from 'react';
+import styles from "./testscreen.css";
+import Timer from './timer';
+import Highlight from './getHighlight';
+import ButtonComponent from './button';
+import ProgressBar from './progressbar';
+import {Progress} from 'reactstrap';
 
 export default class TestScreen extends React.Component {
 
@@ -95,7 +96,7 @@ export default class TestScreen extends React.Component {
                 <ButtonComponent
                         key={question.id}
                         onClick={(selectedId) => {
-                            question.selectedChoice = selectedId; // update the selectedChoice of this question with the clicked choice
+                            question.selectedChoice = question.selectedChoice != selectedId ? selectedId : ''; // update the selectedChoice of this question with the clicked choice
                             this.setState({
                                 questions: [
                                     ...questions.slice(0, index), // questions array before updated question - stay exactly the same
@@ -129,6 +130,16 @@ export default class TestScreen extends React.Component {
             isTestSubmitted: true,
             numberOfCorrectAnswers: numberOfCorrectAnswers,
         });
+    }
+
+    calculatePercentageOfAnsweredQuestions() {
+        const {questions} = this.state; 
+        let numberOfAnsweredQuestions = 0;
+        const answeredQuestions = questions.filter((question) => {
+            return question.selectedChoice != '';
+        });
+        numberOfAnsweredQuestions = answeredQuestions.length;
+        return (numberOfAnsweredQuestions * 100) / questions.length;
     }
 
     renderTestResult(percentageOfCorrectAnswers) {
@@ -174,6 +185,16 @@ export default class TestScreen extends React.Component {
                     {this.renderAllQuestions()}
                     <button class="btn btn-primary" onClick={() => this.checkingAllQuestions()}>Submit</button>
                     </div>
+                </div>
+            </div>
+            <div className = "progressbar">
+                <div>
+                    <ProgressBar questions={questions}/>
+                </div>
+            </div>
+            <div className = "">
+                <div>
+                    <Progress value={this.calculatePercentageOfAnsweredQuestions()} />
                 </div>
             </div>
         </div>
