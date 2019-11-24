@@ -150,8 +150,6 @@ export default class TestScreen extends React.Component {
         }
     }
 
-<<<<<<< Updated upstream
-=======
     checkNotAllSectionQuestionsAnswered() {
         /*
          * TODO VI
@@ -172,7 +170,6 @@ export default class TestScreen extends React.Component {
         const {sections, currentSection} = this.state; 
     }    
 
->>>>>>> Stashed changes
     render() {
         const {
             isTestSubmitted,
