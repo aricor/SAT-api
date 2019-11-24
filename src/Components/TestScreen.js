@@ -244,10 +244,10 @@ export default class TestScreen extends React.Component {
          */ 
 
          /* return true if every choice is selected and return false if not */
-        const {questions} = this.state; 
+        const {sections} = this.state; 
         let result = true;
-        questions.map((question) => {
-             result = question.choices.every((choice) => choice.selectedChoice != '') 
+        sections.map((section) => {
+             result = section.questions.choices.every((choice) => choice.selectedChoice != '') 
         })
         return result;
     }
