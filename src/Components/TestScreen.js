@@ -150,6 +150,29 @@ export default class TestScreen extends React.Component {
         }
     }
 
+<<<<<<< Updated upstream
+=======
+    checkNotAllSectionQuestionsAnswered() {
+        /*
+         * TODO VI
+         * Check if one of the questions of the current section is not answered
+         * hint: you can use the "some" or "every" function
+         */ 
+
+         /* return true if every choice is selected and return false if not */
+        const {questions} = this.state; 
+        let result = true;
+        questions.map((question) => {
+             result = question.choices.every((choice) => choice.selectedChoice != '') 
+        })
+        return result;
+    }
+
+    IsTheLastPage() {
+        const {sections, currentSection} = this.state; 
+    }    
+
+>>>>>>> Stashed changes
     render() {
         const {
             isTestSubmitted,
