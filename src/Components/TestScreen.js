@@ -149,7 +149,6 @@ export default class TestScreen extends React.Component {
             return <h3>FAILED</h3>
         }
     }
-
     checkNotAllSectionQuestionsAnswered() {
         /*
          * TODO VI
