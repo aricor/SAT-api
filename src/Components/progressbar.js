@@ -5,7 +5,6 @@ const ProgressBar = props => {
     return props.questions.map((question) => {
         const buttonColor = question.selectedChoice != '' ? 'btn-primary' : 'btn-secondary';
         return (
-            <div className="d-flex justify-content-center">
                 <div className="btn-toolbar">
                     <div className="mr-2">
                         <div className="mt-2">
@@ -17,7 +16,7 @@ const ProgressBar = props => {
                         </div>
                     </div>
                 </div>
-            </div> 
+
         );
     })
 

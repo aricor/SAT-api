@@ -1,5 +1,7 @@
-.btn-toolbar  { 
+.progressbar div  { 
     flex-direction: row;
     display:flex;
+    justify-content: center;
+
   }
   
