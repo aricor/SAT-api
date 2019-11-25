@@ -211,21 +211,31 @@ export default class TestScreen extends React.Component {
          * if it's NOT last page, you should update the currentSection in state
          * 
          */
+        const {sections, currentSection} = this.state; 
 
-        const {questions} = this.state; 
-        let numberOfCorrectAnswers = 0;
-        questions.map((question) => {
-            //find function
-            const correctAnswer = question.choices.find((choice) => choice.check === true);
-            if(correctAnswer.id === question.selectedChoice) {
-                numberOfCorrectAnswers = numberOfCorrectAnswers + 1;
-            }
-        });
+        if (this.IsTheLastPage()) {
+            let numberOfCorrectAnswers = 0;
+            sections.map((section) => {
+                //find function
+                return (
+                    section.questions.map((question) => {
+                        const correctAnswer = question.choices.find((choice) => choice.check === true);
+                        if(correctAnswer.id === question.selectedChoice) {
+                            numberOfCorrectAnswers = numberOfCorrectAnswers + 1;
+                        }
+                        this.setState({
+                            isTestSubmitted: true,
+                            numberOfCorrectAnswers: numberOfCorrectAnswers,
+                    });
+                )
+   
+            });
 
-        this.setState({
-            isTestSubmitted: true,
-            numberOfCorrectAnswers: numberOfCorrectAnswers,
-        });
+        }
+        else {
+            currentSection = sections.id; 
+        }
+
     }
 
     renderTestResult(percentageOfCorrectAnswers) {
@@ -236,7 +246,7 @@ export default class TestScreen extends React.Component {
         }
     }
 
-    checkNotAllSectionQuestionsAnswered() {
+    NotAllQuestionsAnswered() {
         /*
          * TODO VI
          * Check if one of the questions of the current section is not answered
@@ -245,22 +255,24 @@ export default class TestScreen extends React.Component {
 
          /* return true if every choice is selected and return false if not */
         const {sections} = this.state; 
-        let result = true;
+        let result = false;
         sections.map((section) => {
             return (
                 section.questions.map((question) => {
-                    return (
-                        result = question.choices.every((choice) => choice.selectedChoice != '') 
-
-                    )
+                        result = question.choices.some((choice) => choice.selectedChoice === '') 
                 })
             )
         })
-        //return result;
+        return result;
     }
 
     IsTheLastPage() {
-        const {sections, currentSection} = this.state; 
+        const {sections, currentSection} = this.state;
+        let LastPage = false;  
+        /*  if id of the current section = the size of the sections then return true */
+        if (currentSection === sections.length )
+            LastPage = true; 
+        return LastPage; 
     }    
 
 
@@ -277,7 +289,8 @@ export default class TestScreen extends React.Component {
          * check if the current section is the last one
          * 
          */
-        const isLastSection = false;
+
+        //const isLastSection = false;
 
 
         if(isTestSubmitted) {
@@ -301,8 +314,8 @@ export default class TestScreen extends React.Component {
                 <div className="questionSection">
                     <div className="article2">
                     {this.renderAllQuestions()}
-                    {this.checkNotAllSectionQuestionsAnswered() && <h5>You did not answer all the questions of this section</h5>}
-                    <button class="btn btn-primary" onClick={() => this.checkingAllQuestions()}>{isLastSection ? 'Submit' : 'Next'}</button>
+                    {this.NotAllQuestionsAnswered() && <h5>You did not answer all the questions of this section</h5>}
+                    <button class="btn btn-primary" onClick={() => this.checkingAllQuestions()}>{this.IsTheLastPage() ? 'Submit' : 'Next'}</button>
                     </div>
                 </div>
             </div>
