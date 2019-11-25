@@ -14,7 +14,7 @@ const ButtonComponent = props => {
           props.choices.map( choice => {
             const selected = props.selectedChoice === choice.id;
             return(
-              <div className="mt-2">
+              <div key={choice.id} className="mt-2">
                 <Button
                   key={choice.id}
                   onClick={() => props.onClick(choice.id)}  
