@@ -247,9 +247,16 @@ export default class TestScreen extends React.Component {
         const {sections} = this.state; 
         let result = true;
         sections.map((section) => {
-             result = section.questions.choices.every((choice) => choice.selectedChoice != '') 
+            return (
+                section.questions.map((question) => {
+                    return (
+                        result = question.choices.every((choice) => choice.selectedChoice != '') 
+
+                    )
+                })
+            )
         })
-        return result;
+        //return result;
     }
 
     IsTheLastPage() {
