@@ -226,11 +226,10 @@ export default class TestScreen extends React.Component {
                         this.setState({
                             isTestSubmitted: true,
                             numberOfCorrectAnswers: numberOfCorrectAnswers,
-                    });
+                        });
+                    })
                 )
-   
             });
-
         }
         else {
             currentSection = sections.id; 
@@ -259,7 +258,7 @@ export default class TestScreen extends React.Component {
         sections.map((section) => {
             return (
                 section.questions.map((question) => {
-                        result = question.choices.some((choice) => question.choice.selectedChoice === '') 
+                        result = question.choices.some((choice) => choice.selectedChoice === '') 
                 })
             )
         })
