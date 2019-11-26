@@ -3,10 +3,8 @@ import {Button } from "reactstrap";
 
 const ProgressBar = props => {
     return props.sections.map((section) => {
-        return (
-            props.section.questions.map((question) => {
+            section.questions.map((question) => {
                 const buttonColor = question.selectedChoice != '' ? 'btn-primary' : '';
-                return (
                     <div class="d-flex justify-content-center">
                         <div className="btn-toolbar">
                             <div className="mr-2">
@@ -20,9 +18,7 @@ const ProgressBar = props => {
                             </div>
                         </div>
                     </div> 
-                );
             })
-        )
 
     })
 
