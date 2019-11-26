@@ -4,7 +4,8 @@ import Timer from './timer'
 import Highlight from './getHighlight'
 import ButtonComponent from './button'
 import {Button } from "reactstrap"
-
+import ProgressBar from './progressbar';
+import {Progress} from 'reactstrap'
 export default class TestScreen extends React.Component {
 
     constructor(props) {
@@ -275,22 +276,21 @@ export default class TestScreen extends React.Component {
 
     }    
 
-
+    calculatePercentageOfAnsweredQuestions() {
+        const {questions} = this.state; 
+        let numberOfAnsweredQuestions = 0;
+        const answeredQuestions = questions.filter((question) => {
+            return question.selectedChoice != '';
+        });
+        numberOfAnsweredQuestions = answeredQuestions.length;
+        return (numberOfAnsweredQuestions * 100) / questions.length;
+    }
     render() {
         const {
             isTestSubmitted,
             numberOfCorrectAnswers,
             questions,
         } = this.state;
-
-        /*
-         * 
-         * check if the current section is the last one
-         * 
-         */
-
-        //const isLastSection = false;
-
 
         if(isTestSubmitted) {
             return (
@@ -301,7 +301,7 @@ export default class TestScreen extends React.Component {
             );
         }
 
-        console.log(this.state.sections);
+        //console.log(this.state.sections);
 
         return <div className="appContainer">
             <Timer/>            
@@ -320,6 +320,12 @@ export default class TestScreen extends React.Component {
                     </div>
                 </div>
             </div>
+            <div className = "progressbar">
+                <div>
+                    <ProgressBar questions={questions}/>
+                </div>
+            </div>
+
         </div>
     }
 }
