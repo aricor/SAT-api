@@ -9,11 +9,12 @@ const ButtonComponent = props => {
     <div>
       <p><b> {props.question} </b></p>
       <div className="choice">
-        <div className='mb-2'>
+        <div className='mb-2' >
         { 
           props.sections.map( section => {
-            section.choices.map((choice) => {
+            props.section.choices.map((choice) => {
               const selected = props.selectedChoice === choice.id;
+              return(
                 <div key={choice.id} className="mt-2">
                   <Button
                     key={choice.id}
@@ -27,7 +28,7 @@ const ButtonComponent = props => {
                   {choice.text}
                 </span>
               </div>
-              
+              )
             })
 
           })

@@ -4,6 +4,8 @@ import Timer from './timer'
 import Highlight from './getHighlight'
 import ButtonComponent from './button'
 import {Button } from "reactstrap"
+import ProgressBar from './progressbar';
+import {Progress} from 'reactstrap'
 
 export default class TestScreen extends React.Component {
 
@@ -235,14 +237,33 @@ export default class TestScreen extends React.Component {
         }
 
     }
+    calculatePercentageOfAnsweredQuestions() {
+        const {sections} = this.state; 
+        let numberOfAnsweredQuestions = 0;
+        const answeredQuestions = sections.map((section) => {
+            return (
+                section.questions.filter((question) => {
+                    return question.selectedChoice != '';
+                })
+            )
+        });
 
-    renderTestResult(percentageOfCorrectAnswers) {
-        if(percentageOfCorrectAnswers > 50) {
-            return <h3>PASSED</h3>
-        } else {
-            return <h3>FAILED</h3>
-        }
+        numberOfAnsweredQuestions = answeredQuestions.length;
+        let TotalNumberOfQuestions = 0;
+        for (section in sections)
+            for (question in section.questions) {
+                return TotalNumberOfQuestions +=1;
+            }
+
+        return (numberOfAnsweredQuestions * 100) / TotalNumberOfQuestions;
     }
+    //renderTestResult(percentageOfCorrectAnswers) {
+    //    if(percentageOfCorrectAnswers > 50) {
+     //       return <h3>PASSED</h3>
+    //    } else {
+    //        return <h3>FAILED</h3>
+    //    }
+    //}
 
     NotAllQuestionsAnswered() {
         /*
@@ -280,7 +301,7 @@ export default class TestScreen extends React.Component {
         const {
             isTestSubmitted,
             numberOfCorrectAnswers,
-            questions,
+            sections,
         } = this.state;
 
         /*
@@ -291,7 +312,7 @@ export default class TestScreen extends React.Component {
 
         //const isLastSection = false;
 
-
+        //const percentageOfCorrectAnswers = (numberOfCorrectAnswers*100)/sections.questions.length;
         if(isTestSubmitted) {
             return (
                 <div className="appContainer">
@@ -320,6 +341,17 @@ export default class TestScreen extends React.Component {
                     </div>
                 </div>
             </div>
+            <div className = "progressbar">
+                <div>
+                    <ProgressBar questions={questions}/>
+                </div>
+            </div>
+            <div className = "">
+                <div>
+                    <Progress value={this.calculatePercentageOfAnsweredQuestions()} />
+                </div>
+            </div>
         </div>
+        
     }
 }
