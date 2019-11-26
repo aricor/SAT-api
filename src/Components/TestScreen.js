@@ -180,7 +180,7 @@ export default class TestScreen extends React.Component {
                                     <ButtonComponent
                                     key={subquestion.id}
                                     onClick={(selectedId) => {
-                                        subquestion.selectedChoice = selectedId; // update the selectedChoice of this question with the clicked choice
+                                        subquestion.selectedChoice = subquestion.selectedChoice != selectedId? selectedId : ''; // update the selectedChoice of this question with the clicked choice
                                         this.setState({
                                             questions: [
                                                 ...section.questions.slice(0, index2), // questions array before updated question - stay exactly the same
