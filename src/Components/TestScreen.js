@@ -23,7 +23,7 @@ export default class TestScreen extends React.Component {
                         {
                             id: 1,
                             question: 
-                            "1. As presented in the passage, Mr. Kearney is best described as",  
+                            "1.1 As presented in the passage, Mr. Kearney is best described as",  
                             choices: [
                                 {
                                     opt: 'A',
@@ -56,7 +56,7 @@ export default class TestScreen extends React.Component {
                         {
                             id: 2,
                             question: 
-                            "2. As presented in the passage, Mr. Kearney is best described as",  
+                            "1.2 As presented in the passage, Mr. Kearney is best described as",  
                             choices: [
                                 {
                                     opt: 'A',
@@ -98,7 +98,7 @@ export default class TestScreen extends React.Component {
                         {
                             id: 1,
                             question: 
-                            "1. As presented in the passage, Mr. Kearney is best described as",  
+                            "2.1 As presented in the passage, Mr. Kearney is best described as",  
                             choices: [
                                 {
                                     opt: 'A',
@@ -131,7 +131,7 @@ export default class TestScreen extends React.Component {
                         {
                             id: 2,
                             question: 
-                            "2. As presented in the passage, Mr. Kearney is best described as",  
+                            "2.2 As presented in the passage, Mr. Kearney is best described as",  
                             choices: [
                                 {
                                     opt: 'A',
@@ -220,7 +220,12 @@ export default class TestScreen extends React.Component {
                 //find function
                 return (
                     section.questions.map((question) => {
-                        const correctAnswer = question.choices.find((choice) => choice.check === true);
+                        const correctAnswer = question.choices.find((choice) => {
+                          if(choice.check === true) {
+                            return choice.id;
+                          }
+                        });
+                        
                         if(correctAnswer.id === question.selectedChoice) {
                             numberOfCorrectAnswers = numberOfCorrectAnswers + 1;
                         }
@@ -240,53 +245,30 @@ export default class TestScreen extends React.Component {
     calculatePercentageOfAnsweredQuestions() {
         const {sections} = this.state; 
         let numberOfAnsweredQuestions = 0;
-        const answeredQuestions = sections.map((section) => {
-            return (
-                section.questions.filter((question) => {
-                    return question.selectedChoice != '';
-                })
-            )
+        
+        sections.map((section) => {
+            section.questions.map((question) => {
+                if (question.selectedChoice != '') {
+                  numberOfAnsweredQuestions = numberOfAnsweredQuestions + 1;
+                };
+            })
         });
 
-        numberOfAnsweredQuestions = answeredQuestions.length;
-        let TotalNumberOfQuestions = 0;
-        for (section in sections)
-            for (question in section.questions) {
-                return TotalNumberOfQuestions +=1;
-            }
+        let allQuestions = [];
+        sections.map((section) => {
+          allQuestions = [...allQuestions, ...section.questions]; 
+        });
 
-        return (numberOfAnsweredQuestions * 100) / TotalNumberOfQuestions;
+        return (numberOfAnsweredQuestions * 100) / allQuestions.length;
     }
-    //renderTestResult(percentageOfCorrectAnswers) {
-    //    if(percentageOfCorrectAnswers > 50) {
-     //       return <h3>PASSED</h3>
-    //    } else {
-    //        return <h3>FAILED</h3>
-    //    }
-    //}
 
     NotAllQuestionsAnswered() {
         /*
          * Check if one of the questions of the current section is not answered
          */ 
-
-         /* return true if some choices are not selected */
-        //const {sections} = this.state; 
-        //let result = false;
-        //for (section in sections)
-        //  for (question in questions)
-        //    if (question.seldfjslkdjfs == '')
-        //      return true
-        //return false;
         const {sections} = this.state;
 
         return sections.some((section) => section.questions.some((question) => question.selectedChoice === ''));
-        //sections.map((section) => {
-        //    return (
-        //        section.questions.some((question) => question.selectedChoice === '') 
-        //    )
-        //})
-        //return result; 
     }
 
     IsTheLastPage() {
@@ -302,6 +284,7 @@ export default class TestScreen extends React.Component {
             isTestSubmitted,
             numberOfCorrectAnswers,
             sections,
+            currentSection,
         } = this.state;
 
         /*
@@ -310,14 +293,18 @@ export default class TestScreen extends React.Component {
          * 
          */
 
-        //const isLastSection = false;
+        let allQuestions = [];
+        sections.map((section) => {
+          allQuestions = [...allQuestions, ...section.questions]; 
+        });
 
         //const percentageOfCorrectAnswers = (numberOfCorrectAnswers*100)/sections.questions.length;
         if(isTestSubmitted) {
             return (
                 <div className="appContainer">
                     <h1>Test Submitted!</h1>
-                    <h2>Number of Question is: {questions.length}</h2>
+                    <h2>Number of Question is: {allQuestions.length}</h2>
+                    <h2>Number of Correct Answers is: {numberOfCorrectAnswers}</h2>
                 </div>
             );
         }
@@ -337,13 +324,14 @@ export default class TestScreen extends React.Component {
                     <div className="article2">
                     {this.renderAllQuestions()}
                     {this.NotAllQuestionsAnswered() && this.IsTheLastPage() && <h5>You did not answer all the questions of this section</h5>}
-                    <button className="btn btn-primary" onClick={() => this.checkingAllQuestions()}>{this.IsTheLastPage() ? 'Submit' : 'Next'}</button>
+                    <button className="btn btn-primary" onClick={() => this.setState({ currentSection: currentSection - 1})}>Back</button>
+                    <button className="btn btn-primary m-2" onClick={() => this.checkingAllQuestions()}>{this.IsTheLastPage() ? 'Submit' : 'Next'}</button>
                     </div>
                 </div>
             </div>
             <div className = "progressbar">
                 <div>
-                    <ProgressBar questions={questions}/>
+                    <ProgressBar currentSection={currentSection} sections={sections}/>
                 </div>
             </div>
             <div className = "">

@@ -2,7 +2,7 @@ import React from "react";
 import {Button } from "reactstrap"; 
 
 const ProgressBar = props => {
-    return props.sections.map((section) => {
+        const section = props.sections[props.currentSection];
         return (
             section.questions.map((question) => {
                 const buttonColor = question.selectedChoice != '' ? 'btn-primary' : '';
@@ -23,8 +23,5 @@ const ProgressBar = props => {
                 );
             })
         )
-
-    })
-
 }
 export default ProgressBar; 
