@@ -1,11 +1,12 @@
 import React from "react";
 import {Button } from "reactstrap"; 
+import "./progressbar.css"
 
 const ProgressBar = props => {
         const section = props.sections[props.currentSection];
         return (
             section.questions.map((question) => {
-                const buttonColor = question.selectedChoice != '' ? 'btn-primary' : '';
+                const buttonColor = question.selectedChoice != '' ? 'btn-primary' : 'btn-secondary';
                 return (
                     <div class="d-flex justify-content-center">
                         <div className="btn-toolbar">
