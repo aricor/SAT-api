@@ -1,7 +1,9 @@
 .timerContainer {
-    position: fixed;
+  display: flex; /* or inline-flex */
+    justify-content: space-between;
+   /* position: fixed; */
     top: 0;
     background: white;
     width:100%;
   }
-  
+ 

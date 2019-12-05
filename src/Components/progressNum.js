@@ -1,8 +1,8 @@
 import React from "react";
 import {Button } from "reactstrap"; 
-import "./progressbar.css"
+import "./progressNum.css"
 
-const ProgressBar = props => {
+const ProgressNum = props => {
         const section = props.sections[props.currentSection];
         return (
             section.questions.map((question) => {
@@ -25,4 +25,4 @@ const ProgressBar = props => {
             })
         )
 }
-export default ProgressBar; 
+export default ProgressNum; 

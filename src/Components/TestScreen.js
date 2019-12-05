@@ -4,7 +4,7 @@ import Timer from './timer'
 import Highlight from './getHighlight'
 import ButtonComponent from './button'
 import {Button } from "reactstrap"
-import ProgressBar from './progressbar';
+import ProgressNum from './progressNum';
 import {Progress} from 'reactstrap'
 
 export default class TestScreen extends React.Component {
@@ -278,6 +278,7 @@ export default class TestScreen extends React.Component {
 
     }    
 
+ 
 
     render() {
         const {
@@ -312,7 +313,9 @@ export default class TestScreen extends React.Component {
         console.log(this.state.sections);
 
         return <div className="appContainer">
+            <div className= "header">
             <Timer/>            
+            </div>
             <div className="testContainer">
                 <div className="passageSection">
                 <div className="passagename">
@@ -324,19 +327,20 @@ export default class TestScreen extends React.Component {
                     <div className="article2">
                     {this.renderAllQuestions()}
                     {this.NotAllQuestionsAnswered() && this.IsTheLastPage() && <h5>You did not answer all the questions of this section</h5>}
-                    <button className="btn btn-primary" onClick={() => this.setState({ currentSection: currentSection - 1})}>Back</button>
+                    
+                    <button className="btn btn-primary" onClick={() => this.setState({ currentSection: currentSection - 1})}> Back</button>
                     <button className="btn btn-primary m-2" onClick={() => this.checkingAllQuestions()}>{this.IsTheLastPage() ? 'Submit' : 'Next'}</button>
                     </div>
                 </div>
             </div>
-            <div className = "progressbar">
+            <div className = "progressNum">
                 <div>
-                    <ProgressBar currentSection={currentSection} sections={sections}/>
+                    <ProgressNum currentSection={currentSection} sections={sections}/>
                 </div>
             </div>
-            <div className = "">
-                <div>
-                    <Progress value={this.calculatePercentageOfAnsweredQuestions()} />
+            <div className = "progressbar">
+                <div> 
+                    <Progress animated color="info" value={this.calculatePercentageOfAnsweredQuestions()} />
                 </div>
             </div>
         </div>

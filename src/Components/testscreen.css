@@ -6,7 +6,6 @@
 }
 .testContainer {
     display: flex;
-    margin-top: 10vh;
     height: 85vh;
     overflow-y: hidden;
     overflow-x: hidden;
