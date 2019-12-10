@@ -1149,11 +1149,19 @@ export default class TestScreen extends React.Component {
 
     //}    
 
+<<<<<<< HEAD
     IsNotTheFirstPage() {
         const {currentSection} = this.state;
         return ((currentSection !== 0))
     }
 
+=======
+ 
+    IsNotTheFirstPage() {
+        const {sections, currentSection} = this.state;
+        return ((currentSection !== 0))
+    }
+>>>>>>> 6fbf940690551ca03e350d43acc96873e52579ee
     render() {
         const {
             isTestSubmitted,
@@ -1205,8 +1213,15 @@ export default class TestScreen extends React.Component {
                 <div className="questionSection">
                     <div className="article2">
                     {this.renderAllQuestions()}
+<<<<<<< HEAD
                     {this.IsNotTheFirstPage() ?  <button className="btn btn-primary"  onClick={() => this.setState({ currentSection: currentSection - 1})}> Back</button> : '' }
                     <button className="btn btn-primary m-2" onClick={() => this.checkingAllQuestions()}>{this.IsLastSection() ? 'Submit' : 'Next'}</button>
+=======
+                    {this.NotAllQuestionsAnswered() && this.IsTheLastPage() && <h5>You did not answer all the questions of this section</h5>}
+                    
+                    {this.IsNotTheFirstPage() ?  <button className="btn btn-primary"  onClick={() => this.setState({ currentSection: currentSection - 1})}> Back</button> : '' }
+                    <button className="btn btn-primary m-2" onClick={() => this.checkingAllQuestions()}>{this.IsTheLastPage() ? 'Submit' : 'Next'}</button>
+>>>>>>> 6fbf940690551ca03e350d43acc96873e52579ee
                     </div>
                 </div>
             </div>
