@@ -279,7 +279,10 @@ export default class TestScreen extends React.Component {
     }    
 
  
-
+    IsNotTheFirstPage() {
+        const {sections, currentSection} = this.state;
+        return ((currentSection !== 0))
+    }
     render() {
         const {
             isTestSubmitted,
@@ -328,7 +331,7 @@ export default class TestScreen extends React.Component {
                     {this.renderAllQuestions()}
                     {this.NotAllQuestionsAnswered() && this.IsTheLastPage() && <h5>You did not answer all the questions of this section</h5>}
                     
-                    <button className="btn btn-primary" onClick={() => this.setState({ currentSection: currentSection - 1})}> Back</button>
+                    {this.IsNotTheFirstPage() ?  <button className="btn btn-primary"  onClick={() => this.setState({ currentSection: currentSection - 1})}> Back</button> : '' }
                     <button className="btn btn-primary m-2" onClick={() => this.checkingAllQuestions()}>{this.IsTheLastPage() ? 'Submit' : 'Next'}</button>
                     </div>
                 </div>
