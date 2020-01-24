@@ -28,7 +28,6 @@ export default class TestScreen extends React.Component {
                     sections: [
                         {
                             id:1, 
-                            sectionType:  'reading', 
                             questions: [
                                 {
                                     id: 1,
@@ -102,9 +101,8 @@ export default class TestScreen extends React.Component {
                                 },
                             ]
                         },
-                        {
+                         {
                             id:2, 
-                            sectionType: 'reading', 
                             questions: [
                                 {
                                     id: 3,
@@ -186,7 +184,6 @@ export default class TestScreen extends React.Component {
                     sections: [
                         {
                             id:1, 
-                            sectionType: 'writing', 
                             questions: [
                                 {
                                     id: 1,
@@ -262,7 +259,6 @@ export default class TestScreen extends React.Component {
                         },
                          {
                             id:2, 
-                            sectionType: 'writing', 
                             questions: [
                                 {
                                     id: 3,
@@ -344,7 +340,6 @@ export default class TestScreen extends React.Component {
                     sections: [
                         {
                             id:1, 
-                            sectionType: 'mathNoCal', 
                             questions: [
                                 {
                                     id: 1,
@@ -420,7 +415,6 @@ export default class TestScreen extends React.Component {
                         },
                          {
                             id:2, 
-                            sectionType: 'mathNoCal', 
                             questions: [
                                 {
                                     id: 3,
@@ -502,7 +496,6 @@ export default class TestScreen extends React.Component {
                     sections: [
                         {
                             id:1, 
-                            sectionType: 'mathNoCal',
                             questions: [
                                 {
                                     id: 1,
@@ -574,28 +567,11 @@ export default class TestScreen extends React.Component {
                                     selectedChoice: '',
                                
                                 },
-                            ], 
-                            fillInQuestions: [
-                                {
-                                    id:1, 
-                                    question: "Juan purchased an antique that had a value of $200 at the time of purchase. Each year, the value of the antique is estimated to increase 10% over its value the previous year. The estimated value of the antique, in dollars, 2 years after purchase can be represented by the expression 200a, where a is a constant. What is the value of a ?",
-                                    text: "1.21", 
-                                    check: true, 
-                                }, 
-                                {
-                                    id:2, 
-                                    question: "Juan purchased an antique that had a value of $200 at the time of purchase. Each year, the value of the antique is estimated to increase 10% over its value the previous year. The estimated value of the antique, in dollars, 2 years after purchase can be represented by the expression 200a, where a is a constant. What is the value of a ?",
-                                    text: "1.21", 
-                                    check: true, 
-                                }
-                
                             ]
-    
                         },
                          {
                             id:2, 
-                            sectionType: 'mathWithcal', 
-                              questions: [
+                            questions: [
                                 {
                                     id: 3,
                                     question: 
@@ -629,7 +605,6 @@ export default class TestScreen extends React.Component {
                                     selectedChoice: '',
                             
                                 },
-
                                 {
                                     id: 4,
                                     question: 
@@ -667,21 +642,6 @@ export default class TestScreen extends React.Component {
                                     selectedChoice: '',
                                 }
                             ],
-                            
-                            fillInQuestions: [
-                                {
-                                    id:1, 
-                                    question: "Juan purchased an antique that had a value of $200 at the time of purchase. Each year, the value of the antique is estimated to increase 10% over its value the previous year. The estimated value of the antique, in dollars, 2 years after purchase can be represented by the expression 200a, where a is a constant. What is the value of a ?",
-                                    text: "1.21", 
-                                    check: true, 
-                                }, 
-                                {
-                                    id:2, 
-                                    question: "Juan purchased an antique that had a value of $200 at the time of purchase. Each year, the value of the antique is estimated to increase 10% over its value the previous year. The estimated value of the antique, in dollars, 2 years after purchase can be represented by the expression 200a, where a is a constant. What is the value of a ?",
-                                    text: "1.21", 
-                                    check: true, 
-                                }
-                            ]
                         }, 
                     ]
                 }
@@ -694,78 +654,34 @@ export default class TestScreen extends React.Component {
         const {sections, currentSection, subjects, currentSubject} = this.state; 
         const subject = subjects[currentSubject]; 
         const section = sections[currentSection];
-        subjects.map((subject) => {
-            subject.sections.map((section) => {
-                if (section.sectionType === 'reading' || section.sectionType === 'writing' ) {
-                    return (
-                        <div>
-                            
-                            <h4> SECTION {section.sectionType}</h4>
-                            {
-        
-                                section.questions.map((subquestion, index2) => {
-                                    return (
-                                            <ButtonComponent
-                                            key={subquestion.id}
-                                            onClick={(selectedId) => {
-                                                subquestion.selectedChoice = subquestion.selectedChoice != selectedId? selectedId : ''; // update the selectedChoice of this question with the clicked choice
-                                                this.setState({
-                                                    questions: [
-                                                        ...section.questions.slice(0, index2), // questions array before updated question - stay exactly the same
-                                                        subquestion, // updated question - it's updated with the selectedChoice
-                                                        ...section.questions.slice(index2+1, section.questions.length), // questions array after updated question - stays exactly the same
-                                                    ]
-                                                });
-                                            }}
-                                            selectedChoice={subquestion.selectedChoice}
-                                            question={subquestion.question}
-                                            choices={subquestion.choices}
-                                    />
-                                    )
-        
-                                })
-                            }
-                        </div>
-                    )                
-                }
-                else {
-                    return (
-                        <div>
-                            
-                            <h4> SECTION {section.sectionType}</h4>
-                            {
-        
-                                section.questions.map((subquestion, index2) => {
-                                    return (
-                                            <ButtonComponent
-                                            key={subquestion.id}
-                                            onClick={(selectedId) => {
-                                                subquestion.selectedChoice = subquestion.selectedChoice != selectedId? selectedId : ''; // update the selectedChoice of this question with the clicked choice
-                                                this.setState({
-                                                    questions: [
-                                                        ...section.questions.slice(0, index2), // questions array before updated question - stay exactly the same
-                                                        subquestion, // updated question - it's updated with the selectedChoice
-                                                        ...section.questions.slice(index2+1, section.questions.length), // questions array after updated question - stays exactly the same
-                                                    ]
-                                                });
-                                            }}
-                                            selectedChoice={subquestion.selectedChoice}
-                                            question={subquestion.question}
-                                            choices={subquestion.choices}
-                                    />
-                                    )
-        
-                                })
-                            }
-                            
-                        </div>
-                    )  
-                }
-            })
+            return (
+                <div>
+                    <h4> SECTION {section.id}</h4>
+                    {
+                        section.questions.map((subquestion, index2) => {
+                            return (
+                                    <ButtonComponent
+                                    key={subquestion.id}
+                                    onClick={(selectedId) => {
+                                        subquestion.selectedChoice = subquestion.selectedChoice != selectedId? selectedId : ''; // update the selectedChoice of this question with the clicked choice
+                                        this.setState({
+                                            questions: [
+                                                ...section.questions.slice(0, index2), // questions array before updated question - stay exactly the same
+                                                subquestion, // updated question - it's updated with the selectedChoice
+                                                ...section.questions.slice(index2+1, section.questions.length), // questions array after updated question - stays exactly the same
+                                            ]
+                                        });
+                                    }}
+                                    selectedChoice={subquestion.selectedChoice}
+                                    question={subquestion.question}
+                                    choices={subquestion.choices}
+                            />
+                            )
 
-        })
-        
-
+                        })
+                    }
+                </div>
+            )
 
     }
     IsLastSubject() {
