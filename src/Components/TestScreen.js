@@ -736,7 +736,7 @@ export default class TestScreen extends React.Component {
                             {
         
                                 section.questions.map((subquestion, index2) => {
-                                    return (
+                                
                                             <ButtonComponent
                                             key={subquestion.id}
                                             onClick={(selectedId) => {
@@ -752,8 +752,13 @@ export default class TestScreen extends React.Component {
                                             selectedChoice={subquestion.selectedChoice}
                                             question={subquestion.question}
                                             choices={subquestion.choices}
-                                    />
-                                    )
+                                            />;
+
+                                            <MathButton 
+                                            
+                                            />
+
+                                
         
                                 })
                             }
