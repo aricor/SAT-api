@@ -20,7 +20,7 @@ export default class TestScreen extends React.Component {
             ReadingScore: 0, 
             WritingScore: 0, 
             MathScore: 0,
-            subjects: [
+            sections: [
                 {
                     id: 1, 
                     score: 0, 
@@ -100,10 +100,11 @@ export default class TestScreen extends React.Component {
                                     selectedChoice: '',
                                
                                 },
-                            ]
-                        },
-                        {
-                            id:2, 
+                            ] 
+                }, 
+
+                {
+                    id:2, 
                             sectionType: 'reading', 
                             questions: [
                                 {
@@ -180,12 +181,7 @@ export default class TestScreen extends React.Component {
                     ]
                 }, 
                 {
-                    id: 2, 
-                    score: 0, 
-                    numberOfCorrectAnswers: 0, 
-                    sections: [
-                        {
-                            id:1, 
+                    id:3, 
                             sectionType: 'writing', 
                             questions: [
                                 {
@@ -259,9 +255,9 @@ export default class TestScreen extends React.Component {
                                
                                 },
                             ]
-                        },
-                         {
-                            id:2, 
+                }, 
+                {
+                    id:4, 
                             sectionType: 'writing', 
                             questions: [
                                 {
@@ -333,176 +329,11 @@ export default class TestScreen extends React.Component {
                                     ],
                                     selectedChoice: '',
                                 }
-                            ],
-                        }, 
-                    ]
-                }, 
-                {
-                    id: 3, 
-                    score: 0, 
-                    numberOfCorrectAnswers: 0, 
-                    sections: [
-                        {
-                            id:1, 
-                            sectionType: 'mathNoCal', 
-                            questions: [
-                                {
-                                    id: 1,
-                                    question: 
-                                    "1.1 As presented in the passage, Mr. Kearney is best described as",  
-                                    choices: [
-                                        {
-                                            opt: 'A',
-                                            id: 1, 
-                                            text:"independent and strong willed.", 
-                                            check: false, 
-                                        },
-                                        {
-                                            opt: 'B',
-                                            id:2, 
-                                            text:"paternal and affectionate.",  
-                                            check:false, 
-                                        },
-                                        {
-                                            opt: 'C',
-                                            id:3, 
-                                            text: "serious and family oriented.",  
-                                            check:true, 
-                                        },
-                                        {
-                                            opt: 'D',
-                                            id:4, 
-                                            text: "boring and simple minded.",  
-                                            check:false, 
-                                        } 
-                                    ],
-                                    selectedChoice: '',
-                               
-                                },
-                                {
-                                    id: 2,
-                                    question: 
-                                    "1.2 As presented in the passage, Mr. Kearney is best described as",  
-                                    choices: [
-                                        {
-                                            opt: 'A',
-                                            id: 1, 
-                                            text:"2independent and strong willed.", 
-                                            check: false, 
-                
-                                        },
-                                        {
-                                            opt: 'B',
-                                            id:2, 
-                                            text:"2paternal and affectionate.",  
-                                            check: false, 
-                
-                                        },
-                                        {
-                                            opt: 'C',
-                                            id:3, 
-                                            text: "2serious and family oriented.",  
-                                            check: false, 
-                
-                                        },
-                                        {
-                                            opt: 'D',
-                                            id:4, 
-                                            text: "2boring and simple minded.",  
-                                            check: true, 
-                
-                                        } 
-                                    ],
-                                    selectedChoice: '',
-                               
-                                },
                             ]
-                        },
-                         {
-                            id:2, 
-                            sectionType: 'mathNoCal', 
-                            questions: [
-                                {
-                                    id: 3,
-                                    question: 
-                                    "2.1 As presented in the passage, Mr. Kearney is best described as",  
-                                    choices: [
-                                        {
-                                            opt: 'A',
-                                            id: 1, 
-                                            text:"independent and strong willed.", 
-                                            check: false, 
-                                        },
-                                        {
-                                            opt: 'B',
-                                            id:2, 
-                                            text:"paternal and affectionate.",  
-                                            check:false, 
-                                        },
-                                        {
-                                            opt: 'C',
-                                            id:3, 
-                                            text: "serious and family oriented.",  
-                                            check:true, 
-                                        },
-                                        {
-                                            opt: 'D',
-                                            id:4, 
-                                            text: "boring and simple minded.",  
-                                            check:false, 
-                                        } 
-                                    ],
-                                    selectedChoice: '',
-                            
-                                },
-                                {
-                                    id: 4,
-                                    question: 
-                                    "2.2 As presented in the passage, Mr. Kearney is best described as",  
-                                    choices: [
-                                        {
-                                            opt: 'A',
-                                            id: 1, 
-                                            text:"2independent and strong willed.", 
-                                            check: false, 
-                
-                                        },
-                                        {
-                                            opt: 'B',
-                                            id:2, 
-                                            text:"2paternal and affectionate.",  
-                                            check: false, 
-                
-                                        },
-                                        {
-                                            opt: 'C',
-                                            id:3, 
-                                            text: "2serious and family oriented.",  
-                                            check: false, 
-                
-                                        },
-                                        {
-                                            opt: 'D',
-                                            id:4, 
-                                            text: "2boring and simple minded.",  
-                                            check: true, 
-                
-                                        } 
-                                    ],
-                                    selectedChoice: '',
-                                }
-                            ],
-                        }, 
-                    ]
                 }, 
                 {
-                    id: 4, 
-                    score: 0, 
-                    numberOfCorrectAnswers: 0, 
-                    sections: [
-                        {
-                            id:1, 
-                            sectionType: 'mathNoCal',
+                    id:5, 
+                            sectionType: 'mathNoCal', 
                             questions: [
                                 {
                                     id: 1,
@@ -588,104 +419,99 @@ export default class TestScreen extends React.Component {
                                     text: "1.21", 
                                     check: true, 
                                 }
-                
                             ]
-    
-                        },
-                         {
-                            id:2, 
-                            sectionType: 'mathWithcal', 
-                              questions: [
+                }, 
+                {
+                    id:6, 
+                    sectionType: 'mathWithCal', 
+                    questions: [
+                        {
+                            id: 1,
+                            question: 
+                            "1.1 As presented in the passage, Mr. Kearney is best described as",  
+                            choices: [
                                 {
-                                    id: 3,
-                                    question: 
-                                    "2.1 As presented in the passage, Mr. Kearney is best described as",  
-                                    choices: [
-                                        {
-                                            opt: 'A',
-                                            id: 1, 
-                                            text:"independent and strong willed.", 
-                                            check: false, 
-                                        },
-                                        {
-                                            opt: 'B',
-                                            id:2, 
-                                            text:"paternal and affectionate.",  
-                                            check:false, 
-                                        },
-                                        {
-                                            opt: 'C',
-                                            id:3, 
-                                            text: "serious and family oriented.",  
-                                            check:true, 
-                                        },
-                                        {
-                                            opt: 'D',
-                                            id:4, 
-                                            text: "boring and simple minded.",  
-                                            check:false, 
-                                        } 
-                                    ],
-                                    selectedChoice: '',
-                            
+                                    opt: 'A',
+                                    id: 1, 
+                                    text:"independent and strong willed.", 
+                                    check: false, 
                                 },
-
                                 {
-                                    id: 4,
-                                    question: 
-                                    "2.2 As presented in the passage, Mr. Kearney is best described as",  
-                                    choices: [
-                                        {
-                                            opt: 'A',
-                                            id: 1, 
-                                            text:"2independent and strong willed.", 
-                                            check: false, 
-                
-                                        },
-                                        {
-                                            opt: 'B',
-                                            id:2, 
-                                            text:"2paternal and affectionate.",  
-                                            check: false, 
-                
-                                        },
-                                        {
-                                            opt: 'C',
-                                            id:3, 
-                                            text: "2serious and family oriented.",  
-                                            check: false, 
-                
-                                        },
-                                        {
-                                            opt: 'D',
-                                            id:4, 
-                                            text: "2boring and simple minded.",  
-                                            check: true, 
-                
-                                        } 
-                                    ],
-                                    selectedChoice: '',
-                                }
-                            ],
-                            
-                            fillInQuestions: [
-                                {
-                                    id:1, 
-                                    question: "Juan purchased an antique that had a value of $200 at the time of purchase. Each year, the value of the antique is estimated to increase 10% over its value the previous year. The estimated value of the antique, in dollars, 2 years after purchase can be represented by the expression 200a, where a is a constant. What is the value of a ?",
-                                    text: "1.21", 
-                                    check: true, 
-                                }, 
-                                {
+                                    opt: 'B',
                                     id:2, 
-                                    question: "Juan purchased an antique that had a value of $200 at the time of purchase. Each year, the value of the antique is estimated to increase 10% over its value the previous year. The estimated value of the antique, in dollars, 2 years after purchase can be represented by the expression 200a, where a is a constant. What is the value of a ?",
-                                    text: "1.21", 
+                                    text:"paternal and affectionate.",  
+                                    check:false, 
+                                },
+                                {
+                                    opt: 'C',
+                                    id:3, 
+                                    text: "serious and family oriented.",  
+                                    check:true, 
+                                },
+                                {
+                                    opt: 'D',
+                                    id:4, 
+                                    text: "boring and simple minded.",  
+                                    check:false, 
+                                } 
+                            ],
+                            selectedChoice: '',
+                       
+                        },
+                        {
+                            id: 2,
+                            question: 
+                            "1.2 As presented in the passage, Mr. Kearney is best described as",  
+                            choices: [
+                                {
+                                    opt: 'A',
+                                    id: 1, 
+                                    text:"2independent and strong willed.", 
+                                    check: false, 
+        
+                                },
+                                {
+                                    opt: 'B',
+                                    id:2, 
+                                    text:"2paternal and affectionate.",  
+                                    check: false, 
+        
+                                },
+                                {
+                                    opt: 'C',
+                                    id:3, 
+                                    text: "2serious and family oriented.",  
+                                    check: false, 
+        
+                                },
+                                {
+                                    opt: 'D',
+                                    id:4, 
+                                    text: "2boring and simple minded.",  
                                     check: true, 
-                                }
-                            ]
+        
+                                } 
+                            ],
+                            selectedChoice: '',
+                       
+                        },
+                    ], 
+                    fillInQuestions: [
+                        {
+                            id:1, 
+                            question: "Juan purchased an antique that had a value of $200 at the time of purchase. Each year, the value of the antique is estimated to increase 10% over its value the previous year. The estimated value of the antique, in dollars, 2 years after purchase can be represented by the expression 200a, where a is a constant. What is the value of a ?",
+                            text: "1.21", 
+                            check: true, 
                         }, 
+                        {
+                            id:2, 
+                            question: "Juan purchased an antique that had a value of $200 at the time of purchase. Each year, the value of the antique is estimated to increase 10% over its value the previous year. The estimated value of the antique, in dollars, 2 years after purchase can be represented by the expression 200a, where a is a constant. What is the value of a ?",
+                            text: "1.21", 
+                            check: true, 
+                        }
                     ]
                 }
-            ],
+            ], 
            
         };
     }
