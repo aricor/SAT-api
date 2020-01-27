@@ -619,6 +619,9 @@ export default class TestScreen extends React.Component {
 
             })
     }
+   // checkingFillInQuestions() {
+//
+  //  }
     checkingAllQuestions() {
         const {currentSection, NumeberOfCorrectAnswersOfEachSubject, sections, currentSubject} = this.state; 
         let numberOfCorrectAnswers = 0;

@@ -6,7 +6,7 @@ const MathComponent = props => {
         <div>
             <p><b> {props.question} </b></p>
             <div>
-            <form id="someForm" on>
+            <form id="someForm" >
             <input name="ans" type="text" required />
             </form>
            </div>
