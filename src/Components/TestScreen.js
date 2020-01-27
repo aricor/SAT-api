@@ -583,14 +583,14 @@ export default class TestScreen extends React.Component {
                                             selectedChoice={subquestion.selectedChoice}
                                             question={subquestion.question}
                                             choices={subquestion.choices}
-                                            />;
+                                            />        
+                                }),
 
-                                            <MathComponent 
-                                            
-                                            />
-
-                                
-        
+                                section.fillInQuestions.map((subfillInQuestion)=> {
+                                    <MathComponent
+                                    key = {subfillInQuestion.id}
+                                    question={subfillInQuestion.question}
+                                    />
                                 })
                             }
                             
