@@ -15,7 +15,6 @@ export default class TestScreen extends React.Component {
             title: "This passage is from James Joyce, The Dubliners originally published in 1914",
             isTestSubmitted: false,
             currentSection: 0,
-            currentSubject: 0, 
             NumeberOfCorrectAnswersOfEachSubject: [], 
             ReadingScore: 0, 
             WritingScore: 0, 
@@ -29,6 +28,7 @@ export default class TestScreen extends React.Component {
                         {
                             id:1, 
                             sectionType:  'reading', 
+                            IsLastSectionType: false, 
                             questions: [
                                 {
                                     id: 1,
@@ -106,6 +106,8 @@ export default class TestScreen extends React.Component {
                 {
                     id:2, 
                             sectionType: 'reading', 
+                            IsLastSectionType: true, 
+
                             questions: [
                                 {
                                     id: 3,
@@ -183,6 +185,8 @@ export default class TestScreen extends React.Component {
                 {
                     id:3, 
                             sectionType: 'writing', 
+                            IsLastSectionType: false, 
+
                             questions: [
                                 {
                                     id: 1,
@@ -259,6 +263,8 @@ export default class TestScreen extends React.Component {
                 {
                     id:4, 
                             sectionType: 'writing', 
+                            IsLastSectionType: true, 
+
                             questions: [
                                 {
                                     id: 3,
@@ -334,6 +340,8 @@ export default class TestScreen extends React.Component {
                 {
                     id:5, 
                             sectionType: 'mathNoCal', 
+                            IsLastSectionType: true, 
+
                             questions: [
                                 {
                                     id: 1,
@@ -424,6 +432,8 @@ export default class TestScreen extends React.Component {
                 {
                     id:6, 
                     sectionType: 'mathWithCal', 
+                    IsLastSectionType: true, 
+
                     questions: [
                         {
                             id: 1,
@@ -599,26 +609,25 @@ export default class TestScreen extends React.Component {
 
 
     }
-    IsLastSubject() {
-        const {subjects, currentSubject} = this.state;
+    IsLastElementOfSectionsArray() {
+        const {currentSection} = this.state;
         /*  if id of the current subject = the size of the subjects then return true */
-        return (currentSubject === subjects.length-1);
-    }
+        return (currentSection === sections.length-1);
+   }
 
     IsLastSection() {
-        const {subjects, currentSection} = this.state;
-        subjects.map((subject) => {
-            return (
-                subject.sections.map((section) => {
-                    currentSection = section.length-1; 
-                })
-            )
-        })
+        const {sections} = this.state;
+        sections.map((section) => {
+            if (section.IsLastSectionType === true) {
+                    return section.id; 
+                }
+
+            })
     }
     checkAllQuestions() {
-        const {subjects, currentSection, currentSubject, NumeberOfCorrectAnswersOfEachSubject} = this.state; 
+        const {currentSection, NumeberOfCorrectAnswersOfEachSubject} = this.state; 
         let numberOfCorrectAnswers = 0;
-        if (this.IsLastSubject() && this.IsLastSection()) {
+        if (this.IsLastElementOfSectionsArray() && this.IsLastSection()) {
             subjects.map((subject) => {
                 subject.sections.map((section) => {
                     section.questions.map((question) => {
