@@ -3,10 +3,9 @@ import styles from "./testscreen.css"
 import Timer from './timer'
 import Highlight from './getHighlight'
 import ButtonComponent from './button'
-import {Button } from "reactstrap"
 import ProgressNum from './progressNum'
 import {Progress} from 'reactstrap'
-
+import MathComponent from './MathComponent'
 export default class TestScreen extends React.Component {
 
     constructor(props) {
@@ -22,86 +21,81 @@ export default class TestScreen extends React.Component {
             MathScore: 0,
             sections: [
                 {
-                    id: 1, 
-                    score: 0, 
-                    numberOfCorrectAnswers: 0, 
-                    sections: [
+                    id:1, 
+                    sectionType:  'reading', 
+                    IsLastSectionType: false, 
+                    questions: [
                         {
-                            id:1, 
-                            sectionType:  'reading', 
-                            IsLastSectionType: false, 
-                            questions: [
+                            id: 1,
+                            question: 
+                            "1.1 As presented in the passage, Mr. Kearney is best described as",  
+                            choices: [
                                 {
-                                    id: 1,
-                                    question: 
-                                    "1.1 As presented in the passage, Mr. Kearney is best described as",  
-                                    choices: [
-                                        {
-                                            opt: 'A',
-                                            id: 1, 
-                                            text:"independent and strong willed.", 
-                                            check: false, 
-                                        },
-                                        {
-                                            opt: 'B',
-                                            id:2, 
-                                            text:"paternal and affectionate.",  
-                                            check:false, 
-                                        },
-                                        {
-                                            opt: 'C',
-                                            id:3, 
-                                            text: "serious and family oriented.",  
-                                            check:true, 
-                                        },
-                                        {
-                                            opt: 'D',
-                                            id:4, 
-                                            text: "boring and simple minded.",  
-                                            check:false, 
-                                        } 
-                                    ],
-                                    selectedChoice: '',
-                               
+                                    opt: 'A',
+                                    id: 1, 
+                                    text:"independent and strong willed.", 
+                                    check: false, 
                                 },
                                 {
-                                    id: 2,
-                                    question: 
-                                    "1.2 As presented in the passage, Mr. Kearney is best described as",  
-                                    choices: [
-                                        {
-                                            opt: 'A',
-                                            id: 1, 
-                                            text:"2independent and strong willed.", 
-                                            check: false, 
-                
-                                        },
-                                        {
-                                            opt: 'B',
-                                            id:2, 
-                                            text:"2paternal and affectionate.",  
-                                            check: false, 
-                
-                                        },
-                                        {
-                                            opt: 'C',
-                                            id:3, 
-                                            text: "2serious and family oriented.",  
-                                            check: false, 
-                
-                                        },
-                                        {
-                                            opt: 'D',
-                                            id:4, 
-                                            text: "2boring and simple minded.",  
-                                            check: true, 
-                
-                                        } 
-                                    ],
-                                    selectedChoice: '',
-                               
+                                    opt: 'B',
+                                    id:2, 
+                                    text:"paternal and affectionate.",  
+                                    check:false, 
                                 },
-                            ] 
+                                {
+                                    opt: 'C',
+                                    id:3, 
+                                    text: "serious and family oriented.",  
+                                    check:true, 
+                                },
+                                {
+                                    opt: 'D',
+                                    id:4, 
+                                    text: "boring and simple minded.",  
+                                    check:false, 
+                                } 
+                            ],
+                            selectedChoice: '',
+                       
+                        },
+                        {
+                            id: 2,
+                            question: 
+                            "1.2 As presented in the passage, Mr. Kearney is best described as",  
+                            choices: [
+                                {
+                                    opt: 'A',
+                                    id: 1, 
+                                    text:"2independent and strong willed.", 
+                                    check: false, 
+        
+                                },
+                                {
+                                    opt: 'B',
+                                    id:2, 
+                                    text:"2paternal and affectionate.",  
+                                    check: false, 
+        
+                                },
+                                {
+                                    opt: 'C',
+                                    id:3, 
+                                    text: "2serious and family oriented.",  
+                                    check: false, 
+        
+                                },
+                                {
+                                    opt: 'D',
+                                    id:4, 
+                                    text: "2boring and simple minded.",  
+                                    check: true, 
+        
+                                } 
+                            ],
+                            selectedChoice: '',
+                       
+                        },
+                    ] 
                 }, 
 
                 {
@@ -180,9 +174,8 @@ export default class TestScreen extends React.Component {
                                     selectedChoice: '',
                                 }
                             ],
-                        }, 
-                    ]
                 }, 
+                
                 {
                     id:3, 
                             sectionType: 'writing', 
@@ -261,6 +254,7 @@ export default class TestScreen extends React.Component {
                                 },
                             ]
                 }, 
+
                 {
                     id:4, 
                             sectionType: 'writing', 
@@ -338,6 +332,7 @@ export default class TestScreen extends React.Component {
                                 }
                             ]
                 }, 
+                
                 {
                     id:5, 
                             sectionType: 'mathNoCal', 
@@ -430,11 +425,11 @@ export default class TestScreen extends React.Component {
                                 }
                             ]
                 }, 
+
                 {
-                    id:6, 
+                    id:6,
                     sectionType: 'mathWithCal', 
                     IsLastSectionType: true, 
-
                     questions: [
                         {
                             id: 1,
@@ -465,10 +460,9 @@ export default class TestScreen extends React.Component {
                                     text: "boring and simple minded.",  
                                     check:false, 
                                 } 
-                            ],
+                            ], 
                             selectedChoice: '',
-                       
-                        },
+                        }, 
                         {
                             id: 2,
                             question: 
@@ -504,8 +498,7 @@ export default class TestScreen extends React.Component {
                                 } 
                             ],
                             selectedChoice: '',
-                       
-                        },
+                        }
                     ], 
                     fillInQuestions: [
                         {
@@ -521,12 +514,13 @@ export default class TestScreen extends React.Component {
                             check: true, 
                         }
                     ]
-                }
-            ], 
+
+                }, 
+                
+            ],
            
         };
-    }
-
+ }
     renderAllQuestions() {
         const {sections, currentSection, subjects, currentSubject} = this.state; 
         const subject = subjects[currentSubject]; 
@@ -591,7 +585,7 @@ export default class TestScreen extends React.Component {
                                             choices={subquestion.choices}
                                             />;
 
-                                            <MathButton 
+                                            <MathComponent 
                                             
                                             />
 

@@ -1,8 +1,7 @@
 import React from "react";
-import {Button } from "reactstrap"; 
 import './button.css';
 
-const MathButton = props => {
+const MathComponent = props => {
     return (
         <div>
             <p><b> {props.question} </b></p>
@@ -18,4 +17,4 @@ const MathButton = props => {
     
 
 
-export default MathButton; 
+export default MathComponent; 
