@@ -611,7 +611,7 @@ export default class TestScreen extends React.Component {
 
     }
     IsLastElementOfSectionsArray() {
-        const {currentSection} = this.state;
+        const {currentSection, sections} = this.state;
         /*  if id of the current subject = the size of the subjects then return true */
         return (currentSection === sections.length-1);
    }
@@ -626,7 +626,7 @@ export default class TestScreen extends React.Component {
             })
     }
     checkingAllQuestions() {
-        const {currentSection, NumeberOfCorrectAnswersOfEachSubject} = this.state; 
+        const {currentSection, NumeberOfCorrectAnswersOfEachSubject, sections, currentSubject} = this.state; 
         let numberOfCorrectAnswers = 0;
         if (this.IsLastElementOfSectionsArray() && this.IsLastSection()) {
             sections.map((section)=> {
@@ -1080,10 +1080,10 @@ export default class TestScreen extends React.Component {
     render() {
         const {
             isTestSubmitted,
-            NumeberOfCorrectAnswersOfEachSubject , 
             ReadingScore,
             WritingScore,
-            MathScore, subjects  
+            MathScore, 
+            currentSection, sections
         } = this.state;
 
         /*
