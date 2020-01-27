@@ -15,6 +15,7 @@ export default class TestScreen extends React.Component {
             title: "This passage is from James Joyce, The Dubliners originally published in 1914",
             isTestSubmitted: false,
             currentSection: 0,
+            currentSubject:0, 
             NumeberOfCorrectAnswersOfEachSubject: [], 
             ReadingScore: 0, 
             WritingScore: 0, 
@@ -624,32 +625,27 @@ export default class TestScreen extends React.Component {
 
             })
     }
-    checkAllQuestions() {
+    checkingAllQuestions() {
         const {currentSection, NumeberOfCorrectAnswersOfEachSubject} = this.state; 
         let numberOfCorrectAnswers = 0;
         if (this.IsLastElementOfSectionsArray() && this.IsLastSection()) {
-            subjects.map((subject) => {
-                subject.sections.map((section) => {
-                    section.questions.map((question) => {
-                        const correctAnswer = question.choices.find((choice) => {
-                            if(choice.check === true) {
-                                return choice.id;
-                              }
-
-                        })
+            sections.map((section)=> {
+                section.questions.map((question) => {
+                    const correctAnswer = question.choices.find((choice) => {
+                        if (choice.check === true) {
+                            return choice.id;    
+                        }
+                    })
                         if(correctAnswer.id === question.selectedChoice) {
                             numberOfCorrectAnswers = numberOfCorrectAnswers + 1;
                         };
-
-                    })
-
                 })
             })
             NumeberOfCorrectAnswersOfEachSubject[currentSubject] = numberOfCorrectAnswers; 
-            return (NumeberOfCorrectAnswersOfEachSubject); 
-    
+            return (NumeberOfCorrectAnswersOfEachSubject);
         }
-        else if (!this.IsLastSubject() && this.IsLastSection()) {
+
+        else if (!this.IsLastElementOfSectionsArray() && this.IsLastSection()) {
             this.setState({
                 currentSection: 0, 
                 currentSubject: currentSubject + 1
