@@ -524,91 +524,84 @@ export default class TestScreen extends React.Component {
     renderAllQuestions() {
         const {sections, currentSection} = this.state; 
         const section = sections[currentSection];
-        
-        
-            sections.map((section) => {
-                if (section.sectionType === 'reading' || section.sectionType === 'writing' ) {
-                    return (
-                        <div>
+
+        if (section.sectionType === 'reading' || section.sectionType === 'writing' ) {
+            return (
+                <div>
+                    
+                    <h4> SECTION {section.sectionType}</h4>
+                    {
+
+                        section.questions.map((subquestion, index2) => {
+                            return (
+                                    <ButtonComponent
+                                    key={subquestion.id}
+                                    onClick={(selectedId) => {
+                                        subquestion.selectedChoice = subquestion.selectedChoice != selectedId? selectedId : ''; // update the selectedChoice of this question with the clicked choice
+                                        this.setState({
+                                            questions: [
+                                                ...section.questions.slice(0, index2), // questions array before updated question - stay exactly the same
+                                                subquestion, // updated question - it's updated with the selectedChoice
+                                                ...section.questions.slice(index2+1, section.questions.length), // questions array after updated question - stays exactly the same
+                                            ]
+                                        });
+                                    }}
+                                    selectedChoice={subquestion.selectedChoice}
+                                    question={subquestion.question}
+                                    choices={subquestion.choices}
+                            />
+                            )
+
+                        })
+                    }
+                </div>
+            )                
+        }
+        else {
+            return (
+                <div>
+                    
+                    <h4> SECTION {section.sectionType}</h4>
+                    {
+
+                        section.questions.map((subquestion, index2) => {
+                            return (
+                                <ButtonComponent
+                                key={subquestion.id}
+                                onClick={(selectedId) => {
+                                    subquestion.selectedChoice = subquestion.selectedChoice != selectedId? selectedId : ''; // update the selectedChoice of this question with the clicked choice
+                                    this.setState({
+                                        questions: [
+                                            ...section.questions.slice(0, index2), // questions array before updated question - stay exactly the same
+                                            subquestion, // updated question - it's updated with the selectedChoice
+                                            ...section.questions.slice(index2+1, section.questions.length), // questions array after updated question - stays exactly the same
+                                        ]
+                                    });
+                                }}
+                                selectedChoice={subquestion.selectedChoice}
+                                question={subquestion.question}
+                                choices={subquestion.choices}
+                                />           
+                            )
                             
-                            <h4> SECTION {section.sectionType}</h4>
-                            {
-        
-                                section.questions.map((subquestion, index2) => {
-                                    return (
-                                            <ButtonComponent
-                                            key={subquestion.id}
-                                            onClick={(selectedId) => {
-                                                subquestion.selectedChoice = subquestion.selectedChoice != selectedId? selectedId : ''; // update the selectedChoice of this question with the clicked choice
-                                                this.setState({
-                                                    questions: [
-                                                        ...section.questions.slice(0, index2), // questions array before updated question - stay exactly the same
-                                                        subquestion, // updated question - it's updated with the selectedChoice
-                                                        ...section.questions.slice(index2+1, section.questions.length), // questions array after updated question - stays exactly the same
-                                                    ]
-                                                });
-                                            }}
-                                            selectedChoice={subquestion.selectedChoice}
-                                            question={subquestion.question}
-                                            choices={subquestion.choices}
-                                    />
-                                    )
-        
-                                })
-                            }
-                        </div>
-                    )                
-                }
-                else {
-                    return (
-                        <div>
                             
-                            <h4> SECTION {section.sectionType}</h4>
-                            {
-        
-                                section.questions.map((subquestion, index2) => {
-                                    return (
-                                        <ButtonComponent
-                                        key={subquestion.id}
-                                        onClick={(selectedId) => {
-                                            subquestion.selectedChoice = subquestion.selectedChoice != selectedId? selectedId : ''; // update the selectedChoice of this question with the clicked choice
-                                            this.setState({
-                                                questions: [
-                                                    ...section.questions.slice(0, index2), // questions array before updated question - stay exactly the same
-                                                    subquestion, // updated question - it's updated with the selectedChoice
-                                                    ...section.questions.slice(index2+1, section.questions.length), // questions array after updated question - stays exactly the same
-                                                ]
-                                            });
-                                        }}
-                                        selectedChoice={subquestion.selectedChoice}
-                                        question={subquestion.question}
-                                        choices={subquestion.choices}
-                                        />           
-                                    )
-                                    
-                                    
-                               
-                                }), 
+                        
+                        }), 
 
-                                section.fillInQuestions.map((subfillInQuestion)=> {
-                                    return (
-                                        <MathComponent
-                                        key = {subfillInQuestion.id}
-                                        question={subfillInQuestion.question}
-                                        />
-                                    )
-                                })
+                        section.fillInQuestions.map((subfillInQuestion)=> {
+                            return (
+                                <MathComponent
+                                key = {subfillInQuestion.id}
+                                question={subfillInQuestion.question}
+                                />
+                            )
+                        })
 
-                            }
-                            
-                        </div>
-                    )  
-                }
-            })
-
-        
-        
-
+                    }
+                    
+                </div>
+            )  
+        }
 
     }
     IsLastElementOfSectionsArray() {
@@ -618,13 +611,14 @@ export default class TestScreen extends React.Component {
    }
 
     IsLastSection() {
-        const {sections} = this.state;
-        sections.map((section) => {
-            if (section.IsLastSectionType === true) {
-                    return section.id; 
-                }
-
-            })
+        const {
+            currentSection,
+            sections,
+        } = this.state;
+        const section = sections[currentSection];
+        if (section.IsLastSectionType === true) {
+            return section.id; 
+        }
     }
    // checkingFillInQuestions() {
 //
@@ -640,22 +634,17 @@ export default class TestScreen extends React.Component {
                             return choice.id;    
                         }
                     })
-                        if(correctAnswer.id === question.selectedChoice) {
-                            numberOfCorrectAnswers = numberOfCorrectAnswers + 1;
-                        };
+                    if(correctAnswer.id === question.selectedChoice) {
+                        numberOfCorrectAnswers = numberOfCorrectAnswers + 1;
+                    };
                 })
             })
             NumeberOfCorrectAnswersOfEachSubject[currentSubject] = numberOfCorrectAnswers; 
-            return (NumeberOfCorrectAnswersOfEachSubject);
-        }
-
-        else if (!this.IsLastElementOfSectionsArray() && this.IsLastSection()) {
             this.setState({
-                currentSection: 0, 
-                currentSubject: currentSubject + 1
-            })
-        }
-        else {
+                isTestSubmitted: true,
+                numberOfCorrectAnswers: numberOfCorrectAnswers,
+            });
+        } else {
             this.setState({
                 currentSection: currentSection + 1 
             });
