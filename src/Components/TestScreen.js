@@ -522,11 +522,11 @@ export default class TestScreen extends React.Component {
         };
  }
     renderAllQuestions() {
-        const {sections, currentSection, subjects, currentSubject} = this.state; 
-        const subject = subjects[currentSubject]; 
+        const {sections, currentSection} = this.state; 
         const section = sections[currentSection];
-        subjects.map((subject) => {
-            subject.sections.map((section) => {
+        
+        
+            sections.map((section) => {
                 if (section.sectionType === 'reading' || section.sectionType === 'writing' ) {
                     return (
                         <div>
@@ -606,7 +606,7 @@ export default class TestScreen extends React.Component {
                 }
             })
 
-        })
+        
         
 
 
@@ -1028,17 +1028,15 @@ export default class TestScreen extends React.Component {
     }
 
     calculatePercentageOfAnsweredQuestions() {
-        const {subjects} = this.state; 
+        const {sections} = this.state; 
         let numberOfAnsweredQuestions = 0;
-        subjects.map((subject) => {
-            subject.sections.map((section) => {
+            sections.map((section) => {
                 section.questions.map((question) => {
                     if (question.selectedChoice != '') {
                         numberOfAnsweredQuestions = numberOfAnsweredQuestions + 1;
                       };
                 })
             })
-        })
        // sections.map((section) => {
        //     section.questions.map((question) => {
        //         if (question.selectedChoice != '') {
@@ -1048,11 +1046,9 @@ export default class TestScreen extends React.Component {
        // });
 
         let allQuestions = [];
-        subjects.map((subject) => {
-            subject.sections.map((section) => {
+            sections.map((section) => {
                 allQuestions = [...allQuestions, ...section.questions]; 
             })
-        })
       //  sections.map((section) => {
        //   allQuestions = [...allQuestions, ...section.questions]; 
        // });
