@@ -567,30 +567,33 @@ export default class TestScreen extends React.Component {
                             {
         
                                 section.questions.map((subquestion, index2) => {
-                                
-                                            <ButtonComponent
-                                            key={subquestion.id}
-                                            onClick={(selectedId) => {
-                                                subquestion.selectedChoice = subquestion.selectedChoice != selectedId? selectedId : ''; // update the selectedChoice of this question with the clicked choice
-                                                this.setState({
-                                                    questions: [
-                                                        ...section.questions.slice(0, index2), // questions array before updated question - stay exactly the same
-                                                        subquestion, // updated question - it's updated with the selectedChoice
-                                                        ...section.questions.slice(index2+1, section.questions.length), // questions array after updated question - stays exactly the same
-                                                    ]
-                                                });
-                                            }}
-                                            selectedChoice={subquestion.selectedChoice}
-                                            question={subquestion.question}
-                                            choices={subquestion.choices}
-                                            />        
-                                }),
+                                    return (
+                                        <ButtonComponent
+                                        key={subquestion.id}
+                                        onClick={(selectedId) => {
+                                            subquestion.selectedChoice = subquestion.selectedChoice != selectedId? selectedId : ''; // update the selectedChoice of this question with the clicked choice
+                                            this.setState({
+                                                questions: [
+                                                    ...section.questions.slice(0, index2), // questions array before updated question - stay exactly the same
+                                                    subquestion, // updated question - it's updated with the selectedChoice
+                                                    ...section.questions.slice(index2+1, section.questions.length), // questions array after updated question - stays exactly the same
+                                                ]
+                                            });
+                                        }}
+                                        selectedChoice={subquestion.selectedChoice}
+                                        question={subquestion.question}
+                                        choices={subquestion.choices}
+                                        />,        
 
-                                section.fillInQuestions.map((subfillInQuestion)=> {
-                                    <MathComponent
-                                    key = {subfillInQuestion.id}
-                                    question={subfillInQuestion.question}
-                                    />
+                                        section.fillInQuestions.map((subfillInQuestion)=> {
+                                            <MathComponent
+                                            key = {subfillInQuestion.id}
+                                            question={subfillInQuestion.question}
+                                            />
+        
+        
+                                    )
+                               
                                 })
                             }
                             
