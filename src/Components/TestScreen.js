@@ -623,6 +623,44 @@ export default class TestScreen extends React.Component {
    // checkingFillInQuestions() {
 //
   //  }
+    addPassageOrNot() {
+        const {
+            currentSection,
+            sections,
+        } = this.state;
+        const section = sections[currentSection];
+        if (section.sectionType === 'reading' ||section.sectionType === 'writing' ) {
+            return (
+                <div className="passageSection">
+                <div className="passagename">
+                <b>{this.state.title}</b>
+                </div>
+                <Highlight/>
+                </div>
+            ) 
+        }        
+    }
+    renderRightButton() {
+        const {
+            currentSection,
+            sections,
+        } = this.state;
+        const section = sections[currentSection];
+        let buttonText = 'Next'; 
+        if (this.IsLastSection() && section.sectionType === 'reading') {
+            buttonText = 'Go to Writing and Language'; 
+        }
+        else if (this.IsLastSection() && section.sectionType === 'writing') {
+            buttonText = 'Go to Math (No Calculators)'; 
+        }
+        else if (this.IsLastSection() && section.sectionType === 'mathNoCal') {
+            buttonText = 'Go to Math (With Calculators)'; 
+        }
+        else if (this.IsLastSection() && section.sectionType === 'mathWithCal') {
+            buttonText = 'Submit'; 
+        }
+    return (<button className="btn btn-primary m-2" onClick={() => this.checkingAllQuestions()}>{buttonText}</button>);
+    }
     checkingAllQuestions() {
         const {currentSection, NumeberOfCorrectAnswersOfEachSubject, sections, currentSubject} = this.state; 
         let numberOfCorrectAnswers = 0;
@@ -1108,17 +1146,14 @@ export default class TestScreen extends React.Component {
             <Timer/>            
             </div>
             <div className="testContainer">
-                <div className="passageSection">
-                <div className="passagename">
-                <b>{this.state.title}</b>
-                </div>
-                <Highlight/>
-                </div>
+
+                {this.addPassageOrNot()}
+
                 <div className="questionSection">
                     <div className="article2">
                     {this.renderAllQuestions()}
                     {this.IsNotTheFirstPage() ?  <button className="btn btn-primary"  onClick={() => this.setState({ currentSection: currentSection - 1})}> Back</button> : '' }
-                    <button className="btn btn-primary m-2" onClick={() => this.checkingAllQuestions()}>{this.IsLastSection() ? 'Submit' : 'Next'}</button>
+                    {this.renderRightButton()}
                     </div>
                 </div>
             </div>
