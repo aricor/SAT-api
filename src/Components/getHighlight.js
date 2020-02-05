@@ -5,9 +5,7 @@ import Popover from "react-text-selection-popover";
 export default class Highlight extends Component {
     constructor(props) {
         super(props);
-        this.state = {isToggleOn: true};
         this.refParagraph = React.createRef();
-        //this.ToggleButton = this.ToggleButton.bind(this);
         this.saveSelection = this.saveSelection.bind(this);
       }
 

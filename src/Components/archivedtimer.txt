@@ -3,17 +3,12 @@ import React, { Component } from 'react'
 import styles from './timer.css'
 
 export default class Timer extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            minutes:0, 
-            seconds:0, 
-        }
+    state = {
+        minutes: 65,
+        seconds: 0,
     }
 
-
     componentDidMount() {
-       
         this.myInterval = setInterval(() => {
             const { seconds, minutes } = this.state
 
