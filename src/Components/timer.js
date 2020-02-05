@@ -43,7 +43,7 @@ export default class Timer extends Component {
         const { minutes, seconds } = this.state
         return (
             <div className="timerContainer">
-                <h2>Reading</h2>
+                <h2>{this.props.sectionType}</h2>
                 <h2>Elite Prep VN</h2>
                 { minutes === 0 && seconds === 0
                     ? <h1>Busted!</h1>

@@ -39,33 +39,7 @@ export default class Highlight extends Component {
         <div>
 
         <p  className="highlight" ref={this.refParagraph} >
-                    Mr Holohan, assistant secretary of the Eire
-            Abu Society, had been walking up and down
-            Dublin for nearly a month, with his hands and
-            pockets full of dirty pieces of paper, arranging
-            about the series of concerts. He had a game
-            leg and for this his friends called him Hoppy
-            Holohan. He walked up and down constantly,
-            stood by the hour at street corners arguing
-            the point and made notes; but in the end it
-            was Mrs Kearney who arranged everything
-
-                Miss Devlin had become Mrs Kearney out
-        of spite. She had been educated in a
-        high-class convent, where she had learned
-        French and music. As she was naturally pale
-        and unbending in manner she made few
-        friends at school. When she came to the age
-        of marriage she was sent out to many houses
-        where her playing and ivory manners were
-        much admired. She sat amid the chilly circle
-        of her accomplishments, waiting for some
-        suitor to brave it and oer her a brilliant life.
-        But the young men whom she met were Kathleen, to a good convent, where she
-        learned French and music, and aerward paid
-        her fees at the Academy. Every year in the
-        month of July Mrs Kearney found occasion to
-        say to some friend:
+                   {this.props.passage}
         </p>
         <Popover selectionRef={this.refParagraph} >
         <Bar bg="yellow">

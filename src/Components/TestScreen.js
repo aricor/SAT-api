@@ -646,6 +646,7 @@ export default class TestScreen extends React.Component {
             ) 
         }        
     }
+
     renderRightButton() {
         const {
             currentSection,
