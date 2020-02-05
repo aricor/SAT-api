@@ -18,6 +18,16 @@ export default class TestScreen extends React.Component {
             ReadingScore: 0, 
             WritingScore: 0, 
             MathScore: 0,
+            CorrectMath:0, 
+            MathNoCal:0, 
+            MathWithCal:0, 
+            CorrectReading: 0, 
+            CorrectWriting: 0,
+            CorrectMathNoCal:0, 
+            CorrectMathWithCal:0, 
+            Verbal: 0, 
+            Total:0, 
+            TotalScore:0, 
             sections: [
                 {
                     id:1, 
@@ -669,31 +679,86 @@ export default class TestScreen extends React.Component {
     return (<button className="btn btn-primary m-2" onClick={() => this.checkingAllQuestions()}>{buttonText}</button>);
     }
     checkingAllQuestions() {
-        const {currentSection, NumeberOfCorrectAnswersOfEachSubject, sections, currentSubject} = this.state; 
-        let numberOfCorrectAnswers = 0;
-        if (this.IsLastElementOfSectionsArray() && this.IsLastSection()) {
-            sections.map((section)=> {
+        const {currentSection, NumeberOfCorrectAnswersOfEachSubject, 
+            sections, 
+            currentSubject
+            } = this.state; 
+       // let numberOfCorrectAnswers = 0;
+        let CorrectReading = 0; 
+        let CorrectWriting = 0; 
+        let CorrectMathNoCal = 0; 
+        let CorrectMathWithCal = 0;
+        let Total = 0; 
+        let Verbal = 0;
+        let CorrectMath = 0; 
+        const section = sections[currentSection];
+        while (!this.IsLastElementOfSectionsArray() && !this.IsLastSection()) {
+            if (section.sectionType === 'reading') {
                 section.questions.map((question) => {
-                    const correctAnswer = question.choices.find((choice) => {
-                        if (choice.check === true) {
-                            return choice.id;    
-                        }
-                    })
+                    const correctAnswer = question.choices.find((choice) => choice.check === true);
                     if(correctAnswer.id === question.selectedChoice) {
-                        numberOfCorrectAnswers = numberOfCorrectAnswers + 1;
-                    };
+                        CorrectReading = CorrectReading + 1; 
+                    }
                 })
-            })
-            NumeberOfCorrectAnswersOfEachSubject[currentSubject] = numberOfCorrectAnswers; 
-            this.setState({
-                isTestSubmitted: true,
-                numberOfCorrectAnswers: numberOfCorrectAnswers,
-            });
-        } else {
+            }
+            else if (section.sectionType === 'writing') {
+                section.questions.map((question) => {
+                    const correctAnswer = question.choices.find((choice) => choice.check === true);
+                    if(correctAnswer.id === question.selectedChoice) {
+                        CorrectWriting= CorrectWriting + 1; 
+                    }
+                })
+            }
+            else if (section.sectionType === 'mathNoCal') {
+                section.questions.map((question) => {
+                    const correctAnswer = question.choices.find((choice) => choice.check === true);
+                    if(correctAnswer.id === question.selectedChoice) {
+                        CorrectMathNoCal= CorrectMathNoCal + 1; 
+                    }
+                })
+            }
+            else if (section.sectionType === 'mathWithCal') {
+                section.questions.map((question) => {
+                    const correctAnswer = question.choices.find((choice) => choice.check === true);
+                    if(correctAnswer.id === question.selectedChoice) {
+                        CorrectMathWithCal= CorrectMathWithCal + 1; 
+                    }
+                })
+            }
+            //Verbal = CorrectReading + CorrectWriting; 
+            CorrectMath = CorrectMathNoCal + CorrectMathWithCal; 
+           // Total =  CorrectReading + CorrectWriting + CorrectMath; 
             this.setState({
                 currentSection: currentSection + 1 
             });
         }
+        this.setState({
+            isTestSubmitted: true,
+            CorrectReading: CorrectReading,
+            CorrectWriting: CorrectWriting, 
+            CorrectMathNoCal: CorrectMathNoCal, 
+            CorrectMathWithCal: CorrectMathWithCal, 
+            CorrectMath: CorrectMath, 
+           // Total: Total,
+           // Verbal: Verbal 
+        })
+        //if (this.IsLastElementOfSectionsArray() && this.IsLastSection()) {
+        //        section.questions.map((question) => {
+        //            const correctAnswer = question.choices.find((choice) => choice.check === true);
+        //            if(correctAnswer.id === question.selectedChoice) {
+        //                numberOfCorrectAnswers = numberOfCorrectAnswers + 1;
+        //            };
+        //        })
+        //    NumeberOfCorrectAnswersOfEachSubject[currentSubject] = numberOfCorrectAnswers; 
+        //    this.setState({
+        //        isTestSubmitted: true,
+        //        numberOfCorrectAnswers: numberOfCorrectAnswers,
+        //    });
+        //} else {
+        //    this.setState({
+        //        currentSection: currentSection + 1 
+        //    });
+        //}
 
     }
     ReadingScore() {
@@ -1117,6 +1182,12 @@ export default class TestScreen extends React.Component {
             ReadingScore,
             WritingScore,
             MathScore, 
+            Total, 
+            CorrectMath, 
+            CorrectReading, 
+            CorrectWriting, 
+            CorrectMathWithCal, 
+            CorrectMathNoCal, 
             currentSection, sections
         } = this.state;
 
@@ -1130,17 +1201,15 @@ export default class TestScreen extends React.Component {
       //  sections.map((section) => {
       //    allQuestions = [...allQuestions, ...section.questions]; 
        // });
-        let TotalScore = ReadingScore + WritingScore + MathScore; 
         //const percentageOfCorrectAnswers = (numberOfCorrectAnswers*100)/sections.questions.length;
         if(isTestSubmitted) {
             
             return (
                 <div className="appContainer">
                     <h1>Result:!</h1>
-                    <h2>Reading Score: {ReadingScore}</h2>
-                    <h2>Writing and Language Score: {WritingScore}</h2>
-                    <h2>Math Score: {MathScore}</h2>
-                    <h2>Total Score: {TotalScore} </h2>
+                    <h2>Reading Score: {CorrectReading}</h2>
+                    <h2>Writing and Language Score: {CorrectWriting}</h2>
+                    <h2>Math Score: {CorrectMath}</h2>
 
                 </div>
             );
