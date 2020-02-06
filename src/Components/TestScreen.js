@@ -675,68 +675,74 @@ export default class TestScreen extends React.Component {
             buttonText = 'Submit'; 
         }
 
-        return (<button className="btn btn-primary m-2" onClick={this.checkingAllQuestions()}>{buttonText}</button>);
+        return (<button className="btn btn-primary m-2" onClick={() => this.checkingAllQuestions()}>{buttonText}</button>);
 
     }
     
     checkingAllQuestions() {
-        const {currentSection, sections, CorrectReading, CorrectWriting, CorrectMathNoCal, CorrectMathWithCal} = this.state; 
-        const section = sections[currentSection];
-        if  (this.IsLastElementOfSectionsArray() && this.IsLastSection()) {
-            if (section.sectionType === 'reading' ) {
-                section.questions.map((question) => {
-                    const correctAnswer = question.choices.find((choice) => choice.check === true);
-                    if(correctAnswer.id === question.selectedChoice) { 
-                        this.setState({
-                            CorrectReading: CorrectReading+1
+        const {currentSection, sections, CorrectWriting, CorrectMathNoCal, CorrectMathWithCal} = this.state; 
+
+            if  (this.IsLastElementOfSectionsArray() && this.IsLastSection()) {
+                sections.map(section => {
+                    section.questions.map((question) => {
+                        const correctAnswer = question.choices.find((choice) => choice.check === true);
+                        if (section.sectionType === 'reading' ) {
+                            if(correctAnswer.id === question.selectedChoice) { 
+                                this.setState(currentState => {
+                                    return {
+                                        CorrectReading: currentState.CorrectReading + 1
+                                    }
+                                }, () => this.CalculateScores());
+                            }
+                        } //TODO: else  if(section.sectionType === 'writing' ) { Exactly the same logic as reading but for the others}
+                    });
+        
+                    if(section.sectionType === 'writing' ) {
+                        section.questions.map((question) => {
+                            const correctAnswer = question.choices.find((choice) => choice.check === true);
+                            if(correctAnswer.id === question.selectedChoice) { 
+                                this.setState({
+                                    CorrectWriting: CorrectWriting+1
+                                })
+                            }
                         })
                     }
-                })
-    
-            }
-            else if(section.sectionType === 'writing' ) {
-                section.questions.map((question) => {
-                    const correctAnswer = question.choices.find((choice) => choice.check === true);
-                    if(correctAnswer.id === question.selectedChoice) { 
-                        this.setState({
-                            CorrectWriting: CorrectWriting+1
+                    else if(section.sectionType === 'mathNoCal' ) {
+                        section.questions.map((question) => {
+                            const correctAnswer = question.choices.find((choice) => choice.check === true);
+                            if(correctAnswer.id === question.selectedChoice) { 
+                                this.setState({
+                                    CorrectMathNoCal: CorrectMathNoCal+1
+                                })
+                            }
                         })
                     }
-                })
-            }
-            else if(section.sectionType === 'mathNoCal' ) {
-                section.questions.map((question) => {
-                    const correctAnswer = question.choices.find((choice) => choice.check === true);
-                    if(correctAnswer.id === question.selectedChoice) { 
-                        this.setState({
-                            CorrectMathNoCal: CorrectMathNoCal+1
+                    else if(section.sectionType === 'mathWithCal' ) {
+                        section.questions.map((question) => {
+                            const correctAnswer = question.choices.find((choice) => choice.check === true);
+                            if(correctAnswer.id === question.selectedChoice) { 
+                                this.setState({
+                                    CorrectMathWithCal: CorrectMathWithCal+1
+                                })
+                            }
                         })
                     }
+                });
+
+
+            } else {
+                this.setState({
+                    currentSection: currentSection + 1 
                 })
             }
-            else if(section.sectionType === 'mathWithCal' ) {
-                section.questions.map((question) => {
-                    const correctAnswer = question.choices.find((choice) => choice.check === true);
-                    if(correctAnswer.id === question.selectedChoice) { 
-                        this.setState({
-                            CorrectMathWithCal: CorrectMathWithCal+1
-                        })
-                    }
-                })
-            }
-            this.CalculateScores();
-        } else {
-            this.setState({
-                currentSection: currentSection + 1 
-            })
-        }
     }
+
     CalculateScores() {
 
-        const {isTestSubmitted, ReadingScore, WritingScore, currentSection,MathScore,MathNoCal,MathWithCal,  sections, CorrectReading, CorrectWriting, CorrectMathNoCal, CorrectMathWithCal} = this.state; 
-        
+        const {isTestSubmitted, ReadingScore, WritingScore, currentSection, MathScore,MathNoCal,MathWithCal, sections, CorrectReading, CorrectWriting, CorrectMathNoCal, CorrectMathWithCal} = this.state; 
+
         //READING
-        if (0 <= CorrectReading <=3) {
+        if (CorrectReading >= 0 && CorrectReading <= 3) {
             this.setState({
                 ReadingScore: 100
             }) 
@@ -1415,7 +1421,7 @@ export default class TestScreen extends React.Component {
             );
         }
 
-        console.log(this.state.sections);
+        console.log(this.state.CorrectReading);
 
         return <div className="appContainer">
             <div className= "header">
