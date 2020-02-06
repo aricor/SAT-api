@@ -696,8 +696,13 @@ export default class TestScreen extends React.Component {
                 numberOfCorrectAnswers: numberOfCorrectAnswers,
             });
         } else {
+            const section = sections[currentSection];
+            const nextSection = sections[currentSection + 1];
+            if(section.sectionType !== nextSection.sectionType) {
+                alert('The current timer value will be lost ;)')
+            }
             this.setState({
-                currentSection: currentSection + 1 
+                currentSection: currentSection + 1,
             });
         }
 

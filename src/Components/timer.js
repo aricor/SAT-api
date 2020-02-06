@@ -50,17 +50,31 @@ export default class Timer extends Component {
         clearInterval(this.myInterval)
     }
 
-    render() {
+    renderTimerText() {
         const { minutes, seconds } = this.state;
+        if (minutes === 0 && seconds === 0) {
+            return (
+                <h1>Busted!</h1>
+            );
+        } else if (minutes === 0 & seconds <= 15) {
+            return (
+                <h1>### WARNING ### Time Remaining: {minutes}:{seconds < 10 ? `0${seconds}` : seconds}</h1>
+            )
+        } else {
+            return (
+                <h1>Time Remaining: {minutes}:{seconds < 10 ? `0${seconds}` : seconds}</h1>
+            );
+        }
+
+    }
+
+    render() {
         return (
             <div className="timerContainer">
                 <h2>{this.props.sectionType}</h2>
                 <h2>Elite Prep VN</h2>
-                { minutes === 0 && seconds === 0
-                    ? <h1>Busted!</h1>
-                    : <h1>Time Remaining: {minutes}:{seconds < 10 ? `0${seconds}` : seconds}</h1>
-                }
+                {this.renderTimerText()}
             </div>
         )
-    }
+    };
 }
