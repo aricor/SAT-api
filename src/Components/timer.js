@@ -6,8 +6,9 @@ export default class Timer extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            minutes:0, 
-            seconds:0, 
+            minutes: props.initialTimer, 
+            seconds: 0, 
+            sectionType: props.sectionType,
         }
     }
 
@@ -35,12 +36,22 @@ export default class Timer extends Component {
         }, 1000)
     }
 
+    static getDerivedStateFromProps(nextProps, prevProps) {
+        if(nextProps.sectionType !== prevProps.sectionType){
+            return {
+                minutes: nextProps.initialTimer, 
+                seconds: 0,
+                sectionType: nextProps.sectionType,
+            };
+        }
+    }
+
     componentWillUnmount() {
         clearInterval(this.myInterval)
     }
 
     render() {
-        const { minutes, seconds } = this.state
+        const { minutes, seconds } = this.state;
         return (
             <div className="timerContainer">
                 <h2>{this.props.sectionType}</h2>
