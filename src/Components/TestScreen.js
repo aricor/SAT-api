@@ -1047,7 +1047,7 @@ export default class TestScreen extends React.Component {
         }
 
         //MATH
-        if (0 <=(CorrectMathWithCal + CorrectMathNoCal) <=1) {
+        if ((CorrectMathNoCal + CorrectMathWithCal) >= 0 && (CorrectMathNoCal + CorrectMathWithCal)  <= 1) {
             this.setState({
                 MathScore: 200
             }) 
@@ -1338,11 +1338,12 @@ export default class TestScreen extends React.Component {
             }) 
         }
 
-        this.setState({
+  
+        this.setState((state) => ({
             isTestSubmitted: true,
-            Verbal: ReadingScore + WritingScore, 
-            Total: ReadingScore + WritingScore + MathScore
-        });
+            Verbal: state.ReadingScore + state.WritingScore, 
+            Total: state.ReadingScore + state.WritingScore + state.MathScore
+        }))
     }
 
 
@@ -1434,6 +1435,9 @@ export default class TestScreen extends React.Component {
         }
 
         console.log(this.state.CorrectReading);
+        console.log(this.state.CorrectWriting);
+        console.log(this.state.CorrectMathNoCal);
+        console.log(this.state.CorrectMathWithCal);
 
         return <div className="appContainer">
             <div className= "header">
