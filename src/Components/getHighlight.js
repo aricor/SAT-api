@@ -38,7 +38,7 @@ export default class Highlight extends Component {
         return (
         <div>
 
-        <p  className="highlight" ref={this.refParagraph} >
+        <p className="highlight numbered-p" ref={this.refParagraph} >
                    {this.props.passage}
         </p>
         <Popover selectionRef={this.refParagraph} >

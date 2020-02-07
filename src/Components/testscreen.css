@@ -4,6 +4,14 @@
     background-color: yellow;
     font-weight:normal; 
 }
+.numbered-p{
+    background: url(http://i.imgur.com/2cOaJ.png);
+    background-attachment: local;
+    background-repeat: no-repeat;
+    padding-left: 35px;
+    padding-top: 10px;
+    border-color:#ccc;
+}
 .testContainer {
     display: flex;
     height: 85vh;
@@ -52,9 +60,8 @@
     font-family: "ff-tisa-web-pro",serif;
     font-size: 16px;
     font-weight: 400;
-    line-height: 1.45;
+    line-height: 1;
     color: #333;
-    padding: 1em;
     width:450px; 
     max-width:450px; 
     margin-left: 120px;
