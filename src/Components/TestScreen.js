@@ -596,20 +596,18 @@ export default class TestScreen extends React.Component {
                                 choices={subquestion.choices}
                                 />           
                             )
-                            
-                            
-                        
-                        }), 
-
-                        section.fillInQuestions.map((subfillInQuestion)=> {
-                            return (
-                                <MathComponent
-                                key = {subfillInQuestion.id}
-                                question={subfillInQuestion.question}
-                                />
-                            )
                         })
+                    }
 
+                    {
+                        section.fillInQuestions.map((subfillInQuestion)=> {
+                        return (
+                            <MathComponent
+                            key = {subfillInQuestion.id}
+                            question={subfillInQuestion.question}
+                            />
+                        )
+                        })
                     }
                     
                 </div>
@@ -701,9 +699,11 @@ export default class TestScreen extends React.Component {
                         section.questions.map((question) => {
                             const correctAnswer = question.choices.find((choice) => choice.check === true);
                             if(correctAnswer.id === question.selectedChoice) { 
-                                this.setState({
-                                    CorrectWriting: CorrectWriting+1
-                                })
+                                this.setState(currentState => {
+                                    return {
+                                        CorrectWriting: currentState.CorrectWriting + 1
+                                    }
+                                }, () => this.CalculateScores()); 
                             }
                         })
                     }
@@ -711,9 +711,11 @@ export default class TestScreen extends React.Component {
                         section.questions.map((question) => {
                             const correctAnswer = question.choices.find((choice) => choice.check === true);
                             if(correctAnswer.id === question.selectedChoice) { 
-                                this.setState({
-                                    CorrectMathNoCal: CorrectMathNoCal+1
-                                })
+                                this.setState(currentState => {
+                                    return {
+                                        CorrectMathNoCal: currentState.CorrectMathNoCal + 1
+                                    }
+                                }, () => this.CalculateScores());
                             }
                         })
                     }
@@ -721,9 +723,11 @@ export default class TestScreen extends React.Component {
                         section.questions.map((question) => {
                             const correctAnswer = question.choices.find((choice) => choice.check === true);
                             if(correctAnswer.id === question.selectedChoice) { 
-                                this.setState({
-                                    CorrectMathWithCal: CorrectMathWithCal+1
-                                })
+                                this.setState(currentState => {
+                                    return {
+                                        CorrectMathWithCal: currentState.CorrectMathWithCal + 1
+                                    }
+                                }, () => this.CalculateScores());
                             }
                         })
                     }
@@ -731,9 +735,17 @@ export default class TestScreen extends React.Component {
 
 
             } else {
+                const section = sections[currentSection];
+                const nextSection = sections[currentSection + 1];
+                if(section.sectionType !== nextSection.sectionType) {
+                    if (window.confirm("Are you sure? By clicking OK, you'll be moving on to the next section and can't go back")) {
+                        this.setState({
+                            currentSection: currentSection + 1,
+                        })
+                    }            }
                 this.setState({
-                    currentSection: currentSection + 1 
-                })
+                    currentSection: currentSection + 1,
+                });
             }
     }
 
@@ -757,7 +769,7 @@ export default class TestScreen extends React.Component {
                 ReadingScore: 120
             })        
         }
-        else if ( 6 <= CorrectReading <= 7) {
+        else if ( CorrectReading >= 6 && CorrectReading <= 7) {
             this.setState({
                 ReadingScore: 130
             })
@@ -772,57 +784,57 @@ export default class TestScreen extends React.Component {
                 ReadingScore: 150
             }) 
         }
-        else if (10 <= CorrectReading <= 11) {
+        else if (CorrectReading >= 10 && CorrectReading <= 11) {
             this.setState({
                 ReadingScore: 160
             }) 
         }
-        else if (12 <=CorrectReading <= 13) {
+        else if (CorrectReading >= 12 && CorrectReading <= 13) {
             this.setState({
                 ReadingScore: 170
             }) 
         }
-        else if (14 <=CorrectReading <= 15) {
+        else if (CorrectReading >= 14 && CorrectReading <= 15) {
             this.setState({
                 ReadingScore: 180
             }) 
         }
-        else if (16 <=CorrectReading <= 17) {
+        else if (CorrectReading >= 16 && CorrectReading <= 17) {
             this.setState({
                 ReadingScore: 190
             }) 
         }
-        else if (18 <=CorrectReading <= 19) {
+        else if (CorrectReading >= 18 && CorrectReading <= 19) {
             this.setState({
                 ReadingScore: 200
             }) 
         }
-        else if (20 <=CorrectReading <= 21) {
+        else if (CorrectReading >= 20 && CorrectReading <= 21) {
             this.setState({
                 ReadingScore: 210
             }) 
         }
-        else if (22 <=CorrectReading <= 23) {
+        else if (CorrectReading >= 22 && CorrectReading <= 23) {
             this.setState({
                 ReadingScore: 220
             }) 
         }
-        else if (24 <=CorrectReading <= 25) {
+        else if (CorrectReading >= 24 && CorrectReading <= 25) {
             this.setState({
                 ReadingScore: 230
             }) 
         }
-        else if (26 <=CorrectReading <= 27) {
+        else if (CorrectReading >= 26 && CorrectReading <= 27) {
             this.setState({
                 ReadingScore: 240
             }) 
         }
-        else if (28 <=CorrectReading <= 29) {
+        else if (CorrectReading >= 28 && CorrectReading <= 29) {
             this.setState({
                 ReadingScore: 250
             }) 
         }
-        else if (30 <=CorrectReading <= 31) {
+        else if (CorrectReading >= 30 && CorrectReading <= 31) {
             this.setState({
                 ReadingScore: 260
             })  
@@ -832,32 +844,32 @@ export default class TestScreen extends React.Component {
                 ReadingScore: 270
             })  
         }
-        else if (33 <=CorrectReading <= 34) {
+        else if (CorrectReading >= 33 && CorrectReading <= 34) {
             this.setState({
                 ReadingScore: 280
             })  
         }
-        else if (35 <=CorrectReading <= 36) {
+        else if (CorrectReading >= 35 && CorrectReading <= 36) {
             this.setState({
                 ReadingScore: 290
             })  
         }
-        else if (37 <=CorrectReading <= 38) {
+        else if (CorrectReading >= 37 && CorrectReading <= 38) {
             this.setState({
                 ReadingScore: 300
             })  
         }
-        else if (39 <= CorrectReading <= 41) {
+        else if (CorrectReading >= 39 && CorrectReading <= 41) {
             this.setState({
                 ReadingScore: 310
             })  
         }
-        else if ( 42 <= CorrectReading <= 43) {
+        else if (CorrectReading >= 42 && CorrectReading <= 43) {
             this.setState({
                 ReadingScore: 320
             })  
         }
-        else if (44 <= CorrectReading <= 45) {
+        else if (CorrectReading >= 44 && CorrectReading <= 45) {
             this.setState({
                 ReadingScore: 330
             })  
@@ -872,7 +884,7 @@ export default class TestScreen extends React.Component {
                 ReadingScore: 350
             })  
         }
-        else if (48 <= CorrectReading <= 49) {
+        else if (CorrectReading >= 48 && CorrectReading <= 49) {
             this.setState({
                 ReadingScore: 360
             })  
@@ -893,7 +905,7 @@ export default class TestScreen extends React.Component {
             })  
         }
         //WRITING SCORE
-        if (0 <= CorrectWriting <=3) {
+        if (CorrectWriting >= 0 && CorrectWriting <= 3) {
             this.setState({
                 WritingScore: 100
             })   
@@ -908,7 +920,7 @@ export default class TestScreen extends React.Component {
                 WritingScore: 120
             }) 
         }
-        else if ( 6 <= CorrectWriting <= 7) {
+        else if ( CorrectWriting >= 6 && CorrectWriting <= 7) {
             this.setState({
                 WritingScore: 130
             }) 
@@ -923,32 +935,32 @@ export default class TestScreen extends React.Component {
                 WritingScore: 150
             }) 
         }
-        else if (10 <= CorrectWriting <= 11) {
+        else if (CorrectWriting >= 10 && CorrectWriting <= 11) {
             this.setState({
                 WritingScore: 160
             }) 
         }
-        else if (12 <=CorrectWriting <= 13) {
+        else if (CorrectWriting >= 12 && CorrectWriting <= 13) {
             this.setState({
                 WritingScore: 170
             }) 
         }
-        else if (14 <=CorrectWriting <= 16) {
+        else if (CorrectWriting >= 14 && CorrectWriting <= 16) {
             this.setState({
                 WritingScore: 180
             }) 
         }
-        else if (17 <=CorrectWriting <= 18) {
+        else if (CorrectWriting >= 17 && CorrectWriting <= 18) {
             this.setState({
                 WritingScore: 190
             }) 
         }
-        else if (19 <=CorrectWriting <= 20) {
+        else if (CorrectWriting >= 19 && CorrectWriting <= 20) {
             this.setState({
                 WritingScore: 200
             }) 
         }
-        else if (21 <=CorrectWriting <= 22) {
+        else if (CorrectWriting >= 21 && CorrectWriting <= 22) {
             this.setState({
                 WritingScore: 210
             }) 
@@ -958,17 +970,17 @@ export default class TestScreen extends React.Component {
                 WritingScore: 220
             }) 
         }
-        else if (24 <=CorrectWriting <= 25) {
+        else if (CorrectWriting >= 24 && CorrectWriting <= 25) {
             this.setState({
                 WritingScore: 230
             }) 
         }
-        else if (26 <=CorrectWriting <= 27) {
+        else if (CorrectWriting >= 26 && CorrectWriting <= 27) {
             this.setState({
                 WritingScore: 240
             }) 
         }
-        else if (28 <=CorrectWriting <= 29) {
+        else if (CorrectWriting >= 28 && CorrectWriting <= 29) {
             this.setState({
                 WritingScore: 250
             }) 
@@ -978,7 +990,7 @@ export default class TestScreen extends React.Component {
                 WritingScore: 260
             }) 
         }
-        else if (31 <=CorrectWriting === 32) {
+        else if (CorrectWriting >= 31 && CorrectWriting <= 32) {
             this.setState({
                 WritingScore: 270
             }) 
@@ -988,7 +1000,7 @@ export default class TestScreen extends React.Component {
                 WritingScore: 280
             }) 
         }
-        else if (34 <=CorrectWriting <= 35) {
+        else if (CorrectWriting >= 34 && CorrectWriting <= 35) {
             this.setState({
                 WritingScore: 290
             }) 
@@ -998,7 +1010,7 @@ export default class TestScreen extends React.Component {
                 WritingScore: 300
             }) 
         }
-        else if (37 <= CorrectWriting <= 38) {
+        else if (CorrectWriting >= 37 && CorrectWriting <= 38) {
             this.setState({
                 WritingScore: 310
             }) 
@@ -1023,7 +1035,7 @@ export default class TestScreen extends React.Component {
                 WritingScore: 360
             }) 
         }
-        else if (48 <= CorrectWriting <= 43) {
+        else if (CorrectWriting === 43) {
             this.setState({
                 WritingScore: 380
             }) 
