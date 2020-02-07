@@ -34,6 +34,7 @@ export default class TestScreen extends React.Component {
                     title: "This passage is from James Joyce, The Dubliners originally published in 1914",
                     passage: '1914 Mr Holohan, assistant secretary of the Eire Abu Society, had been walking up and down Dublin for nearly a month, with his hands and pockets full of dirty pieces of paper, arranging about the series of concerts. He had a game leg and for this his friends called him Hoppy Holohan. He walked up and down constantly, stood by the hour at street corners arguing the point and made notes; but in the end it was Mrs Kearney who arranged every Miss Devlin had become Mrs Kearney out of spite. She had been educated in a', 
                     IsLastSectionType: false, 
+                    IsFirstSectionType: true, 
                     questions: [
                         {
                             id: 1,
@@ -113,6 +114,7 @@ export default class TestScreen extends React.Component {
                     defaultTimer: 65,
                             sectionType: 'reading', 
                             IsLastSectionType: true, 
+                            IsFirstSectionType: false, 
                             title: 'Questions 11-20 are based on the following passage and supplementary material.', 
                             passage: 'The central aim of the current study was to eschew the experimental context traditionally used to study over-imitation, in order to determine whether visibly causally irrelevant actions would be copied in a naturalistic context in which the participants were unaware that they were taking part in an experiment, and therefore free from any social pressures. In order to achieve such a real-world context our child and adult participants viewed an individual, whom they believed to be another zoo visitor, retrieve a reward from inside a transparent puzzle box, using an action sequence which contained elements that were readily discernible as causally irrelevant. The task demonstration involved the model performing a sequence of causally',
                             questions: [
@@ -193,6 +195,7 @@ export default class TestScreen extends React.Component {
                     defaultTimer: 1,
                             sectionType: 'writing', 
                             IsLastSectionType: false, 
+                            IsFirstSectionType: true, 
                             title:' Violet Wood Sorrel Plant', 
                             passage: 'only attraction possessed by this charming little plant. As a family, the wood-sorrels have great interest for botanists since Darwin devoted such         1 long study to their power of movement. and many other scientists have described the several forms assumed by perfect flowers of the same',
                             questions: [
@@ -274,8 +277,8 @@ export default class TestScreen extends React.Component {
                     defaultTimer: 1,
                             sectionType: 'writing', 
                             IsLastSectionType: true, 
+                            IsFirstSectionType: false, 
                             title:' Violet Wood Sorrel Plant 2', 
-
                             passage: 'The first Ohio stories are part of the common story of the wonderful Ice Age, when a frozen deluge pushed down from the north and covered a vast part of the earth’s surface with slowly moving glaciers',
                             questions: [
                                 {
@@ -355,7 +358,7 @@ export default class TestScreen extends React.Component {
                     defaultTimer: 20,
                             sectionType: 'mathNoCal', 
                             IsLastSectionType: true, 
-
+                            IsFirstSectionType: true, 
                             questions: [
                                 {
                                     id: 1,
@@ -434,12 +437,14 @@ export default class TestScreen extends React.Component {
                                     question: "Juan purchased an antique that had a value of $200 at the time of purchase. Each year, the value of the antique is estimated to increase 10% over its value the previous year. The estimated value of the antique, in dollars, 2 years after purchase can be represented by the expression 200a, where a is a constant. What is the value of a ?",
                                     text: "1.21", 
                                     check: true, 
+                                    input:'', 
                                 }, 
                                 {
                                     id:2, 
                                     question: "Juan purchased an antique that had a value of $200 at the time of purchase. Each year, the value of the antique is estimated to increase 10% over its value the previous year. The estimated value of the antique, in dollars, 2 years after purchase can be represented by the expression 200a, where a is a constant. What is the value of a ?",
                                     text: "1.21", 
                                     check: true, 
+                                    input:'', 
                                 }
                             ]
                 }, 
@@ -525,12 +530,16 @@ export default class TestScreen extends React.Component {
                             question: "Juan purchased an antique that had a value of $200 at the time of purchase. Each year, the value of the antique is estimated to increase 10% over its value the previous year. The estimated value of the antique, in dollars, 2 years after purchase can be represented by the expression 200a, where a is a constant. What is the value of a ?",
                             text: "1.21", 
                             check: true, 
+                            input:'',
+
                         }, 
                         {
                             id:2, 
                             question: "Juan purchased an antique that had a value of $200 at the time of purchase. Each year, the value of the antique is estimated to increase 10% over its value the previous year. The estimated value of the antique, in dollars, 2 years after purchase can be represented by the expression 200a, where a is a constant. What is the value of a ?",
                             text: "1.21", 
                             check: true, 
+                            input:'',
+
                         }
                     ]
 
@@ -723,6 +732,7 @@ export default class TestScreen extends React.Component {
                                     }
                                 }, () => this.CalculateScores());
                             }
+
                         })
                     }
                     else if(section.sectionType === 'mathWithCal' ) {
@@ -748,10 +758,19 @@ export default class TestScreen extends React.Component {
                         this.setState({
                             currentSection: currentSection + 1,
                         })
-                    }            }
-                this.setState({
-                    currentSection: currentSection + 1,
-                });
+                    }
+                    else {
+                        this.setState({
+                            currentSection: currentSection + 0,
+                        });
+                    }            
+                }
+                else {
+                    this.setState({
+                        currentSection: currentSection + 1,
+                    });
+                }
+
             }
     }
 
@@ -1343,8 +1362,6 @@ export default class TestScreen extends React.Component {
                 MathScore: 800
             }) 
         }
-
-  
         this.setState((state) => ({
             isTestSubmitted: true,
             Verbal: state.ReadingScore + state.WritingScore, 
@@ -1384,7 +1401,12 @@ export default class TestScreen extends React.Component {
         const {currentSection} = this.state;
         return ((currentSection !== 0))
     }
+    IsTheFirstSectionType() {
+        const {sections, currentSection} = this.state; 
 
+        const section = sections[currentSection];
+        return (section.IsFirstSectionType === true); 
+    }
     render() {
         const {
             isTestSubmitted,
@@ -1394,6 +1416,10 @@ export default class TestScreen extends React.Component {
             MathScore, 
             Total,
             currentSection, sections, 
+            CorrectReading, 
+            CorrectWriting, 
+            CorrectMathWithCal, 
+            CorrectMathNoCal
         } = this.state;
 
         /*
@@ -1412,7 +1438,12 @@ export default class TestScreen extends React.Component {
                     <h2>Verbal Score: {Verbal}</h2>
                     <h2>Math Score: {MathScore}</h2>
                     <h2>Total Score: {Total} </h2>
+                    <h2>Number of correct Reading section: {CorrectReading} (out of 52)</h2>
+                    <h2>Number of correct Writing and Language section: {CorrectWriting} (out of 44)</h2>
+                    <h2>Number of correct Math (No Calculator) section: {CorrectMathNoCal} (out of 20)</h2>
+                    <h2>Number of correct Math (With Calculator) section: {CorrectMathWithCal} (out of 38)</h2>
 
+                    <button className="btn btn-primary"  onClick={() => this.setState({ currentSection: currentSection - 1})}> Go Back To Review</button>
                 </div>
             );
         }
@@ -1434,7 +1465,7 @@ export default class TestScreen extends React.Component {
                 <div className="questionSection">
                     <div className="article2">
                     {this.renderAllQuestions()}
-                    {this.IsNotTheFirstPage() ?  <button className="btn btn-primary"  onClick={() => this.setState({ currentSection: currentSection - 1})}> Back</button> : '' }
+                    {!this.IsTheFirstSectionType() ?  <button className="btn btn-primary"  onClick={() => this.setState({ currentSection: currentSection - 1})}> Back</button> : '' }
                     {this.renderRightButton()}
                     </div>
                 </div>
