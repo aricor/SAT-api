@@ -37,13 +37,14 @@ export default class Timer extends Component {
     }
 
     static getDerivedStateFromProps(nextProps, prevProps) {
-        if(nextProps.sectionType !== prevProps.sectionType){
+        if(nextProps.sectionType !== prevProps.sectionType || (prevProps.minutes === 0 && prevProps.seconds === 0 )){
             return {
                 minutes: nextProps.initialTimer, 
                 seconds: 0,
                 sectionType: nextProps.sectionType,
             };
         }
+
     }
 
     componentWillUnmount() {
