@@ -697,8 +697,11 @@ export default class TestScreen extends React.Component {
             const section = sections[currentSection];
             const nextSection = sections[currentSection + 1];
             if(section.sectionType !== nextSection.sectionType) {
-                alert('The current timer value will be lost ;)')
-            }
+                if (window.confirm("Are you sure? By clicking OK, you'll be moving on to the next section and can't go back")) {
+                    this.setState({
+                        currentSection: currentSection + 1,
+                    })
+                }            }
             this.setState({
                 currentSection: currentSection + 1,
             });
