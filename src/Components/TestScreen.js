@@ -448,14 +448,14 @@ export default class TestScreen extends React.Component {
                                     id:1, 
                                     question: "Juan purchased an antique that had a value of $200 at the time of purchase. Each year, the value of the antique is estimated to increase 10% over its value the previous year. The estimated value of the antique, in dollars, 2 years after purchase can be represented by the expression 200a, where a is a constant. What is the value of a ?",
                                     text: "1.21", 
-                                    check: true, 
+                                    correctAnswer: 'answer 1', 
                                     input:'', 
                                 }, 
                                 {
                                     id:2, 
                                     question: "Juan purchased an antique that had a value of $200 at the time of purchase. Each year, the value of the antique is estimated to increase 10% over its value the previous year. The estimated value of the antique, in dollars, 2 years after purchase can be represented by the expression 200a, where a is a constant. What is the value of a ?",
                                     text: "1.21", 
-                                    check: true, 
+                                    correctAnswer: 'answer 2',
                                     input:'', 
                                 }
                             ]
@@ -550,7 +550,7 @@ export default class TestScreen extends React.Component {
                             id:1, 
                             question: "Juan purchased an antique that had a value of $200 at the time of purchase. Each year, the value of the antique is estimated to increase 10% over its value the previous year. The estimated value of the antique, in dollars, 2 years after purchase can be represented by the expression 200a, where a is a constant. What is the value of a ?",
                             text: "1.21", 
-                            check: true, 
+                            correctAnswer: 'answer 3',
                             input:'',
 
                         }, 
@@ -558,7 +558,7 @@ export default class TestScreen extends React.Component {
                             id:2, 
                             question: "Juan purchased an antique that had a value of $200 at the time of purchase. Each year, the value of the antique is estimated to increase 10% over its value the previous year. The estimated value of the antique, in dollars, 2 years after purchase can be represented by the expression 200a, where a is a constant. What is the value of a ?",
                             text: "1.21", 
-                            check: true, 
+                            correctAnswer: 'answer 4',
                             input:'',
 
                         }
@@ -645,11 +645,21 @@ export default class TestScreen extends React.Component {
                     }
 
                     {
-                        section.fillInQuestions.map((subfillInQuestion)=> {
+                        section.fillInQuestions.map((subfillInQuestion, index)=> {
                         return (
                             <MathComponent
-                            key = {subfillInQuestion.id}
-                            question={subfillInQuestion.question}
+                                key = {subfillInQuestion.id}
+                                question={subfillInQuestion.question}
+                                onChange={(text) => {
+                                    subfillInQuestion.input = text;
+                                    this.setState({
+                                        fillInQuestions: [
+                                            ...section.questions.slice(0, index), // questions array before updated question - stay exactly the same
+                                            subfillInQuestion, // updated question - it's updated with the selectedChoice
+                                            ...section.questions.slice(index+1, section.questions.length), // questions array after updated question - stays exactly the same
+                                        ]
+                                    });
+                                }}
                             />
                         )
                         })
