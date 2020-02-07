@@ -25,7 +25,8 @@ export default class Timer extends Component {
             }
             if (seconds === 0) {
                 if (minutes === 0) {
-                    clearInterval(this.myInterval)
+                    clearInterval(this.myInterval);
+                    this.props.onTimeEnd();
                 } else {
                     this.setState(({ minutes }) => ({
                         minutes: minutes - 1,

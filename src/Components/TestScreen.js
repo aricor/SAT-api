@@ -1496,7 +1496,11 @@ export default class TestScreen extends React.Component {
 
         return <div className="appContainer">
             <div className= "header">
-            <Timer initialTimer={currentSectionObject.defaultTimer} sectionType={currentSectionObject.sectionType}/>            
+                <Timer 
+                    initialTimer={currentSectionObject.defaultTimer} 
+                    sectionType={currentSectionObject.sectionType}
+                    onTimeEnd={() => alert('replace this alert with the function (setState) that moves to the next subject. it should move the currentSection to the right one')}
+                />            
             </div>
             <div className="testContainer">
 
