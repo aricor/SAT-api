@@ -673,404 +673,663 @@ export default class TestScreen extends React.Component {
     return (<button className="btn btn-primary m-2" onClick={() => this.checkingAllQuestions()}>{buttonText}</button>);
     }
     checkingAllQuestions() {
-        const {currentSection, NumeberOfCorrectAnswersOfEachSubject, sections, currentSubject} = this.state; 
-        let numberOfCorrectAnswers = 0;
-        if (this.IsLastElementOfSectionsArray() && this.IsLastSection()) {
-            sections.map((section)=> {
-                section.questions.map((question) => {
-                    const correctAnswer = question.choices.find((choice) => {
-                        if (choice.check === true) {
-                            return choice.id;    
-                        }
-                    })
-                    if(correctAnswer.id === question.selectedChoice) {
-                        numberOfCorrectAnswers = numberOfCorrectAnswers + 1;
-                    };
+        const {currentSection, sections, CorrectWriting, CorrectMathNoCal, CorrectMathWithCal} = this.state; 
+
+            if  (this.IsLastElementOfSectionsArray() && this.IsLastSection()) {
+                sections.map(section => {
+                    section.questions.map((question) => {
+                        const correctAnswer = question.choices.find((choice) => choice.check === true);
+                        if (section.sectionType === 'reading' ) {
+                            if(correctAnswer.id === question.selectedChoice) { 
+                                this.setState(currentState => {
+                                    return {
+                                        CorrectReading: currentState.CorrectReading + 1
+                                    }
+                                }, () => this.CalculateScores());
+                            }
+                        } //TODO: else  if(section.sectionType === 'writing' ) { Exactly the same logic as reading but for the others}
+                    });
+        
+                    if(section.sectionType === 'writing' ) {
+                        section.questions.map((question) => {
+                            const correctAnswer = question.choices.find((choice) => choice.check === true);
+                            if(correctAnswer.id === question.selectedChoice) { 
+                                this.setState(currentState => {
+                                    return {
+                                        CorrectWriting: currentState.CorrectWriting + 1
+                                    }
+                                }, () => this.CalculateScores()); 
+                            }
+                        })
+                    }
+                    else if(section.sectionType === 'mathNoCal' ) {
+                        section.questions.map((question) => {
+                            const correctAnswer = question.choices.find((choice) => choice.check === true);
+                            if(correctAnswer.id === question.selectedChoice) { 
+                                this.setState(currentState => {
+                                    return {
+                                        CorrectMathNoCal: currentState.CorrectMathNoCal + 1
+                                    }
+                                }, () => this.CalculateScores());
+                            }
+                        })
+                    }
+                    else if(section.sectionType === 'mathWithCal' ) {
+                        section.questions.map((question) => {
+                            const correctAnswer = question.choices.find((choice) => choice.check === true);
+                            if(correctAnswer.id === question.selectedChoice) { 
+                                this.setState(currentState => {
+                                    return {
+                                        CorrectMathWithCal: currentState.CorrectMathWithCal + 1
+                                    }
+                                }, () => this.CalculateScores());
+                            }
+                        })
+                    }
+                });
+
+
+            } else {
+                this.setState({
+                    currentSection: currentSection + 1 
                 })
+            }
+    }
+
+CalculateScores() {
+
+        const {isTestSubmitted, ReadingScore, WritingScore, currentSection, MathScore,MathNoCal,MathWithCal, sections, CorrectReading, CorrectWriting, CorrectMathNoCal, CorrectMathWithCal} = this.state; 
+
+        //READING
+        if (CorrectReading >= 0 && CorrectReading <= 3) {
+            this.setState({
+                ReadingScore: 100
+            }) 
+        } 
+        else if ( CorrectReading === 4 ) {
+            this.setState({
+                ReadingScore: 110
+            })         
+        }
+        else if ( CorrectReading === 5) {
+            this.setState({
+                ReadingScore: 120
+            })        
+        }
+        else if ( CorrectReading >= 6 && CorrectReading <= 7) {
+            this.setState({
+                ReadingScore: 130
             })
-            NumeberOfCorrectAnswersOfEachSubject[currentSubject] = numberOfCorrectAnswers; 
+        }
+        else if (CorrectReading === 8) {
             this.setState({
-                isTestSubmitted: true,
-                numberOfCorrectAnswers: numberOfCorrectAnswers,
-            });
-        } else {
-            const section = sections[currentSection];
-            const nextSection = sections[currentSection + 1];
-            if(section.sectionType !== nextSection.sectionType) {
-                if (window.confirm("Are you sure? By clicking OK, you'll be moving on to the next section and can't go back")) {
-                    this.setState({
-                        currentSection: currentSection + 1,
-                    })
-                }            }
+                ReadingScore: 140
+            })        
+        }
+        else if (CorrectReading === 9) {
             this.setState({
-                currentSection: currentSection + 1,
-            });
+                ReadingScore: 150
+            }) 
+        }
+        else if (CorrectReading >= 10 && CorrectReading <= 11) {
+            this.setState({
+                ReadingScore: 160
+            }) 
+        }
+        else if (CorrectReading >= 12 && CorrectReading <= 13) {
+            this.setState({
+                ReadingScore: 170
+            }) 
+        }
+        else if (CorrectReading >= 14 && CorrectReading <= 15) {
+            this.setState({
+                ReadingScore: 180
+            }) 
+        }
+        else if (CorrectReading >= 16 && CorrectReading <= 17) {
+            this.setState({
+                ReadingScore: 190
+            }) 
+        }
+        else if (CorrectReading >= 18 && CorrectReading <= 19) {
+            this.setState({
+                ReadingScore: 200
+            }) 
+        }
+        else if (CorrectReading >= 20 && CorrectReading <= 21) {
+            this.setState({
+                ReadingScore: 210
+            }) 
+        }
+        else if (CorrectReading >= 22 && CorrectReading <= 23) {
+            this.setState({
+                ReadingScore: 220
+            }) 
+        }
+        else if (CorrectReading >= 24 && CorrectReading <= 25) {
+            this.setState({
+                ReadingScore: 230
+            }) 
+        }
+        else if (CorrectReading >= 26 && CorrectReading <= 27) {
+            this.setState({
+                ReadingScore: 240
+            }) 
+        }
+        else if (CorrectReading >= 28 && CorrectReading <= 29) {
+            this.setState({
+                ReadingScore: 250
+            }) 
+        }
+        else if (CorrectReading >= 30 && CorrectReading <= 31) {
+            this.setState({
+                ReadingScore: 260
+            })  
+        }
+        else if (CorrectReading === 32) {
+            this.setState({
+                ReadingScore: 270
+            })  
+        }
+        else if (CorrectReading >= 33 && CorrectReading <= 34) {
+            this.setState({
+                ReadingScore: 280
+            })  
+        }
+        else if (CorrectReading >= 35 && CorrectReading <= 36) {
+            this.setState({
+                ReadingScore: 290
+            })  
+        }
+        else if (CorrectReading >= 37 && CorrectReading <= 38) {
+            this.setState({
+                ReadingScore: 300
+            })  
+        }
+        else if (CorrectReading >= 39 && CorrectReading <= 41) {
+            this.setState({
+                ReadingScore: 310
+            })  
+        }
+        else if (CorrectReading >= 42 && CorrectReading <= 43) {
+            this.setState({
+                ReadingScore: 320
+            })  
+        }
+        else if (CorrectReading >= 44 && CorrectReading <= 45) {
+            this.setState({
+                ReadingScore: 330
+            })  
+        }
+        else if ( CorrectReading === 46) {
+            this.setState({
+                ReadingScore: 340
+            })  
+        }
+        else if ( CorrectReading === 47) {
+            this.setState({
+                ReadingScore: 350
+            })  
+        }
+        else if (CorrectReading >= 48 && CorrectReading <= 49) {
+            this.setState({
+                ReadingScore: 360
+            })  
+        }
+        else if ( CorrectReading === 50) {
+            this.setState({
+                ReadingScore: 370
+            })  
+        }
+        else if ( CorrectReading === 51) {
+            this.setState({
+                ReadingScore: 380
+            })  
+        }
+        else if ( CorrectReading === 52) {
+            this.setState({
+                ReadingScore: 400
+            })  
+        }
+        //WRITING SCORE
+        if (CorrectWriting >= 0 && CorrectWriting <= 3) {
+            this.setState({
+                WritingScore: 100
+            })   
+        } 
+        else if ( CorrectWriting === 4 ) {
+            this.setState({
+                WritingScore: 110
+            }) 
+        }
+        else if ( CorrectWriting === 5) {
+            this.setState({
+                WritingScore: 120
+            }) 
+        }
+        else if ( CorrectWriting >= 6 && CorrectWriting <= 7) {
+            this.setState({
+                WritingScore: 130
+            }) 
+        }
+        else if (CorrectWriting === 8) {
+            this.setState({
+                WritingScore: 140
+            }) 
+        }
+        else if (CorrectWriting === 9) {
+            this.setState({
+                WritingScore: 150
+            }) 
+        }
+        else if (CorrectWriting >= 10 && CorrectWriting <= 11) {
+            this.setState({
+                WritingScore: 160
+            }) 
+        }
+        else if (CorrectWriting >= 12 && CorrectWriting <= 13) {
+            this.setState({
+                WritingScore: 170
+            }) 
+        }
+        else if (CorrectWriting >= 14 && CorrectWriting <= 16) {
+            this.setState({
+                WritingScore: 180
+            }) 
+        }
+        else if (CorrectWriting >= 17 && CorrectWriting <= 18) {
+            this.setState({
+                WritingScore: 190
+            }) 
+        }
+        else if (CorrectWriting >= 19 && CorrectWriting <= 20) {
+            this.setState({
+                WritingScore: 200
+            }) 
+        }
+        else if (CorrectWriting >= 21 && CorrectWriting <= 22) {
+            this.setState({
+                WritingScore: 210
+            }) 
+        }
+        else if (CorrectWriting === 23) {
+            this.setState({
+                WritingScore: 220
+            }) 
+        }
+        else if (CorrectWriting >= 24 && CorrectWriting <= 25) {
+            this.setState({
+                WritingScore: 230
+            }) 
+        }
+        else if (CorrectWriting >= 26 && CorrectWriting <= 27) {
+            this.setState({
+                WritingScore: 240
+            }) 
+        }
+        else if (CorrectWriting >= 28 && CorrectWriting <= 29) {
+            this.setState({
+                WritingScore: 250
+            }) 
+        }
+        else if (CorrectWriting === 30) {
+            this.setState({
+                WritingScore: 260
+            }) 
+        }
+        else if (CorrectWriting >= 31 && CorrectWriting <= 32) {
+            this.setState({
+                WritingScore: 270
+            }) 
+        }
+        else if (CorrectWriting === 33) {
+            this.setState({
+                WritingScore: 280
+            }) 
+        }
+        else if (CorrectWriting >= 34 && CorrectWriting <= 35) {
+            this.setState({
+                WritingScore: 290
+            }) 
+        }
+        else if (CorrectWriting <= 36) {
+            this.setState({
+                WritingScore: 300
+            }) 
+        }
+        else if (CorrectWriting >= 37 && CorrectWriting <= 38) {
+            this.setState({
+                WritingScore: 310
+            }) 
+        }
+        else if (  CorrectWriting === 39) {
+            this.setState({
+                WritingScore: 320
+            }) 
+        }
+        else if (CorrectWriting ===40) {
+            this.setState({
+                WritingScore: 330
+            }) 
+        }
+        else if ( CorrectWriting === 41) {
+            this.setState({
+                WritingScore: 340
+            }) 
+        }
+        else if ( CorrectWriting === 42) {
+            this.setState({
+                WritingScore: 360
+            }) 
+        }
+        else if (CorrectWriting === 43) {
+            this.setState({
+                WritingScore: 380
+            }) 
+        }
+        else if ( CorrectWriting === 44) {
+            this.setState({
+                WritingScore: 400
+            }) 
         }
 
-    }
-    ReadingScore() {
-        const {ReadingScore,  NumeberOfCorrectAnswersOfEachSubject} = this.state; 
+        //MATH
+        if (0 <=(CorrectMathWithCal + CorrectMathNoCal) <=1) {
+            this.setState({
+                MathScore: 200
+            }) 
+        } 
+        else if ( (CorrectMathWithCal + CorrectMathNoCal) === 2 ) {
+            this.setState({
+                MathScore: 210
+            }) 
+        }
+        else if ( (CorrectMathWithCal + CorrectMathNoCal) === 3) {
+            this.setState({
+                MathScore: 220
+            }) 
+        }
+        else if ( (CorrectMathWithCal + CorrectMathNoCal) === 4) {
+            this.setState({
+                MathScore: 230
+            }) 
+        }
+        else if ((CorrectMathWithCal + CorrectMathNoCal) === 5) {
+            this.setState({
+                MathScore: 250
+            }) 
+        }
+        else if ((CorrectMathWithCal + CorrectMathNoCal) === 6) {
+            this.setState({
+                MathScore: 270
+            }) 
+        }
+        else if ((CorrectMathWithCal + CorrectMathNoCal) === 7) {
+            this.setState({
+                MathScore: 280
+            }) 
+        }
+        else if ((CorrectMathWithCal + CorrectMathNoCal) === 8) {
+            this.setState({
+                MathScore: 300
+            }) 
+        }
+        else if ((CorrectMathWithCal + CorrectMathNoCal) === 9) {
+            this.setState({
+                MathScore: 310
+            }) 
+        }
+        else if ((CorrectMathWithCal + CorrectMathNoCal) === 10) {
+            this.setState({
+                MathScore: 320
+            }) 
+        }
+        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 11) {
+            this.setState({
+                MathScore: 340
+            }) 
+        }
+        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 12) {
+            this.setState({
+                MathScore: 350
+            }) 
+        }
+        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 13) {
+            this.setState({
+                MathScore: 360
+            }) 
+        }
+        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 14) {
+            this.setState({
+                MathScore: 370
+            }) 
+        }
+        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 15) {
+            this.setState({
+                MathScore: 380
+            }) 
+        }
+        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 16) {
+            this.setState({
+                MathScore: 390
+            }) 
+        }
+        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 17) {
+            this.setState({
+                MathScore: 400
+            }) 
+        }
+        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 18) {
+            this.setState({
+                MathScore: 410
+            }) 
+        }
+        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 19) {
+            this.setState({
+                MathScore: 420
+            }) 
+        }
+        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 20) {
+            this.setState({
+                MathScore: 430
+            }) 
+        }
+        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 21) {
+            this.setState({
+                MathScore: 440
+            }) 
+        }
+        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 22) {
+            this.setState({
+                MathScore: 450
+            }) 
+        }
+        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 23) {
+            this.setState({
+                MathScore: 460
+            }) 
+        }
+        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 24) {
+            this.setState({
+                MathScore: 470
+            }) 
+        }
+        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 25) {
+            this.setState({
+                MathScore: 480
+            }) 
+        }
+        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 26) {
+            this.setState({
+                MathScore: 490
+            }) 
+        }
+        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 27) {
+            this.setState({
+                MathScore: 500
+            }) 
+        }
+        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 28) {
+            this.setState({
+                MathScore: 500
+            }) 
+        }
+        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 29) {
+            this.setState({
+                MathScore: 510
+            }) 
+        }
+        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 30) {
+            this.setState({
+                MathScore: 520
+            }) 
+        }
+        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 31) {
+            this.setState({
+                MathScore: 520
+            }) 
+        }
+        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 32) {
+            this.setState({
+                MathScore: 530
+            }) 
+        }
+        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 33) {
+            this.setState({
+                MathScore: 540
+            }) 
+        }
+        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 34) {
+            this.setState({
+                MathScore: 540
+            }) 
+        }
+        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 35) {
+            this.setState({
+                MathScore: 550
+            }) 
+        }
+        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 36) {
+            this.setState({
+                MathScore: 560
+            }) 
+        }
+        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 37) {
+            this.setState({
+                MathScore: 570
+            }) 
+        }
+        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 38) {
+            this.setState({
+                MathScore: 580
+            }) 
+        }
+        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 39) {
+            this.setState({
+                MathScore: 580
+            }) 
+        }
+        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 40) {
+            this.setState({
+                MathScore: 590
+            }) 
+        }
+        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 41) {
+            this.setState({
+                MathScore: 600
+            })
+        }
+        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 42) {
+            this.setState({
+                MathScore: 610
+            }) 
+        }
+        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 43) {
+            this.setState({
+                MathScore: 610
+            }) 
+        }
+        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 44) {
+            this.setState({
+                MathScore: 620
+            }) 
+        }
+        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 45) {
+            this.setState({
+                MathScore: 630
+            }) 
+        }
+        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 46) {
+            this.setState({
+                MathScore: 640
+            }) 
+        }
+        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 47) {
+            this.setState({
+                MathScore: 650
+            }) 
+        }
+        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 48) {
+            this.setState({
+                MathScore: 660
+            }) 
+        }
+        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 49) {
+            this.setState({
+                MathScore: 670
+            }) 
+        }
+        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 50) {
+            this.setState({
+                MathScore: 680
+            }) 
+        }
+        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 51) {
+            this.setState({
+                MathScore: 690
+            }) 
+        }
+        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 52) {
+            this.setState({
+                MathScore: 700
+            }) 
+        }
+        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 53) {
+            this.setState({
+                MathScore: 710
+            }) 
+        }
+        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 54) {
+            this.setState({
+                MathScore: 730
+            }) 
+        }
+        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 55) {
+            this.setState({
+                MathScore: 750
+            }) 
+        }
+        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 56) {
+            this.setState({
+                MathScore: 770
+            }) 
+        }
+        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 57) {
+            this.setState({
+                MathScore: 790
+            }) 
+        }
+        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 58) {
+            this.setState({
+                MathScore: 800
+            }) 
+        }
 
-        if (0 <= NumeberOfCorrectAnswersOfEachSubject[1] <=3) {
-            ReadingScore = 100; 
-
-        } 
-        else if ( NumeberOfCorrectAnswersOfEachSubject[1] === 4 ) {
-            ReadingScore = 110; 
-        }
-        else if ( NumeberOfCorrectAnswersOfEachSubject[1] === 5) {
-            ReadingScore = 120; 
-        }
-        else if ( 6 <= NumeberOfCorrectAnswersOfEachSubject[1] <= 7) {
-            ReadingScore = 130; 
-        }
-        else if (NumeberOfCorrectAnswersOfEachSubject[1] === 8) {
-            ReadingScore = 140; 
-        }
-        else if (NumeberOfCorrectAnswersOfEachSubject[1] === 9) {
-            ReadingScore = 150; 
-        }
-        else if (10 <= NumeberOfCorrectAnswersOfEachSubject[1] <= 11) {
-            ReadingScore = 160; 
-        }
-        else if (12 <=NumeberOfCorrectAnswersOfEachSubject[1] <= 13) {
-            ReadingScore = 170; 
-        }
-        else if (14 <=NumeberOfCorrectAnswersOfEachSubject[1] <= 15) {
-            ReadingScore = 180; 
-        }
-        else if (16 <=NumeberOfCorrectAnswersOfEachSubject[1] <= 17) {
-            ReadingScore = 190; 
-        }
-        else if (18 <=NumeberOfCorrectAnswersOfEachSubject[1] <= 19) {
-            ReadingScore = 200; 
-        }
-        else if (20 <=NumeberOfCorrectAnswersOfEachSubject[1] <= 21) {
-            ReadingScore = 210; 
-        }
-        else if (22 <=NumeberOfCorrectAnswersOfEachSubject[1] <= 23) {
-            ReadingScore = 220; 
-        }
-        else if (24 <=NumeberOfCorrectAnswersOfEachSubject[1] <= 25) {
-            ReadingScore = 230; 
-        }
-        else if (26 <=NumeberOfCorrectAnswersOfEachSubject[1] <= 27) {
-            ReadingScore = 240; 
-        }
-        else if (28 <=NumeberOfCorrectAnswersOfEachSubject[1] <= 29) {
-            ReadingScore = 250; 
-        }
-        else if (30 <=NumeberOfCorrectAnswersOfEachSubject[1] <= 31) {
-            ReadingScore = 260; 
-        }
-        else if (NumeberOfCorrectAnswersOfEachSubject[1] === 32) {
-            ReadingScore = 270; 
-        }
-        else if (33 <=NumeberOfCorrectAnswersOfEachSubject[1] <= 34) {
-            ReadingScore = 280; 
-        }
-        else if (35 <=NumeberOfCorrectAnswersOfEachSubject[1] <= 36) {
-            ReadingScore = 290; 
-        }
-        else if (37 <=NumeberOfCorrectAnswersOfEachSubject[1] <= 38) {
-            ReadingScore = 300; 
-        }
-        else if (39 <= NumeberOfCorrectAnswersOfEachSubject[1] <= 41) {
-            ReadingScore = 310; 
-        }
-        else if ( 42 <= NumeberOfCorrectAnswersOfEachSubject[1] <= 43) {
-            ReadingScore = 320; 
-        }
-        else if (44 <= NumeberOfCorrectAnswersOfEachSubject[1] <= 45) {
-            ReadingScore = 330; 
-        }
-        else if ( NumeberOfCorrectAnswersOfEachSubject[1] === 46) {
-            ReadingScore = 340; 
-        }
-        else if ( NumeberOfCorrectAnswersOfEachSubject[1] === 47) {
-            ReadingScore = 350; 
-        }
-        else if (48 <= NumeberOfCorrectAnswersOfEachSubject[1] <= 49) {
-            ReadingScore = 360; 
-        }
-        else if ( NumeberOfCorrectAnswersOfEachSubject[1] === 50) {
-            ReadingScore = 370; 
-        }
-        else if ( NumeberOfCorrectAnswersOfEachSubject[1] === 51) {
-            ReadingScore = 380; 
-        }
-        else if ( NumeberOfCorrectAnswersOfEachSubject[1] === 52) {
-            ReadingScore = 400; 
-        }
-        return (ReadingScore); 
-    }
-    WritingScore() {
-        const {WritingScore,  NumeberOfCorrectAnswersOfEachSubject} = this.state; 
-        if (0 <= NumeberOfCorrectAnswersOfEachSubject[2] <=3) {
-            WritingScore = 100; 
-        } 
-        else if ( NumeberOfCorrectAnswersOfEachSubject[2] === 4 ) {
-            WritingScore = 110; 
-        }
-        else if ( NumeberOfCorrectAnswersOfEachSubject[2] === 5) {
-            WritingScore = 120; 
-        }
-        else if ( 6 <= NumeberOfCorrectAnswersOfEachSubject[2] <= 7) {
-            WritingScore = 130; 
-        }
-        else if (NumeberOfCorrectAnswersOfEachSubject[2] === 8) {
-            WritingScore = 140; 
-        }
-        else if (NumeberOfCorrectAnswersOfEachSubject[2] === 9) {
-            WritingScore = 150; 
-        }
-        else if (10 <= NumeberOfCorrectAnswersOfEachSubject[2] <= 11) {
-            WritingScore = 160; 
-        }
-        else if (12 <=NumeberOfCorrectAnswersOfEachSubject[2] <= 13) {
-            WritingScore = 170; 
-        }
-        else if (14 <=NumeberOfCorrectAnswersOfEachSubject[2] <= 16) {
-            WritingScore = 180; 
-        }
-        else if (17 <=NumeberOfCorrectAnswersOfEachSubject[2] <= 18) {
-            WritingScore = 190; 
-        }
-        else if (19 <=NumeberOfCorrectAnswersOfEachSubject[2] <= 20) {
-            WritingScore = 200; 
-        }
-        else if (21 <=NumeberOfCorrectAnswersOfEachSubject[2] <= 22) {
-            WritingScore = 210; 
-        }
-        else if (NumeberOfCorrectAnswersOfEachSubject[2] === 23) {
-            WritingScore = 220; 
-        }
-        else if (24 <=NumeberOfCorrectAnswersOfEachSubject[2] <= 25) {
-            WritingScore = 230; 
-        }
-        else if (26 <=NumeberOfCorrectAnswersOfEachSubject[2] <= 27) {
-            WritingScore = 240; 
-        }
-        else if (28 <=NumeberOfCorrectAnswersOfEachSubject[2] <= 29) {
-            WritingScore = 250; 
-        }
-        else if (NumeberOfCorrectAnswersOfEachSubject[2] === 30) {
-            WritingScore = 260; 
-        }
-        else if (31 <=NumeberOfCorrectAnswersOfEachSubject[2] === 32) {
-            WritingScore = 270; 
-        }
-        else if (NumeberOfCorrectAnswersOfEachSubject[2] === 33) {
-            WritingScore = 280; 
-        }
-        else if (34 <=NumeberOfCorrectAnswersOfEachSubject[2] <= 35) {
-            WritingScore = 290; 
-        }
-        else if (NumeberOfCorrectAnswersOfEachSubject[2] <= 36) {
-            WritingScore = 300; 
-        }
-        else if (37 <= NumeberOfCorrectAnswersOfEachSubject[2] <= 38) {
-            WritingScore = 310; 
-        }
-        else if (  NumeberOfCorrectAnswersOfEachSubject[2] === 39) {
-            WritingScore = 320; 
-        }
-        else if (NumeberOfCorrectAnswersOfEachSubject[2] ===40) {
-            WritingScore = 330; 
-        }
-        else if ( NumeberOfCorrectAnswersOfEachSubject[2] === 41) {
-            WritingScore = 340; 
-        }
-        else if ( NumeberOfCorrectAnswersOfEachSubject[2] === 42) {
-            WritingScore = 360; 
-        }
-        else if (48 <= NumeberOfCorrectAnswersOfEachSubject[2] <= 43) {
-            WritingScore = 380; 
-        }
-        else if ( NumeberOfCorrectAnswersOfEachSubject[2] === 44) {
-            WritingScore = 400; 
-        }
-      
-        return (WritingScore); 
-    }
-    MathScore() {
-        const {MathScore,  NumeberOfCorrectAnswersOfEachSubject} = this.state; 
-        let ScoreOfTwoMathTests = NumeberOfCorrectAnswersOfEachSubject[3] +  NumeberOfCorrectAnswersOfEachSubject[4]; 
-        if (0 <=ScoreOfTwoMathTests <=1) {
-            MathScore = 200; 
-        } 
-        else if ( ScoreOfTwoMathTests === 2 ) {
-            MathScore = 210; 
-        }
-        else if ( ScoreOfTwoMathTests === 3) {
-            MathScore = 220; 
-        }
-        else if ( ScoreOfTwoMathTests === 4) {
-            MathScore = 230; 
-        }
-        else if (ScoreOfTwoMathTests === 5) {
-            MathScore = 250; 
-        }
-        else if (ScoreOfTwoMathTests === 6) {
-            MathScore = 270; 
-        }
-        else if (ScoreOfTwoMathTests === 7) {
-            MathScore = 280; 
-        }
-        else if (ScoreOfTwoMathTests === 8) {
-            MathScore = 300; 
-        }
-        else if (ScoreOfTwoMathTests === 9) {
-            MathScore = 310; 
-        }
-        else if (ScoreOfTwoMathTests === 10) {
-            MathScore = 320; 
-        }
-        else if  (ScoreOfTwoMathTests === 11) {
-            MathScore = 340; 
-        }
-        else if  (ScoreOfTwoMathTests === 12) {
-            MathScore = 350; 
-        }
-        else if  (ScoreOfTwoMathTests === 13) {
-            MathScore = 360; 
-        }
-        else if  (ScoreOfTwoMathTests === 14) {
-            MathScore = 370; 
-        }
-        else if  (ScoreOfTwoMathTests === 15) {
-            MathScore = 380; 
-        }
-        else if  (ScoreOfTwoMathTests === 16) {
-            MathScore = 390; 
-        }
-        else if  (ScoreOfTwoMathTests === 17) {
-            MathScore = 400; 
-        }
-        else if  (ScoreOfTwoMathTests === 18) {
-            MathScore = 410; 
-        }
-        else if  (ScoreOfTwoMathTests === 19) {
-            MathScore = 420; 
-        }
-        else if  (ScoreOfTwoMathTests === 20) {
-            MathScore = 430; 
-        }
-        else if  (ScoreOfTwoMathTests === 21) {
-            MathScore = 440; 
-        }
-        else if  (ScoreOfTwoMathTests === 22) {
-            MathScore = 450; 
-        }
-        else if  (ScoreOfTwoMathTests === 23) {
-            MathScore = 460; 
-        }
-        else if  (ScoreOfTwoMathTests === 24) {
-            MathScore = 470; 
-        }
-        else if  (ScoreOfTwoMathTests === 25) {
-            MathScore = 480; 
-        }
-        else if  (ScoreOfTwoMathTests === 26) {
-            MathScore = 490; 
-        }
-        else if  (ScoreOfTwoMathTests === 27) {
-            MathScore = 500; 
-        }
-        else if  (ScoreOfTwoMathTests === 28) {
-            MathScore = 500; 
-        }
-        else if  (ScoreOfTwoMathTests === 29) {
-            MathScore = 510; 
-        }
-        else if  (ScoreOfTwoMathTests === 30) {
-            MathScore = 520; 
-        }
-        else if  (ScoreOfTwoMathTests === 31) {
-            MathScore = 520; 
-        }
-        else if  (ScoreOfTwoMathTests === 32) {
-            MathScore = 530; 
-        }
-        else if  (ScoreOfTwoMathTests === 33) {
-            MathScore = 540; 
-        }
-        else if  (ScoreOfTwoMathTests === 34) {
-            MathScore = 540; 
-        }
-        else if  (ScoreOfTwoMathTests === 35) {
-            MathScore = 550; 
-        }
-        else if  (ScoreOfTwoMathTests === 36) {
-            MathScore = 560; 
-        }
-        else if  (ScoreOfTwoMathTests === 37) {
-            MathScore = 570; 
-        }
-        else if  (ScoreOfTwoMathTests === 38) {
-            MathScore = 580; 
-        }
-        else if  (ScoreOfTwoMathTests === 39) {
-            MathScore = 580; 
-        }
-        else if  (ScoreOfTwoMathTests === 40) {
-            MathScore = 590; 
-        }
-        else if  (ScoreOfTwoMathTests === 41) {
-            MathScore = 600; 
-        }
-        else if  (ScoreOfTwoMathTests === 42) {
-            MathScore = 610; 
-        }
-        else if  (ScoreOfTwoMathTests === 43) {
-            MathScore = 610; 
-        }
-        else if  (ScoreOfTwoMathTests === 44) {
-            MathScore = 620; 
-        }
-        else if  (ScoreOfTwoMathTests === 45) {
-            MathScore = 630; 
-        }
-        else if  (ScoreOfTwoMathTests === 46) {
-            MathScore = 640; 
-        }
-        else if  (ScoreOfTwoMathTests === 47) {
-            MathScore = 650; 
-        }
-        else if  (ScoreOfTwoMathTests === 48) {
-            MathScore = 660; 
-        }
-        else if  (ScoreOfTwoMathTests === 49) {
-            MathScore = 670; 
-        }
-        else if  (ScoreOfTwoMathTests === 50) {
-            MathScore = 680; 
-        }
-        else if  (ScoreOfTwoMathTests === 51) {
-            MathScore = 690; 
-        }
-        else if  (ScoreOfTwoMathTests === 52) {
-            MathScore = 700; 
-        }
-        else if  (ScoreOfTwoMathTests === 53) {
-            MathScore = 710; 
-        }
-        else if  (ScoreOfTwoMathTests === 54) {
-            MathScore = 730; 
-        }
-        else if  (ScoreOfTwoMathTests === 55) {
-            MathScore = 750; 
-        }
-        else if  (ScoreOfTwoMathTests === 56) {
-            MathScore = 770; 
-        }
-        else if  (ScoreOfTwoMathTests === 57) {
-            MathScore = 790; 
-        }
-        else if  (ScoreOfTwoMathTests === 58) {
-            MathScore = 800; 
-        }
-        return (MathScore); 
+        this.setState({
+            isTestSubmitted: true,
+            Verbal: ReadingScore + WritingScore, 
+            Total: ReadingScore + WritingScore + MathScore
+        });
     }
 
     calculatePercentageOfAnsweredQuestions() {
