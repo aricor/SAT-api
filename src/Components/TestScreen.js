@@ -29,6 +29,7 @@ export default class TestScreen extends React.Component {
             sections: [
                 {
                     id:1, 
+                    defaultTimer: 65,
                     sectionType:  'reading', 
                     title: "This passage is from James Joyce, The Dubliners originally published in 1914",
                     passage: '1914 Mr Holohan, assistant secretary of the Eire Abu Society, had been walking up and down Dublin for nearly a month, with his hands and pockets full of dirty pieces of paper, arranging about the series of concerts. He had a game leg and for this his friends called him Hoppy Holohan. He walked up and down constantly, stood by the hour at street corners arguing the point and made notes; but in the end it was Mrs Kearney who arranged every Miss Devlin had become Mrs Kearney out of spite. She had been educated in a', 
@@ -109,6 +110,7 @@ export default class TestScreen extends React.Component {
 
                 {
                     id:2, 
+                    defaultTimer: 65,
                             sectionType: 'reading', 
                             IsLastSectionType: true, 
                             title: 'Questions 11-20 are based on the following passage and supplementary material.', 
@@ -188,6 +190,7 @@ export default class TestScreen extends React.Component {
                 
                 {
                     id:3, 
+                    defaultTimer: 1,
                             sectionType: 'writing', 
                             IsLastSectionType: false, 
                             title:' Violet Wood Sorrel Plant', 
@@ -268,6 +271,7 @@ export default class TestScreen extends React.Component {
 
                 {
                     id:4, 
+                    defaultTimer: 1,
                             sectionType: 'writing', 
                             IsLastSectionType: true, 
                             title:' Violet Wood Sorrel Plant 2', 
@@ -348,6 +352,7 @@ export default class TestScreen extends React.Component {
                 
                 {
                     id:5, 
+                    defaultTimer: 20,
                             sectionType: 'mathNoCal', 
                             IsLastSectionType: true, 
 
@@ -441,6 +446,7 @@ export default class TestScreen extends React.Component {
 
                 {
                     id:6,
+                    defaultTimer: 20,
                     sectionType: 'mathWithCal', 
                     IsLastSectionType: true, 
                     questions: [
@@ -1357,21 +1363,11 @@ export default class TestScreen extends React.Component {
                       };
                 })
             })
-       // sections.map((section) => {
-       //     section.questions.map((question) => {
-       //         if (question.selectedChoice != '') {
-       //           numberOfAnsweredQuestions = numberOfAnsweredQuestions + 1;
-       //         };
-       //     })
-       // });
 
         let allQuestions = [];
             sections.map((section) => {
                 allQuestions = [...allQuestions, ...section.questions]; 
             })
-      //  sections.map((section) => {
-       //   allQuestions = [...allQuestions, ...section.questions]; 
-       // });
 
         return (numberOfAnsweredQuestions * 100) / allQuestions.length;
     }
@@ -1382,15 +1378,7 @@ export default class TestScreen extends React.Component {
          */ 
         const {subjects} = this.state;
         return subjects.some((subject) => subject.sections.some((section) => section.questions.map((question) => question.selectedChoice === '' ))); 
-  //  return sections.some((section) => section.questions.some((question) => question.selectedChoice === ''));
-    }
-
-  //  IsTheLastPage() {
-    //    const {sections, currentSection} = this.state;
-        /*  if id of the current section = the size of the sections then return true */
-   //     return ((currentSection === sections.length-1))
-
-    //}    
+    }  
 
     IsNotTheFirstPage() {
         const {currentSection} = this.state;
@@ -1414,12 +1402,7 @@ export default class TestScreen extends React.Component {
          * 
          */
 
-    //    let allQuestions = [];
-      //  sections.map((section) => {
-      //    allQuestions = [...allQuestions, ...section.questions]; 
-       // });
-        //const percentageOfCorrectAnswers = (numberOfCorrectAnswers*100)/sections.questions.length;
-        if(isTestSubmitted) {
+       if(isTestSubmitted) {
             
             return (
                 <div className="appContainer">
@@ -1438,10 +1421,11 @@ export default class TestScreen extends React.Component {
         console.log(this.state.CorrectWriting);
         console.log(this.state.CorrectMathNoCal);
         console.log(this.state.CorrectMathWithCal);
+        const currentSectionObject = sections[currentSection];
 
         return <div className="appContainer">
             <div className= "header">
-            <Timer/>            
+            <Timer initialTimer={currentSectionObject.defaultTimer} sectionType={currentSectionObject.sectionType}/>            
             </div>
             <div className="testContainer">
 
