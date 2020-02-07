@@ -182,7 +182,7 @@ export default class TestScreen extends React.Component {
                 
                 {
                     id:3, 
-                    defaultTimer: 15,
+                    defaultTimer: 1,
                             sectionType: 'writing', 
                             IsLastSectionType: false, 
                             title:' Violet Wood Sorrel Plant', 
@@ -263,7 +263,7 @@ export default class TestScreen extends React.Component {
 
                 {
                     id:4, 
-                    defaultTimer: 15,
+                    defaultTimer: 1,
                             sectionType: 'writing', 
                             IsLastSectionType: true, 
                             title:' Violet Wood Sorrel Plant 2', 

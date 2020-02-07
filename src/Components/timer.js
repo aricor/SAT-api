@@ -58,11 +58,11 @@ export default class Timer extends Component {
             );
         } else if (minutes === 0 & seconds <= 15) {
             return (
-                <h1>### WARNING ### Time Remaining: {minutes}:{seconds < 10 ? `0${seconds}` : seconds}</h1>
+                <h1>### WARNING ### Time Remaining: {minutes < 10 ? `0${minutes}`: minutes} :{seconds < 10 ? `0${seconds}` : seconds}</h1>
             )
         } else {
             return (
-                <h1>Time Remaining: {minutes}:{seconds < 10 ? `0${seconds}` : seconds}</h1>
+                <h1>Time Remaining: {minutes < 10 ? `0${minutes}`: minutes}:{seconds < 10 ? `0${seconds}` : seconds}</h1>
             );
         }
 
