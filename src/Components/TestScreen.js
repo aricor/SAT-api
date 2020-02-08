@@ -1540,7 +1540,7 @@ export default class TestScreen extends React.Component {
                 <Timer 
                     initialTimer={currentSectionObject.defaultTimer} 
                     sectionType={currentSectionObject.sectionType}
-                    onTimeEnd={() => this.moveToAnotherSubject()}
+                    onTimeEnd={() => this.currentSectionObject.moveToAnotherSubject()}
                 />            
             </div>
             <div className="testContainer">
