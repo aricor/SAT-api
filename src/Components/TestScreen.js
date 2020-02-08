@@ -772,13 +772,32 @@ export default class TestScreen extends React.Component {
                                     }
                                 }, () => this.CalculateScores());
                             }
+                        })
 
+                        section.fillInQuestions.map((fillInQuestion) => {
+                            if (fillInQuestion.correctAnswer ===fillInQuestion.input ) {
+                                this.setState(currentState => {
+                                    return {
+                                        CorrectMathNoCal: currentState.CorrectMathNoCal + 1
+                                    }
+                                }, () => this.CalculateScores());
+                            }
                         })
                     }
                     else if(section.sectionType === 'mathWithCal' ) {
                         section.questions.map((question) => {
                             const correctAnswer = question.choices.find((choice) => choice.check === true);
                             if(correctAnswer.id === question.selectedChoice) { 
+                                this.setState(currentState => {
+                                    return {
+                                        CorrectMathWithCal: currentState.CorrectMathWithCal + 1
+                                    }
+                                }, () => this.CalculateScores());
+                            }
+                        })
+
+                        section.fillInQuestions.map((fillInQuestion) => {
+                            if (fillInQuestion.correctAnswer ===fillInQuestion.input ) {
                                 this.setState(currentState => {
                                     return {
                                         CorrectMathWithCal: currentState.CorrectMathWithCal + 1
