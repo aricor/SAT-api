@@ -1474,15 +1474,18 @@ export default class TestScreen extends React.Component {
     }
     moveToAnotherSubject() {
         const {sections,currentSection } = this.state;
-        const section1 = sections[currentSection];
-        const section2 = sections[currentSection + 1];
+        let section1 = sections[currentSection];
+        let section2 = sections[currentSection + 1];
+        
+        let nextSection = 0;
         while (section1.sectionType === section2.sectionType) {
-            this.setState({
-                currentSection: currentSection + 1
-            })
+            nextSection = nextSection + 1;
+            section1 = sections[nextSection];
+            section2 = sections[nextSection + 1];
         }
+
         this.setState({
-            currentSection: currentSection + 1
+            currentSection: nextSection + 1,
         })
     }
     render() {
