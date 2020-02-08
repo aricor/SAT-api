@@ -32,7 +32,7 @@ export default class TestScreen extends React.Component {
                     defaultTimer: 65,
                     sectionType:  'reading', 
                     title: "This passage is from James Joyce, The Dubliners originally published in 1914",
-                    passage: '1914 Mr Holohan, assistant secretary of the Eire Abu Society, had been walking up and down Dublin for nearly a month, with his hands and pockets full of dirty pieces of paper, arranging about the series of concerts. He had a game leg and for this his friends called him Hoppy Holohan. He walked up and down constantly, stood by the hour at street corners arguing the point and made notes; but in the end it was Mrs Kearney who arranged every Miss Devlin had become Mrs Kearney out of spite. She had been educated in a', 
+                    passage: 'Mr Holohan, assistant secretary of the Eire Abu Society, had been walking up and down Dublin for nearly a month, with his hands and pockets full of dirty pieces of paper, arranging about the series of concerts. He had a game leg and for this his friends called him Hoppy Holohan. He walked up and down constantly, stood by the hour at street corners arguing the point and made notes; but in the end it was Mrs Kearney who arranged everything.', 
                     IsLastSectionType: false, 
                     IsFirstSectionType: true, 
 

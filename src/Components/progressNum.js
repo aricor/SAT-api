@@ -6,7 +6,7 @@ const ProgressNum = props => {
         const section = props.sections[props.currentSection];
         return (
             section.questions.map((question) => {
-                const buttonColor = question.selectedChoice != '' ? 'btn-primary' : 'btn-secondary';
+                const buttonColor = question.selectedChoice != '' ? 'btn-dark' : 'btn-secondary';
                 return (
                     <div class="d-flex justify-content-center">
                         <div className="btn-toolbar">
