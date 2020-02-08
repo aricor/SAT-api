@@ -29,13 +29,12 @@ export default class TestScreen extends React.Component {
             sections: [
                 {
                     id:1, 
-                    defaultTimer: 1,
+                    defaultTimer: 65,
                     sectionType:  'reading', 
                     title: "This passage is from James Joyce, The Dubliners originally published in 1914",
                     passage: 'Mr Holohan, assistant secretary of the Eire Abu Society, had been walking up and down Dublin for nearly a month, with his hands and pockets full of dirty pieces of paper, arranging about the series of concerts. He had a game leg and for this his friends called him Hoppy Holohan. He walked up and down constantly, stood by the hour at street corners arguing the point and made notes; but in the end it was Mrs Kearney who arranged everything.', 
                     IsLastSectionType: false, 
                     IsFirstSectionType: true, 
-
                     questions: [
                         {
                             id: 1,
@@ -112,7 +111,7 @@ export default class TestScreen extends React.Component {
 
                 {
                     id:2, 
-                    defaultTimer: 1,
+                    defaultTimer: 65,
                             sectionType: 'reading', 
                             IsLastSectionType: true, 
                             IsFirstSectionType: false, 
@@ -192,7 +191,7 @@ export default class TestScreen extends React.Component {
                 }, 
                 {
                     id:3, 
-                    defaultTimer: 1,
+                    defaultTimer: 10,
                             sectionType: 'break', 
                             IsLastSectionType: true, 
                             IsFirstSectionType: true, 
@@ -367,7 +366,7 @@ export default class TestScreen extends React.Component {
                 
                 {
                     id:6, 
-                    defaultTimer: 20,
+                    defaultTimer: 25,
                             sectionType: 'mathNoCal', 
                             IsLastSectionType: true, 
                             IsFirstSectionType: true, 
@@ -472,7 +471,7 @@ export default class TestScreen extends React.Component {
                 }, 
                 {
                     id:8,
-                    defaultTimer: 20,
+                    defaultTimer: 55,
                     sectionType: 'mathWithCal', 
                     IsLastSectionType: true, 
                     questions: [

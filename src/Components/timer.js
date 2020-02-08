@@ -55,7 +55,7 @@ export default class Timer extends Component {
         const { minutes, seconds } = this.state;
         if (minutes === 0 && seconds === 0) {
             return (
-                <h1>Busted!</h1>
+                <h1>Time's up!</h1>
             );
         } else if (minutes === 0 & seconds <= 15) {
             return (
