@@ -700,9 +700,15 @@ export default class TestScreen extends React.Component {
 
                 <div className="passageSection">
                 <div className="passagename">
-                <b>{section.title}</b>
+                    <div className= "title">
+                        <b>{section.title}</b>
+                    </div>
+
                 </div>
-                <Highlight passage = {section.passage}/>
+                    <div className= "passageToRead">
+                        <Highlight passage = {section.passage}/>
+
+                    </div>
                 </div>
             ) 
         }        
