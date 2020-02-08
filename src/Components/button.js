@@ -20,7 +20,7 @@ const ButtonComponent = props => {
                     onClick={() => props.onClick(choice.id)}  
                     className="btn-circle" 
                     outline={!selected} 
-                    color="primary">
+                    color="warning">
                     {choice.opt}
                 </Button>
                 <span className="m-2">

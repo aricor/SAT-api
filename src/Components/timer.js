@@ -64,7 +64,9 @@ export default class Timer extends Component {
             )
         } else {
             return (
-                <h1>Time Remaining: {minutes < 10 ? `0${minutes}`: minutes}:{seconds < 10 ? `0${seconds}` : seconds}</h1>
+                <h1>
+                    {minutes < 10 ? `0${minutes}`: minutes}:{seconds < 10 ? `0${seconds}` : seconds}
+                </h1>
             );
         }
 
@@ -73,9 +75,13 @@ export default class Timer extends Component {
     render() {
         return (
             <div className="timerContainer">
+                <div className="sectionType">
                 <h2>{this.props.sectionType}</h2>
-                <h2>Elite Prep VN</h2>
+                </div>
+                    <a href="https://www.facebook.com/eliteprepvn/" className="elite">Elite Prep VN</a>
+                <div className="timer">
                 {this.renderTimerText()}
+                </div>
             </div>
         )
     };

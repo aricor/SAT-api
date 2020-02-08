@@ -20,7 +20,7 @@
     justify-content: space-evenly;
 }
 .passageSection {
-    background-color: rgba(210, 215, 211, 1);
+    background-color: #F4D293;
     overflow-y: auto;
     overflow-x: auto; 
     width: 50%;

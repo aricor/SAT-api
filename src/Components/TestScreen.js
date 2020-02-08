@@ -192,7 +192,7 @@ export default class TestScreen extends React.Component {
                 }, 
                 {
                     id:3, 
-                    defaultTimer: 10,
+                    defaultTimer: 1,
                             sectionType: 'break', 
                             IsLastSectionType: true, 
                             IsFirstSectionType: true, 
@@ -728,7 +728,7 @@ export default class TestScreen extends React.Component {
             buttonText = 'Submit'; 
         }
 
-        return (<button className="btn btn-primary m-2" onClick={() => this.checkingAllQuestions()}>{buttonText}</button>);
+        return (<button className="btn btn-dark m-2" onClick={() => this.checkingAllQuestions()}>{buttonText}</button>);
 
     }
     
@@ -1466,6 +1466,19 @@ export default class TestScreen extends React.Component {
         const section = sections[currentSection];
         return (section.IsFirstSectionType === true); 
     }
+    moveToAnotherSubject() {
+        const {sections,currentSection } = this.state;
+        const section1 = sections[currentSection];
+        const section2 = sections[currentSection + 1];
+        while (section1.sectionType === section2.sectionType) {
+            this.setState({
+                currentSection: currentSection + 1
+            })
+        }
+        this.setState({
+            currentSection: currentSection + 1
+        })
+    }
     render() {
         const {
             isTestSubmitted,
@@ -1502,7 +1515,7 @@ export default class TestScreen extends React.Component {
                     <h2>Number of correct Math (No Calculator) section: {CorrectMathNoCal} (out of 20)</h2>
                     <h2>Number of correct Math (With Calculator) section: {CorrectMathWithCal} (out of 38)</h2>
 
-                    <button className="btn btn-primary"  onClick={() => this.setState({ currentSection: currentSection - 1})}> Go Back To Review</button>
+                    <button className="btn btn-dark"  onClick={() => this.setState({ currentSection: currentSection - 1})}> Go Back To Review</button>
                 </div>
             );
         }
@@ -1518,7 +1531,7 @@ export default class TestScreen extends React.Component {
                 <Timer 
                     initialTimer={currentSectionObject.defaultTimer} 
                     sectionType={currentSectionObject.sectionType}
-                    onTimeEnd={() => alert('replace this alert with the function (setState) that moves to the next subject. it should move the currentSection to the right one')}
+                    onTimeEnd={() => this.moveToAnotherSubject()}
                 />            
             </div>
             <div className="testContainer">
@@ -1528,7 +1541,7 @@ export default class TestScreen extends React.Component {
                 <div className="questionSection">
                     <div className="article2">
                     {this.renderAllQuestions()}
-                    {!this.IsTheFirstSectionType() ?  <button className="btn btn-primary"  onClick={() => this.setState({ currentSection: currentSection - 1})}> Back</button> : '' }
+                    {!this.IsTheFirstSectionType() ?  <button className="btn btn-dark"  onClick={() => this.setState({ currentSection: currentSection - 1})}> Back</button> : '' }
                     {this.renderRightButton()}
                     </div>
                 </div>
@@ -1540,7 +1553,7 @@ export default class TestScreen extends React.Component {
             </div>
             <div className = "progressbar">
                 <div> 
-                    <Progress animated color="info" value={this.calculatePercentageOfAnsweredQuestions()} />
+                    <Progress animated color="warning" value={this.calculatePercentageOfAnsweredQuestions()} />
                 </div>
             </div>
         </div>
