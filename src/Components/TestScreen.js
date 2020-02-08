@@ -763,9 +763,8 @@ export default class TestScreen extends React.Component {
             sections, 
         } = this.state; 
         const section = sections[currentSection]; 
-        section.passage.map((para) => {
-            return para.content; 
-        })
+        return section.passage.map((para) => <div> {para.content}</div>); 
+
     }
     renderRightButton() {
         const {
