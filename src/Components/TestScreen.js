@@ -32,7 +32,18 @@ export default class TestScreen extends React.Component {
                     defaultTimer: 65,
                     sectionType:  'reading', 
                     title: "This passage is from James Joyce, The Dubliners originally published in 1914",
-                    passage: 'Mr Holohan, assistant secretary of the Eire Abu Society, had been walking up and down Dublin for nearly a month, with his hands and pockets full of dirty pieces of paper, arranging about the series of concerts. He had a game leg and for this his friends called him Hoppy Holohan. He walked up and down constantly, stood by the hour at street corners arguing the point and made notes; but in the end it was Mrs Kearney who arranged everything.', 
+                    passage: [
+                        {
+                            id:1, 
+                            content: 'Mr Holohan, assistant secretary of the Eire Abu Society, had been walking up and down Dublin for nearly a month, with his hands and pockets full of dirty pieces of paper, arranging about the series of concerts. He had a game leg and for this his friends called him Hoppy Holohan. He walked up and down constantly, stood by the hour at street corners arguing the point and made notes; but in the end it was Mrs Kearney who arranged everything.', 
+                        }, 
+                        {
+                            id:2, 
+                            content: ' Miss Devlin had become Mrs Kearney out of spite. She had been educated in a high-class convent, where she had learned French and music. As she was naturally pale and unbending in manner she made few friends at school. When she came to the age of marriage she was sent out to many houses where her playing and ivory manners were much admired. She sat amid the chilly circle of her  accomplishments, waiting for some suitor to brave it and offer her a brilliant life. But the young men whom she met were Kathleen, to a good convent, where she learned French and music, and afterward paid her fees at the Academy. Every year in the month of July Mrs Kearney found occasion to say to some friend:', 
+                        }
+
+
+                    ], 
                     IsLastSectionType: false, 
                     IsFirstSectionType: true, 
                     questions: [
@@ -115,8 +126,19 @@ export default class TestScreen extends React.Component {
                             sectionType: 'reading', 
                             IsLastSectionType: true, 
                             IsFirstSectionType: false, 
-                            title: 'Questions 11-20 are based on the following passage and supplementary material.', 
-                            passage: 'The central aim of the current study was to eschew the experimental context traditionally used to study over-imitation, in order to determine whether visibly causally irrelevant actions would be copied in a naturalistic context in which the participants were unaware that they were taking part in an experiment, and therefore free from any social pressures. In order to achieve such a real-world context our child and adult participants viewed an individual, whom they believed to be another zoo visitor, retrieve a reward from inside a transparent puzzle box, using an action sequence which contained elements that were readily discernible as causally irrelevant. The task demonstration involved the model performing a sequence of causally',
+                            title: 'This passage and the figures are adapted from Whiten et. al Social Learning in the Real World © 2016', 
+                            passage: [
+                                {
+                                    id:1, 
+                                    content: 'The central aim of the current study was to eschew the experimental context traditionally used to study over-imitation, in order to determine whether visibly causally irrelevant actions would be copied in a naturalistic context in which the participants were unaware that they were taking part in an experiment, and therefore free from any social pressures. In order to achieve such a real-world context our child and adult participants viewed an individual, whom they believed to be another zoo visitor, retrieve a reward from inside a transparent puzzle box, using an action sequence which contained elements that were readily discernible as causally irrelevant.', 
+                                }, 
+        
+                                {
+                                    id:2, 
+                                    content: 'The task demonstration involved the model performing a sequence of causally irrelevant actions towards a bolt ‘defense’ situated on the top of the box before ultimately withdrawing a reward from inside the box using a magnet tipped probe. The causally irrelevant elements of the demonstration were always performed first and comprised two stages: 1) the probe was used to slide out the bolt defense in order to uncover a hole on top of the box, and 2) the probe was inserted into the hole and struck multiple times against a false ceiling inside the box.', 
+                                }
+        
+                            ],                            
                             questions: [
                                 {
                                     id: 3,
@@ -196,7 +218,7 @@ export default class TestScreen extends React.Component {
                             IsLastSectionType: true, 
                             IsFirstSectionType: true, 
                             title:'', 
-                            passage:'', 
+                            passage:[], 
                             questions:[], 
                             
                 }, 
@@ -208,7 +230,18 @@ export default class TestScreen extends React.Component {
                             IsLastSectionType: false, 
                             IsFirstSectionType: true, 
                             title:' Violet Wood Sorrel Plant', 
-                            passage: 'only attraction possessed by this charming little plant. As a family, the wood-sorrels have great interest for botanists since Darwin devoted such         1 long study to their power of movement. and many other scientists have described the several forms assumed by perfect flowers of the same',
+                            passage: [
+                                {
+                                    id:1, 
+                                    content: 'Beauty of leaf and blossom is not the only attraction possessed by this charming little plant. As a family, the wood-sorrels have great interest for botanists since Darwin devoted such [1. long] study to their power of movement. and many other scientists have described the several forms assumed by perfect flowers of the same.', 
+                                }, 
+        
+                                {
+                                    id:2, 
+                                    content: 'was inserted into the hole and struck multiple times against a false ceiling inside the box.', 
+                                }
+        
+                            ],   
                             questions: [
                                 {
                                     id: 1,
@@ -290,7 +323,18 @@ export default class TestScreen extends React.Component {
                             IsLastSectionType: true, 
                             IsFirstSectionType: false, 
                             title:' Violet Wood Sorrel Plant 2', 
-                            passage: 'The first Ohio stories are part of the common story of the wonderful Ice Age, when a frozen deluge pushed down from the north and covered a vast part of the earth’s surface with slowly moving glaciers',
+                            passage: [
+                                {
+                                    id:1, 
+                                    content: 'Beauty of leaf and blossom is not the only attraction possessed by this charming little plant. As a family, the wood-sorrels have great interest for botanists since Darwin devoted such [1. long] study to their power of movement. and many other scientists have described the several forms assumed by perfect flowers of the same.', 
+                                }, 
+        
+                                {
+                                    id:2, 
+                                    content: 'was inserted into the hole and struck multiple times against a false ceiling inside the box.', 
+                                }
+        
+                            ],   
                             questions: [
                                 {
                                     id: 3,
@@ -466,7 +510,7 @@ export default class TestScreen extends React.Component {
                     IsLastSectionType: true, 
                     IsFirstSectionType: true, 
                     title:'', 
-                    passage:'', 
+                    passage:[], 
                     questions:[], 
                 }, 
                 {
@@ -705,7 +749,7 @@ export default class TestScreen extends React.Component {
 
                 </div>
                     <div className= "passageToRead">
-                        <Highlight passage = {section.passage}/>
+                        <Highlight displayP = {() => this.displayPassage()}/>
 
                     </div>
                 </div>
@@ -713,6 +757,16 @@ export default class TestScreen extends React.Component {
         }        
     }
 
+    displayPassage() {
+        const {
+            currentSection, 
+            sections, 
+        } = this.state; 
+        const section = sections[currentSection]; 
+        section.passage.map((para) => {
+            return para.content; 
+        })
+    }
     renderRightButton() {
         const {
             currentSection,
