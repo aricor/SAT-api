@@ -1476,8 +1476,15 @@ export default class TestScreen extends React.Component {
         const {sections,currentSection } = this.state;
         let section1 = sections[currentSection];
         let section2 = sections[currentSection + 1];
+
+        if (!section2) {
+            this.setState({
+                isTestSubmitted: true,
+            });
+            return;
+        }
         
-        let nextSection = 0;
+        let nextSection = currentSection;
         while (section1.sectionType === section2.sectionType) {
             nextSection = nextSection + 1;
             section1 = sections[nextSection];

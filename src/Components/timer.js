@@ -25,7 +25,6 @@ export default class Timer extends Component {
             }
             if (seconds === 0) {
                 if (minutes === 0) {
-                    clearInterval(this.myInterval);
                     this.props.onTimeEnd();
                 } else {
                     this.setState(({ minutes }) => ({
@@ -38,7 +37,7 @@ export default class Timer extends Component {
     }
 
     static getDerivedStateFromProps(nextProps, prevProps) {
-        if(nextProps.sectionType !== prevProps.sectionType || (prevProps.minutes === 0 && prevProps.seconds === 0 )){
+        if(nextProps.sectionType !== prevProps.sectionType){
             return {
                 minutes: nextProps.initialTimer, 
                 seconds: 0,
