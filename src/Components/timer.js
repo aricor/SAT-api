@@ -74,7 +74,7 @@ export default class Timer extends Component {
         return (
             <div className="timerContainer">
                 <h2>{this.props.sectionType}</h2>
-                <h2>Elite Prep VN</h2>
+                <img src={require('./elite.png')} alt="fireSpot"/>
                 {this.renderTimerText()}
             </div>
         )

@@ -192,7 +192,7 @@ export default class TestScreen extends React.Component {
                 }, 
                 {
                     id:3, 
-                    defaultTimer: 10,
+                    defaultTimer: 1,
                             sectionType: 'break', 
                             IsLastSectionType: true, 
                             IsFirstSectionType: true, 
@@ -820,7 +820,7 @@ export default class TestScreen extends React.Component {
                     }
                     else {
                         this.setState({
-                            currentSection: currentSection + 0,
+                            currentSection: currentSection ,
                         });
                     }            
                 }
@@ -1428,7 +1428,6 @@ export default class TestScreen extends React.Component {
         }))
     }
 
-
     calculatePercentageOfAnsweredQuestions() {
         const {sections} = this.state; 
         let numberOfAnsweredQuestions = 0;
@@ -1465,6 +1464,21 @@ export default class TestScreen extends React.Component {
 
         const section = sections[currentSection];
         return (section.IsFirstSectionType === true); 
+    }
+
+    moveToAnotherSubject() {
+        const {sections, currentSection} = this.state; 
+
+        const section1 = sections[currentSection];
+        const section2 = sections[currentSection + 1]; 
+        while (section1.sectionType === section2.sectionType) {
+            this.setState({
+                currentSection: currentSection + 1,
+            })
+        }
+        this.setState({
+            currentSection: currentSection + 1,
+        })
     }
     render() {
         const {
@@ -1518,9 +1532,11 @@ export default class TestScreen extends React.Component {
                 <Timer 
                     initialTimer={currentSectionObject.defaultTimer} 
                     sectionType={currentSectionObject.sectionType}
-                    onTimeEnd={() => alert('replace this alert with the function (setState) that moves to the next subject. it should move the currentSection to the right one')}
-                />            
+                    onTimeEnd={() =>this.currentSectionObject.moveToAnotherSubject()}
+                />     
+
             </div>
+            
             <div className="testContainer">
 
                 {this.addPassageOrNot()}
@@ -1544,7 +1560,7 @@ export default class TestScreen extends React.Component {
                 </div>
             </div>
         </div>
-        
     }
+
 }
 
