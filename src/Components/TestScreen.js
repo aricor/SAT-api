@@ -5,7 +5,7 @@ import Highlight from './getHighlight'
 import ButtonComponent from './button'
 import ProgressNum from './progressNum'
 import {Progress} from 'reactstrap'
-import MathComponent from './MathComponent'
+import MathComponent from './mathComponent'
 export default class TestScreen extends React.Component {
 
     constructor(props) {
@@ -15,17 +15,17 @@ export default class TestScreen extends React.Component {
             currentSection: 0,
             currentSubject:0, 
             NumeberOfCorrectAnswersOfEachSubject: [], 
-            ReadingScore: 0, 
-            WritingScore: 0, 
-            MathScore: 0,
-            MathNoCal:0, 
-            MathWithCal:0, 
-            CorrectReading: 0, 
-            CorrectWriting: 0,
-            CorrectMathNoCal:0, 
-            CorrectMathWithCal:0, 
-            Verbal: 0, 
-            Total:0, 
+            readingScore: 0, 
+            writingScore: 0, 
+            mathScore: 0,
+            mathNoCal:0, 
+            mathWithCal:0, 
+            correctReading: 0, 
+            correctWriting: 0,
+            correctmathNoCal:0, 
+            correctmathWithCal:0, 
+            verbal: 0, 
+            total:0, 
             sections: [
                 {
                     id:1, 
@@ -39,9 +39,20 @@ export default class TestScreen extends React.Component {
                         }, 
                         {
                             id:2, 
-                            content: ' Miss Devlin had become Mrs Kearney out of spite. She had been educated in a high-class convent, where she had learned French and music. As she was naturally pale and unbending in manner she made few friends at school. When she came to the age of marriage she was sent out to many houses where her playing and ivory manners were much admired. She sat amid the chilly circle of her  accomplishments, waiting for some suitor to brave it and offer her a brilliant life. But the young men whom she met were Kathleen, to a good convent, where she learned French and music, and afterward paid her fees at the Academy. Every year in the month of July Mrs Kearney found occasion to say to some friend:', 
-                        }
-
+                            content: ' Miss Devlin had become Mrs Kearney out of spite. She had been educated in a high-class convent, where she had learned French and music. As she was naturally pale and unbending in manner she made few friends at school. When she came to the age of marriage she was sent out to many houses where her playing and ivory manners were much admired. She sat amid the chilly circle of her  accomplishments, waiting for some suitor to brave it and offer her a brilliant life. But the young men whom she met were ordinary and she gave them no encouragement, trying to console her romantic desires by eating a great deal of Turkish Delight in secret. However, when she drew near the limit and her friends began to loosen their tongues about her, she silenced them by marrying Mr Kearney, who was a bootmaker on Ormond Quay.', 
+                        }, 
+                        {
+                            id:3, 
+                            content: 'He was much older than she. His conversation, which was serious, took place at intervals in his great brown beard. After the first year of married life, Mrs Kearney perceived that such a man would wear better than a romantic person, but she never put her own romantic ideas away. He was sober, thrifty and pious; he went to the altar every first Friday, sometimes with her, oftener by himself. But she never weakened in her religion and was a good wife to him. At some party in a strange house when she lifted her eyebrow ever so slightly he stood up to take his leave and, when his cough troubled him, she put the eider-down quilt over his feet and made a strong rum punch. For his part, he was a model father. By paying a small sum every week into a society, he ensured for both his daughters a dowry of one hundred pounds each when they came to the age of twenty-four. He sent the elder daughter, Kathleen, to a good convent, where she learned French and music, and afterward paid her fees at the Academy. Every year in the month of July Mrs Kearney found occasion to say to some friend:', 
+                        }, 
+                        {
+                            id:4, 
+                            content: '"My good man is packing us off to Skerries for a few weeks.” If it was not Skerries it was Howth or Greystones.', 
+                        }, 
+                        {
+                            id:5, 
+                            content: 'When the Irish Revival began to be appreciable Mrs Kearney determined to take advantage of her daughter\'s name and brought an Irish teacher to the house. Kathleen and her sister sent Irish picture postcards to their friends and these friends sent back other Irish picture postcards. On special Sundays, when Mr Kearney went with his family to the pro-cathedral, a little crowd of people would assemble after mass at the corner of Cathedral Street. They were all friends of the Kearneys—musical friends or Nationalist friends; and, when they had played every little counter of gossip, they shook hands with one another all together, laughing at the crossing of so many hands, and said good-bye to one another in Irish. Soon the name of Miss Kathleen Kearney began to be heard often on people\'s lips. People said that she was very clever at music and a very nice girl and, moreover, that she was a believer in the language movement. Mrs Kearney was well content at this.', 
+                        }, 
 
                     ], 
                     IsLastSectionType: false, 
@@ -136,8 +147,31 @@ export default class TestScreen extends React.Component {
                                 {
                                     id:2, 
                                     content: 'The task demonstration involved the model performing a sequence of causally irrelevant actions towards a bolt ‘defense’ situated on the top of the box before ultimately withdrawing a reward from inside the box using a magnet tipped probe. The causally irrelevant elements of the demonstration were always performed first and comprised two stages: 1) the probe was used to slide out the bolt defense in order to uncover a hole on top of the box, and 2) the probe was inserted into the hole and struck multiple times against a false ceiling inside the box.', 
-                                }
-        
+                                }, 
+                                {
+                                    id:3, 
+                                    content: 'On completion of the irrelevant actions the model performed a two stage causally relevant sequence: 1) a second door defense on the front of the box was manually moved in order to uncover a hole on the face of the box, and 2) the probe was inserted into the hole behind to retrieve the reward from an opaque tunnel. Of interest was whether participants would copy all of the actions that were irrespective of their causal relevance (i.e., over-imitate), or perform only the actions necessary to obtain the goal.', 
+                                }, 
+                                {
+                                    id:4, 
+                                    content: 'Despite the fact that the model was unknown to the observer, performed the task only once, did not directly ‘teach’ the task to the observer, and physically moved away from the area in which the puzzle box was located before the participant attempted the task, the majority of participants, irrespective of their age, performed the causally irrelevant actions when they themselves attempted the task.', 
+                                }, 
+                                {
+                                    id:5, 
+                                    content: ' This capacity suggests that humans are opportunistic social learners from a very young age, capitalizing on even fleeting chances to learn fine grained details of action techniques intentionally performed by other individuals on novel artefacts. Perhaps most surprisingly, even the adult participants were subject to this effect despite the causal irrelevance of the actions witnessed being so visible.', 
+                                }, 
+                                {
+                                    id:5, 
+                                    content: ' The principal question raised by our results is why such a minimal learning context should lead both adults and children alike to abandon their own causal knowledge relevant to the task (displayed in the control condition) and instead adopt the inefficient technique used by the person they had just observed. One important influence which  may result in the reproduction of causally irrelevant actions in experimental studies of over-imitation is the social influence of the model.', 
+                                }, 
+                                {
+                                    id:6, 
+                                    content: ' Of course participants are not invited to imitate, but such experimental contexts likely contain a number of social influences which may impact on the likelihood that the observers will over-imitate. First, these influences may elicit a motivation on the part of the observer to affiliate with the model by acting like them; second, they may place social pressure on the observer to conform to performing the task in the same way as the model; or third, they may provide an opportunity for the observer to engage in a shared experience with the model.', 
+                                }, 
+                                {
+                                    id:7, 
+                                    content: ' Of course participants are not invited to imitate, but such experimental contexts likely contain a number of social influences which may impact on the likelihood that the observers will over-imitate. First, these influences may elicit a motivation on the part of the observer to affiliate with the model by acting like them; second, they may place social pressure on the observer to conform to performing the task in the same way as the model; or third, they may provide an opportunity for the observer to engage in a shared experience with the model.', 
+                                }, 
                             ],                            
                             questions: [
                                 {
@@ -742,19 +776,24 @@ export default class TestScreen extends React.Component {
             return (
 
                 <div className="passageSection">
-                <div className="passagename">
-                    <div className= "title">
-                        <b>{section.title}</b>
-                    </div>
 
-                </div>
-                    <div className= "passageToRead">
-                        <Highlight displayP = {() => this.displayPassage()}/>
+                        <div className="passagename">
+                            <div className= "title">
+                                <b>{section.title}</b>
+                            </div>
 
-                    </div>
+                        </div>
+
+                        <div className= "passageToRead">
+                                <Highlight displayP = {() => this.displayPassage()}/>
+                                {this.addPic()}                
+
+                        </div>
                 </div>
+
             ) 
-        }        
+        }     
+   
     }
 
     displayPassage() {
@@ -765,6 +804,20 @@ export default class TestScreen extends React.Component {
         const section = sections[currentSection]; 
         return section.passage.map((para) => <div> {para.content}</div>); 
 
+    }
+    addPic() {
+        const {
+            currentSection, 
+            sections, 
+        } = this.state; 
+        const section = sections[currentSection]; 
+        if (section.sectionType === 'reading' && section.id === 2) {
+            return (
+                <div className="pic">
+                <img src={require('./elite.jpg')} className="eliteImage"></img>
+                </div>
+            )
+        }
     }
     renderRightButton() {
         const {
@@ -791,7 +844,7 @@ export default class TestScreen extends React.Component {
     }
     
     checkingAllQuestions() {
-        const {currentSection, sections, CorrectWriting, CorrectMathNoCal, CorrectMathWithCal} = this.state; 
+        const {currentSection, sections, correctWriting, correctmathNoCal, correctmathWithCal} = this.state; 
 
             if  (this.IsLastElementOfSectionsArray() && this.IsLastSection()) {
                 sections.map(section => {
@@ -801,7 +854,7 @@ export default class TestScreen extends React.Component {
                             if(correctAnswer.id === question.selectedChoice) { 
                                 this.setState(currentState => {
                                     return {
-                                        CorrectReading: currentState.CorrectReading + 1
+                                        correctReading: currentState.correctReading + 1
                                     }
                                 }, () => this.CalculateScores());
                             }
@@ -814,7 +867,7 @@ export default class TestScreen extends React.Component {
                             if(correctAnswer.id === question.selectedChoice) { 
                                 this.setState(currentState => {
                                     return {
-                                        CorrectWriting: currentState.CorrectWriting + 1
+                                        correctWriting: currentState.correctWriting + 1
                                     }
                                 }, () => this.CalculateScores()); 
                             }
@@ -826,7 +879,7 @@ export default class TestScreen extends React.Component {
                             if(correctAnswer.id === question.selectedChoice) { 
                                 this.setState(currentState => {
                                     return {
-                                        CorrectMathNoCal: currentState.CorrectMathNoCal + 1
+                                        correctmathNoCal: currentState.correctmathNoCal + 1
                                     }
                                 }, () => this.CalculateScores());
                             }
@@ -836,7 +889,7 @@ export default class TestScreen extends React.Component {
                             if (fillInQuestion.correctAnswer ===fillInQuestion.input ) {
                                 this.setState(currentState => {
                                     return {
-                                        CorrectMathNoCal: currentState.CorrectMathNoCal + 1
+                                        correctmathNoCal: currentState.correctmathNoCal + 1
                                     }
                                 }, () => this.CalculateScores());
                             }
@@ -848,7 +901,7 @@ export default class TestScreen extends React.Component {
                             if(correctAnswer.id === question.selectedChoice) { 
                                 this.setState(currentState => {
                                     return {
-                                        CorrectMathWithCal: currentState.CorrectMathWithCal + 1
+                                        correctmathWithCal: currentState.correctmathWithCal + 1
                                     }
                                 }, () => this.CalculateScores());
                             }
@@ -858,7 +911,7 @@ export default class TestScreen extends React.Component {
                             if (fillInQuestion.correctAnswer ===fillInQuestion.input ) {
                                 this.setState(currentState => {
                                     return {
-                                        CorrectMathWithCal: currentState.CorrectMathWithCal + 1
+                                        correctmathWithCal: currentState.correctmathWithCal + 1
                                     }
                                 }, () => this.CalculateScores());
                             }
@@ -893,596 +946,596 @@ export default class TestScreen extends React.Component {
 
     CalculateScores() {
 
-        const {isTestSubmitted, ReadingScore, WritingScore, currentSection, MathScore,MathNoCal,MathWithCal, sections, CorrectReading, CorrectWriting, CorrectMathNoCal, CorrectMathWithCal} = this.state; 
+        const {isTestSubmitted, readingScore, writingScore, currentSection, mathScore,mathNoCal,mathWithCal, sections, correctReading, correctWriting, correctmathNoCal, correctmathWithCal} = this.state; 
 
         //READING
-        if (CorrectReading >= 0 && CorrectReading <= 3) {
+        if (correctReading >= 0 && correctReading <= 3) {
             this.setState({
-                ReadingScore: 100
+                readingScore: 100
             }) 
         } 
-        else if ( CorrectReading === 4 ) {
+        else if ( correctReading === 4 ) {
             this.setState({
-                ReadingScore: 110
+                readingScore: 110
             })         
         }
-        else if ( CorrectReading === 5) {
+        else if ( correctReading === 5) {
             this.setState({
-                ReadingScore: 120
+                readingScore: 120
             })        
         }
-        else if ( CorrectReading >= 6 && CorrectReading <= 7) {
+        else if ( correctReading >= 6 && correctReading <= 7) {
             this.setState({
-                ReadingScore: 130
+                readingScore: 130
             })
         }
-        else if (CorrectReading === 8) {
+        else if (correctReading === 8) {
             this.setState({
-                ReadingScore: 140
+                readingScore: 140
             })        
         }
-        else if (CorrectReading === 9) {
+        else if (correctReading === 9) {
             this.setState({
-                ReadingScore: 150
+                readingScore: 150
             }) 
         }
-        else if (CorrectReading >= 10 && CorrectReading <= 11) {
+        else if (correctReading >= 10 && correctReading <= 11) {
             this.setState({
-                ReadingScore: 160
+                readingScore: 160
             }) 
         }
-        else if (CorrectReading >= 12 && CorrectReading <= 13) {
+        else if (correctReading >= 12 && correctReading <= 13) {
             this.setState({
-                ReadingScore: 170
+                readingScore: 170
             }) 
         }
-        else if (CorrectReading >= 14 && CorrectReading <= 15) {
+        else if (correctReading >= 14 && correctReading <= 15) {
             this.setState({
-                ReadingScore: 180
+                readingScore: 180
             }) 
         }
-        else if (CorrectReading >= 16 && CorrectReading <= 17) {
+        else if (correctReading >= 16 && correctReading <= 17) {
             this.setState({
-                ReadingScore: 190
+                readingScore: 190
             }) 
         }
-        else if (CorrectReading >= 18 && CorrectReading <= 19) {
+        else if (correctReading >= 18 && correctReading <= 19) {
             this.setState({
-                ReadingScore: 200
+                readingScore: 200
             }) 
         }
-        else if (CorrectReading >= 20 && CorrectReading <= 21) {
+        else if (correctReading >= 20 && correctReading <= 21) {
             this.setState({
-                ReadingScore: 210
+                readingScore: 210
             }) 
         }
-        else if (CorrectReading >= 22 && CorrectReading <= 23) {
+        else if (correctReading >= 22 && correctReading <= 23) {
             this.setState({
-                ReadingScore: 220
+                readingScore: 220
             }) 
         }
-        else if (CorrectReading >= 24 && CorrectReading <= 25) {
+        else if (correctReading >= 24 && correctReading <= 25) {
             this.setState({
-                ReadingScore: 230
+                readingScore: 230
             }) 
         }
-        else if (CorrectReading >= 26 && CorrectReading <= 27) {
+        else if (correctReading >= 26 && correctReading <= 27) {
             this.setState({
-                ReadingScore: 240
+                readingScore: 240
             }) 
         }
-        else if (CorrectReading >= 28 && CorrectReading <= 29) {
+        else if (correctReading >= 28 && correctReading <= 29) {
             this.setState({
-                ReadingScore: 250
+                readingScore: 250
             }) 
         }
-        else if (CorrectReading >= 30 && CorrectReading <= 31) {
+        else if (correctReading >= 30 && correctReading <= 31) {
             this.setState({
-                ReadingScore: 260
+                readingScore: 260
             })  
         }
-        else if (CorrectReading === 32) {
+        else if (correctReading === 32) {
             this.setState({
-                ReadingScore: 270
+                readingScore: 270
             })  
         }
-        else if (CorrectReading >= 33 && CorrectReading <= 34) {
+        else if (correctReading >= 33 && correctReading <= 34) {
             this.setState({
-                ReadingScore: 280
+                readingScore: 280
             })  
         }
-        else if (CorrectReading >= 35 && CorrectReading <= 36) {
+        else if (correctReading >= 35 && correctReading <= 36) {
             this.setState({
-                ReadingScore: 290
+                readingScore: 290
             })  
         }
-        else if (CorrectReading >= 37 && CorrectReading <= 38) {
+        else if (correctReading >= 37 && correctReading <= 38) {
             this.setState({
-                ReadingScore: 300
+                readingScore: 300
             })  
         }
-        else if (CorrectReading >= 39 && CorrectReading <= 41) {
+        else if (correctReading >= 39 && correctReading <= 41) {
             this.setState({
-                ReadingScore: 310
+                readingScore: 310
             })  
         }
-        else if (CorrectReading >= 42 && CorrectReading <= 43) {
+        else if (correctReading >= 42 && correctReading <= 43) {
             this.setState({
-                ReadingScore: 320
+                readingScore: 320
             })  
         }
-        else if (CorrectReading >= 44 && CorrectReading <= 45) {
+        else if (correctReading >= 44 && correctReading <= 45) {
             this.setState({
-                ReadingScore: 330
+                readingScore: 330
             })  
         }
-        else if ( CorrectReading === 46) {
+        else if ( correctReading === 46) {
             this.setState({
-                ReadingScore: 340
+                readingScore: 340
             })  
         }
-        else if ( CorrectReading === 47) {
+        else if ( correctReading === 47) {
             this.setState({
-                ReadingScore: 350
+                readingScore: 350
             })  
         }
-        else if (CorrectReading >= 48 && CorrectReading <= 49) {
+        else if (correctReading >= 48 && correctReading <= 49) {
             this.setState({
-                ReadingScore: 360
+                readingScore: 360
             })  
         }
-        else if ( CorrectReading === 50) {
+        else if ( correctReading === 50) {
             this.setState({
-                ReadingScore: 370
+                readingScore: 370
             })  
         }
-        else if ( CorrectReading === 51) {
+        else if ( correctReading === 51) {
             this.setState({
-                ReadingScore: 380
+                readingScore: 380
             })  
         }
-        else if ( CorrectReading === 52) {
+        else if ( correctReading === 52) {
             this.setState({
-                ReadingScore: 400
+                readingScore: 400
             })  
         }
         //WRITING SCORE
-        if (CorrectWriting >= 0 && CorrectWriting <= 3) {
+        if (correctWriting >= 0 && correctWriting <= 3) {
             this.setState({
-                WritingScore: 100
+                writingScore: 100
             })   
         } 
-        else if ( CorrectWriting === 4 ) {
+        else if ( correctWriting === 4 ) {
             this.setState({
-                WritingScore: 110
+                writingScore: 110
             }) 
         }
-        else if ( CorrectWriting === 5) {
+        else if ( correctWriting === 5) {
             this.setState({
-                WritingScore: 120
+                writingScore: 120
             }) 
         }
-        else if ( CorrectWriting >= 6 && CorrectWriting <= 7) {
+        else if ( correctWriting >= 6 && correctWriting <= 7) {
             this.setState({
-                WritingScore: 130
+                writingScore: 130
             }) 
         }
-        else if (CorrectWriting === 8) {
+        else if (correctWriting === 8) {
             this.setState({
-                WritingScore: 140
+                writingScore: 140
             }) 
         }
-        else if (CorrectWriting === 9) {
+        else if (correctWriting === 9) {
             this.setState({
-                WritingScore: 150
+                writingScore: 150
             }) 
         }
-        else if (CorrectWriting >= 10 && CorrectWriting <= 11) {
+        else if (correctWriting >= 10 && correctWriting <= 11) {
             this.setState({
-                WritingScore: 160
+                writingScore: 160
             }) 
         }
-        else if (CorrectWriting >= 12 && CorrectWriting <= 13) {
+        else if (correctWriting >= 12 && correctWriting <= 13) {
             this.setState({
-                WritingScore: 170
+                writingScore: 170
             }) 
         }
-        else if (CorrectWriting >= 14 && CorrectWriting <= 16) {
+        else if (correctWriting >= 14 && correctWriting <= 16) {
             this.setState({
-                WritingScore: 180
+                writingScore: 180
             }) 
         }
-        else if (CorrectWriting >= 17 && CorrectWriting <= 18) {
+        else if (correctWriting >= 17 && correctWriting <= 18) {
             this.setState({
-                WritingScore: 190
+                writingScore: 190
             }) 
         }
-        else if (CorrectWriting >= 19 && CorrectWriting <= 20) {
+        else if (correctWriting >= 19 && correctWriting <= 20) {
             this.setState({
-                WritingScore: 200
+                writingScore: 200
             }) 
         }
-        else if (CorrectWriting >= 21 && CorrectWriting <= 22) {
+        else if (correctWriting >= 21 && correctWriting <= 22) {
             this.setState({
-                WritingScore: 210
+                writingScore: 210
             }) 
         }
-        else if (CorrectWriting === 23) {
+        else if (correctWriting === 23) {
             this.setState({
-                WritingScore: 220
+                writingScore: 220
             }) 
         }
-        else if (CorrectWriting >= 24 && CorrectWriting <= 25) {
+        else if (correctWriting >= 24 && correctWriting <= 25) {
             this.setState({
-                WritingScore: 230
+                writingScore: 230
             }) 
         }
-        else if (CorrectWriting >= 26 && CorrectWriting <= 27) {
+        else if (correctWriting >= 26 && correctWriting <= 27) {
             this.setState({
-                WritingScore: 240
+                writingScore: 240
             }) 
         }
-        else if (CorrectWriting >= 28 && CorrectWriting <= 29) {
+        else if (correctWriting >= 28 && correctWriting <= 29) {
             this.setState({
-                WritingScore: 250
+                writingScore: 250
             }) 
         }
-        else if (CorrectWriting === 30) {
+        else if (correctWriting === 30) {
             this.setState({
-                WritingScore: 260
+                writingScore: 260
             }) 
         }
-        else if (CorrectWriting >= 31 && CorrectWriting <= 32) {
+        else if (correctWriting >= 31 && correctWriting <= 32) {
             this.setState({
-                WritingScore: 270
+                writingScore: 270
             }) 
         }
-        else if (CorrectWriting === 33) {
+        else if (correctWriting === 33) {
             this.setState({
-                WritingScore: 280
+                writingScore: 280
             }) 
         }
-        else if (CorrectWriting >= 34 && CorrectWriting <= 35) {
+        else if (correctWriting >= 34 && correctWriting <= 35) {
             this.setState({
-                WritingScore: 290
+                writingScore: 290
             }) 
         }
-        else if (CorrectWriting <= 36) {
+        else if (correctWriting <= 36) {
             this.setState({
-                WritingScore: 300
+                writingScore: 300
             }) 
         }
-        else if (CorrectWriting >= 37 && CorrectWriting <= 38) {
+        else if (correctWriting >= 37 && correctWriting <= 38) {
             this.setState({
-                WritingScore: 310
+                writingScore: 310
             }) 
         }
-        else if (  CorrectWriting === 39) {
+        else if (  correctWriting === 39) {
             this.setState({
-                WritingScore: 320
+                writingScore: 320
             }) 
         }
-        else if (CorrectWriting ===40) {
+        else if (correctWriting ===40) {
             this.setState({
-                WritingScore: 330
+                writingScore: 330
             }) 
         }
-        else if ( CorrectWriting === 41) {
+        else if ( correctWriting === 41) {
             this.setState({
-                WritingScore: 340
+                writingScore: 340
             }) 
         }
-        else if ( CorrectWriting === 42) {
+        else if ( correctWriting === 42) {
             this.setState({
-                WritingScore: 360
+                writingScore: 360
             }) 
         }
-        else if (CorrectWriting === 43) {
+        else if (correctWriting === 43) {
             this.setState({
-                WritingScore: 380
+                writingScore: 380
             }) 
         }
-        else if ( CorrectWriting === 44) {
+        else if ( correctWriting === 44) {
             this.setState({
-                WritingScore: 400
+                writingScore: 400
             }) 
         }
 
         //MATH
-        if ((CorrectMathNoCal + CorrectMathWithCal) >= 0 && (CorrectMathNoCal + CorrectMathWithCal)  <= 1) {
+        if ((correctmathNoCal + correctmathWithCal) >= 0 && (correctmathNoCal + correctmathWithCal)  <= 1) {
             this.setState({
-                MathScore: 200
+                mathScore: 200
             }) 
         } 
-        else if ( (CorrectMathWithCal + CorrectMathNoCal) === 2 ) {
+        else if ( (correctmathWithCal + correctmathNoCal) === 2 ) {
             this.setState({
-                MathScore: 210
+                mathScore: 210
             }) 
         }
-        else if ( (CorrectMathWithCal + CorrectMathNoCal) === 3) {
+        else if ( (correctmathWithCal + correctmathNoCal) === 3) {
             this.setState({
-                MathScore: 220
+                mathScore: 220
             }) 
         }
-        else if ( (CorrectMathWithCal + CorrectMathNoCal) === 4) {
+        else if ( (correctmathWithCal + correctmathNoCal) === 4) {
             this.setState({
-                MathScore: 230
+                mathScore: 230
             }) 
         }
-        else if ((CorrectMathWithCal + CorrectMathNoCal) === 5) {
+        else if ((correctmathWithCal + correctmathNoCal) === 5) {
             this.setState({
-                MathScore: 250
+                mathScore: 250
             }) 
         }
-        else if ((CorrectMathWithCal + CorrectMathNoCal) === 6) {
+        else if ((correctmathWithCal + correctmathNoCal) === 6) {
             this.setState({
-                MathScore: 270
+                mathScore: 270
             }) 
         }
-        else if ((CorrectMathWithCal + CorrectMathNoCal) === 7) {
+        else if ((correctmathWithCal + correctmathNoCal) === 7) {
             this.setState({
-                MathScore: 280
+                mathScore: 280
             }) 
         }
-        else if ((CorrectMathWithCal + CorrectMathNoCal) === 8) {
+        else if ((correctmathWithCal + correctmathNoCal) === 8) {
             this.setState({
-                MathScore: 300
+                mathScore: 300
             }) 
         }
-        else if ((CorrectMathWithCal + CorrectMathNoCal) === 9) {
+        else if ((correctmathWithCal + correctmathNoCal) === 9) {
             this.setState({
-                MathScore: 310
+                mathScore: 310
             }) 
         }
-        else if ((CorrectMathWithCal + CorrectMathNoCal) === 10) {
+        else if ((correctmathWithCal + correctmathNoCal) === 10) {
             this.setState({
-                MathScore: 320
+                mathScore: 320
             }) 
         }
-        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 11) {
+        else if  ((correctmathWithCal + correctmathNoCal) === 11) {
             this.setState({
-                MathScore: 340
+                mathScore: 340
             }) 
         }
-        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 12) {
+        else if  ((correctmathWithCal + correctmathNoCal) === 12) {
             this.setState({
-                MathScore: 350
+                mathScore: 350
             }) 
         }
-        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 13) {
+        else if  ((correctmathWithCal + correctmathNoCal) === 13) {
             this.setState({
-                MathScore: 360
+                mathScore: 360
             }) 
         }
-        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 14) {
+        else if  ((correctmathWithCal + correctmathNoCal) === 14) {
             this.setState({
-                MathScore: 370
+                mathScore: 370
             }) 
         }
-        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 15) {
+        else if  ((correctmathWithCal + correctmathNoCal) === 15) {
             this.setState({
-                MathScore: 380
+                mathScore: 380
             }) 
         }
-        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 16) {
+        else if  ((correctmathWithCal + correctmathNoCal) === 16) {
             this.setState({
-                MathScore: 390
+                mathScore: 390
             }) 
         }
-        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 17) {
+        else if  ((correctmathWithCal + correctmathNoCal) === 17) {
             this.setState({
-                MathScore: 400
+                mathScore: 400
             }) 
         }
-        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 18) {
+        else if  ((correctmathWithCal + correctmathNoCal) === 18) {
             this.setState({
-                MathScore: 410
+                mathScore: 410
             }) 
         }
-        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 19) {
+        else if  ((correctmathWithCal + correctmathNoCal) === 19) {
             this.setState({
-                MathScore: 420
+                mathScore: 420
             }) 
         }
-        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 20) {
+        else if  ((correctmathWithCal + correctmathNoCal) === 20) {
             this.setState({
-                MathScore: 430
+                mathScore: 430
             }) 
         }
-        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 21) {
+        else if  ((correctmathWithCal + correctmathNoCal) === 21) {
             this.setState({
-                MathScore: 440
+                mathScore: 440
             }) 
         }
-        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 22) {
+        else if  ((correctmathWithCal + correctmathNoCal) === 22) {
             this.setState({
-                MathScore: 450
+                mathScore: 450
             }) 
         }
-        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 23) {
+        else if  ((correctmathWithCal + correctmathNoCal) === 23) {
             this.setState({
-                MathScore: 460
+                mathScore: 460
             }) 
         }
-        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 24) {
+        else if  ((correctmathWithCal + correctmathNoCal) === 24) {
             this.setState({
-                MathScore: 470
+                mathScore: 470
             }) 
         }
-        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 25) {
+        else if  ((correctmathWithCal + correctmathNoCal) === 25) {
             this.setState({
-                MathScore: 480
+                mathScore: 480
             }) 
         }
-        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 26) {
+        else if  ((correctmathWithCal + correctmathNoCal) === 26) {
             this.setState({
-                MathScore: 490
+                mathScore: 490
             }) 
         }
-        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 27) {
+        else if  ((correctmathWithCal + correctmathNoCal) === 27) {
             this.setState({
-                MathScore: 500
+                mathScore: 500
             }) 
         }
-        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 28) {
+        else if  ((correctmathWithCal + correctmathNoCal) === 28) {
             this.setState({
-                MathScore: 500
+                mathScore: 500
             }) 
         }
-        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 29) {
+        else if  ((correctmathWithCal + correctmathNoCal) === 29) {
             this.setState({
-                MathScore: 510
+                mathScore: 510
             }) 
         }
-        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 30) {
+        else if  ((correctmathWithCal + correctmathNoCal) === 30) {
             this.setState({
-                MathScore: 520
+                mathScore: 520
             }) 
         }
-        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 31) {
+        else if  ((correctmathWithCal + correctmathNoCal) === 31) {
             this.setState({
-                MathScore: 520
+                mathScore: 520
             }) 
         }
-        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 32) {
+        else if  ((correctmathWithCal + correctmathNoCal) === 32) {
             this.setState({
-                MathScore: 530
+                mathScore: 530
             }) 
         }
-        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 33) {
+        else if  ((correctmathWithCal + correctmathNoCal) === 33) {
             this.setState({
-                MathScore: 540
+                mathScore: 540
             }) 
         }
-        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 34) {
+        else if  ((correctmathWithCal + correctmathNoCal) === 34) {
             this.setState({
-                MathScore: 540
+                mathScore: 540
             }) 
         }
-        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 35) {
+        else if  ((correctmathWithCal + correctmathNoCal) === 35) {
             this.setState({
-                MathScore: 550
+                mathScore: 550
             }) 
         }
-        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 36) {
+        else if  ((correctmathWithCal + correctmathNoCal) === 36) {
             this.setState({
-                MathScore: 560
+                mathScore: 560
             }) 
         }
-        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 37) {
+        else if  ((correctmathWithCal + correctmathNoCal) === 37) {
             this.setState({
-                MathScore: 570
+                mathScore: 570
             }) 
         }
-        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 38) {
+        else if  ((correctmathWithCal + correctmathNoCal) === 38) {
             this.setState({
-                MathScore: 580
+                mathScore: 580
             }) 
         }
-        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 39) {
+        else if  ((correctmathWithCal + correctmathNoCal) === 39) {
             this.setState({
-                MathScore: 580
+                mathScore: 580
             }) 
         }
-        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 40) {
+        else if  ((correctmathWithCal + correctmathNoCal) === 40) {
             this.setState({
-                MathScore: 590
+                mathScore: 590
             }) 
         }
-        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 41) {
+        else if  ((correctmathWithCal + correctmathNoCal) === 41) {
             this.setState({
-                MathScore: 600
+                mathScore: 600
             })
         }
-        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 42) {
+        else if  ((correctmathWithCal + correctmathNoCal) === 42) {
             this.setState({
-                MathScore: 610
+                mathScore: 610
             }) 
         }
-        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 43) {
+        else if  ((correctmathWithCal + correctmathNoCal) === 43) {
             this.setState({
-                MathScore: 610
+                mathScore: 610
             }) 
         }
-        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 44) {
+        else if  ((correctmathWithCal + correctmathNoCal) === 44) {
             this.setState({
-                MathScore: 620
+                mathScore: 620
             }) 
         }
-        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 45) {
+        else if  ((correctmathWithCal + correctmathNoCal) === 45) {
             this.setState({
-                MathScore: 630
+                mathScore: 630
             }) 
         }
-        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 46) {
+        else if  ((correctmathWithCal + correctmathNoCal) === 46) {
             this.setState({
-                MathScore: 640
+                mathScore: 640
             }) 
         }
-        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 47) {
+        else if  ((correctmathWithCal + correctmathNoCal) === 47) {
             this.setState({
-                MathScore: 650
+                mathScore: 650
             }) 
         }
-        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 48) {
+        else if  ((correctmathWithCal + correctmathNoCal) === 48) {
             this.setState({
-                MathScore: 660
+                mathScore: 660
             }) 
         }
-        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 49) {
+        else if  ((correctmathWithCal + correctmathNoCal) === 49) {
             this.setState({
-                MathScore: 670
+                mathScore: 670
             }) 
         }
-        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 50) {
+        else if  ((correctmathWithCal + correctmathNoCal) === 50) {
             this.setState({
-                MathScore: 680
+                mathScore: 680
             }) 
         }
-        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 51) {
+        else if  ((correctmathWithCal + correctmathNoCal) === 51) {
             this.setState({
-                MathScore: 690
+                mathScore: 690
             }) 
         }
-        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 52) {
+        else if  ((correctmathWithCal + correctmathNoCal) === 52) {
             this.setState({
-                MathScore: 700
+                mathScore: 700
             }) 
         }
-        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 53) {
+        else if  ((correctmathWithCal + correctmathNoCal) === 53) {
             this.setState({
-                MathScore: 710
+                mathScore: 710
             }) 
         }
-        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 54) {
+        else if  ((correctmathWithCal + correctmathNoCal) === 54) {
             this.setState({
-                MathScore: 730
+                mathScore: 730
             }) 
         }
-        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 55) {
+        else if  ((correctmathWithCal + correctmathNoCal) === 55) {
             this.setState({
-                MathScore: 750
+                mathScore: 750
             }) 
         }
-        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 56) {
+        else if  ((correctmathWithCal + correctmathNoCal) === 56) {
             this.setState({
-                MathScore: 770
+                mathScore: 770
             }) 
         }
-        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 57) {
+        else if  ((correctmathWithCal + correctmathNoCal) === 57) {
             this.setState({
-                MathScore: 790
+                mathScore: 790
             }) 
         }
-        else if  ((CorrectMathWithCal + CorrectMathNoCal) === 58) {
+        else if  ((correctmathWithCal + correctmathNoCal) === 58) {
             this.setState({
-                MathScore: 800
+                mathScore: 800
             }) 
         }
         this.setState((state) => ({
             isTestSubmitted: true,
-            Verbal: state.ReadingScore + state.WritingScore, 
-            Total: state.ReadingScore + state.WritingScore + state.MathScore
+            verbal: state.readingScore + state.writingScore, 
+            total: state.readingScore + state.writingScore + state.mathScore
         }))
     }
 
@@ -1550,16 +1603,16 @@ export default class TestScreen extends React.Component {
     render() {
         const {
             isTestSubmitted,
-            Verbal,
-            ReadingScore,
-            WritingScore,
-            MathScore, 
-            Total,
+            verbal,
+            readingScore,
+            writingScore,
+            mathScore, 
+            total,
             currentSection, sections, 
-            CorrectReading, 
-            CorrectWriting, 
-            CorrectMathWithCal, 
-            CorrectMathNoCal
+            correctReading, 
+            correctWriting, 
+            correctmathWithCal, 
+            correctmathNoCal
         } = this.state;
 
         /*
@@ -1573,25 +1626,25 @@ export default class TestScreen extends React.Component {
             return (
                 <div className="appContainer">
                     <h1>results</h1>
-                    <h2>Reading Score: {ReadingScore}</h2>
-                    <h2>Writing and Language Score: {WritingScore}</h2>
-                    <h2>Verbal Score: {Verbal}</h2>
-                    <h2>Math Score: {MathScore}</h2>
-                    <h2>Total Score: {Total} </h2>
-                    <h2>Number of correct Reading section: {CorrectReading} (out of 52)</h2>
-                    <h2>Number of correct Writing and Language section: {CorrectWriting} (out of 44)</h2>
-                    <h2>Number of correct Math (No Calculator) section: {CorrectMathNoCal} (out of 20)</h2>
-                    <h2>Number of correct Math (With Calculator) section: {CorrectMathWithCal} (out of 38)</h2>
+                    <h2>Reading Score: {readingScore}</h2>
+                    <h2>Writing and Language Score: {writingScore}</h2>
+                    <h2>verbal Score: {verbal}</h2>
+                    <h2>Math Score: {mathScore}</h2>
+                    <h2>total Score: {total} </h2>
+                    <h2>Number of correct Reading section: {correctReading} (out of 52)</h2>
+                    <h2>Number of correct Writing and Language section: {correctWriting} (out of 44)</h2>
+                    <h2>Number of correct Math (No Calculator) section: {correctmathNoCal} (out of 20)</h2>
+                    <h2>Number of correct Math (With Calculator) section: {correctmathWithCal} (out of 38)</h2>
 
                     <button className="btn btn-dark"  onClick={() => this.setState({ currentSection: currentSection - 1})}> Go Back To Review</button>
                 </div>
             );
         }
 
-        console.log(this.state.CorrectReading);
-        console.log(this.state.CorrectWriting);
-        console.log(this.state.CorrectMathNoCal);
-        console.log(this.state.CorrectMathWithCal);
+        console.log(this.state.correctReading);
+        console.log(this.state.correctWriting);
+        console.log(this.state.correctmathNoCal);
+        console.log(this.state.correctmathWithCal);
         const currentSectionObject = sections[currentSection];
 
         return <div className="appContainer">

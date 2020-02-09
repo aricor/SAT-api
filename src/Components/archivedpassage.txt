@@ -15,9 +15,9 @@ export default class TestScreen extends React.Component {
             currentSection: 0,
             currentSubject:0, 
             NumeberOfCorrectAnswersOfEachSubject: [], 
-            ReadingScore: 0, 
-            WritingScore: 0, 
-            MathScore: 0,
+            readingScore: 0, 
+            writingScore: 0, 
+            mathScore: 0,
             sections: [
                 {
                     id:1, 
@@ -695,369 +695,369 @@ export default class TestScreen extends React.Component {
         }
 
     }
-    ReadingScore() {
-        const {ReadingScore,  NumeberOfCorrectAnswersOfEachSubject} = this.state; 
+    readingScore() {
+        const {readingScore,  NumeberOfCorrectAnswersOfEachSubject} = this.state; 
 
         if (0 <= NumeberOfCorrectAnswersOfEachSubject[1] <=3) {
-            ReadingScore = 100; 
+            readingScore = 100; 
 
         } 
         else if ( NumeberOfCorrectAnswersOfEachSubject[1] === 4 ) {
-            ReadingScore = 110; 
+            readingScore = 110; 
         }
         else if ( NumeberOfCorrectAnswersOfEachSubject[1] === 5) {
-            ReadingScore = 120; 
+            readingScore = 120; 
         }
         else if ( 6 <= NumeberOfCorrectAnswersOfEachSubject[1] <= 7) {
-            ReadingScore = 130; 
+            readingScore = 130; 
         }
         else if (NumeberOfCorrectAnswersOfEachSubject[1] === 8) {
-            ReadingScore = 140; 
+            readingScore = 140; 
         }
         else if (NumeberOfCorrectAnswersOfEachSubject[1] === 9) {
-            ReadingScore = 150; 
+            readingScore = 150; 
         }
         else if (10 <= NumeberOfCorrectAnswersOfEachSubject[1] <= 11) {
-            ReadingScore = 160; 
+            readingScore = 160; 
         }
         else if (12 <=NumeberOfCorrectAnswersOfEachSubject[1] <= 13) {
-            ReadingScore = 170; 
+            readingScore = 170; 
         }
         else if (14 <=NumeberOfCorrectAnswersOfEachSubject[1] <= 15) {
-            ReadingScore = 180; 
+            readingScore = 180; 
         }
         else if (16 <=NumeberOfCorrectAnswersOfEachSubject[1] <= 17) {
-            ReadingScore = 190; 
+            readingScore = 190; 
         }
         else if (18 <=NumeberOfCorrectAnswersOfEachSubject[1] <= 19) {
-            ReadingScore = 200; 
+            readingScore = 200; 
         }
         else if (20 <=NumeberOfCorrectAnswersOfEachSubject[1] <= 21) {
-            ReadingScore = 210; 
+            readingScore = 210; 
         }
         else if (22 <=NumeberOfCorrectAnswersOfEachSubject[1] <= 23) {
-            ReadingScore = 220; 
+            readingScore = 220; 
         }
         else if (24 <=NumeberOfCorrectAnswersOfEachSubject[1] <= 25) {
-            ReadingScore = 230; 
+            readingScore = 230; 
         }
         else if (26 <=NumeberOfCorrectAnswersOfEachSubject[1] <= 27) {
-            ReadingScore = 240; 
+            readingScore = 240; 
         }
         else if (28 <=NumeberOfCorrectAnswersOfEachSubject[1] <= 29) {
-            ReadingScore = 250; 
+            readingScore = 250; 
         }
         else if (30 <=NumeberOfCorrectAnswersOfEachSubject[1] <= 31) {
-            ReadingScore = 260; 
+            readingScore = 260; 
         }
         else if (NumeberOfCorrectAnswersOfEachSubject[1] === 32) {
-            ReadingScore = 270; 
+            readingScore = 270; 
         }
         else if (33 <=NumeberOfCorrectAnswersOfEachSubject[1] <= 34) {
-            ReadingScore = 280; 
+            readingScore = 280; 
         }
         else if (35 <=NumeberOfCorrectAnswersOfEachSubject[1] <= 36) {
-            ReadingScore = 290; 
+            readingScore = 290; 
         }
         else if (37 <=NumeberOfCorrectAnswersOfEachSubject[1] <= 38) {
-            ReadingScore = 300; 
+            readingScore = 300; 
         }
         else if (39 <= NumeberOfCorrectAnswersOfEachSubject[1] <= 41) {
-            ReadingScore = 310; 
+            readingScore = 310; 
         }
         else if ( 42 <= NumeberOfCorrectAnswersOfEachSubject[1] <= 43) {
-            ReadingScore = 320; 
+            readingScore = 320; 
         }
         else if (44 <= NumeberOfCorrectAnswersOfEachSubject[1] <= 45) {
-            ReadingScore = 330; 
+            readingScore = 330; 
         }
         else if ( NumeberOfCorrectAnswersOfEachSubject[1] === 46) {
-            ReadingScore = 340; 
+            readingScore = 340; 
         }
         else if ( NumeberOfCorrectAnswersOfEachSubject[1] === 47) {
-            ReadingScore = 350; 
+            readingScore = 350; 
         }
         else if (48 <= NumeberOfCorrectAnswersOfEachSubject[1] <= 49) {
-            ReadingScore = 360; 
+            readingScore = 360; 
         }
         else if ( NumeberOfCorrectAnswersOfEachSubject[1] === 50) {
-            ReadingScore = 370; 
+            readingScore = 370; 
         }
         else if ( NumeberOfCorrectAnswersOfEachSubject[1] === 51) {
-            ReadingScore = 380; 
+            readingScore = 380; 
         }
         else if ( NumeberOfCorrectAnswersOfEachSubject[1] === 52) {
-            ReadingScore = 400; 
+            readingScore = 400; 
         }
-        return (ReadingScore); 
+        return (readingScore); 
     }
-    WritingScore() {
-        const {WritingScore,  NumeberOfCorrectAnswersOfEachSubject} = this.state; 
+    writingScore() {
+        const {writingScore,  NumeberOfCorrectAnswersOfEachSubject} = this.state; 
         if (0 <= NumeberOfCorrectAnswersOfEachSubject[2] <=3) {
-            WritingScore = 100; 
+            writingScore = 100; 
         } 
         else if ( NumeberOfCorrectAnswersOfEachSubject[2] === 4 ) {
-            WritingScore = 110; 
+            writingScore = 110; 
         }
         else if ( NumeberOfCorrectAnswersOfEachSubject[2] === 5) {
-            WritingScore = 120; 
+            writingScore = 120; 
         }
         else if ( 6 <= NumeberOfCorrectAnswersOfEachSubject[2] <= 7) {
-            WritingScore = 130; 
+            writingScore = 130; 
         }
         else if (NumeberOfCorrectAnswersOfEachSubject[2] === 8) {
-            WritingScore = 140; 
+            writingScore = 140; 
         }
         else if (NumeberOfCorrectAnswersOfEachSubject[2] === 9) {
-            WritingScore = 150; 
+            writingScore = 150; 
         }
         else if (10 <= NumeberOfCorrectAnswersOfEachSubject[2] <= 11) {
-            WritingScore = 160; 
+            writingScore = 160; 
         }
         else if (12 <=NumeberOfCorrectAnswersOfEachSubject[2] <= 13) {
-            WritingScore = 170; 
+            writingScore = 170; 
         }
         else if (14 <=NumeberOfCorrectAnswersOfEachSubject[2] <= 16) {
-            WritingScore = 180; 
+            writingScore = 180; 
         }
         else if (17 <=NumeberOfCorrectAnswersOfEachSubject[2] <= 18) {
-            WritingScore = 190; 
+            writingScore = 190; 
         }
         else if (19 <=NumeberOfCorrectAnswersOfEachSubject[2] <= 20) {
-            WritingScore = 200; 
+            writingScore = 200; 
         }
         else if (21 <=NumeberOfCorrectAnswersOfEachSubject[2] <= 22) {
-            WritingScore = 210; 
+            writingScore = 210; 
         }
         else if (NumeberOfCorrectAnswersOfEachSubject[2] === 23) {
-            WritingScore = 220; 
+            writingScore = 220; 
         }
         else if (24 <=NumeberOfCorrectAnswersOfEachSubject[2] <= 25) {
-            WritingScore = 230; 
+            writingScore = 230; 
         }
         else if (26 <=NumeberOfCorrectAnswersOfEachSubject[2] <= 27) {
-            WritingScore = 240; 
+            writingScore = 240; 
         }
         else if (28 <=NumeberOfCorrectAnswersOfEachSubject[2] <= 29) {
-            WritingScore = 250; 
+            writingScore = 250; 
         }
         else if (NumeberOfCorrectAnswersOfEachSubject[2] === 30) {
-            WritingScore = 260; 
+            writingScore = 260; 
         }
         else if (31 <=NumeberOfCorrectAnswersOfEachSubject[2] === 32) {
-            WritingScore = 270; 
+            writingScore = 270; 
         }
         else if (NumeberOfCorrectAnswersOfEachSubject[2] === 33) {
-            WritingScore = 280; 
+            writingScore = 280; 
         }
         else if (34 <=NumeberOfCorrectAnswersOfEachSubject[2] <= 35) {
-            WritingScore = 290; 
+            writingScore = 290; 
         }
         else if (NumeberOfCorrectAnswersOfEachSubject[2] <= 36) {
-            WritingScore = 300; 
+            writingScore = 300; 
         }
         else if (37 <= NumeberOfCorrectAnswersOfEachSubject[2] <= 38) {
-            WritingScore = 310; 
+            writingScore = 310; 
         }
         else if (  NumeberOfCorrectAnswersOfEachSubject[2] === 39) {
-            WritingScore = 320; 
+            writingScore = 320; 
         }
         else if (NumeberOfCorrectAnswersOfEachSubject[2] ===40) {
-            WritingScore = 330; 
+            writingScore = 330; 
         }
         else if ( NumeberOfCorrectAnswersOfEachSubject[2] === 41) {
-            WritingScore = 340; 
+            writingScore = 340; 
         }
         else if ( NumeberOfCorrectAnswersOfEachSubject[2] === 42) {
-            WritingScore = 360; 
+            writingScore = 360; 
         }
         else if (48 <= NumeberOfCorrectAnswersOfEachSubject[2] <= 43) {
-            WritingScore = 380; 
+            writingScore = 380; 
         }
         else if ( NumeberOfCorrectAnswersOfEachSubject[2] === 44) {
-            WritingScore = 400; 
+            writingScore = 400; 
         }
       
-        return (WritingScore); 
+        return (writingScore); 
     }
-    MathScore() {
-        const {MathScore,  NumeberOfCorrectAnswersOfEachSubject} = this.state; 
+    mathScore() {
+        const {mathScore,  NumeberOfCorrectAnswersOfEachSubject} = this.state; 
         let ScoreOfTwoMathTests = NumeberOfCorrectAnswersOfEachSubject[3] +  NumeberOfCorrectAnswersOfEachSubject[4]; 
         if (0 <=ScoreOfTwoMathTests <=1) {
-            MathScore = 200; 
+            mathScore = 200; 
         } 
         else if ( ScoreOfTwoMathTests === 2 ) {
-            MathScore = 210; 
+            mathScore = 210; 
         }
         else if ( ScoreOfTwoMathTests === 3) {
-            MathScore = 220; 
+            mathScore = 220; 
         }
         else if ( ScoreOfTwoMathTests === 4) {
-            MathScore = 230; 
+            mathScore = 230; 
         }
         else if (ScoreOfTwoMathTests === 5) {
-            MathScore = 250; 
+            mathScore = 250; 
         }
         else if (ScoreOfTwoMathTests === 6) {
-            MathScore = 270; 
+            mathScore = 270; 
         }
         else if (ScoreOfTwoMathTests === 7) {
-            MathScore = 280; 
+            mathScore = 280; 
         }
         else if (ScoreOfTwoMathTests === 8) {
-            MathScore = 300; 
+            mathScore = 300; 
         }
         else if (ScoreOfTwoMathTests === 9) {
-            MathScore = 310; 
+            mathScore = 310; 
         }
         else if (ScoreOfTwoMathTests === 10) {
-            MathScore = 320; 
+            mathScore = 320; 
         }
         else if  (ScoreOfTwoMathTests === 11) {
-            MathScore = 340; 
+            mathScore = 340; 
         }
         else if  (ScoreOfTwoMathTests === 12) {
-            MathScore = 350; 
+            mathScore = 350; 
         }
         else if  (ScoreOfTwoMathTests === 13) {
-            MathScore = 360; 
+            mathScore = 360; 
         }
         else if  (ScoreOfTwoMathTests === 14) {
-            MathScore = 370; 
+            mathScore = 370; 
         }
         else if  (ScoreOfTwoMathTests === 15) {
-            MathScore = 380; 
+            mathScore = 380; 
         }
         else if  (ScoreOfTwoMathTests === 16) {
-            MathScore = 390; 
+            mathScore = 390; 
         }
         else if  (ScoreOfTwoMathTests === 17) {
-            MathScore = 400; 
+            mathScore = 400; 
         }
         else if  (ScoreOfTwoMathTests === 18) {
-            MathScore = 410; 
+            mathScore = 410; 
         }
         else if  (ScoreOfTwoMathTests === 19) {
-            MathScore = 420; 
+            mathScore = 420; 
         }
         else if  (ScoreOfTwoMathTests === 20) {
-            MathScore = 430; 
+            mathScore = 430; 
         }
         else if  (ScoreOfTwoMathTests === 21) {
-            MathScore = 440; 
+            mathScore = 440; 
         }
         else if  (ScoreOfTwoMathTests === 22) {
-            MathScore = 450; 
+            mathScore = 450; 
         }
         else if  (ScoreOfTwoMathTests === 23) {
-            MathScore = 460; 
+            mathScore = 460; 
         }
         else if  (ScoreOfTwoMathTests === 24) {
-            MathScore = 470; 
+            mathScore = 470; 
         }
         else if  (ScoreOfTwoMathTests === 25) {
-            MathScore = 480; 
+            mathScore = 480; 
         }
         else if  (ScoreOfTwoMathTests === 26) {
-            MathScore = 490; 
+            mathScore = 490; 
         }
         else if  (ScoreOfTwoMathTests === 27) {
-            MathScore = 500; 
+            mathScore = 500; 
         }
         else if  (ScoreOfTwoMathTests === 28) {
-            MathScore = 500; 
+            mathScore = 500; 
         }
         else if  (ScoreOfTwoMathTests === 29) {
-            MathScore = 510; 
+            mathScore = 510; 
         }
         else if  (ScoreOfTwoMathTests === 30) {
-            MathScore = 520; 
+            mathScore = 520; 
         }
         else if  (ScoreOfTwoMathTests === 31) {
-            MathScore = 520; 
+            mathScore = 520; 
         }
         else if  (ScoreOfTwoMathTests === 32) {
-            MathScore = 530; 
+            mathScore = 530; 
         }
         else if  (ScoreOfTwoMathTests === 33) {
-            MathScore = 540; 
+            mathScore = 540; 
         }
         else if  (ScoreOfTwoMathTests === 34) {
-            MathScore = 540; 
+            mathScore = 540; 
         }
         else if  (ScoreOfTwoMathTests === 35) {
-            MathScore = 550; 
+            mathScore = 550; 
         }
         else if  (ScoreOfTwoMathTests === 36) {
-            MathScore = 560; 
+            mathScore = 560; 
         }
         else if  (ScoreOfTwoMathTests === 37) {
-            MathScore = 570; 
+            mathScore = 570; 
         }
         else if  (ScoreOfTwoMathTests === 38) {
-            MathScore = 580; 
+            mathScore = 580; 
         }
         else if  (ScoreOfTwoMathTests === 39) {
-            MathScore = 580; 
+            mathScore = 580; 
         }
         else if  (ScoreOfTwoMathTests === 40) {
-            MathScore = 590; 
+            mathScore = 590; 
         }
         else if  (ScoreOfTwoMathTests === 41) {
-            MathScore = 600; 
+            mathScore = 600; 
         }
         else if  (ScoreOfTwoMathTests === 42) {
-            MathScore = 610; 
+            mathScore = 610; 
         }
         else if  (ScoreOfTwoMathTests === 43) {
-            MathScore = 610; 
+            mathScore = 610; 
         }
         else if  (ScoreOfTwoMathTests === 44) {
-            MathScore = 620; 
+            mathScore = 620; 
         }
         else if  (ScoreOfTwoMathTests === 45) {
-            MathScore = 630; 
+            mathScore = 630; 
         }
         else if  (ScoreOfTwoMathTests === 46) {
-            MathScore = 640; 
+            mathScore = 640; 
         }
         else if  (ScoreOfTwoMathTests === 47) {
-            MathScore = 650; 
+            mathScore = 650; 
         }
         else if  (ScoreOfTwoMathTests === 48) {
-            MathScore = 660; 
+            mathScore = 660; 
         }
         else if  (ScoreOfTwoMathTests === 49) {
-            MathScore = 670; 
+            mathScore = 670; 
         }
         else if  (ScoreOfTwoMathTests === 50) {
-            MathScore = 680; 
+            mathScore = 680; 
         }
         else if  (ScoreOfTwoMathTests === 51) {
-            MathScore = 690; 
+            mathScore = 690; 
         }
         else if  (ScoreOfTwoMathTests === 52) {
-            MathScore = 700; 
+            mathScore = 700; 
         }
         else if  (ScoreOfTwoMathTests === 53) {
-            MathScore = 710; 
+            mathScore = 710; 
         }
         else if  (ScoreOfTwoMathTests === 54) {
-            MathScore = 730; 
+            mathScore = 730; 
         }
         else if  (ScoreOfTwoMathTests === 55) {
-            MathScore = 750; 
+            mathScore = 750; 
         }
         else if  (ScoreOfTwoMathTests === 56) {
-            MathScore = 770; 
+            mathScore = 770; 
         }
         else if  (ScoreOfTwoMathTests === 57) {
-            MathScore = 790; 
+            mathScore = 790; 
         }
         else if  (ScoreOfTwoMathTests === 58) {
-            MathScore = 800; 
+            mathScore = 800; 
         }
-        return (MathScore); 
+        return (mathScore); 
     }
 
     calculatePercentageOfAnsweredQuestions() {
@@ -1113,9 +1113,9 @@ export default class TestScreen extends React.Component {
     render() {
         const {
             isTestSubmitted,
-            ReadingScore,
-            WritingScore,
-            MathScore, 
+            readingScore,
+            writingScore,
+            mathScore, 
             currentSection, sections
         } = this.state;
 
@@ -1129,17 +1129,17 @@ export default class TestScreen extends React.Component {
       //  sections.map((section) => {
       //    allQuestions = [...allQuestions, ...section.questions]; 
        // });
-        let TotalScore = ReadingScore + WritingScore + MathScore; 
+        let totalScore = readingScore + writingScore + mathScore; 
         //const percentageOfCorrectAnswers = (numberOfCorrectAnswers*100)/sections.questions.length;
         if(isTestSubmitted) {
             
             return (
                 <div className="appContainer">
                     <h1>Result:!</h1>
-                    <h2>Reading Score: {ReadingScore}</h2>
-                    <h2>Writing and Language Score: {WritingScore}</h2>
-                    <h2>Math Score: {MathScore}</h2>
-                    <h2>Total Score: {TotalScore} </h2>
+                    <h2>Reading Score: {readingScore}</h2>
+                    <h2>Writing and Language Score: {writingScore}</h2>
+                    <h2>Math Score: {mathScore}</h2>
+                    <h2>total Score: {totalScore} </h2>
 
                 </div>
             );

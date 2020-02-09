@@ -602,7 +602,7 @@ export default class TestScreen extends React.Component {
 
     }
 
-  //  calculateReadingScore() {
+  //  calculatereadingScore() {
    //     const {subjects, currentSection} = this.state; 
 
    //     sections.map((section) => {
@@ -637,15 +637,15 @@ export default class TestScreen extends React.Component {
         })
     }
 
-    ReadingScore() {
+    readingScore() {
 
     }
 
-    WritingScore() {
+    writingScore() {
 
     }
 
-    MathScore() {
+    mathScore() {
 
     }
     checkAllQuestions() {

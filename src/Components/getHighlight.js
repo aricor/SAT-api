@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Bar } from "./popoverui";
+import { Bar } from "./popoverUI";
 import Popover from "react-text-selection-popover";
 
 export default class Highlight extends Component {
