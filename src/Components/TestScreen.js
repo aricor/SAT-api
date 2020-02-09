@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from "./testscreen.css"
+import styles from "./testScreen.css"
 import Timer from './timer'
 import Highlight from './getHighlight'
 import ButtonComponent from './button'
