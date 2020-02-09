@@ -135,7 +135,7 @@ export default class TestScreen extends React.Component {
                     id:2, 
                     defaultTimer: 65,
                             sectionType: 'reading', 
-                            IsLastSectionType: true, 
+                            IsLastSectionType: false, 
                             IsFirstSectionType: false, 
                             title: 'This passage and the figures are adapted from Whiten et. al Social Learning in the Real World © 2016', 
                             passage: [
@@ -247,6 +247,317 @@ export default class TestScreen extends React.Component {
                 }, 
                 {
                     id:3, 
+                    defaultTimer: 65,
+                    sectionType:  'reading', 
+                    title: "This passage is from James Joyce, The Dubliners originally published in 1914",
+                    passage: [
+                        {
+                            id:1, 
+                            content: 'Mr Holohan, assistant secretary of the Eire Abu Society, had been walking up and down Dublin for nearly a month, with his hands and pockets full of dirty pieces of paper, arranging about the series of concerts. He had a game leg and for this his friends called him Hoppy Holohan. He walked up and down constantly, stood by the hour at street corners arguing the point and made notes; but in the end it was Mrs Kearney who arranged everything.', 
+                        }, 
+                        {
+                            id:2, 
+                            content: ' Miss Devlin had become Mrs Kearney out of spite. She had been educated in a high-class convent, where she had learned French and music. As she was naturally pale and unbending in manner she made few friends at school. When she came to the age of marriage she was sent out to many houses where her playing and ivory manners were much admired. She sat amid the chilly circle of her  accomplishments, waiting for some suitor to brave it and offer her a brilliant life. But the young men whom she met were ordinary and she gave them no encouragement, trying to console her romantic desires by eating a great deal of Turkish Delight in secret. However, when she drew near the limit and her friends began to loosen their tongues about her, she silenced them by marrying Mr Kearney, who was a bootmaker on Ormond Quay.', 
+                        }, 
+                        {
+                            id:3, 
+                            content: 'He was much older than she. His conversation, which was serious, took place at intervals in his great brown beard. After the first year of married life, Mrs Kearney perceived that such a man would wear better than a romantic person, but she never put her own romantic ideas away. He was sober, thrifty and pious; he went to the altar every first Friday, sometimes with her, oftener by himself. But she never weakened in her religion and was a good wife to him. At some party in a strange house when she lifted her eyebrow ever so slightly he stood up to take his leave and, when his cough troubled him, she put the eider-down quilt over his feet and made a strong rum punch. For his part, he was a model father. By paying a small sum every week into a society, he ensured for both his daughters a dowry of one hundred pounds each when they came to the age of twenty-four. He sent the elder daughter, Kathleen, to a good convent, where she learned French and music, and afterward paid her fees at the Academy. Every year in the month of July Mrs Kearney found occasion to say to some friend:', 
+                        }, 
+                        {
+                            id:4, 
+                            content: '"My good man is packing us off to Skerries for a few weeks.” If it was not Skerries it was Howth or Greystones.', 
+                        }, 
+                        {
+                            id:5, 
+                            content: 'When the Irish Revival began to be appreciable Mrs Kearney determined to take advantage of her daughter\'s name and brought an Irish teacher to the house. Kathleen and her sister sent Irish picture postcards to their friends and these friends sent back other Irish picture postcards. On special Sundays, when Mr Kearney went with his family to the pro-cathedral, a little crowd of people would assemble after mass at the corner of Cathedral Street. They were all friends of the Kearneys—musical friends or Nationalist friends; and, when they had played every little counter of gossip, they shook hands with one another all together, laughing at the crossing of so many hands, and said good-bye to one another in Irish. Soon the name of Miss Kathleen Kearney began to be heard often on people\'s lips. People said that she was very clever at music and a very nice girl and, moreover, that she was a believer in the language movement. Mrs Kearney was well content at this.', 
+                        }, 
+
+                    ], 
+                    IsLastSectionType: false, 
+                    IsFirstSectionType: false, 
+                    questions: [
+                        {
+                            id: 1,
+                            question: 
+                            "1.1 As presented in the passage, Mr. Kearney is best described as",  
+                            choices: [
+                                {
+                                    opt: 'A',
+                                    id: 1, 
+                                    text:"independent and strong willed.", 
+                                    check: false, 
+                                },
+                                {
+                                    opt: 'B',
+                                    id:2, 
+                                    text:"paternal and affectionate.",  
+                                    check:false, 
+                                },
+                                {
+                                    opt: 'C',
+                                    id:3, 
+                                    text: "serious and family oriented.",  
+                                    check:true, 
+                                },
+                                {
+                                    opt: 'D',
+                                    id:4, 
+                                    text: "boring and simple minded.",  
+                                    check:false, 
+                                } 
+                            ],
+                            selectedChoice: '',
+                       
+                        },
+                        {
+                            id: 2,
+                            question: 
+                            "1.2 As presented in the passage, Mr. Kearney is best described as",  
+                            choices: [
+                                {
+                                    opt: 'A',
+                                    id: 1, 
+                                    text:"2independent and strong willed.", 
+                                    check: false, 
+        
+                                },
+                                {
+                                    opt: 'B',
+                                    id:2, 
+                                    text:"2paternal and affectionate.",  
+                                    check: false, 
+        
+                                },
+                                {
+                                    opt: 'C',
+                                    id:3, 
+                                    text: "2serious and family oriented.",  
+                                    check: false, 
+        
+                                },
+                                {
+                                    opt: 'D',
+                                    id:4, 
+                                    text: "2boring and simple minded.",  
+                                    check: true, 
+        
+                                } 
+                            ],
+                            selectedChoice: '',
+                       
+                        },
+                    ] 
+                }, 
+
+                {
+                    id:4, 
+                    defaultTimer: 65,
+                    sectionType:  'reading', 
+                    title: "This passage is from James Joyce, The Dubliners originally published in 1914",
+                    passage: [
+                        {
+                            id:1, 
+                            content: 'Mr Holohan, assistant secretary of the Eire Abu Society, had been walking up and down Dublin for nearly a month, with his hands and pockets full of dirty pieces of paper, arranging about the series of concerts. He had a game leg and for this his friends called him Hoppy Holohan. He walked up and down constantly, stood by the hour at street corners arguing the point and made notes; but in the end it was Mrs Kearney who arranged everything.', 
+                        }, 
+                        {
+                            id:2, 
+                            content: ' Miss Devlin had become Mrs Kearney out of spite. She had been educated in a high-class convent, where she had learned French and music. As she was naturally pale and unbending in manner she made few friends at school. When she came to the age of marriage she was sent out to many houses where her playing and ivory manners were much admired. She sat amid the chilly circle of her  accomplishments, waiting for some suitor to brave it and offer her a brilliant life. But the young men whom she met were ordinary and she gave them no encouragement, trying to console her romantic desires by eating a great deal of Turkish Delight in secret. However, when she drew near the limit and her friends began to loosen their tongues about her, she silenced them by marrying Mr Kearney, who was a bootmaker on Ormond Quay.', 
+                        }, 
+                        {
+                            id:3, 
+                            content: 'He was much older than she. His conversation, which was serious, took place at intervals in his great brown beard. After the first year of married life, Mrs Kearney perceived that such a man would wear better than a romantic person, but she never put her own romantic ideas away. He was sober, thrifty and pious; he went to the altar every first Friday, sometimes with her, oftener by himself. But she never weakened in her religion and was a good wife to him. At some party in a strange house when she lifted her eyebrow ever so slightly he stood up to take his leave and, when his cough troubled him, she put the eider-down quilt over his feet and made a strong rum punch. For his part, he was a model father. By paying a small sum every week into a society, he ensured for both his daughters a dowry of one hundred pounds each when they came to the age of twenty-four. He sent the elder daughter, Kathleen, to a good convent, where she learned French and music, and afterward paid her fees at the Academy. Every year in the month of July Mrs Kearney found occasion to say to some friend:', 
+                        }, 
+                        {
+                            id:4, 
+                            content: '"My good man is packing us off to Skerries for a few weeks.” If it was not Skerries it was Howth or Greystones.', 
+                        }, 
+                        {
+                            id:5, 
+                            content: 'When the Irish Revival began to be appreciable Mrs Kearney determined to take advantage of her daughter\'s name and brought an Irish teacher to the house. Kathleen and her sister sent Irish picture postcards to their friends and these friends sent back other Irish picture postcards. On special Sundays, when Mr Kearney went with his family to the pro-cathedral, a little crowd of people would assemble after mass at the corner of Cathedral Street. They were all friends of the Kearneys—musical friends or Nationalist friends; and, when they had played every little counter of gossip, they shook hands with one another all together, laughing at the crossing of so many hands, and said good-bye to one another in Irish. Soon the name of Miss Kathleen Kearney began to be heard often on people\'s lips. People said that she was very clever at music and a very nice girl and, moreover, that she was a believer in the language movement. Mrs Kearney was well content at this.', 
+                        }, 
+
+                    ], 
+                    IsLastSectionType: false, 
+                    IsFirstSectionType: false, 
+                    questions: [
+                        {
+                            id: 1,
+                            question: 
+                            "1.1 As presented in the passage, Mr. Kearney is best described as",  
+                            choices: [
+                                {
+                                    opt: 'A',
+                                    id: 1, 
+                                    text:"independent and strong willed.", 
+                                    check: false, 
+                                },
+                                {
+                                    opt: 'B',
+                                    id:2, 
+                                    text:"paternal and affectionate.",  
+                                    check:false, 
+                                },
+                                {
+                                    opt: 'C',
+                                    id:3, 
+                                    text: "serious and family oriented.",  
+                                    check:true, 
+                                },
+                                {
+                                    opt: 'D',
+                                    id:4, 
+                                    text: "boring and simple minded.",  
+                                    check:false, 
+                                } 
+                            ],
+                            selectedChoice: '',
+                       
+                        },
+                        {
+                            id: 2,
+                            question: 
+                            "1.2 As presented in the passage, Mr. Kearney is best described as",  
+                            choices: [
+                                {
+                                    opt: 'A',
+                                    id: 1, 
+                                    text:"2independent and strong willed.", 
+                                    check: false, 
+        
+                                },
+                                {
+                                    opt: 'B',
+                                    id:2, 
+                                    text:"2paternal and affectionate.",  
+                                    check: false, 
+        
+                                },
+                                {
+                                    opt: 'C',
+                                    id:3, 
+                                    text: "2serious and family oriented.",  
+                                    check: false, 
+        
+                                },
+                                {
+                                    opt: 'D',
+                                    id:4, 
+                                    text: "2boring and simple minded.",  
+                                    check: true, 
+        
+                                } 
+                            ],
+                            selectedChoice: '',
+                       
+                        },
+                    ] 
+                }, 
+                {
+                    id:5, 
+                    defaultTimer: 65,
+                    sectionType:  'reading', 
+                    title: "This passage is from James Joyce, The Dubliners originally published in 1914",
+                    passage: [
+                        {
+                            id:1, 
+                            content: 'Mr Holohan, assistant secretary of the Eire Abu Society, had been walking up and down Dublin for nearly a month, with his hands and pockets full of dirty pieces of paper, arranging about the series of concerts. He had a game leg and for this his friends called him Hoppy Holohan. He walked up and down constantly, stood by the hour at street corners arguing the point and made notes; but in the end it was Mrs Kearney who arranged everything.', 
+                        }, 
+                        {
+                            id:2, 
+                            content: ' Miss Devlin had become Mrs Kearney out of spite. She had been educated in a high-class convent, where she had learned French and music. As she was naturally pale and unbending in manner she made few friends at school. When she came to the age of marriage she was sent out to many houses where her playing and ivory manners were much admired. She sat amid the chilly circle of her  accomplishments, waiting for some suitor to brave it and offer her a brilliant life. But the young men whom she met were ordinary and she gave them no encouragement, trying to console her romantic desires by eating a great deal of Turkish Delight in secret. However, when she drew near the limit and her friends began to loosen their tongues about her, she silenced them by marrying Mr Kearney, who was a bootmaker on Ormond Quay.', 
+                        }, 
+                        {
+                            id:3, 
+                            content: 'He was much older than she. His conversation, which was serious, took place at intervals in his great brown beard. After the first year of married life, Mrs Kearney perceived that such a man would wear better than a romantic person, but she never put her own romantic ideas away. He was sober, thrifty and pious; he went to the altar every first Friday, sometimes with her, oftener by himself. But she never weakened in her religion and was a good wife to him. At some party in a strange house when she lifted her eyebrow ever so slightly he stood up to take his leave and, when his cough troubled him, she put the eider-down quilt over his feet and made a strong rum punch. For his part, he was a model father. By paying a small sum every week into a society, he ensured for both his daughters a dowry of one hundred pounds each when they came to the age of twenty-four. He sent the elder daughter, Kathleen, to a good convent, where she learned French and music, and afterward paid her fees at the Academy. Every year in the month of July Mrs Kearney found occasion to say to some friend:', 
+                        }, 
+                        {
+                            id:4, 
+                            content: '"My good man is packing us off to Skerries for a few weeks.” If it was not Skerries it was Howth or Greystones.', 
+                        }, 
+                        {
+                            id:5, 
+                            content: 'When the Irish Revival began to be appreciable Mrs Kearney determined to take advantage of her daughter\'s name and brought an Irish teacher to the house. Kathleen and her sister sent Irish picture postcards to their friends and these friends sent back other Irish picture postcards. On special Sundays, when Mr Kearney went with his family to the pro-cathedral, a little crowd of people would assemble after mass at the corner of Cathedral Street. They were all friends of the Kearneys—musical friends or Nationalist friends; and, when they had played every little counter of gossip, they shook hands with one another all together, laughing at the crossing of so many hands, and said good-bye to one another in Irish. Soon the name of Miss Kathleen Kearney began to be heard often on people\'s lips. People said that she was very clever at music and a very nice girl and, moreover, that she was a believer in the language movement. Mrs Kearney was well content at this.', 
+                        }, 
+
+                    ], 
+                    IsLastSectionType: true, 
+                    IsFirstSectionType: false, 
+                    questions: [
+                        {
+                            id: 1,
+                            question: 
+                            "1.1 As presented in the passage, Mr. Kearney is best described as",  
+                            choices: [
+                                {
+                                    opt: 'A',
+                                    id: 1, 
+                                    text:"independent and strong willed.", 
+                                    check: false, 
+                                },
+                                {
+                                    opt: 'B',
+                                    id:2, 
+                                    text:"paternal and affectionate.",  
+                                    check:false, 
+                                },
+                                {
+                                    opt: 'C',
+                                    id:3, 
+                                    text: "serious and family oriented.",  
+                                    check:true, 
+                                },
+                                {
+                                    opt: 'D',
+                                    id:4, 
+                                    text: "boring and simple minded.",  
+                                    check:false, 
+                                } 
+                            ],
+                            selectedChoice: '',
+                       
+                        },
+                        {
+                            id: 2,
+                            question: 
+                            "1.2 As presented in the passage, Mr. Kearney is best described as",  
+                            choices: [
+                                {
+                                    opt: 'A',
+                                    id: 1, 
+                                    text:"2independent and strong willed.", 
+                                    check: false, 
+        
+                                },
+                                {
+                                    opt: 'B',
+                                    id:2, 
+                                    text:"2paternal and affectionate.",  
+                                    check: false, 
+        
+                                },
+                                {
+                                    opt: 'C',
+                                    id:3, 
+                                    text: "2serious and family oriented.",  
+                                    check: false, 
+        
+                                },
+                                {
+                                    opt: 'D',
+                                    id:4, 
+                                    text: "2boring and simple minded.",  
+                                    check: true, 
+        
+                                } 
+                            ],
+                            selectedChoice: '',
+                       
+                        },
+                    ] 
+                }, 
+
+                {
+                    id:6, 
                     defaultTimer: 10,
                             sectionType: 'break', 
                             IsLastSectionType: true, 
@@ -258,7 +569,7 @@ export default class TestScreen extends React.Component {
                 }, 
 
                 {
-                    id:4, 
+                    id:7, 
                     defaultTimer: 35,
                             sectionType: 'writing', 
                             IsLastSectionType: false, 
@@ -349,14 +660,13 @@ export default class TestScreen extends React.Component {
                                 },
                             ]
                 }, 
-
                 {
-                    id:5, 
+                    id:8, 
                     defaultTimer: 35,
                             sectionType: 'writing', 
-                            IsLastSectionType: true, 
+                            IsLastSectionType: false, 
                             IsFirstSectionType: false, 
-                            title:' Violet Wood Sorrel Plant 2', 
+                            title:' Violet Wood Sorrel Plant', 
                             passage: [
                                 {
                                     id:1, 
@@ -371,9 +681,9 @@ export default class TestScreen extends React.Component {
                             ],   
                             questions: [
                                 {
-                                    id: 3,
+                                    id: 1,
                                     question: 
-                                    "2.1 As presented in the passage, Mr. Kearney is best described as",  
+                                    "1.1 As presented in the passage, Mr. Kearney is best described as",  
                                     choices: [
                                         {
                                             opt: 'A',
@@ -401,12 +711,12 @@ export default class TestScreen extends React.Component {
                                         } 
                                     ],
                                     selectedChoice: '',
-                            
+                               
                                 },
                                 {
-                                    id: 4,
+                                    id: 2,
                                     question: 
-                                    "2.2 As presented in the passage, Mr. Kearney is best described as",  
+                                    "1.2 As presented in the passage, Mr. Kearney is best described as",  
                                     choices: [
                                         {
                                             opt: 'A',
@@ -438,12 +748,200 @@ export default class TestScreen extends React.Component {
                                         } 
                                     ],
                                     selectedChoice: '',
-                                }
+                               
+                                },
                             ]
                 }, 
                 
                 {
-                    id:6, 
+                    id:9, 
+                    defaultTimer: 35,
+                            sectionType: 'writing', 
+                            IsLastSectionType: false, 
+                            IsFirstSectionType: false, 
+                            title:' Violet Wood Sorrel Plant', 
+                            passage: [
+                                {
+                                    id:1, 
+                                    content: 'Beauty of leaf and blossom is not the only attraction possessed by this charming little plant. As a family, the wood-sorrels have great interest for botanists since Darwin devoted such [1. long] study to their power of movement. and many other scientists have described the several forms assumed by perfect flowers of the same.', 
+                                }, 
+        
+                                {
+                                    id:2, 
+                                    content: 'was inserted into the hole and struck multiple times against a false ceiling inside the box.', 
+                                }
+        
+                            ],   
+                            questions: [
+                                {
+                                    id: 1,
+                                    question: 
+                                    "1.1 As presented in the passage, Mr. Kearney is best described as",  
+                                    choices: [
+                                        {
+                                            opt: 'A',
+                                            id: 1, 
+                                            text:"independent and strong willed.", 
+                                            check: false, 
+                                        },
+                                        {
+                                            opt: 'B',
+                                            id:2, 
+                                            text:"paternal and affectionate.",  
+                                            check:false, 
+                                        },
+                                        {
+                                            opt: 'C',
+                                            id:3, 
+                                            text: "serious and family oriented.",  
+                                            check:true, 
+                                        },
+                                        {
+                                            opt: 'D',
+                                            id:4, 
+                                            text: "boring and simple minded.",  
+                                            check:false, 
+                                        } 
+                                    ],
+                                    selectedChoice: '',
+                               
+                                },
+                                {
+                                    id: 2,
+                                    question: 
+                                    "1.2 As presented in the passage, Mr. Kearney is best described as",  
+                                    choices: [
+                                        {
+                                            opt: 'A',
+                                            id: 1, 
+                                            text:"2independent and strong willed.", 
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'B',
+                                            id:2, 
+                                            text:"2paternal and affectionate.",  
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'C',
+                                            id:3, 
+                                            text: "2serious and family oriented.",  
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'D',
+                                            id:4, 
+                                            text: "2boring and simple minded.",  
+                                            check: true, 
+                
+                                        } 
+                                    ],
+                                    selectedChoice: '',
+                               
+                                },
+                            ]
+                }, 
+
+                {
+                    id:10, 
+                    defaultTimer: 35,
+                            sectionType: 'writing', 
+                            IsLastSectionType: true, 
+                            IsFirstSectionType: false, 
+                            title:' Violet Wood Sorrel Plant', 
+                            passage: [
+                                {
+                                    id:1, 
+                                    content: 'Beauty of leaf and blossom is not the only attraction possessed by this charming little plant. As a family, the wood-sorrels have great interest for botanists since Darwin devoted such [1. long] study to their power of movement. and many other scientists have described the several forms assumed by perfect flowers of the same.', 
+                                }, 
+        
+                                {
+                                    id:2, 
+                                    content: 'was inserted into the hole and struck multiple times against a false ceiling inside the box.', 
+                                }
+        
+                            ],   
+                            questions: [
+                                {
+                                    id: 1,
+                                    question: 
+                                    "1.1 As presented in the passage, Mr. Kearney is best described as",  
+                                    choices: [
+                                        {
+                                            opt: 'A',
+                                            id: 1, 
+                                            text:"independent and strong willed.", 
+                                            check: false, 
+                                        },
+                                        {
+                                            opt: 'B',
+                                            id:2, 
+                                            text:"paternal and affectionate.",  
+                                            check:false, 
+                                        },
+                                        {
+                                            opt: 'C',
+                                            id:3, 
+                                            text: "serious and family oriented.",  
+                                            check:true, 
+                                        },
+                                        {
+                                            opt: 'D',
+                                            id:4, 
+                                            text: "boring and simple minded.",  
+                                            check:false, 
+                                        } 
+                                    ],
+                                    selectedChoice: '',
+                               
+                                },
+                                {
+                                    id: 2,
+                                    question: 
+                                    "1.2 As presented in the passage, Mr. Kearney is best described as",  
+                                    choices: [
+                                        {
+                                            opt: 'A',
+                                            id: 1, 
+                                            text:"2independent and strong willed.", 
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'B',
+                                            id:2, 
+                                            text:"2paternal and affectionate.",  
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'C',
+                                            id:3, 
+                                            text: "2serious and family oriented.",  
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'D',
+                                            id:4, 
+                                            text: "2boring and simple minded.",  
+                                            check: true, 
+                
+                                        } 
+                                    ],
+                                    selectedChoice: '',
+                               
+                                },
+                            ]
+                }, 
+
+                
+                {
+                    id:11, 
                     defaultTimer: 25,
                             sectionType: 'mathNoCal', 
                             IsLastSectionType: true, 
@@ -538,7 +1036,7 @@ export default class TestScreen extends React.Component {
                             ]
                 }, 
                 {
-                    id:7, 
+                    id:12, 
                     defaultTimer: 5,
                     sectionType: 'break', 
                     IsLastSectionType: true, 
@@ -548,10 +1046,11 @@ export default class TestScreen extends React.Component {
                     questions:[], 
                 }, 
                 {
-                    id:8,
+                    id:13,
                     defaultTimer: 55,
                     sectionType: 'mathWithCal', 
                     IsLastSectionType: true, 
+                    IsFirstSectionType: true, 
                     questions: [
                         {
                             id: 1,
@@ -814,7 +1313,10 @@ export default class TestScreen extends React.Component {
         if (section.sectionType === 'reading' && section.id === 2) {
             return (
                 <div className="pic">
-                <img src={require('./elite.jpg')} className="eliteImage"></img>
+                <img src={require('./readingSection2a.png')} className="readingSection2a"></img>
+                <div className="graphTitles"> Figure 1: Percentage number of participants in each age group who performed all (bolts plus insertions), part (bolts only), or none of the irrelevant action sequence.</div>
+                <img src={require('./readingSection2b.png')} className="readingSection2b"></img>
+                <div className="graphTitles"> Figure 2: Percentage number of participants in each age group who dragged or pushed the bolts as a function of technique witnessed.</div>
                 </div>
             )
         }
