@@ -571,7 +571,7 @@ export default class TestScreen extends React.Component {
                 {
                     id:7, 
                     defaultTimer: 35,
-                            sectionType: 'writing', 
+                            sectionType: 'writing and language', 
                             IsLastSectionType: false, 
                             IsFirstSectionType: true, 
                             title:' Violet Wood Sorrel Plant', 
@@ -663,7 +663,7 @@ export default class TestScreen extends React.Component {
                 {
                     id:8, 
                     defaultTimer: 35,
-                            sectionType: 'writing', 
+                            sectionType: 'writing and language', 
                             IsLastSectionType: false, 
                             IsFirstSectionType: false, 
                             title:' Violet Wood Sorrel Plant', 
@@ -756,7 +756,7 @@ export default class TestScreen extends React.Component {
                 {
                     id:9, 
                     defaultTimer: 35,
-                            sectionType: 'writing', 
+                            sectionType: 'writing and language', 
                             IsLastSectionType: false, 
                             IsFirstSectionType: false, 
                             title:' Violet Wood Sorrel Plant', 
@@ -849,7 +849,7 @@ export default class TestScreen extends React.Component {
                 {
                     id:10, 
                     defaultTimer: 35,
-                            sectionType: 'writing', 
+                            sectionType: 'writing and language', 
                             IsLastSectionType: true, 
                             IsFirstSectionType: false, 
                             title:' Violet Wood Sorrel Plant', 
@@ -943,7 +943,7 @@ export default class TestScreen extends React.Component {
                 {
                     id:11, 
                     defaultTimer: 25,
-                            sectionType: 'mathNoCal', 
+                            sectionType: 'math (no calculator)', 
                             IsLastSectionType: true, 
                             IsFirstSectionType: true, 
                             questions: [
@@ -1048,7 +1048,7 @@ export default class TestScreen extends React.Component {
                 {
                     id:13,
                     defaultTimer: 55,
-                    sectionType: 'mathWithCal', 
+                    sectionType: 'math (with calculator)', 
                     IsLastSectionType: true, 
                     IsFirstSectionType: true, 
                     questions: [
@@ -1150,7 +1150,7 @@ export default class TestScreen extends React.Component {
         const {sections, currentSection} = this.state; 
         const section = sections[currentSection];
 
-        if (section.sectionType === 'reading' || section.sectionType === 'writing' ) {
+        if (section.sectionType === 'reading' || section.sectionType === 'writing and language' ) {
             return (
                 <div>
                     
@@ -1271,7 +1271,7 @@ export default class TestScreen extends React.Component {
             sections,
         } = this.state;
         const section = sections[currentSection];
-        if (section.sectionType === 'reading' ||section.sectionType === 'writing' ) {
+        if (section.sectionType === 'reading' ||section.sectionType === 'writing and language' ) {
             return (
 
                 <div className="passageSection">
@@ -1331,13 +1331,13 @@ export default class TestScreen extends React.Component {
         if (this.IsLastSection() && section.sectionType === 'reading') {
             buttonText = 'Go to Writing and Language'; 
         }
-        else if (this.IsLastSection() && section.sectionType === 'writing') {
-            buttonText = 'Go to Math (No Calculators)'; 
+        else if (this.IsLastSection() && section.sectionType === 'writing and language') {
+            buttonText = 'Go to Math (No Calculator)'; 
         }
-        else if (this.IsLastSection() && section.sectionType === 'mathNoCal') {
-            buttonText = 'Go to Math (With Calculators)'; 
+        else if (this.IsLastSection() && section.sectionType === 'math (no calculator)') {
+            buttonText = 'Go to Math (With Calculator)'; 
         }
-        else if (this.IsLastSection() && section.sectionType === 'mathWithCal') {
+        else if (this.IsLastSection() && section.sectionType === 'math (with calculator)') {
             buttonText = 'Submit'; 
         }
 
@@ -1363,7 +1363,7 @@ export default class TestScreen extends React.Component {
                         } //TODO: else  if(section.sectionType === 'writing' ) { Exactly the same logic as reading but for the others}
                     });
         
-                    if(section.sectionType === 'writing' ) {
+                    if(section.sectionType === 'writing and language' ) {
                         section.questions.map((question) => {
                             const correctAnswer = question.choices.find((choice) => choice.check === true);
                             if(correctAnswer.id === question.selectedChoice) { 
@@ -1375,7 +1375,7 @@ export default class TestScreen extends React.Component {
                             }
                         })
                     }
-                    else if(section.sectionType === 'mathNoCal' ) {
+                    else if(section.sectionType === 'math (no calculator)' ) {
                         section.questions.map((question) => {
                             const correctAnswer = question.choices.find((choice) => choice.check === true);
                             if(correctAnswer.id === question.selectedChoice) { 
@@ -1397,7 +1397,7 @@ export default class TestScreen extends React.Component {
                             }
                         })
                     }
-                    else if(section.sectionType === 'mathWithCal' ) {
+                    else if(section.sectionType === 'math (with calculator)' ) {
                         section.questions.map((question) => {
                             const correctAnswer = question.choices.find((choice) => choice.check === true);
                             if(correctAnswer.id === question.selectedChoice) { 
