@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Home from './Containers/Home';
+import Home from './Components/testScreen';
 ReactDOM.render(
   <Home/>,
   document.getElementById('root')
