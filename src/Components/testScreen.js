@@ -1,11 +1,11 @@
 import React from 'react'
 import styles from "./testScreen.css"
-import Timer from './timer'
-import Highlight from './getHighlight'
-import ButtonComponent from './button'
-import ProgressNum from './progressNum'
+import getTimer from './timer'
+import getHighlight from './getHighlight'
+import buttonComponent from './button'
+import progressNum from './progressNum'
 import {Progress} from 'reactstrap'
-import MathComponent from './mathComponent'
+import mathComponent from './mathComponent'
 export default class TestScreen extends React.Component {
 
     constructor(props) {
@@ -660,7 +660,7 @@ export default class TestScreen extends React.Component {
 
                         section.questions.map((subquestion, index2) => {
                             return (
-                                    <ButtonComponent
+                                    <buttonComponent
                                     key={subquestion.id}
                                     onClick={(selectedId) => {
                                         subquestion.selectedChoice = subquestion.selectedChoice != selectedId? selectedId : ''; // update the selectedChoice of this question with the clicked choice
@@ -701,7 +701,7 @@ export default class TestScreen extends React.Component {
 
                         section.questions.map((subquestion, index2) => {
                             return (
-                                <ButtonComponent
+                                <buttonComponent
                                 key={subquestion.id}
                                 onClick={(selectedId) => {
                                     subquestion.selectedChoice = subquestion.selectedChoice != selectedId? selectedId : ''; // update the selectedChoice of this question with the clicked choice
@@ -724,7 +724,7 @@ export default class TestScreen extends React.Component {
                     {
                         section.fillInQuestions.map((subfillInQuestion, index)=> {
                         return (
-                            <MathComponent
+                            <mathComponent
                                 key = {subfillInQuestion.id}
                                 question={subfillInQuestion.question}
                                 onChange={(text) => {
@@ -785,7 +785,7 @@ export default class TestScreen extends React.Component {
                         </div>
 
                         <div className= "passageToRead">
-                                <Highlight displayP = {() => this.displayPassage()}/>
+                                <getHighlight displayP = {() => this.displayPassage()}/>
                                 {this.addPic()}                
 
                         </div>
@@ -1649,7 +1649,7 @@ export default class TestScreen extends React.Component {
 
         return <div className="appContainer">
             <div className= "header">
-                <Timer 
+                <getTimer 
                     initialTimer={currentSectionObject.defaultTimer} 
                     sectionType={currentSectionObject.sectionType}
                     onTimeEnd={() => this.moveToAnotherSubject()}
@@ -1669,7 +1669,7 @@ export default class TestScreen extends React.Component {
             </div>
             <div className = "progressNum">
                 <div>
-                    <ProgressNum currentSection={currentSection} sections={sections}/>
+                    <progressNum currentSection={currentSection} sections={sections}/>
                 </div>
             </div>
             <div className = "progressbar">
