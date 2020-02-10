@@ -7,7 +7,8 @@ import './button.css';
 const ButtonComponent = props => {
   return (
     <div>
-      <p><b> {props.question} </b></p>
+      <p><b>  {props.question} </b></p>
+
       <div className="choice">
         <div className='mb-2' >
         { 

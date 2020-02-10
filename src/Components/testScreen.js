@@ -61,7 +61,7 @@ export default class TestScreen extends React.Component {
                         {
                             id: 1,
                             question: 
-                            "1.1 As presented in the passage, Mr. Kearney is best described as",  
+                            "1. As presented in the passage, Mr. Kearney is best described as",  
                             choices: [
                                 {
                                     opt: 'A',
@@ -94,33 +94,33 @@ export default class TestScreen extends React.Component {
                         {
                             id: 2,
                             question: 
-                            "1.2 As presented in the passage, Mr. Kearney is best described as",  
+                            "2. It can be inferred from the passage that Miss Devlin married Mr. Kearney because",  
                             choices: [
                                 {
                                     opt: 'A',
                                     id: 1, 
-                                    text:"2independent and strong willed.", 
+                                    text:"independent and strong willed.", 
                                     check: false, 
         
                                 },
                                 {
                                     opt: 'B',
                                     id:2, 
-                                    text:"2paternal and affectionate.",  
+                                    text:"she had no other marriage offers.",  
                                     check: false, 
         
                                 },
                                 {
                                     opt: 'C',
                                     id:3, 
-                                    text: "2serious and family oriented.",  
+                                    text: "other men were too ordinary.",  
                                     check: false, 
         
                                 },
                                 {
                                     opt: 'D',
                                     id:4, 
-                                    text: "2boring and simple minded.",  
+                                    text: "her friends were irritating her.",  
                                     check: true, 
         
                                 } 
@@ -128,6 +128,304 @@ export default class TestScreen extends React.Component {
                             selectedChoice: '',
                        
                         },
+                        {
+                            id: 3,
+                            question: 
+                            "3. Which choice provides the best evidence for the answer to the previous question?",  
+                            choices: [
+                                {
+                                    opt: 'A',
+                                    id: 1, 
+                                    text:'Lines 9-10 (“Miss...spite.”)', 
+                                    check: false, 
+        
+                                },
+                                {
+                                    opt: 'B',
+                                    id:2, 
+                                    text:"Lines 22-26 (“But the...secret.”)",  
+                                    check: false, 
+        
+                                },
+                                {
+                                    opt: 'C',
+                                    id:3, 
+                                    text: "Lines 26-30 (“However...Quay.”)",  
+                                    check: true, 
+        
+                                },
+                                {
+                                    opt: 'D',
+                                    id:4, 
+                                    text: "Lines 33-37 (“After the...away.”)",  
+                                    check: false, 
+        
+                                } 
+                            ],
+                            selectedChoice: '',
+                       
+                        },
+
+                        {
+                            id: 4,
+                            question: 
+                            "4. In line 18, the word “ivory” most nearly means",  
+                            choices: [
+                                {
+                                    opt: 'A',
+                                    id: 1, 
+                                    text:'proper', 
+                                    check: true, 
+        
+                                },
+                                {
+                                    opt: 'B',
+                                    id:2, 
+                                    text:"gentle",  
+                                    check: false, 
+        
+                                },
+                                {
+                                    opt: 'C',
+                                    id:3, 
+                                    text: "sincere",  
+                                    check: false, 
+        
+                                },
+                                {
+                                    opt: 'D',
+                                    id:4, 
+                                    text: "renowned",  
+                                    check: false, 
+        
+                                } 
+                            ],
+                            selectedChoice: '',
+                       
+                        },
+
+                        {
+                            id: 5,
+                            question: 
+                            "5. Which choice best describes the main idea of the third paragraph (lines 31-56)?",  
+                            choices: [
+                                {
+                                    opt: 'A',
+                                    id: 1, 
+                                    text:'The narrator details a choice that a character later regrets.', 
+                                    check: false, 
+        
+                                },
+                                {
+                                    opt: 'B',
+                                    id:2, 
+                                    text:"The author recounts the affectionate relationship between two characters.",  
+                                    check: true, 
+        
+                                },
+                                {
+                                    opt: 'C',
+                                    id:3, 
+                                    text: "One character describes how happy another character has made them.",  
+                                    check: false, 
+        
+                                },
+                                {
+                                    opt: 'D',
+                                    id:4, 
+                                    text: "An event occurs that affects allff characters within the story.",  
+                                    check: false, 
+        
+                                } 
+                            ],
+                            selectedChoice: '',
+                       
+                        },
+                        
+                        {
+                            id: 6,
+                            question: 
+                            "6. The narrator mentions the Irish Revival in line 60 in order to convey",  
+                            choices: [
+                                {
+                                    opt: 'A',
+                                    id: 1, 
+                                    text:'A)	Mrs. Kearney’s attempts to manipulate her family.', 
+                                    check: false, 
+        
+                                },
+                                {
+                                    opt: 'B',
+                                    id:2, 
+                                    text:"B)	the national pride that the Kearney’s have.",  
+                                    check: true, 
+        
+                                },
+                                {
+                                    opt: 'C',
+                                    id:3, 
+                                    text: "C)	why Kathleen was sent away to study.",  
+                                    check: false, 
+        
+                                },
+                                {
+                                    opt: 'D',
+                                    id:4, 
+                                    text: "an issue that Mr. and Mrs. Kearney disagreed on.",  
+                                    check: false, 
+        
+                                } 
+                            ],
+                            selectedChoice: '',
+                       
+                        },
+                        {
+                            id: 7,
+                            question: 
+                            "7. The passage indicates that Mrs. Kearney’s actions are often influence by",  
+                            choices: [
+                                {
+                                    opt: 'A',
+                                    id: 1, 
+                                    text:'the opinions of other.', 
+                                    check: true, 
+        
+                                },
+                                {
+                                    opt: 'B',
+                                    id:2, 
+                                    text:"a desire to give her family a good life.",  
+                                    check: false, 
+        
+                                },
+                                {
+                                    opt: 'C',
+                                    id:3, 
+                                    text: "her religious beliefs.",  
+                                    check: false, 
+        
+                                },
+                                {
+                                    opt: 'D',
+                                    id:4, 
+                                    text: "Irish tradition.",  
+                                    check: false, 
+        
+                                } 
+                            ],
+                            selectedChoice: '',
+                       
+                        },
+
+                        {
+                            id: 8,
+                            question: 
+                            "8. Which choice provides the best evidence for the answer",  
+                            choices: [
+                                {
+                                    opt: 'A',
+                                    id: 1, 
+                                    text:'Lines 40-41 (“But she...him.”)', 
+                                    check: false, 
+        
+                                },
+                                {
+                                    opt: 'B',
+                                    id:2, 
+                                    text:"Lines 54-59 (“Every...Greystones.”)",  
+                                    check: true, 
+        
+                                },
+                                {
+                                    opt: 'C',
+                                    id:3, 
+                                    text: "Lines 60- 63(“When the...house.”)",  
+                                    check: false, 
+        
+                                },
+                                {
+                                    opt: 'D',
+                                    id:4, 
+                                    text: "Lines 60- 63(“When the...house.”)",  
+                                    check: false, 
+        
+                                } 
+                            ],
+                            selectedChoice: '',
+                        },
+                        {
+                            id: 9,
+                            question: 
+                            "9. How does Mrs. Kearny perceive her daughter Kathleen?",  
+                            choices: [
+                                {
+                                    opt: 'A',
+                                    id: 1, 
+                                    text:'She wants Kathleen to have a bright future by pursuing music.', 
+                                    check: false, 
+        
+                                },
+                                {
+                                    opt: 'B',
+                                    id:2, 
+                                    text:"She believes that Kathleen will need more tutoring in order to do well.",  
+                                    check: false, 
+        
+                                },
+                                {
+                                    opt: 'C',
+                                    id:3, 
+                                    text: "She is content on how others perceive Kathleen and her abilities.",  
+                                    check: true, 
+        
+                                },
+                                {
+                                    opt: 'D',
+                                    id:4, 
+                                    text: "She wants Kathleen to pursue her dreams as a linguist.",  
+                                    check: false, 
+        
+                                } 
+                            ],
+                            selectedChoice: '',
+                        },
+
+                        {
+                            id: 10,
+                            question: 
+                            "10. Which choice best describes the developmental pattern of the passage?",  
+                            choices: [
+                                {
+                                    opt: 'A',
+                                    id: 1, 
+                                    text:'a descriptive analysis of a chance encounter between two strangers', 
+                                    check: false, 
+        
+                                },
+                                {
+                                    opt: 'B',
+                                    id:2, 
+                                    text:"a narrative about a woman with insights into her character and family",  
+                                    check: true, 
+        
+                                },
+                                {
+                                    opt: 'C',
+                                    id:3, 
+                                    text: "a discussion of a failed marriage and its effects on others",  
+                                    check: true, 
+        
+                                },
+                                {
+                                    opt: 'D',
+                                    id:4, 
+                                    text: "an overview of the hardships endured by a character and the results",  
+                                    check: false, 
+                                } 
+                            ],
+                            selectedChoice: '',
+                        },
+                        
                     ] 
                 }, 
 
@@ -175,70 +473,143 @@ export default class TestScreen extends React.Component {
                             ],                            
                             questions: [
                                 {
-                                    id: 3,
+                                    id: 11,
                                     question: 
-                                    "2.1 As presented in the passage, Mr. Kearney is best described as",  
+                                    "11. The authors most likely notes that the participants in the study were “unaware that they were taking part in an experiment” (lines 7-8) to highlight that",  
                                     choices: [
                                         {
                                             opt: 'A',
                                             id: 1, 
-                                            text:"independent and strong willed.", 
-                                            check: false, 
+                                            text:'ocial pressure was not a factor in the experiment.', 
+                                            check: true, 
+                
                                         },
                                         {
                                             opt: 'B',
                                             id:2, 
-                                            text:"paternal and affectionate.",  
-                                            check:false, 
+                                            text:"the study was ethically conducted.",  
+                                            check: false, 
+                
                                         },
                                         {
                                             opt: 'C',
                                             id:3, 
-                                            text: "serious and family oriented.",  
-                                            check:true, 
+                                            text: "the participants were randomly selected.",  
+                                            check: false, 
+                
                                         },
                                         {
                                             opt: 'D',
                                             id:4, 
-                                            text: "boring and simple minded.",  
-                                            check:false, 
+                                            text: "none of the participants had agreed to the study.",  
+                                            check: false, 
                                         } 
                                     ],
                                     selectedChoice: '',
-                            
                                 },
                                 {
-                                    id: 4,
+                                    id: 12,
                                     question: 
-                                    "2.2 As presented in the passage, Mr. Kearney is best described as",  
+                                    "12. The passage indicates which of the following actions were irrelevant to the task at hand?",  
                                     choices: [
                                         {
                                             opt: 'A',
                                             id: 1, 
-                                            text:"2independent and strong willed.", 
+                                            text:"withdrawing a reward from the box with a magnet", 
                                             check: false, 
                 
                                         },
                                         {
                                             opt: 'B',
                                             id:2, 
-                                            text:"2paternal and affectionate.",  
+                                            text:"inserting a probe into the box",  
                                             check: false, 
                 
                                         },
                                         {
                                             opt: 'C',
                                             id:3, 
-                                            text: "2serious and family oriented.",  
+                                            text: "uncovering a hole on the top of the box and finding a false ceiling",  
+                                            check: true, 
+                
+                                        },
+                                        {
+                                            opt: 'D',
+                                            id:4, 
+                                            text: "opening a door.",  
+                                            check: false, 
+                
+                                        } 
+                                    ],
+                                    selectedChoice: '',
+                                }, 
+
+                                {
+                                    id: 13,
+                                    question: 
+                                    "13. Which choice provides the best evidence for the answer to the previous question?",  
+                                    choices: [
+                                        {
+                                            opt: 'A',
+                                            id: 1, 
+                                            text:"Lines 16-22 (“The task...probe.”)", 
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'B',
+                                            id:2, 
+                                            text:"B)	Lines 22-30 (“The casually...box.”)",  
+                                            check: true, 
+                
+                                        },
+                                        {
+                                            opt: 'C',
+                                            id:3, 
+                                            text: "Lines 38-42 (“Of interest...goal.”)",  
                                             check: false, 
                 
                                         },
                                         {
                                             opt: 'D',
                                             id:4, 
-                                            text: "2boring and simple minded.",  
-                                            check: true, 
+                                            text: "Lines 43-52 (“Despite...task.”)",  
+                                            check: false, 
+                                        } 
+                                    ],
+                                    selectedChoice: '',
+                                }, 
+
+                                {
+                                    id: 14,
+                                    question: 
+                                    "14. Which choice best summarizes the fifth paragraph of the passage (lines 53-62)?",  
+                                    choices: [
+                                        {
+                                            opt: 'A',
+                                            id: 1, 
+                                            text:"Adults are less likely than children to follow the examples others set.", 
+                                            check: false, 
                 
+                                        },
+                                        {
+                                            opt: 'B',
+                                            id:2, 
+                                            text:"Social learning influences actions at any age.",  
+                                            check: true, 
+                                        },
+                                        {
+                                            opt: 'C',
+                                            id:3, 
+                                            text: "Humans choose which social norms they want to follow.",  
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'D',
+                                            id:4, 
+                                            text: "Irrelevant tasks did not distract participants from achieving the goal.",  
+                                            check: false, 
                                         } 
                                     ],
                                     selectedChoice: '',
@@ -249,28 +620,32 @@ export default class TestScreen extends React.Component {
                     id:3, 
                     defaultTimer: 65,
                     sectionType:  'reading', 
-                    title: "This passage is from James Joyce, The Dubliners originally published in 1914",
+                    title: "The passage is adapted from Boutilier et. al Water Filtration Using Plant Xylem © 2014",
                     passage: [
                         {
                             id:1, 
-                            content: 'Mr Holohan, assistant secretary of the Eire Abu Society, had been walking up and down Dublin for nearly a month, with his hands and pockets full of dirty pieces of paper, arranging about the series of concerts. He had a game leg and for this his friends called him Hoppy Holohan. He walked up and down constantly, stood by the hour at street corners arguing the point and made notes; but in the end it was Mrs Kearney who arranged everything.', 
+                            content: 'The scarcity of clean and safe drinking water is one of the major causes of human mortality in the developing world. Potable or drinking water is defined as having acceptable quality in terms of its physical, chemical, and bacteriological parameters so that it can be safely used for drinking and cooking. Among the water pollutants, the most deadly ones are of biological origin: infectious diseases caused by pathogenic bacteria, viruses, protozoa, or parasites are the most common and widespread health risk associated with drinking water. The most common water-borne pathogens are bacteria, viruses, and protoza.', 
                         }, 
                         {
                             id:2, 
-                            content: ' Miss Devlin had become Mrs Kearney out of spite. She had been educated in a high-class convent, where she had learned French and music. As she was naturally pale and unbending in manner she made few friends at school. When she came to the age of marriage she was sent out to many houses where her playing and ivory manners were much admired. She sat amid the chilly circle of her  accomplishments, waiting for some suitor to brave it and offer her a brilliant life. But the young men whom she met were ordinary and she gave them no encouragement, trying to console her romantic desires by eating a great deal of Turkish Delight in secret. However, when she drew near the limit and her friends began to loosen their tongues about her, she silenced them by marrying Mr Kearney, who was a bootmaker on Ormond Quay.', 
+                            content: 'The World Health Organization reports that 1.6 million people die every year from diarrheal diseases attributable to lack of access to safe drinking water and basic sanitation. 90% of these are children under the age of 5, mostly in developing countries. Multiple barriers including prevention of contamination, sanitation, and disinfection are necessary to effectively prevent the spread of waterborne diseases. However, if only one barrier is possible, it has to be disinfection unless evidence exists that chemical contaminants are more harmful than the risk from ingestion of microbial pathogens. Furthermore, controlling water quality at the point-of-use is ften most effective due to the issues of microbial regrowth, byproducts of disinfectants, pipeline corrosion, and contamination in the distribution system.', 
                         }, 
                         {
                             id:3, 
-                            content: 'He was much older than she. His conversation, which was serious, took place at intervals in his great brown beard. After the first year of married life, Mrs Kearney perceived that such a man would wear better than a romantic person, but she never put her own romantic ideas away. He was sober, thrifty and pious; he went to the altar every first Friday, sometimes with her, oftener by himself. But she never weakened in her religion and was a good wife to him. At some party in a strange house when she lifted her eyebrow ever so slightly he stood up to take his leave and, when his cough troubled him, she put the eider-down quilt over his feet and made a strong rum punch. For his part, he was a model father. By paying a small sum every week into a society, he ensured for both his daughters a dowry of one hundred pounds each when they came to the age of twenty-four. He sent the elder daughter, Kathleen, to a good convent, where she learned French and music, and afterward paid her fees at the Academy. Every year in the month of July Mrs Kearney found occasion to say to some friend:', 
+                            content: 'Common technologies for water disinfection include chlorination, filtration, UV-disinfection, pasteurization or boiling, and ozone treatment. Chlorine treatment is effective on a large scale, but becomes expensive for smaller towns and villages. Boiling is an effective method to disinfect water; however, the amount of fuel required to disinfect water by boiling is several times more than what a typical family will use for cooking. UV-disinfection is a promising point-of-use technology available, yet it does require access to electricity and some maintenance of the UV lamp, or sufficient sunlight.', 
                         }, 
                         {
                             id:4, 
-                            content: '"My good man is packing us off to Skerries for a few weeks.” If it was not Skerries it was Howth or Greystones.', 
+                            content: '  While small and inexpensive filtration devices can potentially address the issue of point-of-use disinfection, an ideal technology does not currently exist. Inexpensive household carbon-based filters are not effective at removing pathogens and can be used only when the water is already biologically safe. Sand filters that can remove pathogens require large area and knowledge of how to maintain them, while membrane filters capable of removing pathogens suffer from high costs, fouling, and often require pumping power due to low flow rates that prevents their wide implementation in developing countries. In this context, new approaches that can improve upon current technologies are urgently needed. Specifically, membrane materials that are inexpensive, readily available, disposable, and effective at pathogen removal could greatly impact our ability to provide safe drinking water to the global population.', 
                         }, 
                         {
                             id:5, 
-                            content: 'When the Irish Revival began to be appreciable Mrs Kearney determined to take advantage of her daughter\'s name and brought an Irish teacher to the house. Kathleen and her sister sent Irish picture postcards to their friends and these friends sent back other Irish picture postcards. On special Sundays, when Mr Kearney went with his family to the pro-cathedral, a little crowd of people would assemble after mass at the corner of Cathedral Street. They were all friends of the Kearneys—musical friends or Nationalist friends; and, when they had played every little counter of gossip, they shook hands with one another all together, laughing at the crossing of so many hands, and said good-bye to one another in Irish. Soon the name of Miss Kathleen Kearney began to be heard often on people\'s lips. People said that she was very clever at music and a very nice girl and, moreover, that she was a believer in the language movement. Mrs Kearney was well content at this.', 
+                            content: 'If we look to nature for inspiration, we find that a potential solution exists in the form of plant xylem – a porous material that conducts fluid in plants. Plants have evolved specialized xylem tissues to conduct sap from their roots to their shoots. Xylem has evolved under the competing pressures of offering minimal resistance to the ascent of sap while maintaining small nanoscale pores to prevent cavitation. The size distribution of these pores also happens to be ideal for filtering out pathogens, which raises the interesting question of whether plant xylem can be used to make inexpensive water filtration devices.', 
                         }, 
+                        {
+                            id: 6, 
+                            content: 'Although scientists have extensively studied plant xylem and the ascent of sap, use of plant xylem in the context of water filtration remains to be explored. Measurements of sap flow in plants sugge that flow rates in the range of several liters per hour may be feasible with less than 10 cm-sized filters, using only gravitational pressure to drive the flow.', 
+                        }
 
                     ], 
                     IsLastSectionType: false, 
@@ -353,29 +728,52 @@ export default class TestScreen extends React.Component {
                     id:4, 
                     defaultTimer: 65,
                     sectionType:  'reading', 
-                    title: "This passage is from James Joyce, The Dubliners originally published in 1914",
+                    title: "Passage1is adapted from Richard Nixon’s book No More Vietnams ©1985. Nixon discusses his view on the publication of the Pentagon Papers in the New York Times during his presidency. Passage 2 is adapted from New York Times Editor A. M. Rosenthal What a Free Press is All About on hisopinion of the matter in 1972.",
                     passage: [
                         {
                             id:1, 
-                            content: 'Mr Holohan, assistant secretary of the Eire Abu Society, had been walking up and down Dublin for nearly a month, with his hands and pockets full of dirty pieces of paper, arranging about the series of concerts. He had a game leg and for this his friends called him Hoppy Holohan. He walked up and down constantly, stood by the hour at street corners arguing the point and made notes; but in the end it was Mrs Kearney who arranged everything.', 
+                            content: '<b>Passage 1<\/b>', 
                         }, 
                         {
                             id:2, 
-                            content: ' Miss Devlin had become Mrs Kearney out of spite. She had been educated in a high-class convent, where she had learned French and music. As she was naturally pale and unbending in manner she made few friends at school. When she came to the age of marriage she was sent out to many houses where her playing and ivory manners were much admired. She sat amid the chilly circle of her  accomplishments, waiting for some suitor to brave it and offer her a brilliant life. But the young men whom she met were ordinary and she gave them no encouragement, trying to console her romantic desires by eating a great deal of Turkish Delight in secret. However, when she drew near the limit and her friends began to loosen their tongues about her, she silenced them by marrying Mr Kearney, who was a bootmaker on Ormond Quay.', 
+                            content: 'My administration faced the difficult question of what to do about the most massive leak of classified documents in American history. We had only two options: We could either do nothing or move for a court injunction that would prevent the Times from continuing publication. Good policy argued for moving against the Times; safe politics argued against doing so.'
                         }, 
                         {
                             id:3, 
-                            content: 'He was much older than she. His conversation, which was serious, took place at intervals in his great brown beard. After the first year of married life, Mrs Kearney perceived that such a man would wear better than a romantic person, but she never put her own romantic ideas away. He was sober, thrifty and pious; he went to the altar every first Friday, sometimes with her, oftener by himself. But she never weakened in her religion and was a good wife to him. At some party in a strange house when she lifted her eyebrow ever so slightly he stood up to take his leave and, when his cough troubled him, she put the eider-down quilt over his feet and made a strong rum punch. For his part, he was a model father. By paying a small sum every week into a society, he ensured for both his daughters a dowry of one hundred pounds each when they came to the age of twenty-four. He sent the elder daughter, Kathleen, to a good convent, where she learned French and music, and afterward paid her fees at the Academy. Every year in the month of July Mrs Kearney found occasion to say to some friend:', 
+                            content: 'If the New York Times had acted with any degree of responsibility, we could have avoided the battle in the court. But it had not done so. Its editors admitted having had possession of the documents for more than three months before publishing them. Yet never once had they asked anyone in the government whether publication of any of the classified material might threaten national security or endanger the lives of our men in Vietnam.', 
                         }, 
                         {
                             id:4, 
-                            content: '"My good man is packing us off to Skerries for a few weeks.” If it was not Skerries it was Howth or Greystones.', 
+                            content: 'The Supreme Court ruled against the government. But I still believe I acted responsibly in challenging the right of the New York Times to publish the Pentagon’s study. Its release was an illegal action. Its publication was a threat to our ability to conduct foreign policy. If we had done nothing, we would have been setting a dangerous precedent: Every disgruntled bureaucrat in Washington would have read our inaction as a signal that he could leak anything he pleased and that the government would simply stand by helplessly. In the thirteen years since the Supreme Court sanctioned the Times’s publication of the Pentagon Papers, that is exactly what has happened.', 
                         }, 
                         {
                             id:5, 
-                            content: 'When the Irish Revival began to be appreciable Mrs Kearney determined to take advantage of her daughter\'s name and brought an Irish teacher to the house. Kathleen and her sister sent Irish picture postcards to their friends and these friends sent back other Irish picture postcards. On special Sundays, when Mr Kearney went with his family to the pro-cathedral, a little crowd of people would assemble after mass at the corner of Cathedral Street. They were all friends of the Kearneys—musical friends or Nationalist friends; and, when they had played every little counter of gossip, they shook hands with one another all together, laughing at the crossing of so many hands, and said good-bye to one another in Irish. Soon the name of Miss Kathleen Kearney began to be heard often on people\'s lips. People said that she was very clever at music and a very nice girl and, moreover, that she was a believer in the language movement. Mrs Kearney was well content at this.', 
+                            content: '<b>Passage 2<\/b>', 
                         }, 
-
+                        {
+                            id:6, 
+                            content: 'The decisions were taken and two great issues immediately confronted the Government, the press, the courts and the public. There was, to begin with, the issue of the papers themselves and what they showed about the process of government, how decisions are made-or, sometimes more important, not made-and how the country went step by step into the most divisive foreign war in its history.', 
+                        }, 
+                        {
+                            id:7, 
+                            content: 'And there was the great constitutional issue of freedom of the press: Does it have limits, and, if so, what are they and who determines them and can they be imposed in advance of publication?', 
+                        }, 
+                        {
+                            id:8, 
+                            content: 'The decisions were not taken to change history or to try to affix blame or as an act of civil disobedience-quite the contrary, we were convinced we were acting totally within the law, and from the beginning agreed that if it did come to a court test, we would fight all the way through the judicial process but would not defy the courts.', 
+                        }, 
+                        {
+                            id:9, 
+                            content: 'The decisions were taken simply because we believed that this was what the national interest and the role of a free press were all about.', 
+                        }, 
+                        {
+                            id:10, 
+                            content: 'By far the most important was that for the first time, a Government of the United States asked for and courts granted an injunction against newspapers-and prior restraint, death to a free press, had a precedent.', 
+                        }, 
+                        {
+                            id:11, 
+                            content: 'That was a loss and it could only be redressed in the future by the determination of American society-the press, the public, the courts, the politicians-to fight to the end against any future attempts at prior restraint. No press ever remained free by bowing to censorship beforehand for fear of what might take place if it printed the truth.', 
+                        }
                     ], 
                     IsLastSectionType: false, 
                     IsFirstSectionType: false, 
@@ -456,28 +854,36 @@ export default class TestScreen extends React.Component {
                     id:5, 
                     defaultTimer: 65,
                     sectionType:  'reading', 
-                    title: "This passage is from James Joyce, The Dubliners originally published in 1914",
+                    title: "This passage and the figures are adapted from Shibuya et. al Toxic wavelength of blue light changes as insects grow © 2018",
                     passage: [
                         {
                             id:1, 
-                            content: 'Mr Holohan, assistant secretary of the Eire Abu Society, had been walking up and down Dublin for nearly a month, with his hands and pockets full of dirty pieces of paper, arranging about the series of concerts. He had a game leg and for this his friends called him Hoppy Holohan. He walked up and down constantly, stood by the hour at street corners arguing the point and made notes; but in the end it was Mrs Kearney who arranged everything.', 
+                            content: 'The responses of insects to light have been studied and applied to various pest control methods. In particular, phototaxis has been well studied in insects. By identifying the species of insects that are attracted to artificial light sources and counting the number of insects, it is possible to forecast pest outbreaks. Phototaxis is also used for physical pest control. For instance, insects are attracted to light sources and are then killed by electric shock. Another study found that the compound eyes of fruit-piercing moths are adapted to yellow light, which suppresses fruit-piercing behavior, with this information being used to control their behavior.', 
                         }, 
                         {
                             id:2, 
-                            content: ' Miss Devlin had become Mrs Kearney out of spite. She had been educated in a high-class convent, where she had learned French and music. As she was naturally pale and unbending in manner she made few friends at school. When she came to the age of marriage she was sent out to many houses where her playing and ivory manners were much admired. She sat amid the chilly circle of her  accomplishments, waiting for some suitor to brave it and offer her a brilliant life. But the young men whom she met were ordinary and she gave them no encouragement, trying to console her romantic desires by eating a great deal of Turkish Delight in secret. However, when she drew near the limit and her friends began to loosen their tongues about her, she silenced them by marrying Mr Kearney, who was a bootmaker on Ormond Quay.', 
+                            content: 'Furthermore, free-flying insects maintain their horizontal orientation by receiving sunlight on their dorsal side while flying, which is termed the dorsal light reaction. This response has also been used in pest control. Specifically, by covering the ground in reflective mulching films (or sheets), flying insects receive reflected sunlight on the ventral side, which inhibits normal flight and prevents pests entering crop fields.', 
                         }, 
                         {
                             id:3, 
-                            content: 'He was much older than she. His conversation, which was serious, took place at intervals in his great brown beard. After the first year of married life, Mrs Kearney perceived that such a man would wear better than a romantic person, but she never put her own romantic ideas away. He was sober, thrifty and pious; he went to the altar every first Friday, sometimes with her, oftener by himself. But she never weakened in her religion and was a good wife to him. At some party in a strange house when she lifted her eyebrow ever so slightly he stood up to take his leave and, when his cough troubled him, she put the eider-down quilt over his feet and made a strong rum punch. For his part, he was a model father. By paying a small sum every week into a society, he ensured for both his daughters a dowry of one hundred pounds each when they came to the age of twenty-four. He sent the elder daughter, Kathleen, to a good convent, where she learned French and music, and afterward paid her fees at the Academy. Every year in the month of July Mrs Kearney found occasion to say to some friend:', 
+                            content: 'However, while many methods use light to control pests, these methods target the behavior of insects. While the lethal effects of ultra-violet light on insects have been reported aver the last five decades, our previous study was the first, to our knowledge, to report the lethal effects of visible light on complex organisms, including insects. Ultraviolet or blue light are used to attract insects to insect traps; however, our previous report suggested that insects are killed by continuous irradiation with blue light that is more than a certain amount. Depending on how it is used, blue light could be used to both capture insects in traps and remove pests through continuous irradiation.', 
                         }, 
                         {
                             id:4, 
-                            content: '"My good man is packing us off to Skerries for a few weeks.” If it was not Skerries it was Howth or Greystones.', 
+                            content: 'Perhaps, fluorescent lamps or LED, which are already used as light sources in insect traps, could be used as insecticidal devices. In our previous study, we irradiated the pupae of three species of insect with various wavelengths of blue light to determine the most harmful wavelength. However, out of all insect species, the photosensitivity of insects that completely change the structure of the body via metamorphosis might change, depending on the stage of development.', 
                         }, 
                         {
                             id:5, 
-                            content: 'When the Irish Revival began to be appreciable Mrs Kearney determined to take advantage of her daughter\'s name and brought an Irish teacher to the house. Kathleen and her sister sent Irish picture postcards to their friends and these friends sent back other Irish picture postcards. On special Sundays, when Mr Kearney went with his family to the pro-cathedral, a little crowd of people would assemble after mass at the corner of Cathedral Street. They were all friends of the Kearneys—musical friends or Nationalist friends; and, when they had played every little counter of gossip, they shook hands with one another all together, laughing at the crossing of so many hands, and said good-bye to one another in Irish. Soon the name of Miss Kathleen Kearney began to be heard often on people\'s lips. People said that she was very clever at music and a very nice girl and, moreover, that she was a believer in the language movement. Mrs Kearney was well content at this.', 
+                            content: 'Therefore, it is necessary to clarify the most toxic wavelength ta each developmental (or growth) stage to establish new physical pest control techniques using blue light. In this study, we report how the effective wavelength of blue light changes with insect development.', 
                         }, 
+                        {
+                            id: 6, 
+                            content: 'We selected the fruit fly, Drosophila melanogaster, as a model insect because of its short life cycle. Furthermore, because it is possible to rear large numbers of D. melanogaster with ease, the experiments of this study could be conducted efficiently. In addition, D. melanogaster is suitable for future research to clarify the mechanism that generates differences in the effective wavelength among developmental stages, because many mutants are produced and cell culture is straightforward.',
+                        },
+                        {
+                            id: 7, 
+                            contnet: ' This study confirmed that blue light is lethal to all growth stages of D. melanogaster. We showed that the most toxic wavelength differed at different developmental stages. Shorter wavelengths were more harmful to eggs. Eggs were assumed ta be damaged by light with a shorter wavelength because this wavelength contains more energy. The lethal effects of blue light were different on larvae compared to the eqgs. This finding is important toward providing baseline information for establishing pest control methods using light irradiation.'
+                        }
 
                     ], 
                     IsLastSectionType: true, 
@@ -1154,11 +1560,12 @@ export default class TestScreen extends React.Component {
             return (
                 <div>
                     
-                    <h4> SECTION {section.sectionType}</h4>
+                    <h4> Section: {section.sectionType}</h4>
                     {
 
                         section.questions.map((subquestion, index2) => {
                             return (
+                                
                                     <ButtonComponent
                                     key={subquestion.id}
                                     onClick={(selectedId) => {
@@ -1185,8 +1592,7 @@ export default class TestScreen extends React.Component {
         else if (section.sectionType === 'break' ) {
             return (
                 <div>
-                    
-                    <h4> SECTION {section.sectionType}</h4>
+                    <h4> Section: {section.sectionType}</h4>
                     <p>You can be back in {section.defaultTimer} minutes</p>
                 </div>
             )  
@@ -1195,7 +1601,7 @@ export default class TestScreen extends React.Component {
             return (
                 <div>
                     
-                    <h4> SECTION {section.sectionType}</h4>
+                    <h4> Section: {section.sectionType}</h4>
                     {
 
                         section.questions.map((subquestion, index2) => {
@@ -1262,9 +1668,7 @@ export default class TestScreen extends React.Component {
             return section.id; 
         }
     }
-   // checkingFillInQuestions() {
-//
-  //  }
+
     addPassageOrNot() {
         const {
             currentSection,
@@ -1313,10 +1717,20 @@ export default class TestScreen extends React.Component {
         if (section.sectionType === 'reading' && section.id === 2) {
             return (
                 <div className="pic">
-                <img src={require('./readingSection2a.png')} className="readingSection2a"></img>
+                <img src={require('./readingSection2a.png')} className="readingSection"></img>
                 <div className="graphTitles"> Figure 1: Percentage number of participants in each age group who performed all (bolts plus insertions), part (bolts only), or none of the irrelevant action sequence.</div>
-                <img src={require('./readingSection2b.png')} className="readingSection2b"></img>
+                <img src={require('./readingSection2b.png')} className="readingSection"></img>
                 <div className="graphTitles"> Figure 2: Percentage number of participants in each age group who dragged or pushed the bolts as a function of technique witnessed.</div>
+                </div>
+            )
+        }
+        else if (section.sectionType === 'reading' && section.id === 5) {
+            return (
+                <div className="pic">
+                <img src={require('./readingSection5a.png')} className="readingSection"></img>
+                <div className="graphTitles"> Figure 1: Egg mortality at different wavelengths.</div>
+                <img src={require('./readingSection5b.png')} className="readingSection"></img>
+                <div className="graphTitles"> Figure 2: Larval mortality at different wavelengths.</div>
                 </div>
             )
         }
