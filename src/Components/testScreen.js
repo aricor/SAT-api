@@ -613,7 +613,110 @@ export default class TestScreen extends React.Component {
                                         } 
                                     ],
                                     selectedChoice: '',
-                                }
+                                }, 
+
+                                {
+                                    id: 15,
+                                    question: 
+                                    "15. In line 63, the word “principal” most nearly means",  
+                                    choices: [
+                                        {
+                                            opt: 'A',
+                                            id: 1, 
+                                            text:"chief", 
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'B',
+                                            id:2, 
+                                            text:"crucial",  
+                                            check: false, 
+                                        },
+                                        {
+                                            opt: 'C',
+                                            id:3, 
+                                            text: "innate",  
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'D',
+                                            id:4, 
+                                            text: "primary",  
+                                            check: true, 
+                                        } 
+                                    ],
+                                    selectedChoice: '',
+                                }, 
+                                {
+                                    id: 15,
+                                    question: 
+                                    "15. In line 63, the word “principal” most nearly means",  
+                                    choices: [
+                                        {
+                                            opt: 'A',
+                                            id: 1, 
+                                            text:"chief", 
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'B',
+                                            id:2, 
+                                            text:"crucial",  
+                                            check: false, 
+                                        },
+                                        {
+                                            opt: 'C',
+                                            id:3, 
+                                            text: "innate",  
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'D',
+                                            id:4, 
+                                            text: "primary",  
+                                            check: true, 
+                                        } 
+                                    ],
+                                    selectedChoice: '',
+                                }, 
+                                {
+                                    id: 16,
+                                    question: 
+                                    "16. Which of the following best characterizes the perspective of the researchers as to why over-imitation occurred in the experiment?",  
+                                    choices: [
+                                        {
+                                            opt: 'A',
+                                            id: 1, 
+                                            text:"chief", 
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'B',
+                                            id:2, 
+                                            text:"crucial",  
+                                            check: false, 
+                                        },
+                                        {
+                                            opt: 'C',
+                                            id:3, 
+                                            text: "innate",  
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'D',
+                                            id:4, 
+                                            text: "primary",  
+                                            check: true, 
+                                        } 
+                                    ],
+                                    selectedChoice: '',
+                                }, 
                             ],
                 }, 
                 {
@@ -1565,7 +1668,6 @@ export default class TestScreen extends React.Component {
 
                         section.questions.map((subquestion, index2) => {
                             return (
-                                
                                     <ButtonComponent
                                     key={subquestion.id}
                                     onClick={(selectedId) => {
@@ -1581,7 +1683,7 @@ export default class TestScreen extends React.Component {
                                     selectedChoice={subquestion.selectedChoice}
                                     question={subquestion.question}
                                     choices={subquestion.choices}
-                            />
+                                    />
                             )
 
                         })
@@ -2577,7 +2679,10 @@ export default class TestScreen extends React.Component {
 
                 <div className="questionSection">
                     <div className="article2">
-                    {this.renderAllQuestions()}
+                        <div classname="questionContent">
+                        {this.renderAllQuestions()}
+
+                        </div>
                     {!this.IsTheFirstSectionType() ?  <button className="btn btn-dark"  onClick={() => this.setState({ currentSection: currentSection - 1})}> Back</button> : '' }
                     {this.renderRightButton()}
                     </div>
