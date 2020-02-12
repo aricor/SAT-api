@@ -613,110 +613,7 @@ export default class TestScreen extends React.Component {
                                         } 
                                     ],
                                     selectedChoice: '',
-                                }, 
-
-                                {
-                                    id: 15,
-                                    question: 
-                                    "15. In line 63, the word “principal” most nearly means",  
-                                    choices: [
-                                        {
-                                            opt: 'A',
-                                            id: 1, 
-                                            text:"chief", 
-                                            check: false, 
-                
-                                        },
-                                        {
-                                            opt: 'B',
-                                            id:2, 
-                                            text:"crucial",  
-                                            check: false, 
-                                        },
-                                        {
-                                            opt: 'C',
-                                            id:3, 
-                                            text: "innate",  
-                                            check: false, 
-                
-                                        },
-                                        {
-                                            opt: 'D',
-                                            id:4, 
-                                            text: "primary",  
-                                            check: true, 
-                                        } 
-                                    ],
-                                    selectedChoice: '',
-                                }, 
-                                {
-                                    id: 15,
-                                    question: 
-                                    "15. In line 63, the word “principal” most nearly means",  
-                                    choices: [
-                                        {
-                                            opt: 'A',
-                                            id: 1, 
-                                            text:"chief", 
-                                            check: false, 
-                
-                                        },
-                                        {
-                                            opt: 'B',
-                                            id:2, 
-                                            text:"crucial",  
-                                            check: false, 
-                                        },
-                                        {
-                                            opt: 'C',
-                                            id:3, 
-                                            text: "innate",  
-                                            check: false, 
-                
-                                        },
-                                        {
-                                            opt: 'D',
-                                            id:4, 
-                                            text: "primary",  
-                                            check: true, 
-                                        } 
-                                    ],
-                                    selectedChoice: '',
-                                }, 
-                                {
-                                    id: 16,
-                                    question: 
-                                    "16. Which of the following best characterizes the perspective of the researchers as to why over-imitation occurred in the experiment?",  
-                                    choices: [
-                                        {
-                                            opt: 'A',
-                                            id: 1, 
-                                            text:"chief", 
-                                            check: false, 
-                
-                                        },
-                                        {
-                                            opt: 'B',
-                                            id:2, 
-                                            text:"crucial",  
-                                            check: false, 
-                                        },
-                                        {
-                                            opt: 'C',
-                                            id:3, 
-                                            text: "innate",  
-                                            check: false, 
-                
-                                        },
-                                        {
-                                            opt: 'D',
-                                            id:4, 
-                                            text: "primary",  
-                                            check: true, 
-                                        } 
-                                    ],
-                                    selectedChoice: '',
-                                }, 
+                                }
                             ],
                 }, 
                 {
@@ -739,7 +636,7 @@ export default class TestScreen extends React.Component {
                         }, 
                         {
                             id:4, 
-                            content: '  While small and inexpensive filtration devices can potentially address the issue of point-of-use disinfection, an ideal technology does not currently exist. Inexpensive household carbon-based filters are not effective at removing pathogens and can be used only when the water is already biologically safe. Sand filters that can remove pathogens require large area and knowledge of how to maintain them, while membrane filters capable of removing pathogens suffer from high costs, fouling, and often require pumping power due to low flow rates that prevents their wide implementation in developing countries. In this context, new approaches that can improve upon current technologies are urgently needed. Specifically, membrane materials that are inexpensive, readily available, disposable, and effective at pathogen removal could greatly impact our ability to provide safe drinking water to the global population.', 
+                            content: '  While small and inexpensive filtration devices can potentially address the issue of point-of-use disinfection, an ideal technology does not currently exist. Inexpensive household carbon-based filters are not effective at removing pathogens and can be used only when the water is already biologically safe. Sand filters that can remove pathogens require large area and knowledge of how to maintain them, while membrane filters capable of removing pathogens suffer from high costs, fouling, and often require pumping power due to low flow rates that prevents their wide implementation in developing countries. In this context, new approaches that can improve upon current technologies are urgently needed. Specifically, membrane materials that are inexpensive, readily available, disposable, and effective at pathogen removal could greatly impact our ability to provide safe drinking water to the global population.', 
                         }, 
                         {
                             id:5, 
@@ -1087,11 +984,18 @@ export default class TestScreen extends React.Component {
                             passage: [
                                 {
                                     id:1, 
-                                    content: 'Beauty of leaf and blossom is not the only attraction possessed by this charming little plant. As a family, the wood-sorrels have great interest for botanists since Darwin devoted such [1. long] study to their power of movement. and many other scientists have described the several forms assumed by perfect flowers of the same.', 
+                                    content: 'Beauty of leaf and blossom is not the only attraction possessed by this charming little plant. As a family, the wood-sorrels have great interest for botanists since Darwin devoted such ', 
                                 }, 
-        
                                 {
                                     id:2, 
+                                    content: '1. long', 
+                                }, 
+                                {
+                                    id:3, 
+                                    content: ' study to their power of movement. and many other scientists have described the several forms assumed by perfect flowers of the same.', 
+                                }, 
+                                {
+                                    id:4, 
                                     content: 'was inserted into the hole and struck multiple times against a false ceiling inside the box.', 
                                 }
         
@@ -1668,6 +1572,7 @@ export default class TestScreen extends React.Component {
 
                         section.questions.map((subquestion, index2) => {
                             return (
+                                
                                     <ButtonComponent
                                     key={subquestion.id}
                                     onClick={(selectedId) => {
@@ -1683,7 +1588,7 @@ export default class TestScreen extends React.Component {
                                     selectedChoice={subquestion.selectedChoice}
                                     question={subquestion.question}
                                     choices={subquestion.choices}
-                                    />
+                            />
                             )
 
                         })
@@ -1800,6 +1705,12 @@ export default class TestScreen extends React.Component {
         }     
    
     }
+    displayUnderline(word) {
+            return {
+        __html: `${word}`
+        }; 
+    }
+    
 
     displayPassage() {
         const {
@@ -1807,7 +1718,7 @@ export default class TestScreen extends React.Component {
             sections, 
         } = this.state; 
         const section = sections[currentSection]; 
-        return section.passage.map((para) => <div> {para.content}</div>); 
+    return section.passage.map((para) => <div> {para.content}</div>); 
 
     }
     addPic() {
@@ -2679,10 +2590,7 @@ export default class TestScreen extends React.Component {
 
                 <div className="questionSection">
                     <div className="article2">
-                        <div classname="questionContent">
-                        {this.renderAllQuestions()}
-
-                        </div>
+                    {this.renderAllQuestions()}
                     {!this.IsTheFirstSectionType() ?  <button className="btn btn-dark"  onClick={() => this.setState({ currentSection: currentSection - 1})}> Back</button> : '' }
                     {this.renderRightButton()}
                     </div>
@@ -2702,4 +2610,3 @@ export default class TestScreen extends React.Component {
         
     }
 }
-
