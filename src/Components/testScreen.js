@@ -984,7 +984,7 @@ export default class TestScreen extends React.Component {
                             passage: [
                                 {
                                     id:1, 
-                                    content: 'Beauty of leaf and blossom is not the only attraction possessed by this charming little plant. As a family, the wood-sorrels have great interest for botanists since Darwin devoted such ', 
+                                    content: 'Beauty of leaf and blossom is not the only attraction possessed by this charming little plant. As a family, the wood-sorrels have great interest for botanists since Darwin devoted such long study to their power of movement. and many other scientists have described the several forms assumed by perfect flowers of the same.', 
                                 }, 
                                 {
                                     id:2, 
