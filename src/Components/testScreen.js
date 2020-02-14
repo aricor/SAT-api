@@ -99,7 +99,7 @@ export default class TestScreen extends React.Component {
                                 {
                                     opt: 'A',
                                     id: 1, 
-                                    text:"independent and strong willed.", 
+                                    text:"they were passionately in love", 
                                     check: false, 
         
                                 },
@@ -233,7 +233,7 @@ export default class TestScreen extends React.Component {
                                 {
                                     opt: 'D',
                                     id:4, 
-                                    text: "An event occurs that affects allff characters within the story.",  
+                                    text: "An event occurs that affects all characters within the story.",  
                                     check: false, 
         
                                 } 
@@ -759,27 +759,27 @@ export default class TestScreen extends React.Component {
                                         {
                                             opt: 'A',
                                             id: 1, 
-                                            text:"Adults are less likely than children to follow the examples others set.", 
+                                            text:"Over-imitation is equally likely to occur in all age groups.", 
                                             check: false, 
                 
                                         },
                                         {
                                             opt: 'B',
                                             id:2, 
-                                            text:"Social learning influences actions at any age.",  
+                                            text:"Out of all of the ages, those 16 and older were most likely to drag the bolts regardless of what they saw.",  
                                             check: true, 
                                         },
                                         {
                                             opt: 'C',
                                             id:3, 
-                                            text: "Humans choose which social norms they want to follow.",  
+                                            text: "In the control group, no one performed the irrelevant actions.",  
                                             check: false, 
                 
                                         },
                                         {
                                             opt: 'D',
                                             id:4, 
-                                            text: "Irrelevant tasks did not distract participants from achieving the goal.",  
+                                            text: "4-9 year olds are more likely to over-imitate than 10-15 year olds.",  
                                             check: false, 
                                         } 
                                     ],
@@ -788,32 +788,32 @@ export default class TestScreen extends React.Component {
                                 {
                                     id: 20,
                                     question: 
-                                    "14. Which choice best summarizes the fifth paragraph of the passage (lines 53-62)?",  
+                                    "20. The data shown the figures best serves as evidence of which idea presented in the passage?",  
                                     choices: [
                                         {
                                             opt: 'A',
                                             id: 1, 
-                                            text:"Adults are less likely than children to follow the examples others set.", 
+                                            text:'“on completion of the irrelevant actions, the model performed a two stage relevant sequence” (line 21-29)', 
                                             check: false, 
                 
                                         },
                                         {
                                             opt: 'B',
                                             id:2, 
-                                            text:"Social learning influences actions at any age.",  
+                                            text:'“participants would copy all of the actions” (line 26-27)',  
                                             check: true, 
                                         },
                                         {
                                             opt: 'C',
                                             id:3, 
-                                            text: "Humans choose which social norms they want to follow.",  
+                                            text: '“these influences may elicit a motivation on the part of the observer” (line 55-56)',  
                                             check: false, 
                 
                                         },
                                         {
                                             opt: 'D',
                                             id:4, 
-                                            text: "Irrelevant tasks did not distract participants from achieving the goal.",  
+                                            text: '“other age independent motivations may be responsible” (line 64-65)',  
                                             check: false, 
                                         } 
                                     ],
@@ -857,75 +857,330 @@ export default class TestScreen extends React.Component {
                     IsFirstSectionType: false, 
                     questions: [
                         {
-                            id: 1,
+                            id: 21,
                             question: 
-                            "1.1 As presented in the passage, Mr. Kearney is best described as",  
+                            "21. In lines 3-6, the author of the passage defines the qualities of drinking water primarily to",  
                             choices: [
                                 {
                                     opt: 'A',
                                     id: 1, 
-                                    text:"independent and strong willed.", 
+                                    text:"convey a serious tone.", 
                                     check: false, 
                                 },
                                 {
                                     opt: 'B',
                                     id:2, 
-                                    text:"paternal and affectionate.",  
+                                    text:"frame the information that follows.",  
                                     check:false, 
                                 },
                                 {
                                     opt: 'C',
                                     id:3, 
-                                    text: "serious and family oriented.",  
+                                    text: "provide background knowledge.",  
                                     check:true, 
                                 },
                                 {
                                     opt: 'D',
                                     id:4, 
-                                    text: "boring and simple minded.",  
+                                    text: "compare and contrast ideas.",  
                                     check:false, 
                                 } 
                             ],
                             selectedChoice: '',
-                       
                         },
                         {
-                            id: 2,
+                            id: 22,
                             question: 
-                            "1.2 As presented in the passage, Mr. Kearney is best described as",  
+                            "22. According to the author, the most important step to effectively prevent the spread of waterborne diseases is",  
                             choices: [
                                 {
                                     opt: 'A',
                                     id: 1, 
-                                    text:"2independent and strong willed.", 
+                                    text:"basic sanitation.", 
                                     check: false, 
         
                                 },
                                 {
                                     opt: 'B',
                                     id:2, 
-                                    text:"2paternal and affectionate.",  
+                                    text:"prevention of contaminants.",  
                                     check: false, 
         
                                 },
                                 {
                                     opt: 'C',
                                     id:3, 
-                                    text: "2serious and family oriented.",  
+                                    text: "disinfection.",  
                                     check: false, 
         
                                 },
                                 {
                                     opt: 'D',
                                     id:4, 
-                                    text: "2boring and simple minded.",  
+                                    text: "spreading awareness.",  
                                     check: true, 
         
                                 } 
                             ],
                             selectedChoice: '',
-                       
                         },
+                        {
+                            id: 23,
+                            question: 
+                            "23. It can be inferred from the passage that water is most likely to be contaminated",  
+                            choices: [
+                                {
+                                    opt: 'A',
+                                    id: 1, 
+                                    text:"as it goes through a distribution system.", 
+                                    check: false, 
+                                },
+                                {
+                                    opt: 'B',
+                                    id:2, 
+                                    text:"at the point of origin.",  
+                                    check:false, 
+                                },
+                                {
+                                    opt: 'C',
+                                    id:3, 
+                                    text: "when filtration processes are used.",  
+                                    check:true, 
+                                },
+                                {
+                                    opt: 'D',
+                                    id:4, 
+                                    text: "from sewage that has been improperly disposed of.",  
+                                    check:false, 
+                                } 
+                            ],
+                            selectedChoice: '',
+                        },
+                        {
+                            id: 24,
+                            question: 
+                            "24. What explanation does the passage give as to why many of the common technologies used for water disinfection do not work?",  
+                            choices: [
+                                {
+                                    opt: 'A',
+                                    id: 1, 
+                                    text:"Not all of the bacteria are filtered out.", 
+                                    check: false, 
+                                },
+                                {
+                                    opt: 'B',
+                                    id:2, 
+                                    text:"The processes are too complicated to implement on a large scale.",  
+                                    check:false, 
+                                },
+                                {
+                                    opt: 'C',
+                                    id:3, 
+                                    text: "Even if they were widely distributed, no one would use them.",  
+                                    check:true, 
+                                },
+                                {
+                                    opt: 'D',
+                                    id:4, 
+                                    text: "The resources are not largely available.",  
+                                    check:false, 
+                                } 
+                            ],
+                            selectedChoice: '',
+                        },
+                        {
+                            id: 25,
+                            question: 
+                            "25. Which choice provides the best evidence for the answer to the previous question?",  
+                            choices: [
+                                {
+                                    opt: 'A',
+                                    id: 1, 
+                                    text:"Lines 12-14 (“The World...sanitation”)", 
+                                    check: false, 
+                                },
+                                {
+                                    opt: 'B',
+                                    id:2, 
+                                    text:"Lines 26-28 (“Common...treatment.”)",  
+                                    check:false, 
+                                },
+                                {
+                                    opt: 'C',
+                                    id:3, 
+                                    text: "Lines 33-35 (“UV-disinfection...sunlight.”)",  
+                                    check:true, 
+                                },
+                                {
+                                    opt: 'D',
+                                    id:4, 
+                                    text: "Lines 45-47 (“In this...needed.”)",  
+                                    check:false, 
+                                } 
+                            ],
+                            selectedChoice: '',
+                        },
+                        {
+                            id: 26,
+                            question: 
+                            "26. The author mentioned various filtration devices in the fourth paragraph (lines 36-50) in order to",  
+                            choices: [
+                                {
+                                    opt: 'A',
+                                    id: 1, 
+                                    text:"argue against the use of filtration systems in general.", 
+                                    check: false, 
+                                },
+                                {
+                                    opt: 'B',
+                                    id:2, 
+                                    text:"provide examples of technology that successfully disinfects water.",  
+                                    check:false, 
+                                },
+                                {
+                                    opt: 'C',
+                                    id:3, 
+                                    text: "establish a problem that the passage later offers a solution to.",  
+                                    check:true, 
+                                },
+                                {
+                                    opt: 'D',
+                                    id:4, 
+                                    text: "emphasize the extent of the main issue of the passage.",  
+                                    check:false, 
+                                } 
+                            ],
+                            selectedChoice: '',
+                        },
+                        {
+                            id: 27,
+                            question: 
+                            "27. As used in line 57, the words “biologically safe” most nearly mean",  
+                            choices: [
+                                {
+                                    opt: 'A',
+                                    id: 1, 
+                                    text:"biohazardous", 
+                                    check: false, 
+                                },
+                                {
+                                    opt: 'B',
+                                    id:2, 
+                                    text:"safeguarded",  
+                                    check:false, 
+                                },
+                                {
+                                    opt: 'C',
+                                    id:3, 
+                                    text: "consumable",  
+                                    check:true, 
+                                },
+                                {
+                                    opt: 'D',
+                                    id:4, 
+                                    text: "invulnerable",  
+                                    check:false, 
+                                } 
+                            ],
+                            selectedChoice: '',
+                        },
+                        {
+                            id: 28,
+                            question: 
+                            "28. According to the passage, plant xylem is a “potential solution” to disinfecting water because xylem",  
+                            choices: [
+                                {
+                                    opt: 'A',
+                                    id: 1, 
+                                    text:"helps plants transport sap.", 
+                                    check: false, 
+                                },
+                                {
+                                    opt: 'B',
+                                    id:2, 
+                                    text:"allows for the easy flow of a liquid, while also filtering out pathogens.",  
+                                    check:false, 
+                                },
+                                {
+                                    opt: 'C',
+                                    id:3, 
+                                    text: "is an expensive alternative to other filtration processes.",  
+                                    check:true, 
+                                },
+                                {
+                                    opt: 'D',
+                                    id:4, 
+                                    text: "has a durable structure.",  
+                                    check:false, 
+                                } 
+                            ],
+                            selectedChoice: '',
+                        },
+                        {
+                            id: 29,
+                            question: 
+                            "29. Which choice provides the best evidence for the answer to the previous question?",  
+                            choices: [
+                                {
+                                    opt: 'A',
+                                    id: 1, 
+                                    text:"Lines 36-38 (“While...exist.”)", 
+                                    check: false, 
+                                },
+                                {
+                                    opt: 'B',
+                                    id:2, 
+                                    text:"Lines 47-50 (“Specifically...population.”)",  
+                                    check:false, 
+                                },
+                                {
+                                    opt: 'C',
+                                    id:3, 
+                                    text: "Lines 55-57 (“Xylem...caviation.”)",  
+                                    check:true, 
+                                },
+                                {
+                                    opt: 'D',
+                                    id:4, 
+                                    text: "Lines 57-60 (“The size...devices.”)",  
+                                    check:false, 
+                                } 
+                            ],
+                            selectedChoice: '',
+                        },
+                        {
+                            id: 30,
+                            question: 
+                            "30. The central claim of the passage is that xylem is",  
+                            choices: [
+                                {
+                                    opt: 'A',
+                                    id: 1, 
+                                    text:"an inexpensive and effective alternative for water filtration.", 
+                                    check: false, 
+                                },
+                                {
+                                    opt: 'B',
+                                    id:2, 
+                                    text:"the only solution to bringing about cleaner and safer drinking water.",  
+                                    check:false, 
+                                },
+                                {
+                                    opt: 'C',
+                                    id:3, 
+                                    text: "yet to be proven as a successful water clearning system.",  
+                                    check:true, 
+                                },
+                                {
+                                    opt: 'D',
+                                    id:4, 
+                                    text: "an inspiration from nature that offers an answer to an unsolved problem.",  
+                                    check:false, 
+                                } 
+                            ],
+                            selectedChoice: '',
+                        },
+                        
                     ] 
                 }, 
 
@@ -973,10 +1228,14 @@ export default class TestScreen extends React.Component {
                         }, 
                         {
                             id:10, 
-                            content: 'By far the most important was that for the first time, a Government of the United States asked for and courts granted an injunction against newspapers-and prior restraint, death to a free press, had a precedent.', 
+                            content: 'Some unpleasant things happened, not because of the publication of the papers but because the Government rushed into battle against them.', 
                         }, 
                         {
                             id:11, 
+                            content: 'By far the most important was that for the first time, a Government of the United States asked for and courts granted an injunction against newspapers-and prior restraint, death to a free press, had a precedent.', 
+                        }, 
+                        {
+                            id:12, 
                             content: 'That was a loss and it could only be redressed in the future by the determination of American society-the press, the public, the courts, the politicians-to fight to the end against any future attempts at prior restraint. No press ever remained free by bowing to censorship beforehand for fear of what might take place if it printed the truth.', 
                         }
                     ], 
@@ -984,32 +1243,32 @@ export default class TestScreen extends React.Component {
                     IsFirstSectionType: false, 
                     questions: [
                         {
-                            id: 1,
+                            id: 31,
                             question: 
-                            "1.1 As presented in the passage, Mr. Kearney is best described as",  
+                            "31. The central claim of Passage 1 is that",  
                             choices: [
                                 {
                                     opt: 'A',
                                     id: 1, 
-                                    text:"independent and strong willed.", 
+                                    text:"the acts by the New York Times were unconstitutional.", 
                                     check: false, 
                                 },
                                 {
                                     opt: 'B',
                                     id:2, 
-                                    text:"paternal and affectionate.",  
+                                    text:"national security is of greater concern than freedom of press.",  
                                     check:false, 
                                 },
                                 {
                                     opt: 'C',
                                     id:3, 
-                                    text: "serious and family oriented.",  
+                                    text: "Nixon used the release of the Pentagon Papers to further his own agenda.",  
                                     check:true, 
                                 },
                                 {
                                     opt: 'D',
                                     id:4, 
-                                    text: "boring and simple minded.",  
+                                    text: "the Pentagon Papers needed to be released to the public",  
                                     check:false, 
                                 } 
                             ],
@@ -1017,41 +1276,368 @@ export default class TestScreen extends React.Component {
                        
                         },
                         {
-                            id: 2,
+                            id: 32,
                             question: 
-                            "1.2 As presented in the passage, Mr. Kearney is best described as",  
+                            "32. Nixon indicates that while his political advisors suggested releasing the Pentagon Papers, he believed that",  
                             choices: [
                                 {
                                     opt: 'A',
                                     id: 1, 
-                                    text:"2independent and strong willed.", 
+                                    text:"policy overruled personal benefits.", 
                                     check: false, 
         
                                 },
                                 {
                                     opt: 'B',
                                     id:2, 
-                                    text:"2paternal and affectionate.",  
+                                    text:"the New York Times would act responsibly.",  
                                     check: false, 
         
                                 },
                                 {
                                     opt: 'C',
                                     id:3, 
-                                    text: "2serious and family oriented.",  
+                                    text: "democracy would be put at risk.",  
                                     check: false, 
         
                                 },
                                 {
                                     opt: 'D',
                                     id:4, 
-                                    text: "2boring and simple minded.",  
+                                    text: "the truth about Vietnam should be revealed.",  
                                     check: true, 
         
                                 } 
                             ],
                             selectedChoice: '',
                        
+                        },
+                        {
+                            id: 33,
+                            question: 
+                            "33. What does Nixon imply would happen if Washington had not acted against the New York Times?",  
+                            choices: [
+                                {
+                                    opt: 'A',
+                                    id: 1, 
+                                    text:"It would show that the government was weak and unable to defend itself.", 
+                                    check: false, 
+        
+                                },
+                                {
+                                    opt: 'B',
+                                    id:2, 
+                                    text:"Civil disobedience would be encouraged throughout America.",  
+                                    check: false, 
+        
+                                },
+                                {
+                                    opt: 'C',
+                                    id:3, 
+                                    text: "Others would seek the opportunity to make government secrets public.",  
+                                    check: false, 
+        
+                                },
+                                {
+                                    opt: 'D',
+                                    id:4, 
+                                    text: "There would be no limits to freedom of speech in newspapers.",  
+                                    check: true, 
+        
+                                } 
+                            ],
+                            selectedChoice: '',
+                       
+                        },
+                        {
+                            id: 34,
+                            question: 
+                            "34. Which choice provides the best evidence for the answer to the previous question?",  
+                            choices: [
+                                {
+                                    opt: 'A',
+                                    id: 1, 
+                                    text:"Lines 12-15 (“Yet never...Vietnam.”)", 
+                                    check: false, 
+        
+                                },
+                                {
+                                    opt: 'B',
+                                    id:2, 
+                                    text:"Lines 18-20 (“Its release...policy.”)",  
+                                    check: false, 
+        
+                                },
+                                {
+                                    opt: 'C',
+                                    id:3, 
+                                    text: "Lines 20-21 (“If we...precendent.”)",  
+                                    check: false, 
+        
+                                },
+                                {
+                                    opt: 'D',
+                                    id:4, 
+                                    text: "Lines 24-27 (“In the...happened.”)",  
+                                    check: true, 
+        
+                                } 
+                            ],
+                            selectedChoice: '',
+                       
+                        },
+                        {
+                            id: 35,
+                            question: 
+                            "35. The author of Passage 2 brings up the “great constitutional issue of freedom of the press” in order to",  
+                            choices: [
+                                {
+                                    opt: 'A',
+                                    id: 1, 
+                                    text:"frame his argument.", 
+                                    check: false, 
+        
+                                },
+                                {
+                                    opt: 'B',
+                                    id:2, 
+                                    text:"pose a question he later investigates.",  
+                                    check: false, 
+        
+                                },
+                                {
+                                    opt: 'C',
+                                    id:3, 
+                                    text: "contrast his ideas with Nixon’s.",  
+                                    check: false, 
+        
+                                },
+                                {
+                                    opt: 'D',
+                                    id:4, 
+                                    text: "identify a cause of concern.",  
+                                    check: true, 
+        
+                                } 
+                            ],
+                            selectedChoice: '',
+                       
+                        },
+                        {
+                            id: 36,
+                            question: 
+                            "36. What is the reason given by Passage 2 to why the papers were published in the New York Times?",  
+                            choices: [
+                                {
+                                    opt: 'A',
+                                    id: 1, 
+                                    text:"The press wanted the public to be aware of the unjust policies of the government.", 
+                                    check: false, 
+        
+                                },
+                                {
+                                    opt: 'B',
+                                    id:2, 
+                                    text:"The New York Times believed no one else would come forward and release the information.",  
+                                    check: false, 
+        
+                                },
+                                {
+                                    opt: 'C',
+                                    id:3, 
+                                    text: "The New York Times was not afraid of taking on the government in court.",  
+                                    check: false, 
+        
+                                },
+                                {
+                                    opt: 'D',
+                                    id:4, 
+                                    text: "It was done in the national interest as it was the responsibility of the press to provide the truth.",  
+                                    check: true, 
+        
+                                } 
+                            ],
+                            selectedChoice: '',
+                        },
+                        {
+                            id: 37,
+                            question: 
+                            "37. Which choice provides the best evidence for the answer to the previous question?",  
+                            choices: [
+                                {
+                                    opt: 'A',
+                                    id: 1, 
+                                    text:"Lines 46-48 (“The decisions...about.”)", 
+                                    check: false, 
+        
+                                },
+                                {
+                                    opt: 'B',
+                                    id:2, 
+                                    text:"Lines 49-51 (“Some unpleasant...them.”)",  
+                                    check: false, 
+        
+                                },
+                                {
+                                    opt: 'C',
+                                    id:3, 
+                                    text: "Lines 56-59 (“That was...restraint.”)",  
+                                    check: false, 
+        
+                                },
+                                {
+                                    opt: 'D',
+                                    id:4, 
+                                    text: "Lines 59-61 (“No press...truth.”)", 
+                                    check: true, 
+        
+                                } 
+                            ],
+                            selectedChoice: '',
+                        },
+                        {
+                            id: 38,
+                            question: 
+                            "38. In line 45, the word “defy” most nearly means",  
+                            choices: [
+                                {
+                                    opt: 'A',
+                                    id: 1, 
+                                    text:"escape", 
+                                    check: false, 
+        
+                                },
+                                {
+                                    opt: 'B',
+                                    id:2, 
+                                    text:"challenge",  
+                                    check: false, 
+        
+                                },
+                                {
+                                    opt: 'C',
+                                    id:3, 
+                                    text: "dare",  
+                                    check: false, 
+        
+                                },
+                                {
+                                    opt: 'D',
+                                    id:4, 
+                                    text: "elude",  
+                                    check: true, 
+        
+                                } 
+                            ],
+                            selectedChoice: '',
+                        },
+                        {
+                            id: 39,
+                            question: 
+                            "39. Which best describes the overall relationship between Passage 1 and Passage 2?",  
+                            choices: [
+                                {
+                                    opt: 'A',
+                                    id: 1, 
+                                    text:"Passage 1 presents a perspective on an issue discussed in Passage 2.", 
+                                    check: false, 
+        
+                                },
+                                {
+                                    opt: 'B',
+                                    id:2, 
+                                    text:"Passage 1 gives concrete evidence for claims made in Passage 2.",  
+                                    check: false, 
+        
+                                },
+                                {
+                                    opt: 'C',
+                                    id:3, 
+                                    text: "Passage 2 defends a position that Passage 1 strongly disgrees with.",  
+                                    check: false, 
+        
+                                },
+                                {
+                                    opt: 'D',
+                                    id:4, 
+                                    text: "Passage 2 confirms conclusions made in Passage 1.",  
+                                    check: true, 
+        
+                                } 
+                            ],
+                            selectedChoice: '',
+                        },
+                        {
+                            id: 40,
+                            question: 
+                            "40. In comparison to Passage 2, the author of Passage 1 believes that taking the issue to court was",  
+                            choices: [
+                                {
+                                    opt: 'A',
+                                    id: 1, 
+                                    text:"a huge mistake.", 
+                                    check: false, 
+        
+                                },
+                                {
+                                    opt: 'B',
+                                    id:2, 
+                                    text:"the appropriate response.",  
+                                    check: false, 
+        
+                                },
+                                {
+                                    opt: 'C',
+                                    id:3, 
+                                    text: "a threat to the nation.",  
+                                    check: false, 
+        
+                                },
+                                {
+                                    opt: 'D',
+                                    id:4, 
+                                    text: "to be avoided at all costs.",  
+                                    check: true, 
+        
+                                } 
+                            ],
+                            selectedChoice: '',
+                        },
+                        {
+                            id: 41,
+                            question: 
+                            "41. How would the author of Passage 2 most likely respond to the statements made by Nixon in lines 8-10?",  
+                            choices: [
+                                {
+                                    opt: 'A',
+                                    id: 1, 
+                                    text:"with anger because it was not his fault the issue went to court", 
+                                    check: false, 
+        
+                                },
+                                {
+                                    opt: 'B',
+                                    id:2, 
+                                    text:"with concern since he worked for the New York Times",  
+                                    check: false, 
+        
+                                },
+                                {
+                                    opt: 'C',
+                                    id:3, 
+                                    text: "with bitterness as the statements were inaccurate",  
+                                    check: false, 
+        
+                                },
+                                {
+                                    opt: 'D',
+                                    id:4, 
+                                    text: "with offense seeing that he believed the New York Times was doing the right thing.",  
+                                    check: true, 
+        
+                                } 
+                            ],
+                            selectedChoice: '',
                         },
                     ] 
                 }, 
@@ -1087,7 +1673,7 @@ export default class TestScreen extends React.Component {
                         },
                         {
                             id: 7, 
-                            contnet: ' This study confirmed that blue light is lethal to all growth stages of D. melanogaster. We showed that the most toxic wavelength differed at different developmental stages. Shorter wavelengths were more harmful to eggs. Eggs were assumed ta be damaged by light with a shorter wavelength because this wavelength contains more energy. The lethal effects of blue light were different on larvae compared to the eqgs. This finding is important toward providing baseline information for establishing pest control methods using light irradiation.'
+                            content: 'This study confirmed that blue light is lethal to all growth stages of D. melanogaster. We showed that the most toxic wavelength differed at different developmental stages. Shorter wavelengths were more harmful to eggs. Eggs were assumed ta be damaged by light with a shorter wavelength because this wavelength contains more energy. The lethal effects of blue light were different on larvae compared to the eggs. This finding is important toward providing baseline information for establishing pest control methods using light irradiation.'
                         }
 
                     ], 
@@ -1095,32 +1681,32 @@ export default class TestScreen extends React.Component {
                     IsFirstSectionType: false, 
                     questions: [
                         {
-                            id: 1,
+                            id: 42,
                             question: 
-                            "1.1 As presented in the passage, Mr. Kearney is best described as",  
+                            "42. It can be inferred from the passage that the meaning of the word “phototaxis” (lines 2 and 6) is closest to which of the following?",  
                             choices: [
                                 {
                                     opt: 'A',
                                     id: 1, 
-                                    text:"independent and strong willed.", 
+                                    text:"pest control", 
                                     check: false, 
                                 },
                                 {
                                     opt: 'B',
                                     id:2, 
-                                    text:"paternal and affectionate.",  
+                                    text:"x-rays of insects",  
                                     check:false, 
                                 },
                                 {
                                     opt: 'C',
                                     id:3, 
-                                    text: "serious and family oriented.",  
+                                    text: "responsive movement towards light",  
                                     check:true, 
                                 },
                                 {
                                     opt: 'D',
                                     id:4, 
-                                    text: "boring and simple minded.",  
+                                    text: "electric shock",  
                                     check:false, 
                                 } 
                             ],
@@ -1128,41 +1714,364 @@ export default class TestScreen extends React.Component {
                        
                         },
                         {
-                            id: 2,
+                            id: 43,
                             question: 
-                            "1.2 As presented in the passage, Mr. Kearney is best described as",  
+                            "43. Which choice provides the best evidence for the effectiveness of using the response of insects to light in pest control?",  
                             choices: [
                                 {
                                     opt: 'A',
                                     id: 1, 
-                                    text:"2independent and strong willed.", 
+                                    text:"Lines 3-5 (“By identifying...outbreaks.”)", 
                                     check: false, 
         
                                 },
                                 {
                                     opt: 'B',
                                     id:2, 
-                                    text:"2paternal and affectionate.",  
+                                    text:"Lines 8-11 (“Another...behavior.”)",  
                                     check: false, 
         
                                 },
                                 {
                                     opt: 'C',
                                     id:3, 
-                                    text: "2serious and family oriented.",  
+                                    text: "Lines 15-18 (“Specifically...fields.”)",  
                                     check: false, 
         
                                 },
                                 {
                                     opt: 'D',
                                     id:4, 
-                                    text: "2boring and simple minded.",  
+                                    text: "Lines 19-25 (“However...insects.”)",  
                                     check: true, 
         
                                 } 
                             ],
                             selectedChoice: '',
-                       
+                        },
+                        {
+                            id: 44,
+                            question: 
+                            "44. What does the passage claim about the previous study completed on the effect of lights on insects as mentioned in the third paragraph?",  
+                            choices: [
+                                {
+                                    opt: 'A',
+                                    id: 1, 
+                                    text:"It proved that light was an effective insect trap.", 
+                                    check: false, 
+        
+                                },
+                                {
+                                    opt: 'B',
+                                    id:2, 
+                                    text:"It failed to recognize the true affects of blue light on insects.",  
+                                    check: false, 
+        
+                                },
+                                {
+                                    opt: 'C',
+                                    id:3, 
+                                    text: "It disproved all previous theories on the effects of light on insects.",  
+                                    check: false, 
+        
+                                },
+                                {
+                                    opt: 'D',
+                                    id:4, 
+                                    text: "It identified the most lethal wavelength to use on insects.",  
+                                    check: true, 
+        
+                                } 
+                            ],
+                            selectedChoice: '',
+                        },
+                        {
+                            id: 45,
+                            question: 
+                            "45. The main purpose of the fourth paragraph (lines 30-37) is to",  
+                            choices: [
+                                {
+                                    opt: 'A',
+                                    id: 1, 
+                                    text:"inform the reader about other studies.", 
+                                    check: false, 
+        
+                                },
+                                {
+                                    opt: 'B',
+                                    id:2, 
+                                    text:"transition into the new study completed.",  
+                                    check: false, 
+        
+                                },
+                                {
+                                    opt: 'C',
+                                    id:3, 
+                                    text: "illustrate an experimental procedure.",  
+                                    check: false, 
+        
+                                },
+                                {
+                                    opt: 'D',
+                                    id:4, 
+                                    text: "define the meaning of a word.",  
+                                    check: true, 
+        
+                                } 
+                            ],
+                            selectedChoice: '',
+                        },
+                        {
+                            id: 46,
+                            question: 
+                            "46. Why was the fruit fly selected to be a part of the second study on developmental stages (lines 60-71)?",  
+                            choices: [
+                                {
+                                    opt: 'A',
+                                    id: 1, 
+                                    text:"Flies have the most developmental stages out of all of the insects.", 
+                                    check: false, 
+        
+                                },
+                                {
+                                    opt: 'B',
+                                    id:2, 
+                                    text:"There was no specific reason why fruit flies were selected.",  
+                                    check: false, 
+        
+                                },
+                                {
+                                    opt: 'C',
+                                    id:3, 
+                                    text: "The only insect that has been proven to be sensitive to light is the fruit fly.",  
+                                    check: false, 
+        
+                                },
+                                {
+                                    opt: 'D',
+                                    id:4, 
+                                    text: "Many characteristics such as a short life span make the fruit fly an ideal laboratory specimen.",  
+                                    check: true, 
+        
+                                } 
+                            ],
+                            selectedChoice: '',
+                        },
+                        {
+                            id: 47,
+                            question: 
+                            "47. In line 48, the word “mechanism” most nearly means",  
+                            choices: [
+                                {
+                                    opt: 'A',
+                                    id: 1, 
+                                    text:"device", 
+                                    check: false, 
+        
+                                },
+                                {
+                                    opt: 'B',
+                                    id:2, 
+                                    text:"process",  
+                                    check: false, 
+        
+                                },
+                                {
+                                    opt: 'C',
+                                    id:3, 
+                                    text: "contraption",  
+                                    check: false, 
+        
+                                },
+                                {
+                                    opt: 'D',
+                                    id:4, 
+                                    text: "technique",  
+                                    check: true, 
+        
+                                } 
+                            ],
+                            selectedChoice: '',
+                        },
+                        {
+                            id: 48,
+                            question: 
+                            "48. What function does the final paragraph serve in relation to the rest of the passage?",  
+                            choices: [
+                                {
+                                    opt: 'A',
+                                    id: 1, 
+                                    text:"It offers alternative hypotheses for the study conducted.", 
+                                    check: false, 
+        
+                                },
+                                {
+                                    opt: 'B',
+                                    id:2, 
+                                    text:"It identifies possible errors in the calculations of the results.",  
+                                    check: false, 
+        
+                                },
+                                {
+                                    opt: 'C',
+                                    id:3, 
+                                    text: "It concludes the passage by connecting back to the first paragraph.",  
+                                    check: false, 
+        
+                                },
+                                {
+                                    opt: 'D',
+                                    id:4, 
+                                    text: "It presents supporting evidence for earlier claims made in the passage.",  
+                                    check: true, 
+        
+                                } 
+                            ],
+                            selectedChoice: '',
+                        },
+                        {
+                            id: 49,
+                            question: 
+                            "49. The passage is written from the point of view of a",  
+                            choices: [
+                                {
+                                    opt: 'A',
+                                    id: 1, 
+                                    text:"scientist evaluating their peers.", 
+                                    check: false, 
+        
+                                },
+                                {
+                                    opt: 'B',
+                                    id:2, 
+                                    text:"journalist informing the public.",  
+                                    check: false, 
+        
+                                },
+                                {
+                                    opt: 'C',
+                                    id:3, 
+                                    text: "biologist disproving a theory.",  
+                                    check: false, 
+        
+                                },
+                                {
+                                    opt: 'D',
+                                    id:4, 
+                                    text: "researcher contributing to the field.",  
+                                    check: true, 
+        
+                                } 
+                            ],
+                            selectedChoice: '',
+                        },
+                        {
+                            id: 50,
+                            question: 
+                            "50. Which choice best reflects the overall sequence of events in the passage?",  
+                            choices: [
+                                {
+                                    opt: 'A',
+                                    id: 1, 
+                                    text:"an experiment is explained, an anomaly is observed, and a hypothesis is posed", 
+                                    check: false, 
+        
+                                },
+                                {
+                                    opt: 'B',
+                                    id:2, 
+                                    text:"a question leads to a study, a mistake is identified, conclusions are made",  
+                                    check: false, 
+        
+                                },
+                                {
+                                    opt: 'C',
+                                    id:3, 
+                                    text: "a general observation is made, a previous study is analyzed, and new discoveries are evaluated",  
+                                    check: false, 
+        
+                                },
+                                {
+                                    opt: 'D',
+                                    id:4, 
+                                    text: "an opinion is questioned, data is examined, and outside opinions are state",  
+                                    check: true, 
+        
+                                } 
+                            ],
+                            selectedChoice: '',
+                        },
+                        {
+                            id: 51,
+                            question: 
+                            "51. According to figure 1 and figure 2, as wavelength increases, mortality",  
+                            choices: [
+                                {
+                                    opt: 'A',
+                                    id: 1, 
+                                    text:"increases", 
+                                    check: false, 
+        
+                                },
+                                {
+                                    opt: 'B',
+                                    id:2, 
+                                    text:"decreases",  
+                                    check: false, 
+        
+                                },
+                                {
+                                    opt: 'C',
+                                    id:3, 
+                                    text: "stays the same",  
+                                    check: false, 
+        
+                                },
+                                {
+                                    opt: 'D',
+                                    id:4, 
+                                    text: "increases and then decreases",  
+                                    check: true, 
+        
+                                } 
+                            ],
+                            selectedChoice: '',
+                        },
+                        {
+                            id: 52,
+                            question: 
+                            "52. Based on the passage, if another insect received the same treatment as the fruit flies at different developmental stages how would that graph compare to figure 1 and figure 2?",  
+                            choices: [
+                                {
+                                    opt: 'A',
+                                    id: 1, 
+                                    text:"It would look identical.", 
+                                    check: false, 
+        
+                                },
+                                {
+                                    opt: 'B',
+                                    id:2, 
+                                    text:"The egg mortality would be di_erent.",  
+                                    check: false, 
+        
+                                },
+                                {
+                                    opt: 'C',
+                                    id:3, 
+                                    text: "The larval mortality would change.",  
+                                    check: false, 
+        
+                                },
+                                {
+                                    opt: 'D',
+                                    id:4, 
+                                    text: "No comparisons can be made.",  
+                                    check: true, 
+        
+                                } 
+                            ],
+                            selectedChoice: '',
                         },
                     ] 
                 }, 
