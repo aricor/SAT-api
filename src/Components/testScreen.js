@@ -136,28 +136,28 @@ export default class TestScreen extends React.Component {
                                 {
                                     opt: 'A',
                                     id: 1, 
-                                    text:'Lines 9-10 (“Miss...spite.”)', 
+                                    text:'Lines 9 (“Miss...spite.”)', 
                                     check: false, 
         
                                 },
                                 {
                                     opt: 'B',
                                     id:2, 
-                                    text:"Lines 22-26 (“But the...secret.”)",  
+                                    text:"Lines 16-19 (“But the...secret.”)",  
                                     check: false, 
         
                                 },
                                 {
                                     opt: 'C',
                                     id:3, 
-                                    text: "Lines 26-30 (“However...Quay.”)",  
+                                    text: "Lines 19-22 (“However...Quay.”)",  
                                     check: true, 
         
                                 },
                                 {
                                     opt: 'D',
                                     id:4, 
-                                    text: "Lines 33-37 (“After the...away.”)",  
+                                    text: "Lines 24-27 (“After the...away.”)",  
                                     check: false, 
         
                                 } 
@@ -169,7 +169,7 @@ export default class TestScreen extends React.Component {
                         {
                             id: 4,
                             question: 
-                            "4. In line 18, the word “ivory” most nearly means",  
+                            "4. In line 14, the word “ivory” most nearly means",  
                             choices: [
                                 {
                                     opt: 'A',
@@ -207,7 +207,7 @@ export default class TestScreen extends React.Component {
                         {
                             id: 5,
                             question: 
-                            "5. Which choice best describes the main idea of the third paragraph (lines 31-56)?",  
+                            "5. Which choice best describes the main idea of the third paragraph (lines 23-40)?",  
                             choices: [
                                 {
                                     opt: 'A',
@@ -245,26 +245,26 @@ export default class TestScreen extends React.Component {
                         {
                             id: 6,
                             question: 
-                            "6. The narrator mentions the Irish Revival in line 60 in order to convey",  
+                            "6. The narrator mentions the Irish Revival in line 43 in order to convey",  
                             choices: [
                                 {
                                     opt: 'A',
                                     id: 1, 
-                                    text:'A)	Mrs. Kearney’s attempts to manipulate her family.', 
+                                    text:'Mrs. Kearney’s attempts to manipulate her family.', 
                                     check: false, 
         
                                 },
                                 {
                                     opt: 'B',
                                     id:2, 
-                                    text:"B)	the national pride that the Kearney’s have.",  
+                                    text:"the national pride that the Kearney’s have.",  
                                     check: true, 
         
                                 },
                                 {
                                     opt: 'C',
                                     id:3, 
-                                    text: "C)	why Kathleen was sent away to study.",  
+                                    text: "why Kathleen was sent away to study.",  
                                     check: false, 
         
                                 },
@@ -325,21 +325,21 @@ export default class TestScreen extends React.Component {
                                 {
                                     opt: 'A',
                                     id: 1, 
-                                    text:'Lines 40-41 (“But she...him.”)', 
+                                    text:'Lines 29-30 (“But she...him.”)', 
                                     check: false, 
         
                                 },
                                 {
                                     opt: 'B',
                                     id:2, 
-                                    text:"Lines 54-59 (“Every...Greystones.”)",  
+                                    text:"Lines 39-42 (“Every...Greystones.”)",  
                                     check: true, 
         
                                 },
                                 {
                                     opt: 'C',
                                     id:3, 
-                                    text: "Lines 60- 63(“When the...house.”)",  
+                                    text: "Lines 43- 45(“When the...house.”)",  
                                     check: false, 
         
                                 },
@@ -456,31 +456,31 @@ export default class TestScreen extends React.Component {
                                 }, 
                                 {
                                     id:5, 
-                                    content: ' This capacity suggests that humans are opportunistic social learners from a very young age, capitalizing on even fleeting chances to learn fine grained details of action techniques intentionally performed by other individuals on novel artefacts. Perhaps most surprisingly, even the adult participants were subject to this effect despite the causal irrelevance of the actions witnessed being so visible.', 
+                                    content: 'This capacity suggests that humans are opportunistic social learners from a very young age, capitalizing on even fleeting chances to learn fine grained details of action techniques intentionally performed by other individuals on novel artefacts. Perhaps most surprisingly, even the adult participants were subject to this effect despite the causal irrelevance of the actions witnessed being so visible.', 
                                 }, 
                                 {
                                     id:5, 
-                                    content: ' The principal question raised by our results is why such a minimal learning context should lead both adults and children alike to abandon their own causal knowledge relevant to the task (displayed in the control condition) and instead adopt the inefficient technique used by the person they had just observed. One important influence which  may result in the reproduction of causally irrelevant actions in experimental studies of over-imitation is the social influence of the model.', 
+                                    content: 'The principal question raised by our results is why such a minimal learning context should lead both adults and children alike to abandon their own causal knowledge relevant to the task (displayed in the control condition) and instead adopt the inefficient technique used by the person they had just observed. One important influence which  may result in the reproduction of causally irrelevant actions in experimental studies of over-imitation is the social influence of the model.', 
                                 }, 
                                 {
                                     id:6, 
-                                    content: ' Of course participants are not invited to imitate, but such experimental contexts likely contain a number of social influences which may impact on the likelihood that the observers will over-imitate. First, these influences may elicit a motivation on the part of the observer to affiliate with the model by acting like them; second, they may place social pressure on the observer to conform to performing the task in the same way as the model; or third, they may provide an opportunity for the observer to engage in a shared experience with the model.', 
+                                    content: 'Of course participants are not invited to imitate, but such experimental contexts likely contain a number of social influences which may impact on the likelihood that the observers will over-imitate. First, these influences may elicit a motivation on the part of the observer to affiliate with the model by acting like them; second, they may place social pressure on the observer to conform to performing the task in the same way as the model; or third, they may provide an opportunity for the observer to engage in a shared experience with the model.', 
                                 }, 
                                 {
                                     id:7, 
-                                    content: ' Of course participants are not invited to imitate, but such experimental contexts likely contain a number of social influences which may impact on the likelihood that the observers will over-imitate. First, these influences may elicit a motivation on the part of the observer to affiliate with the model by acting like them; second, they may place social pressure on the observer to conform to performing the task in the same way as the model; or third, they may provide an opportunity for the observer to engage in a shared experience with the model.', 
+                                    content: 'In our naturalistic context all such potential social demands were essentially absent, suggesting that such social influences were unlikely to be the motivation. The high fidelity copying nevertheless witnessed across our sample suggests that other age independent motivations may be responsible for eliciting over-imitation in such a context.', 
                                 }, 
                             ],                            
                             questions: [
                                 {
                                     id: 11,
                                     question: 
-                                    "11. The authors most likely notes that the participants in the study were “unaware that they were taking part in an experiment” (lines 7-8) to highlight that",  
+                                    "11. The authors most likely notes that the participants in the study were “unaware that they were taking part in an experiment” (lines 5-6) to highlight that",  
                                     choices: [
                                         {
                                             opt: 'A',
                                             id: 1, 
-                                            text:'ocial pressure was not a factor in the experiment.', 
+                                            text:'Social pressure was not a factor in the experiment.', 
                                             check: true, 
                 
                                         },
@@ -552,28 +552,28 @@ export default class TestScreen extends React.Component {
                                         {
                                             opt: 'A',
                                             id: 1, 
-                                            text:"Lines 16-22 (“The task...probe.”)", 
+                                            text:"Lines 12-15 (“The task...probe.”)", 
                                             check: false, 
                 
                                         },
                                         {
                                             opt: 'B',
                                             id:2, 
-                                            text:"B)	Lines 22-30 (“The casually...box.”)",  
+                                            text:"Lines 15-20 (“The casually...box.”)",  
                                             check: true, 
                 
                                         },
                                         {
                                             opt: 'C',
                                             id:3, 
-                                            text: "Lines 38-42 (“Of interest...goal.”)",  
+                                            text: "Lines 52-60 (“Of interest...goal.”)",  
                                             check: false, 
                 
                                         },
                                         {
                                             opt: 'D',
                                             id:4, 
-                                            text: "Lines 43-52 (“Despite...task.”)",  
+                                            text: "Lines 30-36 (“Despite...task.”)",  
                                             check: false, 
                                         } 
                                     ],
@@ -582,6 +582,211 @@ export default class TestScreen extends React.Component {
 
                                 {
                                     id: 14,
+                                    question: 
+                                    "14. Which choice best summarizes the fifth paragraph of the passage (lines 37-43)?",  
+                                    choices: [
+                                        {
+                                            opt: 'A',
+                                            id: 1, 
+                                            text:"Adults are less likely than children to follow the examples others set.", 
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'B',
+                                            id:2, 
+                                            text:"Social learning influences actions at any age.",  
+                                            check: true, 
+                                        },
+                                        {
+                                            opt: 'C',
+                                            id:3, 
+                                            text: "Humans choose which social norms they want to follow.",  
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'D',
+                                            id:4, 
+                                            text: "Irrelevant tasks did not distract participants from achieving the goal.",  
+                                            check: false, 
+                                        } 
+                                    ],
+                                    selectedChoice: '',
+                                }, 
+                                {
+                                    id: 15,
+                                    question: 
+                                    "15. In line 44, the word “principal” most nearly means",  
+                                    choices: [
+                                        {
+                                            opt: 'A',
+                                            id: 1, 
+                                            text:"Adults are less likely than children to follow the examples others set.", 
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'B',
+                                            id:2, 
+                                            text:"Social learning influences actions at any age.",  
+                                            check: true, 
+                                        },
+                                        {
+                                            opt: 'C',
+                                            id:3, 
+                                            text: "Humans choose which social norms they want to follow.",  
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'D',
+                                            id:4, 
+                                            text: "Irrelevant tasks did not distract participants from achieving the goal.",  
+                                            check: false, 
+                                        } 
+                                    ],
+                                    selectedChoice: '',
+                                }, 
+
+                                {
+                                    id: 16,
+                                    question: 
+                                    "16. Which of the following best characterizes the perspective of the researchers as to why over-imitation occurred in the experiment?",  
+                                    choices: [
+                                        {
+                                            opt: 'A',
+                                            id: 1, 
+                                            text:"They saw social influences such as social pressure as the reason for over-imitation.", 
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'B',
+                                            id:2, 
+                                            text:"They believe over-imitation is a result of age dependent motivation.",  
+                                            check: true, 
+                                        },
+                                        {
+                                            opt: 'C',
+                                            id:3, 
+                                            text: "They could not pinpoint a specific reason, but believed social influences were not a factor.",  
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'D',
+                                            id:4, 
+                                            text: "They determined their research was flawed there was no evidence of over-imitation actually occuring.",  
+                                            check: false, 
+                                        } 
+                                    ],
+                                    selectedChoice: '',
+                                }, 
+                                {
+                                    id: 17,
+                                    question: 
+                                    "17. The passage references “a number of social influences” (lines 53 - 54) in order to",  
+                                    choices: [
+                                        {
+                                            opt: 'A',
+                                            id: 1, 
+                                            text:"explore the reasons behind the results of the study conducted.", 
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'B',
+                                            id:2, 
+                                            text:"explain what might have been the cause of over-imitation in a situation where social influences were likely.",  
+                                            check: true, 
+                                        },
+                                        {
+                                            opt: 'C',
+                                            id:3, 
+                                            text: "provide facts to support the main point.",  
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'D',
+                                            id:4, 
+                                            text: "offer a different interpretation of the experimental results.",  
+                                            check: false, 
+                                        } 
+                                    ],
+                                    selectedChoice: '',
+                                }, 
+                                {
+                                    id: 18,
+                                    question: 
+                                    "18. The passage implies that in the absence of social demands",  
+                                    choices: [
+                                        {
+                                            opt: 'A',
+                                            id: 1, 
+                                            text:"social influence does not exist.", 
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'B',
+                                            id:2, 
+                                            text:"people will not over-imitate.",  
+                                            check: true, 
+                                        },
+                                        {
+                                            opt: 'C',
+                                            id:3, 
+                                            text: "the experiment’s results would have been different.",  
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'D',
+                                            id:4, 
+                                            text: "age plays a more significant role.",  
+                                            check: false, 
+                                        } 
+                                    ],
+                                    selectedChoice: '',
+                                }, 
+                                {
+                                    id: 19,
+                                    question: 
+                                    "19. Data from the figures most strongly supports which of the following statements?",  
+                                    choices: [
+                                        {
+                                            opt: 'A',
+                                            id: 1, 
+                                            text:"Adults are less likely than children to follow the examples others set.", 
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'B',
+                                            id:2, 
+                                            text:"Social learning influences actions at any age.",  
+                                            check: true, 
+                                        },
+                                        {
+                                            opt: 'C',
+                                            id:3, 
+                                            text: "Humans choose which social norms they want to follow.",  
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'D',
+                                            id:4, 
+                                            text: "Irrelevant tasks did not distract participants from achieving the goal.",  
+                                            check: false, 
+                                        } 
+                                    ],
+                                    selectedChoice: '',
+                                }, 
+                                {
+                                    id: 20,
                                     question: 
                                     "14. Which choice best summarizes the fifth paragraph of the passage (lines 53-62)?",  
                                     choices: [
@@ -613,7 +818,7 @@ export default class TestScreen extends React.Component {
                                         } 
                                     ],
                                     selectedChoice: '',
-                                }
+                                }, 
                             ],
                 }, 
                 {
