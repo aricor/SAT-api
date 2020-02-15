@@ -4132,6 +4132,9 @@ export default class TestScreen extends React.Component {
         }; 
     }
     
+    createMarkup(content) {
+        return {__html: content};
+      }
 
     displayPassage() {
         const {
@@ -4139,7 +4142,7 @@ export default class TestScreen extends React.Component {
             sections, 
         } = this.state; 
         const section = sections[currentSection]; 
-    return section.passage.map((para) => <div> {para.content}</div>); 
+    return section.passage.map((para) => <div dangerouslySetInnerHTML={this.createMarkup(para.content)} />); 
 
     }
     addPic() {
