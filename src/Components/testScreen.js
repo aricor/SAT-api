@@ -12,6 +12,7 @@ export default class TestScreen extends React.Component {
         super(props);
         this.state = {
             isTestSubmitted: false,
+            isTestInReview: false,
             currentSection: 0,
             currentSubject:0, 
             NumeberOfCorrectAnswersOfEachSubject: [], 
@@ -2674,7 +2675,7 @@ export default class TestScreen extends React.Component {
         };
  }
     renderAllQuestions() {
-        const {sections, currentSection} = this.state; 
+        const {sections, currentSection, isTestSubmitted} = this.state; 
         const section = sections[currentSection];
 
         if (section.sectionType === 'reading' || section.sectionType === 'writing and language' ) {
@@ -2688,6 +2689,7 @@ export default class TestScreen extends React.Component {
                             return (
                                 
                                     <ButtonComponent
+                                    isTestSubmitted={isTestSubmitted}
                                     key={subquestion.id}
                                     onClick={(selectedId) => {
                                         subquestion.selectedChoice = subquestion.selectedChoice != selectedId? selectedId : ''; // update the selectedChoice of this question with the clicked choice
@@ -3649,6 +3651,7 @@ export default class TestScreen extends React.Component {
     render() {
         const {
             isTestSubmitted,
+            isTestInReview,
             verbal,
             readingScore,
             writingScore,
@@ -3667,7 +3670,7 @@ export default class TestScreen extends React.Component {
          * 
          */
 
-       if(isTestSubmitted) {
+       if(isTestSubmitted && !isTestInReview) {
             
             return (
                 <div className="appContainer">
@@ -3682,7 +3685,7 @@ export default class TestScreen extends React.Component {
                     <h2>Number of correct Math (No Calculator) section: {correctmathNoCal} (out of 20)</h2>
                     <h2>Number of correct Math (With Calculator) section: {correctmathWithCal} (out of 38)</h2>
 
-                    <button className="btn btn-dark"  onClick={() => this.setState({ currentSection: currentSection - 1})}> Go Back To Review</button>
+                    <button className="btn btn-dark"  onClick={() => {this.setState({ currentSection: 0, isTestInReview: true})}}> Go Back To Review</button>
                 </div>
             );
         }
