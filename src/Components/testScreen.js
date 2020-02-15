@@ -2087,7 +2087,6 @@ export default class TestScreen extends React.Component {
                             questions:[], 
                             
                 }, 
-
                 {
                     id:7, 
                     defaultTimer: 35,
@@ -2118,30 +2117,30 @@ export default class TestScreen extends React.Component {
                                 {
                                     id: 1,
                                     question: 
-                                    "1.1 As presented in the passage, Mr. Kearney is best described as",  
+                                    "1.",  
                                     choices: [
                                         {
                                             opt: 'A',
                                             id: 1, 
-                                            text:"independent and strong willed.", 
+                                            text:"NO CHANGE", 
                                             check: false, 
                                         },
                                         {
                                             opt: 'B',
                                             id:2, 
-                                            text:"paternal and affectionate.",  
+                                            text:"bursting",  
                                             check:false, 
                                         },
                                         {
                                             opt: 'C',
                                             id:3, 
-                                            text: "serious and family oriented.",  
+                                            text: "exhaustive",  
                                             check:true, 
                                         },
                                         {
                                             opt: 'D',
                                             id:4, 
-                                            text: "boring and simple minded.",  
+                                            text: "full",  
                                             check:false, 
                                         } 
                                     ],
@@ -2151,39 +2150,362 @@ export default class TestScreen extends React.Component {
                                 {
                                     id: 2,
                                     question: 
-                                    "1.2 As presented in the passage, Mr. Kearney is best described as",  
+                                    "2. The writer is considering deleting the underlined sentence. Should the sentence be kept or deleted?",  
                                     choices: [
                                         {
                                             opt: 'A',
                                             id: 1, 
-                                            text:"2independent and strong willed.", 
+                                            text:"Kept, because it helps explain what blind flowers are", 
                                             check: false, 
                 
                                         },
                                         {
                                             opt: 'B',
                                             id:2, 
-                                            text:"2paternal and affectionate.",  
+                                            text:"Kept, because it provides information that Darwin would find fascinating.",  
                                             check: false, 
                 
                                         },
                                         {
                                             opt: 'C',
                                             id:3, 
-                                            text: "2serious and family oriented.",  
+                                            text: "Deleted, because it blurs the focus of the paragraph by introducing loosely related information.",  
                                             check: false, 
                 
                                         },
                                         {
                                             opt: 'D',
                                             id:4, 
-                                            text: "2boring and simple minded.",  
+                                            text: "Deleted, because it contradicts the passage’s claims about cross-fertilization.",  
                                             check: true, 
                 
                                         } 
                                     ],
                                     selectedChoice: '',
-                               
+                                },
+                                {
+                                    id: 3,
+                                    question: 
+                                    "3.",  
+                                    choices: [
+                                        {
+                                            opt: 'A',
+                                            id: 1, 
+                                            text:"NO CHANGE", 
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'B',
+                                            id:2, 
+                                            text:"evening and during the day they are",  
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'C',
+                                            id:3, 
+                                            text: "evening, and during the day this is",  
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'D',
+                                            id:4, 
+                                            text: "evening, and during the day they are",  
+                                            check: true, 
+                
+                                        } 
+                                    ],
+                                    selectedChoice: '',
+                                },
+                                {
+                                    id: 4,
+                                    question: 
+                                    "4.",  
+                                    choices: [
+                                        {
+                                            opt: 'A',
+                                            id: 1, 
+                                            text:"NO CHANGE", 
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'B',
+                                            id:2, 
+                                            text:"as with",  
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'C',
+                                            id:3, 
+                                            text: "whereby",  
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'D',
+                                            id:4, 
+                                            text: "as regards the sake of",  
+                                            check: true, 
+                
+                                        } 
+                                    ],
+                                    selectedChoice: '',
+                                },
+                                {
+                                    id: 5,
+                                    question: 
+                                    "5.",  
+                                    choices: [
+                                        {
+                                            opt: 'A',
+                                            id: 1, 
+                                            text:"NO CHANGE", 
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'B',
+                                            id:2, 
+                                            text:"yet",  
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'C',
+                                            id:3, 
+                                            text: "because",  
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'D',
+                                            id:4, 
+                                            text: "moreover",  
+                                            check: true, 
+                
+                                        } 
+                                    ],
+                                    selectedChoice: '',
+                                },
+                                {
+                                    id: 6,
+                                    question: 
+                                    "6.",  
+                                    choices: [
+                                        {
+                                            opt: 'A',
+                                            id: 1, 
+                                            text:"NO CHANGE", 
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'B',
+                                            id:2, 
+                                            text:"them",  
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'C',
+                                            id:3, 
+                                            text: "it",  
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'D',
+                                            id:4, 
+                                            text: "those in a",  
+                                            check: true, 
+                
+                                        } 
+                                    ],
+                                    selectedChoice: '',
+                                },
+                                {
+                                    id: 7,
+                                    question: 
+                                    "7.",  
+                                    choices: [
+                                        {
+                                            opt: 'A',
+                                            id: 1, 
+                                            text:"NO CHANGE", 
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'B',
+                                            id:2, 
+                                            text:"infinite",  
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'C',
+                                            id:3, 
+                                            text: "numerous without bound",  
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'D',
+                                            id:4, 
+                                            text: "lots of",  
+                                            check: true, 
+                
+                                        } 
+                                    ],
+                                    selectedChoice: '',
+                                },
+                                {
+                                    id: 8,
+                                    question: 
+                                    "8. Which choice most eectively combines the underlined sentences?",  
+                                    choices: [
+                                        {
+                                            opt: 'A',
+                                            id: 1, 
+                                            text:"The violet wood-sorrel produces two sorts of perfect flowers, reciprocally adapted, to each other but on dierent plants, in the same neighborhood.", 
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'B',
+                                            id:2, 
+                                            text:"The violet wood-sorrel produces two sorts of perfect flowers reciprocally adapted to each other but on different plants, in the same neighborhood.",  
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'C',
+                                            id:3, 
+                                            text: "Two sorts of perfect flowers, reciprocally adapted to each other but on different plants in the same neighborhood, are being produced by the violet wood-sorrel.",  
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'D',
+                                            id:4, 
+                                            text: "The violet wood-sorrel producing two sorts of perfect flowers reciprocally adapted to each other on different plants in the same neighborhood.",  
+                                            check: true, 
+                
+                                        } 
+                                    ],
+                                    selectedChoice: '',
+                                },
+                                {
+                                    id: 9,
+                                    question: 
+                                    "9. ",  
+                                    choices: [
+                                        {
+                                            opt: 'A',
+                                            id: 1, 
+                                            text:"NO CHANGE", 
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'B',
+                                            id:2, 
+                                            text:"it's",  
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'C',
+                                            id:3, 
+                                            text: "its'",  
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'D',
+                                            id:4, 
+                                            text: "they're",  
+                                            check: true, 
+                
+                                        } 
+                                    ],
+                                    selectedChoice: '',
+                                },
+                                {
+                                    id: 10,
+                                    question: 
+                                    "10. ",  
+                                    choices: [
+                                        {
+                                            opt: 'A',
+                                            id: 1, 
+                                            text:"NO CHANGE", 
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'B',
+                                            id:2, 
+                                            text:"have been",  
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'C',
+                                            id:3, 
+                                            text: "had been",  
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'D',
+                                            id:4, 
+                                            text: "are",  
+                                            check: true, 
+                
+                                        } 
+                                    ],
+                                    selectedChoice: '',
+                                },
+                                {
+                                    id: 11,
+                                    question: 
+                                    "11. Which choice most effectively combines the underlined sentences?",  
+                                    choices: [
+                                        {
+                                            opt: 'A',
+                                            id: 1, 
+                                            text:"where it is now.", 
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'B',
+                                            id:2, 
+                                            text:"before sentence 1.",  
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'C',
+                                            id:3, 
+                                            text: "after sentence 3.",  
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'D',
+                                            id:4, 
+                                            text: "after sentence 4.",  
+                                            check: true, 
+                
+                                        } 
+                                    ],
+                                    selectedChoice: '',
                                 },
                             ]
                 }, 
@@ -2208,32 +2530,32 @@ export default class TestScreen extends React.Component {
                             ],   
                             questions: [
                                 {
-                                    id: 1,
+                                    id: 12,
                                     question: 
-                                    "1.1 As presented in the passage, Mr. Kearney is best described as",  
+                                    "12.",  
                                     choices: [
                                         {
                                             opt: 'A',
                                             id: 1, 
-                                            text:"independent and strong willed.", 
+                                            text:"NO CHANGE", 
                                             check: false, 
                                         },
                                         {
                                             opt: 'B',
                                             id:2, 
-                                            text:"paternal and affectionate.",  
+                                            text:"as President, however",  
                                             check:false, 
                                         },
                                         {
                                             opt: 'C',
                                             id:3, 
-                                            text: "serious and family oriented.",  
+                                            text: "as President however,",  
                                             check:true, 
                                         },
                                         {
                                             opt: 'D',
                                             id:4, 
-                                            text: "boring and simple minded.",  
+                                            text: "as President; however,",  
                                             check:false, 
                                         } 
                                     ],
@@ -2241,41 +2563,366 @@ export default class TestScreen extends React.Component {
                                
                                 },
                                 {
-                                    id: 2,
+                                    id: 13,
                                     question: 
-                                    "1.2 As presented in the passage, Mr. Kearney is best described as",  
+                                    "13",  
                                     choices: [
                                         {
                                             opt: 'A',
                                             id: 1, 
-                                            text:"2independent and strong willed.", 
+                                            text:"NO CHANGE", 
                                             check: false, 
                 
                                         },
                                         {
                                             opt: 'B',
                                             id:2, 
-                                            text:"2paternal and affectionate.",  
+                                            text:"made another bid",  
                                             check: false, 
                 
                                         },
                                         {
                                             opt: 'C',
                                             id:3, 
-                                            text: "2serious and family oriented.",  
+                                            text: "went there",  
                                             check: false, 
                 
                                         },
                                         {
                                             opt: 'D',
                                             id:4, 
-                                            text: "2boring and simple minded.",  
+                                            text: "efforted to put himself in position",  
                                             check: true, 
                 
                                         } 
                                     ],
                                     selectedChoice: '',
                                
+                                },
+                                {
+                                    id: 14,
+                                    question: 
+                                    "14. Which choice most effectively combines the underlined sentences?",  
+                                    choices: [
+                                        {
+                                            opt: 'A',
+                                            id: 1, 
+                                            text:"Again on the point of success when Hamilton, who also belonged to New York State, crossed his path, to conciliate them he focused all his energies.", 
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'B',
+                                            id:2, 
+                                            text:"Hamilton, who also belonged to New York State, crossed his path when, to conciliate them, he was in the act of focusing all his energies and on the point of success.",  
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'C',
+                                            id:3, 
+                                            text: "To conciliate them, he focused all his energies and was again on the point of success when Hamilton, who also belonged to New York State, crossed his path",  
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'D',
+                                            id:4, 
+                                            text: "Focusing all his energies to conciliate them, Hamilton, who also belonged to New York State, crossed his path when he was again on the point of success.",  
+                                            check: true, 
+                
+                                        } 
+                                    ],
+                                    selectedChoice: '',
+                               
+                                },
+                                {
+                                    id: 15,
+                                    question: 
+                                    "15. ",  
+                                    choices: [
+                                        {
+                                            opt: 'A',
+                                            id: 1, 
+                                            text:"NO CHANGE", 
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'B',
+                                            id:2, 
+                                            text:"whom",  
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'C',
+                                            id:3, 
+                                            text: "there",  
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'D',
+                                            id:4, 
+                                            text: "which",  
+                                            check: true, 
+                
+                                        } 
+                                    ],
+                                    selectedChoice: '',
+                                },
+                                {
+                                    id: 16,
+                                    question: 
+                                    "15. To make this paragraph most logical, sentence 2 should be",  
+                                    choices: [
+                                        {
+                                            opt: 'A',
+                                            id: 1, 
+                                            text:"placed before sentence 1.", 
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'B',
+                                            id:2, 
+                                            text:"placed after sentence 3.",  
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'C',
+                                            id:3, 
+                                            text: "placed after sentence 4.",  
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'D',
+                                            id:4, 
+                                            text: "placed after sentence 5.",  
+                                            check: true, 
+                
+                                        } 
+                                    ],
+                                    selectedChoice: '',
+                                },
+                                {
+                                    id: 17,
+                                    question: 
+                                    "17. ",  
+                                    choices: [
+                                        {
+                                            opt: 'A',
+                                            id: 1, 
+                                            text:"NO CHANGE", 
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'B',
+                                            id:2, 
+                                            text:"the future, he",  
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'C',
+                                            id:3, 
+                                            text: "the future, therefore, he",  
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'D',
+                                            id:4, 
+                                            text: "the future, therefore he",  
+                                            check: true, 
+                
+                                        } 
+                                    ],
+                                    selectedChoice: '',
+                                },
+                                {
+                                    id: 18,
+                                    question: 
+                                    "18. ",  
+                                    choices: [
+                                        {
+                                            opt: 'A',
+                                            id: 1, 
+                                            text:"NO CHANGE", 
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'B',
+                                            id:2, 
+                                            text:"a crack shot.",  
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'C',
+                                            id:3, 
+                                            text: "a superb marksman who could shoot well.",  
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'D',
+                                            id:4, 
+                                            text: "a superb marksman in addition to a crack shot.",  
+                                            check: true, 
+                
+                                        } 
+                                    ],
+                                    selectedChoice: '',
+                                },
+                                {
+                                    id: 19,
+                                    question: 
+                                    "19. ",  
+                                    choices: [
+                                        {
+                                            opt: 'A',
+                                            id: 1, 
+                                            text:"NO CHANGE", 
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'B',
+                                            id:2, 
+                                            text:"However,",  
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'C',
+                                            id:3, 
+                                            text: "Consequently,",  
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'D',
+                                            id:4, 
+                                            text: "Furthermore,",  
+                                            check: true, 
+                
+                                        } 
+                                    ],
+                                    selectedChoice: '',
+                                },
+                                {
+                                    id: 20,
+                                    question: 
+                                    "20. Which choice adds the most relevant supporting information to the Paragraph?",  
+                                    choices: [
+                                        {
+                                            opt: 'A',
+                                            id: 1, 
+                                            text:"Burr, who traveled by boat to the dueling ground.", 
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'B',
+                                            id:2, 
+                                            text:"Burr, whose unpopular politicking campaign for the vice-presidency was just one of many schemes that fueled his negative image.",  
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'C',
+                                            id:3, 
+                                            text: "Burr, who later traveled to the Western frontier after he left the Vice-Presidency.",  
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'D',
+                                            id:4, 
+                                            text: "Burr, who could be kind to family and strangers alike.",  
+                                            check: true, 
+                
+                                        } 
+                                    ],
+                                    selectedChoice: '',
+                                },
+                                {
+                                    id: 21,
+                                    question: 
+                                    "21. ",  
+                                    choices: [
+                                        {
+                                            opt: 'A',
+                                            id: 1, 
+                                            text:"NO CHANGE", 
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'B',
+                                            id:2, 
+                                            text:"States, and it was",  
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'C',
+                                            id:3, 
+                                            text: "States, however it was",  
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'D',
+                                            id:4, 
+                                            text: "States, but it was",  
+                                            check: true, 
+                
+                                        } 
+                                    ],
+                                    selectedChoice: '',
+                                },
+                                {
+                                    id: 22,
+                                    question: 
+                                    "22. At this point, the write is considering adding the following sentence: 'Anti-Dueling Association of New York were well-received by the public and there was a signi_cant increase in public opposition to the practice of dueling.' Should the writer make this addition here?",  
+                                    choices: [
+                                        {
+                                            opt: 'A',
+                                            id: 1, 
+                                            text:"Yes, because it provides an important detail required to understand Burr.", 
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'B',
+                                            id:2, 
+                                            text:"Yes, because it provides additional support for the main point of the paragraph.",  
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'C',
+                                            id:3, 
+                                            text: "No, because it distracts from the passage’s focus with irrelevant information.",  
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'D',
+                                            id:4, 
+                                            text: "No, because it does not indicate the magnitude of the increase.",  
+                                            check: true, 
+                
+                                        } 
+                                    ],
+                                    selectedChoice: '',
                                 },
                             ]
                 }, 
@@ -2301,32 +2948,32 @@ export default class TestScreen extends React.Component {
                             ],   
                             questions: [
                                 {
-                                    id: 1,
+                                    id: 23,
                                     question: 
-                                    "1.1 As presented in the passage, Mr. Kearney is best described as",  
+                                    "23.",  
                                     choices: [
                                         {
                                             opt: 'A',
                                             id: 1, 
-                                            text:"independent and strong willed.", 
+                                            text:"NO CHANGE", 
                                             check: false, 
                                         },
                                         {
                                             opt: 'B',
                                             id:2, 
-                                            text:"paternal and affectionate.",  
+                                            text:"that, this age left in Ohio,",  
                                             check:false, 
                                         },
                                         {
                                             opt: 'C',
                                             id:3, 
-                                            text: "serious and family oriented.",  
+                                            text: "that this age left in Ohio,",  
                                             check:true, 
                                         },
                                         {
                                             opt: 'D',
                                             id:4, 
-                                            text: "boring and simple minded.",  
+                                            text: "that this age left in Ohio",  
                                             check:false, 
                                         } 
                                     ],
@@ -2334,41 +2981,368 @@ export default class TestScreen extends React.Component {
                                
                                 },
                                 {
-                                    id: 2,
+                                    id: 24,
                                     question: 
-                                    "1.2 As presented in the passage, Mr. Kearney is best described as",  
+                                    "24. ",  
                                     choices: [
                                         {
                                             opt: 'A',
                                             id: 1, 
-                                            text:"2independent and strong willed.", 
+                                            text:"NO CHANGE", 
                                             check: false, 
                 
                                         },
                                         {
                                             opt: 'B',
                                             id:2, 
-                                            text:"2paternal and affectionate.",  
+                                            text:"had been",  
                                             check: false, 
                 
                                         },
                                         {
                                             opt: 'C',
                                             id:3, 
-                                            text: "2serious and family oriented.",  
+                                            text: "is",  
                                             check: false, 
                 
                                         },
                                         {
                                             opt: 'D',
                                             id:4, 
-                                            text: "2boring and simple minded.",  
+                                            text: "being",  
                                             check: true, 
                 
                                         } 
                                     ],
                                     selectedChoice: '',
                                
+                                },
+                                {
+                                    id: 25,
+                                    question: 
+                                    "25. ",  
+                                    choices: [
+                                        {
+                                            opt: 'A',
+                                            id: 1, 
+                                            text:"NO CHANGE", 
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'B',
+                                            id:2, 
+                                            text:"creeping",  
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'C',
+                                            id:3, 
+                                            text: "dripping",  
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'D',
+                                            id:4, 
+                                            text: "motioning",  
+                                            check: true, 
+                
+                                        } 
+                                    ],
+                                    selectedChoice: '',
+                               
+                                },
+
+                                {
+                                    id: 26,
+                                    question: 
+                                    "26. At this point, the write is considering adding the following sentence:  “Given that Lake Erie is the shallowest of the Great Lakes, this is a surprising development.” Should the writer make this addition here?",  
+                                    choices: [
+                                        {
+                                            opt: 'A',
+                                            id: 1, 
+                                            text:"Yes, because it creates geographical context necessary for understanding of the passage.", 
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'B',
+                                            id:2, 
+                                            text:"Yes, because it supports the paragraph’s argument with an important detail.",  
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'C',
+                                            id:3, 
+                                            text: "No, because it challenges the author’s main claim.",  
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'D',
+                                            id:4, 
+                                            text: "No, because it is not directly related to the main point of the paragraph.",  
+                                            check: true, 
+                
+                                        } 
+                                    ],
+                                    selectedChoice: '',
+                               
+                                },
+                                {
+                                    id: 27,
+                                    question: 
+                                    "27. ",  
+                                    choices: [
+                                        {
+                                            opt: 'A',
+                                            id: 1, 
+                                            text:"NO CHANGE", 
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'B',
+                                            id:2, 
+                                            text:"This is due to the fact that",  
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'C',
+                                            id:3, 
+                                            text: "For",  
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'D',
+                                            id:4, 
+                                            text: "As noted by prominent historians",  
+                                            check: true, 
+                
+                                        } 
+                                    ],
+                                    selectedChoice: '',
+                               
+                                },
+                                {
+                                    id: 28,
+                                    question: 
+                                    "28. ",  
+                                    choices: [
+                                        {
+                                            opt: 'A',
+                                            id: 1, 
+                                            text:"NO CHANGE", 
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'B',
+                                            id:2, 
+                                            text:"yet again",  
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'C',
+                                            id:3, 
+                                            text: "additionally",  
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'D',
+                                            id:4, 
+                                            text: "DELETE the underlined portion.",  
+                                            check: true, 
+                
+                                        } 
+                                    ],
+                                    selectedChoice: '',
+                                },
+                                {
+                                    id: 29,
+                                    question: 
+                                    "29. ",  
+                                    choices: [
+                                        {
+                                            opt: 'A',
+                                            id: 1, 
+                                            text:"NO CHANGE", 
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'B',
+                                            id:2, 
+                                            text:"a Greenland-esque climate",  
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'C',
+                                            id:3, 
+                                            text: "a climate like those of Greenland",  
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'D',
+                                            id:4, 
+                                            text: "a climate like that of Greenland",  
+                                            check: true, 
+                
+                                        } 
+                                    ],
+                                    selectedChoice: '',
+                                },
+                                {
+                                    id: 30,
+                                    question: 
+                                    "30. ",  
+                                    choices: [
+                                        {
+                                            opt: 'A',
+                                            id: 1, 
+                                            text:"NO CHANGE", 
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'B',
+                                            id:2, 
+                                            text:"tasks: such as",  
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'C',
+                                            id:3, 
+                                            text: "tasks such as:",  
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'D',
+                                            id:4, 
+                                            text: "tasks, such as",  
+                                            check: true, 
+                
+                                        } 
+                                    ],
+                                    selectedChoice: '',
+                                },
+                                {
+                                    id: 31,
+                                    question: 
+                                    "31. ",  
+                                    choices: [
+                                        {
+                                            opt: 'A',
+                                            id: 1, 
+                                            text:"NO CHANGE", 
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'B',
+                                            id:2, 
+                                            text:"were",  
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'C',
+                                            id:3, 
+                                            text: "is",  
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'D',
+                                            id:4, 
+                                            text: "are",  
+                                            check: true, 
+                
+                                        } 
+                                    ],
+                                    selectedChoice: '',
+                                },
+                                {
+                                    id: 32,
+                                    question: 
+                                    "32. Which choice most eectively combines the underlined sentences?",  
+                                    choices: [
+                                        {
+                                            opt: 'A',
+                                            id: 1, 
+                                            text:"Found in the glacier-built river banks of Europe even today are similar tools or weapons; they had left nothing else behind them.", 
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'B',
+                                            id:2, 
+                                            text:"With leaving nothing else behind them, similar tools or weapons are found in the glacier-built river banks of Europe even today.",  
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'C',
+                                            id:3, 
+                                            text: "They left nothing else behind them, yet similar tools or weapons are found in the glacier-built river banks of Europe even today.",  
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'D',
+                                            id:4, 
+                                            text: "Similar tools or weapons are found in the glacier-built river banks of Europe even today due to their leaving nothing else behind them.",  
+                                            check: true, 
+                                        } 
+                                    ],
+                                    selectedChoice: '',
+                                },
+                                {
+                                    id: 33,
+                                    question: 
+                                    "33. ",  
+                                    choices: [
+                                        {
+                                            opt: 'A',
+                                            id: 1, 
+                                            text:"NO CHANGE", 
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'B',
+                                            id:2, 
+                                            text:"there",  
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'C',
+                                            id:3, 
+                                            text: "they're",  
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'D',
+                                            id:4, 
+                                            text: "their",  
+                                            check: true, 
+                
+                                        } 
+                                    ],
+                                    selectedChoice: '',
                                 },
                             ]
                 }, 
@@ -2394,32 +3368,32 @@ export default class TestScreen extends React.Component {
                             ],   
                             questions: [
                                 {
-                                    id: 1,
+                                    id: 34,
                                     question: 
-                                    "1.1 As presented in the passage, Mr. Kearney is best described as",  
+                                    "34",  
                                     choices: [
                                         {
                                             opt: 'A',
                                             id: 1, 
-                                            text:"independent and strong willed.", 
+                                            text:"NO CHANGE", 
                                             check: false, 
                                         },
                                         {
                                             opt: 'B',
                                             id:2, 
-                                            text:"paternal and affectionate.",  
+                                            text:"In other words,",  
                                             check:false, 
                                         },
                                         {
                                             opt: 'C',
                                             id:3, 
-                                            text: "serious and family oriented.",  
+                                            text: "Indeed,",  
                                             check:true, 
                                         },
                                         {
                                             opt: 'D',
                                             id:4, 
-                                            text: "boring and simple minded.",  
+                                            text: "In fact,",  
                                             check:false, 
                                         } 
                                     ],
@@ -2427,35 +3401,368 @@ export default class TestScreen extends React.Component {
                                
                                 },
                                 {
-                                    id: 2,
+                                    id: 35,
                                     question: 
-                                    "1.2 As presented in the passage, Mr. Kearney is best described as",  
+                                    "35.",  
                                     choices: [
                                         {
                                             opt: 'A',
                                             id: 1, 
-                                            text:"2independent and strong willed.", 
+                                            text:"NO CHANGE", 
                                             check: false, 
                 
                                         },
                                         {
                                             opt: 'B',
                                             id:2, 
-                                            text:"2paternal and affectionate.",  
+                                            text:"to resemble",  
                                             check: false, 
                 
                                         },
                                         {
                                             opt: 'C',
                                             id:3, 
-                                            text: "2serious and family oriented.",  
+                                            text: "resemble",  
                                             check: false, 
                 
                                         },
                                         {
                                             opt: 'D',
                                             id:4, 
-                                            text: "2boring and simple minded.",  
+                                            text: "would have resembled",  
+                                            check: true, 
+                
+                                        } 
+                                    ],
+                                    selectedChoice: '',
+                               
+                                },
+                                {
+                                    id: 36,
+                                    question: 
+                                    "36.",  
+                                    choices: [
+                                        {
+                                            opt: 'A',
+                                            id: 1, 
+                                            text:"NO CHANGE", 
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'B',
+                                            id:2, 
+                                            text:"precedes",  
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'C',
+                                            id:3, 
+                                            text: "proceeds",  
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'D',
+                                            id:4, 
+                                            text: "precede",  
+                                            check: true, 
+                
+                                        } 
+                                    ],
+                                    selectedChoice: '',
+                               
+                                },
+                                {
+                                    id: 37,
+                                    question: 
+                                    "36.",  
+                                    choices: [
+                                        {
+                                            opt: 'A',
+                                            id: 1, 
+                                            text:"NO CHANGE", 
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'B',
+                                            id:2, 
+                                            text:"the houses, it is not",  
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'C',
+                                            id:3, 
+                                            text: "the houses, and it is not",  
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'D',
+                                            id:4, 
+                                            text: "the houses. It is not",  
+                                            check: true, 
+                
+                                        } 
+                                    ],
+                                    selectedChoice: '',
+                               
+                                },
+                                {
+                                    id: 38,
+                                    question: 
+                                    "38.",  
+                                    choices: [
+                                        {
+                                            opt: 'A',
+                                            id: 1, 
+                                            text:"NO CHANGE", 
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'B',
+                                            id:2, 
+                                            text:"leaning against the peak forming the sides.",  
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'C',
+                                            id:3, 
+                                            text: "against the peak to form the sides.",  
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'D',
+                                            id:4, 
+                                            text: "lean against the peak and they form the sides.",  
+                                            check: true, 
+                
+                                        } 
+                                    ],
+                                    selectedChoice: '',
+                               
+                                },
+                                {
+                                    id: 39,
+                                    question: 
+                                    "39.",  
+                                    choices: [
+                                        {
+                                            opt: 'A',
+                                            id: 1, 
+                                            text:"NO CHANGE", 
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'B',
+                                            id:2, 
+                                            text:"follows",  
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'C',
+                                            id:3, 
+                                            text: "sticks",  
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'D',
+                                            id:4, 
+                                            text: "obeys",  
+                                            check: true, 
+                
+                                        } 
+                                    ],
+                                    selectedChoice: '',
+                               
+                                },
+                                {
+                                    id: 40,
+                                    question: 
+                                    "40.",  
+                                    choices: [
+                                        {
+                                            opt: 'A',
+                                            id: 1, 
+                                            text:"NO CHANGE", 
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'B',
+                                            id:2, 
+                                            text:"simplest and most basic",  
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'C',
+                                            id:3, 
+                                            text: "simplest and most humble",  
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'D',
+                                            id:4, 
+                                            text: "simplest",  
+                                            check: true, 
+                
+                                        } 
+                                    ],
+                                    selectedChoice: '',
+                               
+                                },
+                                {
+                                    id: 41,
+                                    question: 
+                                    "41. To make this paragraph most logical, sentence 1 should be placed",  
+                                    choices: [
+                                        {
+                                            opt: 'A',
+                                            id: 1, 
+                                            text:"where it is now.", 
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'B',
+                                            id:2, 
+                                            text:"after sentence 3",  
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'C',
+                                            id:3, 
+                                            text: "after sentence 4",  
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'D',
+                                            id:4, 
+                                            text: "after sentence 6",  
+                                            check: true, 
+                
+                                        } 
+                                    ],
+                                    selectedChoice: '',
+                               
+                                },
+                                {
+                                    id: 42,
+                                    question: 
+                                    "42.",  
+                                    choices: [
+                                        {
+                                            opt: 'A',
+                                            id: 1, 
+                                            text:"NO CHANGE", 
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'B',
+                                            id:2, 
+                                            text:"myths in which First-man",  
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'C',
+                                            id:3, 
+                                            text: "myths where: First-man",  
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'D',
+                                            id:4, 
+                                            text: "myths, in which First-man,",  
+                                            check: true, 
+                
+                                        } 
+                                    ],
+                                    selectedChoice: '',
+                               
+                                },
+                                {
+                                    id: 43,
+                                    question: 
+                                    "43. Which choice most effectively combines the underlined sentences?",  
+                                    choices: [
+                                        {
+                                            opt: 'A',
+                                            id: 1, 
+                                            text:"In the south, Teal’ (Frog) was in a house of blue fog; nevertheless, Tiel’in, who is afterward a water monster, lay at that doorway.", 
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'B',
+                                            id:2, 
+                                            text:"In the south, Teal’ (Frog) was in a house of blue fog, and Tiel’in, a_erward a water monster, lay at that doorway.",  
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'C',
+                                            id:3, 
+                                            text: "Teal’ (Frog) was in a house of blue fog in the south, but Tiel’in, a_erward a water monster, laying at that doorway.",  
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'D',
+                                            id:4, 
+                                            text: "Teal’ (Frog) was in the south in a house of blue fog, and laying, at the doorway, Tiel’in, who is afterward a water monster.",  
+                                            check: true, 
+                
+                                        } 
+                                    ],
+                                    selectedChoice: '',
+                               
+                                },
+                                {
+                                    id: 44,
+                                    question: 
+                                    "44. Which choice offers an accurate interpretation of the data in the graphs?",  
+                                    choices: [
+                                        {
+                                            opt: 'A',
+                                            id: 1, 
+                                            text:"e number of winter huts was more than double the number of summer shelters in every decade shown in the graph.", 
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'B',
+                                            id:2, 
+                                            text:"The gap between the number of winter huts and summer shelters was largest in number in the decade of the 1900s.",  
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'C',
+                                            id:3, 
+                                            text: "The number of winter huts was greater than the number of summer shelters in every time period measured except for the 1910s.",  
+                                            check: false, 
+                
+                                        },
+                                        {
+                                            opt: 'D',
+                                            id:4, 
+                                            text: "The decline in the number of winter huts was greater from the 1900s to the 1910s than it was from the 1870s to the 1890s.",  
                                             check: true, 
                 
                                         } 
@@ -2477,30 +3784,30 @@ export default class TestScreen extends React.Component {
                                 {
                                     id: 1,
                                     question: 
-                                    "1.1 As presented in the passage, Mr. Kearney is best described as",  
+                                    "1. If the sum of three consecutive integers is 96, which of the following is the smallest one?",  
                                     choices: [
                                         {
                                             opt: 'A',
                                             id: 1, 
-                                            text:"independent and strong willed.", 
+                                            text:"31", 
                                             check: false, 
                                         },
                                         {
                                             opt: 'B',
                                             id:2, 
-                                            text:"paternal and affectionate.",  
+                                            text:"32",  
                                             check:false, 
                                         },
                                         {
                                             opt: 'C',
                                             id:3, 
-                                            text: "serious and family oriented.",  
+                                            text: "33",  
                                             check:true, 
                                         },
                                         {
                                             opt: 'D',
                                             id:4, 
-                                            text: "boring and simple minded.",  
+                                            text: "34",  
                                             check:false, 
                                         } 
                                     ],
@@ -2510,7 +3817,7 @@ export default class TestScreen extends React.Component {
                                 {
                                     id: 2,
                                     question: 
-                                    "1.2 As presented in the passage, Mr. Kearney is best described as",  
+                                    "2. What is the solution to the equation ",  
                                     choices: [
                                         {
                                             opt: 'A',
