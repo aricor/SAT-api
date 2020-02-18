@@ -59,7 +59,7 @@
     color: #333;
     width:450px; 
     max-width:450px; 
-    margin-left: 380px;
+    margin-left: 45%;
     margin-top: 0px;
     text-indent: 2em;
   }
@@ -73,7 +73,7 @@
     padding: 1em;
     width:450px; 
     max-width:450px; 
-    margin-left: 380px;
+    margin-left: 45%;
     margin-top: 30px;
     margin-bottom: -25px;
   }
@@ -83,7 +83,7 @@
   }
 
   .pic {
-    margin-left: 380px;
+    margin-left: 30%;
 
   }
     .readingSection {
@@ -98,7 +98,54 @@
     background-color: #333;
     color:white; 
 }
+@media screen and (max-width: 1660px) {
+    .testContainer {
+        width: 100%;
+        height: 100%; 
+      }
+      .passageSection {
+        background-color: #F4D293;
+        height: 700px; 
+    }
+    .questionSection {
+        height: 700px; 
+    }
+    .highlight, .passagename {
+        margin-left: 35%;
+        float: left; 
+    }
+    .passageToRead {
+        margin-top: 13%; 
+    }
+ }
+ @media screen and (max-width: 1440px) {
+    .testContainer {
+        width: 100%;
+        height: 100%; 
+      }
+      .passageSection {
+        background-color: #F4D293;
+        height: 690px; 
+    }
+    .questionSection {
+        height: 690px; 
+    }
+    .highlight, .passagename {
+        margin-left: 27%;
+        float: left; 
+    }
+    .passageToRead {
+        margin-top: 15%; 
+    }
+    .progressNum, .progressBar {
+        margin-top: 5x;
+    }
+ }
     @media screen and (max-width: 1280px) {
+        .testContainer {
+            width: 100%;
+            height: 100%; 
+          }
         .highlight, .passagename {
             margin-left: 120px;
             float: left; 
@@ -117,20 +164,20 @@
         .passageSection {
             background-color: #F4D293;
             width: 700px; 
-            height: 590px; 
+            height: 570px; 
         }
         .progressGeneral {
             margin-top:-15px; 
         }
         
           .progressNum div  {
-              margin-top:-1px; 
+              margin-top:-3px; 
           }
 
           .questionSection {
               float:right; 
               margin-right: -15px; 
-              height: 590px; 
+              height: 570px; 
           }
           .progressBar {
               margin-top: -4px; 
@@ -156,18 +203,20 @@
         .passageSection {
             background-color: #F4D293;
             width: 50%; 
-            height: 100%; 
+            height: 1220px; 
         }
 
         .questionSection {
             float:right; 
             margin-right: -15px; 
-            height: 100%; 
+            height: 1220px; 
         }
         .testContainer {
             width: 100%;
+            height: 100%; 
           }
         .progressNum {
-            margin-top: 30px; 
+            margin-top: 3%; 
         }
+        
     }
