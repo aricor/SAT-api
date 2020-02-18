@@ -1,36 +1,47 @@
 .timerContainer {
-  display: flex; /* or inline-flex */
-    justify-content: space-around;
-   /* position: fixed; */
-    top: 0;
-    background: #191409;
-    width:100%;
-  }
+  /* or inline-flex */
+   /*justify-content: space-around;
+  /* position: fixed; */
+   top: 0;
+   background: #191409;
+   width:100%;
+ }
 
-  .elite {
-    color: #DFA736;
-    font-family: 'Monoton', cursive;
-    font-size: 35px;
-    text-align: center;
+ .elite {
+   display: inline-block; 
+   color: #DFA736;
+   font-family: 'Times New Roman', cursive;
+   font-size: 35px;
+   margin: 0 auto;
+   margin-left: 540px;  
+ }
+ .eliteGeneral {
+   display: inline-block; 
 
-  }
+ }
+ .elite:hover {
+   color: #FF5252;
+ }
 
-  .elite:hover {
-    color: #FF5252;
-  }
+ .timer, .sectionType {
+   display: inline-block;
+ font-family:'Times New Roman', monospace;
+ }
+ .timer {
+   color: #FF5252;
+   font-size: 20px;
+   float:right;
+   margin-right:50px; 
+ }
 
-  .timer, .sectionType {
-  font-family:'Share Tech Mono', monospace;
-  }
-  .timer {
-    color: #FF5252;
-    font-size: 20px;
-    
-  }
+ .sectionType {
+   margin-top:5px;
+   color: white;
+   font-size: 25px;
+   
+   margin-left: 30px; 
+ }
+ @import url('https://fonts.googleapis.com/css?family=Monoton&display=swap');
 
-  .sectionType {
-    color: white;
-    font-size: 25px;
-    float: left;
-  }
-  @import url('https://fonts.googleapis.com/css?family=Monoton&display=swap');
+
+
