@@ -17,6 +17,7 @@
     overflow-y: hidden;
     overflow-x: hidden;
     justify-content: space-evenly;
+    width:100%
 }
 .passageSection {
     background-color: #F4D293;
@@ -145,4 +146,28 @@
                 max-width:450px; 
         
             }
+    }
+
+    @media screen and (max-width: 1024px) and (max-height:1366px) {
+        .highlight, .passagename {
+            margin-left: 40px;
+            float: left; 
+        }
+        .passageSection {
+            background-color: #F4D293;
+            width: 50%; 
+            height: 100%; 
+        }
+
+        .questionSection {
+            float:right; 
+            margin-right: -15px; 
+            height: 100%; 
+        }
+        .testContainer {
+            width: 100%;
+          }
+        .progressNum {
+            margin-top: 30px; 
+        }
     }
