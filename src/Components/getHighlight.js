@@ -24,13 +24,13 @@ export default class Highlight extends Component {
                 sel.removeAllRanges();
                 sel.addRange(range);
             }
-            document.execCommand("underline", false, null);
+            document.execCommand("italic", false, null);
             document.designMode = "off";
         } else if (document.selection && document.selection.createRange &&
                 document.selection.type != "None") {
             // IE case
             range = document.selection.createRange();
-            range.execCommand("underline", false, null);
+            range.execCommand("italic", false, null);
 
         }
       }

@@ -30,7 +30,7 @@ export default class TestScreen extends React.Component {
                 {
                     id:1, 
                     defaultTimer: 65,
-                    sectionType:  'reading', 
+                    sectionType:  'READING', 
                     title: "This passage is from James Joyce, The Dubliners originally published in 1914",
                     passage: [
                         {
@@ -432,7 +432,7 @@ export default class TestScreen extends React.Component {
                 {
                     id:2, 
                     defaultTimer: 65,
-                            sectionType: 'reading', 
+                            sectionType: 'READING', 
                             IsLastSectionType: false, 
                             IsFirstSectionType: false, 
                             title: 'This passage and the figures are adapted from Whiten et. al Social Learning in the Real World © 2016', 
@@ -824,7 +824,7 @@ export default class TestScreen extends React.Component {
                 {
                     id:3, 
                     defaultTimer: 65,
-                    sectionType:  'reading', 
+                    sectionType:  'READING', 
                     title: "The passage is adapted from Boutilier et. al Water Filtration Using Plant Xylem © 2014",
                     passage: [
                         {
@@ -1187,7 +1187,7 @@ export default class TestScreen extends React.Component {
                 {
                     id:4, 
                     defaultTimer: 65,
-                    sectionType:  'reading', 
+                    sectionType:  'READING', 
                     title: "Passage1is adapted from Richard Nixon’s book No More Vietnams ©1985. Nixon discusses his view on the publication of the Pentagon Papers in the New York Times during his presidency. Passage 2 is adapted from New York Times Editor A. M. Rosenthal What a Free Press is All About on hisopinion of the matter in 1972.",
                     passage: [
                         {
@@ -1644,7 +1644,7 @@ export default class TestScreen extends React.Component {
                 {
                     id:5, 
                     defaultTimer: 65,
-                    sectionType:  'reading', 
+                    sectionType:  'READING', 
                     title: "This passage and the figures are adapted from Shibuya et. al Toxic wavelength of blue light changes as insects grow © 2018",
                     passage: [
                         {
@@ -2090,14 +2090,14 @@ export default class TestScreen extends React.Component {
                 {
                     id:7, 
                     defaultTimer: 35,
-                            sectionType: 'writing and language', 
+                            sectionType: 'WRITING AND LANGUAGE', 
                             IsLastSectionType: false, 
                             IsFirstSectionType: true, 
                             title:' Violet Wood Sorrel Plant', 
                             passage: [
                                 {
                                     id:1, 
-                                    content: 'Beauty of leaf and blossom is not the only attraction possessed by this charming little plant. As a family, the wood-sorrels have great interest for botanists since Darwin devoted such long study to their power of movement. and many other scientists have described the several forms assumed by perfect flowers of the same.', 
+                                    content: 'Beauty of leaf and blossom is not the only attraction possessed by this charming little plant. As a family, the wood-sorrels have great interest for botanists since Darwin devoted such <b class="backgroundNum">1.<\/b> <u>long<\/u> study to their power of movement. and many other scientists have described the several forms assumed by perfect flowers of the same species to secure cross-fertilization. Some members of the clan also bear so-called blind flowers. <b class="backgroundNum">2.<\/b> <u>Also termed cleistogamous flowers by botanists, blind flowers never open and lack petals, vet they are able to self-fertilize.<\/u> Even the rudimentary leaves of the seedlings “go to sleep" at <b class="backgroundNum">3.</b> <u>evening, and during the day are<\/u> in constant movement up and down. The stems, too, are restless. And <b class="backgroundNum">4.<\/b> <u>as for<\/u> the mature leaves, every child knows how they droop their three leaflets back to back against the stem at evening, elevating them to the perfect horizontal again by day. Extreme sensitiveness to light has been thought to be the true explanation of so much activity, and <b class="backgroundNum">5.<\/b> <u>therefore<\/u> this is not a satisfactory theory inmany cases. It is certain that drooping leaves suffer far less from frost than those whose upper surfaces are flatly exposed to the zenith. ', 
                                 }, 
                                 {
                                     id:2, 
@@ -2512,7 +2512,7 @@ export default class TestScreen extends React.Component {
                 {
                     id:8, 
                     defaultTimer: 35,
-                            sectionType: 'writing and language', 
+                            sectionType: 'WRITING AND LANGUAGE', 
                             IsLastSectionType: false, 
                             IsFirstSectionType: false, 
                             title:' Violet Wood Sorrel Plant', 
@@ -2930,7 +2930,7 @@ export default class TestScreen extends React.Component {
                 {
                     id:9, 
                     defaultTimer: 35,
-                            sectionType: 'writing and language', 
+                            sectionType: 'WRITING AND LANGUAGE', 
                             IsLastSectionType: false, 
                             IsFirstSectionType: false, 
                             title:' Violet Wood Sorrel Plant', 
@@ -3350,7 +3350,7 @@ export default class TestScreen extends React.Component {
                 {
                     id:10, 
                     defaultTimer: 35,
-                            sectionType: 'writing and language', 
+                            sectionType: 'WRITING AND LANGUAGE', 
                             IsLastSectionType: true, 
                             IsFirstSectionType: false, 
                             title:' Violet Wood Sorrel Plant', 
@@ -3984,7 +3984,7 @@ export default class TestScreen extends React.Component {
         const {sections, currentSection} = this.state; 
         const section = sections[currentSection];
 
-        if (section.sectionType === 'reading' || section.sectionType === 'writing and language' ) {
+        if (section.sectionType === 'READING' || section.sectionType === 'WRITING AND LANGUAGE' ) {
             return (
                 <div>
                     
@@ -4103,7 +4103,7 @@ export default class TestScreen extends React.Component {
             sections,
         } = this.state;
         const section = sections[currentSection];
-        if (section.sectionType === 'reading' ||section.sectionType === 'writing and language' ) {
+        if (section.sectionType === 'READING' ||section.sectionType === 'WRITING AND LANGUAGE' ) {
             return (
 
                 <div className="passageSection">
@@ -4126,11 +4126,6 @@ export default class TestScreen extends React.Component {
         }     
    
     }
-    displayUnderline(word) {
-            return {
-        __html: `${word}`
-        }; 
-    }
     
     createMarkup(content) {
         return {__html: content};
@@ -4151,7 +4146,7 @@ export default class TestScreen extends React.Component {
             sections, 
         } = this.state; 
         const section = sections[currentSection]; 
-        if (section.sectionType === 'reading' && section.id === 2) {
+        if (section.sectionType === 'READING' && section.id === 2) {
             return (
                 <div className="pic">
                 <img src={require('./readingSection2a.png')} className="readingSection"></img>
@@ -4161,7 +4156,7 @@ export default class TestScreen extends React.Component {
                 </div>
             )
         }
-        else if (section.sectionType === 'reading' && section.id === 5) {
+        else if (section.sectionType === 'READING' && section.id === 5) {
             return (
                 <div className="pic">
                 <img src={require('./readingSection5a.png')} className="readingSection"></img>
@@ -4179,7 +4174,7 @@ export default class TestScreen extends React.Component {
         } = this.state;
         const section = sections[currentSection];
         let buttonText = 'Next'; 
-        if (this.IsLastSection() && section.sectionType === 'reading') {
+        if (this.IsLastSection() && section.sectionType === 'READING') {
             buttonText = 'Go to Writing and Language'; 
         }
         else if (this.IsLastSection() && section.sectionType === 'writing and language') {
@@ -4203,7 +4198,7 @@ export default class TestScreen extends React.Component {
                 sections.map(section => {
                     section.questions.map((question) => {
                         const correctAnswer = question.choices.find((choice) => choice.check === true);
-                        if (section.sectionType === 'reading' ) {
+                        if (section.sectionType === 'READING' ) {
                             if(correctAnswer.id === question.selectedChoice) { 
                                 this.setState(currentState => {
                                     return {
@@ -4214,7 +4209,7 @@ export default class TestScreen extends React.Component {
                         } //TODO: else  if(section.sectionType === 'writing' ) { Exactly the same logic as reading but for the others}
                     });
         
-                    if(section.sectionType === 'writing and language' ) {
+                    if(section.sectionType === 'WRITING AND LANGUAGE' ) {
                         section.questions.map((question) => {
                             const correctAnswer = question.choices.find((choice) => choice.check === true);
                             if(correctAnswer.id === question.selectedChoice) { 
