@@ -112,4 +112,12 @@
             max-width:200px; 
     
         }
+
+        .passageSection {
+            background-color: #F4D293;
+            overflow-y: auto;
+            overflow-x: auto; 
+            width: 640px; 
+            
+        }
     }
