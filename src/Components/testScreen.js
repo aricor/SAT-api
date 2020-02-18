@@ -3777,7 +3777,7 @@ export default class TestScreen extends React.Component {
                 {
                     id:11, 
                     defaultTimer: 25,
-                            sectionType: 'math (no calculator)', 
+                            sectionType: 'MATH (NO CALCULATOR)', 
                             IsLastSectionType: true, 
                             IsFirstSectionType: true, 
                             questions: [
@@ -3882,7 +3882,7 @@ export default class TestScreen extends React.Component {
                 {
                     id:13,
                     defaultTimer: 55,
-                    sectionType: 'math (with calculator)', 
+                    sectionType: 'MATH (WITH CALCULATOR)', 
                     IsLastSectionType: true, 
                     IsFirstSectionType: true, 
                     questions: [
@@ -4180,10 +4180,10 @@ export default class TestScreen extends React.Component {
         else if (this.IsLastSection() && section.sectionType === 'writing and language') {
             buttonText = 'Go to Math (No Calculator)'; 
         }
-        else if (this.IsLastSection() && section.sectionType === 'math (no calculator)') {
+        else if (this.IsLastSection() && section.sectionType === 'MATH (NO CALCULATOR)') {
             buttonText = 'Go to Math (With Calculator)'; 
         }
-        else if (this.IsLastSection() && section.sectionType === 'math (with calculator)') {
+        else if (this.IsLastSection() && section.sectionType === 'MATH (WITH CALCULATOR)') {
             buttonText = 'Submit'; 
         }
 
@@ -4221,7 +4221,7 @@ export default class TestScreen extends React.Component {
                             }
                         })
                     }
-                    else if(section.sectionType === 'math (no calculator)' ) {
+                    else if(section.sectionType === 'MATH (NO CALCULATOR)' ) {
                         section.questions.map((question) => {
                             const correctAnswer = question.choices.find((choice) => choice.check === true);
                             if(correctAnswer.id === question.selectedChoice) { 
@@ -4243,7 +4243,7 @@ export default class TestScreen extends React.Component {
                             }
                         })
                     }
-                    else if(section.sectionType === 'math (with calculator)' ) {
+                    else if(section.sectionType === 'MATH (WITH CALCULATOR)' ) {
                         section.questions.map((question) => {
                             const correctAnswer = question.choices.find((choice) => choice.check === true);
                             if(correctAnswer.id === question.selectedChoice) { 
@@ -4978,7 +4978,7 @@ export default class TestScreen extends React.Component {
                     <h2>Writing and Language Score: {writingScore}</h2>
                     <h2>verbal Score: {verbal}</h2>
                     <h2>Math Score: {mathScore}</h2>
-                    <h2>total Score: {total} </h2>
+                    <h2>Total Score: {total} </h2>
                     <h2>Number of correct Reading section: {correctReading} (out of 52)</h2>
                     <h2>Number of correct Writing and Language section: {correctWriting} (out of 44)</h2>
                     <h2>Number of correct Math (No Calculator) section: {correctmathNoCal} (out of 20)</h2>
