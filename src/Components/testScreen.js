@@ -2079,7 +2079,7 @@ export default class TestScreen extends React.Component {
                 {
                     id:6, 
                     defaultTimer: 10,
-                            sectionType: 'break', 
+                            sectionType: 'BREAK', 
                             IsLastSectionType: true, 
                             IsFirstSectionType: true, 
                             title:'', 
@@ -3872,7 +3872,7 @@ export default class TestScreen extends React.Component {
                 {
                     id:12, 
                     defaultTimer: 5,
-                    sectionType: 'break', 
+                    sectionType: 'BREAK', 
                     IsLastSectionType: true, 
                     IsFirstSectionType: true, 
                     title:'', 
@@ -4017,7 +4017,7 @@ export default class TestScreen extends React.Component {
                 </div>
             )                
         }
-        else if (section.sectionType === 'break' ) {
+        else if (section.sectionType === 'BREAK' ) {
             return (
                 <div>
                     <h4> Section: {section.sectionType}</h4>
