@@ -38,9 +38,16 @@
    margin-top:5px;
    color: white;
    font-size: 25px;
-   
    margin-left: 30px; 
  }
- @import url('https://fonts.googleapis.com/css?family=Monoton&display=swap');
 
+ @media screen and (max-width: 1280px) {
+  .elite {
+    margin-left: 300px; 
+  }
+  .timer {
+    margin-right:30px; 
+  }
+  
+ }
 

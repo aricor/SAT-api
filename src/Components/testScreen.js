@@ -5015,16 +5015,19 @@ export default class TestScreen extends React.Component {
                     </div>
                 </div>
             </div>
+            <div className="progressGeneral">
             <div className = "progressNum">
                 <div>
                     <ProgressNum currentSection={currentSection} sections={sections}/>
                 </div>
             </div>
-            <div className = "progressbar">
+            <div className = "progressBar">
                 <div> 
                     <Progress animated color="warning" value={this.calculatePercentageOfAnsweredQuestions()} />
                 </div>
             </div>
+            </div>
+
         </div>
         
     }

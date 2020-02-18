@@ -98,11 +98,12 @@
     color:white; 
 }
     @media screen and (max-width: 1280px) {
-        .highlight {
-            margin-right: 200px, 
+        .highlight, .passagename {
+            margin-left: 120px;
+            float: left; 
         }
-        .passagename {
-            margin-left: 200px, 
+        .highlight {
+            margin-top: 20px; 
         }
         .pic {
             margin-left: 200px;
@@ -112,11 +113,36 @@
             max-width:200px; 
     
         }
-
         .passageSection {
             background-color: #F4D293;
-
-            width: 640px; 
-            
+            width: 700px; 
+            height: 590px; 
         }
+        .progressGeneral {
+            margin-top:-15px; 
+        }
+        
+          .progressNum div  {
+              margin-top:-1px; 
+          }
+
+          .questionSection {
+              float:right; 
+              margin-right: -15px; 
+              height: 590px; 
+          }
+          .progressBar {
+              margin-top: -4px; 
+          }
+          .article2 {
+            height: 600px; 
+          }
+          .pic {
+            margin-left: 120px;
+        
+          }
+            .graphTitles {
+                max-width:450px; 
+        
+            }
     }
