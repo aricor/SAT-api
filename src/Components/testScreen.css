@@ -17,14 +17,15 @@
     overflow-y: hidden;
     overflow-x: hidden;
     justify-content: space-evenly;
-    width:100%
+    width:100%; 
+    height: 200px; 
 }
 .passageSection {
     background-color: #F4D293;
     overflow-y: auto;
     overflow-x: auto; 
     width: 50%;
-    height: 825px; 
+    height: 200px; 
     
 }
 
@@ -32,7 +33,7 @@
     overflow-y: auto;
     overflow-x: auto; 
     width: 50%;
-    height: 825px; 
+    height: 200px; 
 
 }
 
@@ -94,7 +95,6 @@
     }
     .graphTitles {
         max-width:450px; 
-
     }
 .backgroundNum {
     background-color: #333;
@@ -107,6 +107,16 @@
     }  
     .progressNum, .progressBar {
         margin-top: 2px;
+    }
+    .questionSection, .passageSection {
+        height: 1020px; 
+    }
+    .highlight, .passagename {
+        margin-right: 5%;
+        float: right; 
+    }
+    .passageToRead {
+        margin-top: 8%; 
     }
 }
 @media screen and (max-width: 1660px) {
@@ -213,8 +223,13 @@
             width: 100%;
             height: 100%; 
           }
-        .progressNum {
-            margin-top: 3%; 
+        .progressNum,.progressBar {
+            margin-top: 3px; 
         }
-        
+         .pic {
+            margin-left: 40px;
+        }
+        .graphTitles {
+            max-width:450px; 
+        }
     }
