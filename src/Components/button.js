@@ -18,10 +18,10 @@ const ButtonComponent = props => {
                 <div key={choice.id} className="mt-2">
                   <Button
                     key={choice.id}
-                    onClick={() => props.onClick(choice.id)}  
+                    onClick={() => !props.isTestSubmitted && props.onClick(choice.id)}  
                     className="btn-circle" 
                     outline={!selected} 
-                    color="warning">
+                    color={props.isTestSubmitted ? "success" : "warning"}>
                     {choice.opt}
                 </Button>
                 <span className="m-2">

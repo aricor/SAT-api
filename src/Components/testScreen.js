@@ -12,6 +12,7 @@ export default class TestScreen extends React.Component {
         super(props);
         this.state = {
             isTestSubmitted: false,
+            isTestInReview: false,
             currentSection: 0,
             currentSubject:0, 
             NumeberOfCorrectAnswersOfEachSubject: [], 
@@ -3981,7 +3982,7 @@ export default class TestScreen extends React.Component {
         };
  }
     renderAllQuestions() {
-        const {sections, currentSection} = this.state; 
+        const {sections, currentSection, isTestSubmitted} = this.state; 
         const section = sections[currentSection];
 
         if (section.sectionType === 'READING' || section.sectionType === 'WRITING AND LANGUAGE' ) {
@@ -3995,6 +3996,7 @@ export default class TestScreen extends React.Component {
                             return (
                                 
                                     <ButtonComponent
+                                    isTestSubmitted={isTestSubmitted}
                                     key={subquestion.id}
                                     onClick={(selectedId) => {
                                         subquestion.selectedChoice = subquestion.selectedChoice != selectedId? selectedId : ''; // update the selectedChoice of this question with the clicked choice
@@ -4035,6 +4037,7 @@ export default class TestScreen extends React.Component {
                         section.questions.map((subquestion, index2) => {
                             return (
                                 <ButtonComponent
+                                isTestSubmitted={isTestSubmitted}
                                 key={subquestion.id}
                                 onClick={(selectedId) => {
                                     subquestion.selectedChoice = subquestion.selectedChoice != selectedId? selectedId : ''; // update the selectedChoice of this question with the clicked choice
@@ -4058,6 +4061,7 @@ export default class TestScreen extends React.Component {
                         section.fillInQuestions.map((subfillInQuestion, index)=> {
                         return (
                             <MathComponent
+                            isTestSubmitted={isTestSubmitted}
                                 key = {subfillInQuestion.id}
                                 question={subfillInQuestion.question}
                                 onChange={(text) => {
@@ -4948,6 +4952,54 @@ export default class TestScreen extends React.Component {
             currentSection: nextSection + 1,
         })
     }
+
+    renderReview() {
+        const {sections, currentSection, isTestSubmitted} = this.state; 
+        const section = sections[currentSection];
+        if (section.sectionType === 'READING' || section.sectionType === 'WRITING AND LANGUAGE' ) {
+            return (
+                <div>
+                    <h4> Section: {section.sectionType}</h4> 
+                    {
+                        section.questions.map((subquestion) => {
+                            return (
+                                <ButtonComponent
+                                question={subquestion.question}
+                                choices={subquestion.choices}
+                                />
+                            )
+                        })
+                    }
+                </div>
+            )
+        } else {
+            return (
+                <div>
+                    <h4> Section: {section.sectionType}</h4> 
+                    {
+                        section.questions.map((subquestion) => {
+                            return (
+                                <ButtonComponent
+                                question={subquestion.question}
+                                choices={subquestion.choices}
+                                />
+                            )
+                        })
+                    }
+                    {
+                        section.fillInQuestions.map((subfillInQuestion, index)=> {
+                            return (
+                                <MathComponent
+                                
+                                />
+                            )
+                        })
+
+                    }
+                </div>
+            )
+        }
+    }
     render() {
         const {
             isTestSubmitted,
@@ -4960,7 +5012,8 @@ export default class TestScreen extends React.Component {
             correctReading, 
             correctWriting, 
             correctmathWithCal, 
-            correctmathNoCal
+            correctmathNoCal,  
+            isTestInReview
         } = this.state;
 
         /*
@@ -4984,11 +5037,27 @@ export default class TestScreen extends React.Component {
                     <h2>Number of correct Math (No Calculator) section: {correctmathNoCal} (out of 20)</h2>
                     <h2>Number of correct Math (With Calculator) section: {correctmathWithCal} (out of 38)</h2>
 
-                    <button className="btn btn-dark"  onClick={() => this.setState({ currentSection: currentSection - 1})}> Go Back To Review</button>
+                    <button className="btn btn-dark"  onClick={() => {this.setState({ currentSection: 0, isTestInReview: true})}}> Go Back To Review</button>
                 </div>
             );
         }
-
+        if (isTestInReview) {
+            return <div className="appContainer">
+            <div className= "header">
+                <Timer/>            
+            </div>
+            <div className="testContainer">
+                {this.addPassageOrNot()}
+                <div className="questionSection">
+                    <div className="article2">
+                    {this.renderReview()}
+                    {!this.IsTheFirstSectionType() ?  <button className="btn btn-dark"  onClick={() => this.setState({ currentSection: currentSection - 1})}> Back</button> : '' }
+                    {this.renderRightButton()}
+                    </div>
+                </div>
+            </div>
+            </div>
+        }
         console.log(this.state.correctReading);
         console.log(this.state.correctWriting);
         console.log(this.state.correctmathNoCal);
