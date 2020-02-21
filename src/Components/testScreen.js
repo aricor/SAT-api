@@ -2367,12 +2367,12 @@ export default class TestScreen extends React.Component {
                                 {
                                     id: 8,
                                     question: 
-                                    "8. Which choice most eectively combines the underlined sentences?",  
+                                    "8. Which choice most e¬ectively combines the underlined sentences?",  
                                     choices: [
                                         {
                                             opt: 'A',
                                             id: 1, 
-                                            text:"The violet wood-sorrel produces two sorts of perfect flowers, reciprocally adapted, to each other but on dierent plants, in the same neighborhood.", 
+                                            text:"The violet wood-sorrel produces two sorts of perfect flowers, reciprocally adapted, to each other but on di¬erent plants, in the same neighborhood.", 
                                             check: false, 
                 
                                         },
@@ -3277,7 +3277,7 @@ export default class TestScreen extends React.Component {
                                 {
                                     id: 32,
                                     question: 
-                                    "32. Which choice most eectively combines the underlined sentences?",  
+                                    "32. Which choice most e¬ectively combines the underlined sentences?",  
                                     choices: [
                                         {
                                             opt: 'A',
@@ -3742,7 +3742,7 @@ export default class TestScreen extends React.Component {
                                         {
                                             opt: 'A',
                                             id: 1, 
-                                            text:"e number of winter huts was more than double the number of summer shelters in every decade shown in the graph.", 
+                                            text:" e number of winter huts was more than double the number of summer shelters in every decade shown in the graph.", 
                                             check: false, 
                 
                                         },
@@ -4990,7 +4990,10 @@ export default class TestScreen extends React.Component {
                         section.fillInQuestions.map((subfillInQuestion, index)=> {
                             return (
                                 <MathComponent
-                                
+                                question={subfillInQuestion.question}
+                                onChange={(text) => {
+                                    subfillInQuestion.correctAnswer = text;
+                                }}
                                 />
                             )
                         })
@@ -5037,7 +5040,7 @@ export default class TestScreen extends React.Component {
                     <h2>Number of correct Math (No Calculator) section: {correctmathNoCal} (out of 20)</h2>
                     <h2>Number of correct Math (With Calculator) section: {correctmathWithCal} (out of 38)</h2>
 
-                    <button className="btn btn-dark"  onClick={() => {this.setState({ currentSection: 0, isTestInReview: true})}}> Go Back To Review</button>
+                    <button className="btn btn-dark"  onClick={() => {this.setState({ currentSection: 0, isTestInReview: true})} } > Go Back To Reading Section Review</button>
                 </div>
             );
         }
