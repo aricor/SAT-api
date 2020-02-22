@@ -5040,7 +5040,7 @@ export default class TestScreen extends React.Component {
                     <h2>Number of correct Math (No Calculator) section: {correctmathNoCal} (out of 20)</h2>
                     <h2>Number of correct Math (With Calculator) section: {correctmathWithCal} (out of 38)</h2>
 
-                    <button className="btn btn-dark"  onClick={() => {this.setState({ currentSection: 1, isTestInReview: true})} } > Go Back To Review</button>
+                    <button className="btn btn-dark"  onClick={() => {this.setState({ currentSection: 0, isTestInReview: true})} } > Go Back To Review</button>
                 </div>
             );
         }
