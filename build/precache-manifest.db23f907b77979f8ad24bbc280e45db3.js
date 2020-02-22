@@ -1,18 +1,18 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "4d75e24d57d4045a1bf67dc7fa5be959",
+    "revision": "c1ca7203191c0bdf528643bdcaab4604",
     "url": "/SAT-api/index.html"
   },
   {
-    "revision": "698fc824ddf57c058956",
-    "url": "/SAT-api/static/css/main.27a70c13.chunk.css"
+    "revision": "2a759675e572e6d79645",
+    "url": "/SAT-api/static/css/main.a092e6dc.chunk.css"
   },
   {
     "revision": "359d31109df5a6b8a456",
     "url": "/SAT-api/static/js/2.5ac960bb.chunk.js"
   },
   {
-    "revision": "698fc824ddf57c058956",
+    "revision": "2a759675e572e6d79645",
     "url": "/SAT-api/static/js/main.45d9cc56.chunk.js"
   },
   {
