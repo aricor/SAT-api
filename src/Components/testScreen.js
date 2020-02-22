@@ -29,6 +29,17 @@ export default class TestScreen extends React.Component {
             total:0, 
             sections: [
                 {
+                    id:0, 
+                    defaultTimer: '',
+                            sectionType: 'GUIDE', 
+                            IsLastSectionType: true, 
+                            IsFirstSectionType: true, 
+                            title:'', 
+                            passage:[], 
+                            questions:[], 
+                            
+                }, 
+                {
                     id:1, 
                     defaultTimer: 65,
                     sectionType:  'READING', 
@@ -4027,6 +4038,23 @@ export default class TestScreen extends React.Component {
                 </div>
             )  
         }
+        else if (section.sectionType === 'GUIDE'){
+            return (
+                <div className="guideElite">
+                    <h2>Welcome To Elite Prep Vietnam's Mock Test</h2>
+                    <p>For Reading and Writing and Langauge section: On the left side is the article and on the right side is a set of multiple choice questions </p>
+                    <p>Sections in order:</p>
+                    <ul>Reading (65 MINS - 52 QUESTIONS)</ul>
+                    <ul>Break 1 (5 MINS)</ul>
+                    <ul>Writing and Language (35 MINS - 44 QUESTIONS)</ul>
+                    <ul>Math No Calculator (25 MINS - 20 QUESTIONS)</ul>
+                    <ul>Break 2 (10 MINS)</ul>
+                    <ul>Math Calculator (55 MINS - 38 QUESTIONS)</ul>
+                    <b>This mock test does not include Essay section. Once you start the test, it cannot be stopped</b>
+                    <p>Keep calm and good luck! :)</p>
+                </div>
+            )
+        }
         else {
             return (
                 <div>
@@ -5003,6 +5031,10 @@ export default class TestScreen extends React.Component {
             )
         }
     }
+    isTestInReview() {
+        const {isTestInReview} = this.state;
+        return (isTestInReview === true)
+    }
     render() {
         const {
             isTestSubmitted,
@@ -5040,7 +5072,7 @@ export default class TestScreen extends React.Component {
                     <h2>Number of correct Math (No Calculator) section: {correctmathNoCal} (out of 20)</h2>
                     <h2>Number of correct Math (With Calculator) section: {correctmathWithCal} (out of 38)</h2>
 
-                    <button className="btn btn-dark"  onClick={() => {this.setState({ currentSection: 0, isTestInReview: true})} } > Go Back To Review</button>
+                    <button className="btn btn-dark"  onClick={() => {this.setState({ currentSection: 1, isTestInReview: true})} } >Go Back To Review</button>
                 </div>
             );
         }
@@ -5066,7 +5098,7 @@ export default class TestScreen extends React.Component {
                 <div className="questionSection">
                     <div className="article2">
                     {this.renderAllQuestions()}
-                    {!this.IsTheFirstSectionType() ?  <button className="btn btn-dark"  onClick={() => this.setState({ currentSection: currentSection - 1})}> Back</button> : '' }
+                    {!this.IsTheFirstSectionType() || (this.isTestInReview() && this.IsNotTheFirstPage())  ?  <button className="btn btn-dark"  onClick={() => this.setState({ currentSection: currentSection - 1})}> Back</button> : '' }
                     {this.renderRightButton()}
                     </div>
                 </div>

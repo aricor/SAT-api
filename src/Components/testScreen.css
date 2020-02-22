@@ -36,7 +36,10 @@
     height: 200px; 
 
 }
-
+.guideElite {
+    margin-left: 30%;
+    width: 600px; 
+}
 .article2 {
     font-family: "ff-tisa-web-pro",serif;
     font-size: 16px;
