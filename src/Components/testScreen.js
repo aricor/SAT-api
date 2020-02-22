@@ -5025,7 +5025,7 @@ export default class TestScreen extends React.Component {
          * 
          */
 
-       if(isTestSubmitted) {
+       if(isTestSubmitted && !isTestInReview) {
             
             return (
                 <div className="appContainer">
@@ -5040,27 +5040,11 @@ export default class TestScreen extends React.Component {
                     <h2>Number of correct Math (No Calculator) section: {correctmathNoCal} (out of 20)</h2>
                     <h2>Number of correct Math (With Calculator) section: {correctmathWithCal} (out of 38)</h2>
 
-                    <button className="btn btn-dark"  onClick={() => {this.setState({ currentSection: 0, isTestInReview: true})} } > Go Back To Reading Section Review</button>
+                    <button className="btn btn-dark"  onClick={() => {this.setState({ currentSection: 1, isTestInReview: true})} } > Go Back To Review</button>
                 </div>
             );
         }
-        if (isTestInReview) {
-            return <div className="appContainer">
-            <div className= "header">
-                <Timer/>            
-            </div>
-            <div className="testContainer">
-                {this.addPassageOrNot()}
-                <div className="questionSection">
-                    <div className="article2">
-                    {this.renderReview()}
-                    {!this.IsTheFirstSectionType() ?  <button className="btn btn-dark"  onClick={() => this.setState({ currentSection: currentSection - 1})}> Back</button> : '' }
-                    {this.renderRightButton()}
-                    </div>
-                </div>
-            </div>
-            </div>
-        }
+
         console.log(this.state.correctReading);
         console.log(this.state.correctWriting);
         console.log(this.state.correctmathNoCal);
