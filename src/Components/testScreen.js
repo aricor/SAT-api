@@ -4159,6 +4159,22 @@ export default class TestScreen extends React.Component {
    
     }
     
+    displayTimer() {
+        const {
+            isTestSubmitted,
+            currentSection, sections, 
+        } = this.state;
+        const currentSectionObject = sections[currentSection];
+
+        if (!isTestSubmitted)
+            return (
+                <Timer 
+                initialTimer={currentSectionObject.defaultTimer} 
+                sectionType={currentSectionObject.sectionType}
+                onTimeEnd={() => this.moveToAnotherSubject()}
+            />     
+            )
+    }
     createMarkup(content) {
         return {__html: content};
       }
@@ -5035,11 +5051,7 @@ export default class TestScreen extends React.Component {
 
         return <div className="appContainer">
             <div className= "header">
-                <Timer 
-                    initialTimer={currentSectionObject.defaultTimer} 
-                    sectionType={currentSectionObject.sectionType}
-                    onTimeEnd={() => this.moveToAnotherSubject()}
-                />            
+                {this.displayTimer()}         
             </div>
             <div className="testContainer">
 
