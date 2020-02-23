@@ -30,13 +30,13 @@ export default class TestScreen extends React.Component {
             sections: [
                 {
                     id:0, 
-                    defaultTimer: '',
-                            sectionType: 'GUIDE', 
-                            IsLastSectionType: true, 
-                            IsFirstSectionType: true, 
-                            title:'', 
-                            passage:[], 
-                            questions:[], 
+                    defaultTimer: 1,
+                    sectionType: 'GUIDE', 
+                    IsLastSectionType: true, 
+                    IsFirstSectionType: true, 
+                    title:'', 
+                    passage:[], 
+                    questions:[], 
                             
                 }, 
                 {
@@ -4166,7 +4166,7 @@ export default class TestScreen extends React.Component {
         } = this.state;
         const currentSectionObject = sections[currentSection];
         
-        if (!isTestSubmitted || currentSection === 0)
+        if (!isTestSubmitted || !this.IsNotTheFirstPage())
             return (
                 <Timer 
                 initialTimer={currentSectionObject.defaultTimer} 
