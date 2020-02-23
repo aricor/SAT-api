@@ -4244,11 +4244,11 @@ export default class TestScreen extends React.Component {
             isTestInReview
         } = this.state;
         const section = sections[currentSection];
-        if (!isTestInReview && !this.IsLastSection() && section.sectionType !== 'MATH (WITH CALCULATOR)') {
-            this.renderRightButton()
+        if (!isTestInReview && section.sectionType !== 'MATH (WITH CALCULATOR)') {
+            return this.renderRightButton()
         }
     }
-    
+
     checkingAllQuestions() {
         const {currentSection, sections, isTestSubmitted, correctWriting, correctmathNoCal, correctmathWithCal} = this.state; 
         const section = sections[currentSection]
@@ -5052,10 +5052,16 @@ export default class TestScreen extends React.Component {
         console.log(this.state.correctWriting);
         console.log(this.state.correctmathNoCal);
         console.log(this.state.correctmathWithCal);
+        const currentSectionObject = sections[currentSection];
 
         return <div className="appContainer">
             <div className= "header">
-                {this.displayTimer()}         
+            <Timer 
+                initialTimer={currentSectionObject.defaultTimer} 
+                sectionType={currentSectionObject.sectionType}
+                onTimeEnd={() => this.moveToAnotherSubject()}
+                isTestInReview={isTestInReview}
+            />               
             </div>
             <div className="testContainer">
 
@@ -5065,7 +5071,7 @@ export default class TestScreen extends React.Component {
                     <div className="article2">
                     {this.renderAllQuestions()}
                     {!this.IsTheFirstSectionType() || (this.isTestInReview() && this.IsNotTheFirstPage())  ?  <button className="btn btn-dark"  onClick={() => this.setState({ currentSection: currentSection - 1})}> Back</button> : '' }
-                    {this.displayRightButton()}
+                    {this.renderRightButton()}
                     </div>
                 </div>
             </div>
