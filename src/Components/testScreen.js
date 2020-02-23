@@ -3893,7 +3893,7 @@ export default class TestScreen extends React.Component {
                 }, 
                 {
                     id:13,
-                    defaultTimer: 55,
+                    defaultTimer: 1,
                     sectionType: 'MATH (WITH CALCULATOR)', 
                     IsLastSectionType: true, 
                     IsFirstSectionType: true, 
@@ -4234,30 +4234,40 @@ export default class TestScreen extends React.Component {
         else if (this.IsLastSection() && section.sectionType === 'MATH (WITH CALCULATOR)') {
             buttonText = 'Submit'; 
         }
-
         return (<button className="btn btn-dark m-2" onClick={() => this.checkingAllQuestions()}>{buttonText}</button>);
 
     }
+    displayRightButton() {
+        const {
+            currentSection,
+            sections,
+            isTestInReview
+        } = this.state;
+        const section = sections[currentSection];
+        if (!isTestInReview && !this.IsLastSection() && section.sectionType !== 'MATH (WITH CALCULATOR)') {
+            this.renderRightButton()
+        }
+    }
     
     checkingAllQuestions() {
-        const {currentSection, sections, correctWriting, correctmathNoCal, correctmathWithCal} = this.state; 
-
+        const {currentSection, sections, isTestSubmitted, correctWriting, correctmathNoCal, correctmathWithCal} = this.state; 
+        const section = sections[currentSection]
             if  (this.IsLastElementOfSectionsArray() && this.IsLastSection()) {
                 sections.map(section => {
-                    section.questions.map((question) => {
-                        const correctAnswer = question.choices.find((choice) => choice.check === true);
-                        if (section.sectionType === 'READING' ) {
-                            if(correctAnswer.id === question.selectedChoice) { 
+                    if (section.sectionType === 'READING') {
+                        section.questions.map((question) => {
+                            const correctAnswer = question.choices.find((choice) => choice.check === true);
+                            if(correctAnswer.id === question.selectedChoice) {
                                 this.setState(currentState => {
                                     return {
                                         correctReading: currentState.correctReading + 1
                                     }
                                 }, () => this.CalculateScores());
                             }
-                        } //TODO: else  if(section.sectionType === 'writing' ) { Exactly the same logic as reading but for the others}
-                    });
-        
-                    if(section.sectionType === 'WRITING AND LANGUAGE' ) {
+                        })
+                    }
+
+                    else if(section.sectionType === 'WRITING AND LANGUAGE' ) {
                         section.questions.map((question) => {
                             const correctAnswer = question.choices.find((choice) => choice.check === true);
                             if(correctAnswer.id === question.selectedChoice) { 
@@ -4290,6 +4300,7 @@ export default class TestScreen extends React.Component {
                                 }, () => this.CalculateScores());
                             }
                         })
+
                     }
                     else if(section.sectionType === 'MATH (WITH CALCULATOR)' ) {
                         section.questions.map((question) => {
@@ -4311,6 +4322,9 @@ export default class TestScreen extends React.Component {
                                     }
                                 }, () => this.CalculateScores());
                             }
+                        })
+                        this.setState({
+                            isTestSubmitted: true
                         })
                     }
                 });
@@ -4342,7 +4356,7 @@ export default class TestScreen extends React.Component {
 
     CalculateScores() {
 
-        const {isTestSubmitted, readingScore, writingScore, currentSection, mathScore,mathNoCal,mathWithCal, sections, correctReading, correctWriting, correctmathNoCal, correctmathWithCal} = this.state; 
+        const { correctReading, correctWriting, correctmathNoCal, correctmathWithCal} = this.state; 
 
         //READING
         if (correctReading >= 0 && correctReading <= 3) {
@@ -4929,7 +4943,6 @@ export default class TestScreen extends React.Component {
             }) 
         }
         this.setState((state) => ({
-            isTestSubmitted: true,
             verbal: state.readingScore + state.writingScore, 
             total: state.readingScore + state.writingScore + state.mathScore
         }))
@@ -4954,14 +4967,6 @@ export default class TestScreen extends React.Component {
 
         return (numberOfAnsweredQuestions * 100) / allQuestions.length;
     }
-
-    NotAllQuestionsAnswered() {
-        /*
-         * Check if one of the questions of the current section is not answered
-         */ 
-        const {subjects} = this.state;
-        return subjects.some((subject) => subject.sections.some((section) => section.questions.map((question) => question.selectedChoice === '' ))); 
-    }  
 
     IsNotTheFirstPage() {
         const {currentSection} = this.state;
@@ -5047,7 +5052,6 @@ export default class TestScreen extends React.Component {
         console.log(this.state.correctWriting);
         console.log(this.state.correctmathNoCal);
         console.log(this.state.correctmathWithCal);
-        const currentSectionObject = sections[currentSection];
 
         return <div className="appContainer">
             <div className= "header">
@@ -5061,7 +5065,7 @@ export default class TestScreen extends React.Component {
                     <div className="article2">
                     {this.renderAllQuestions()}
                     {!this.IsTheFirstSectionType() || (this.isTestInReview() && this.IsNotTheFirstPage())  ?  <button className="btn btn-dark"  onClick={() => this.setState({ currentSection: currentSection - 1})}> Back</button> : '' }
-                    {this.renderRightButton()}
+                    {this.displayRightButton()}
                     </div>
                 </div>
             </div>
