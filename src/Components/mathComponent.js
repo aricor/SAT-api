@@ -1,5 +1,4 @@
 import React, {Component} from "react";
-import './button.css';
 import {Form, FormControl, FormGroup, FormLabel, Row, Col } from "reactstrap"; 
 export default class ButtonComponent extends Component {
     constructor(props) {
