@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import {Form, FormControl, FormGroup, FormLabel, Row, Col } from "reactstrap"; 
-export default class ButtonComponent extends Component {
+export default class MathComponent extends Component {
     constructor(props) {
         super(props); 
         
