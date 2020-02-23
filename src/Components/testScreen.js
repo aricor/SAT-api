@@ -4165,8 +4165,8 @@ export default class TestScreen extends React.Component {
             currentSection, sections, 
         } = this.state;
         const currentSectionObject = sections[currentSection];
-
-        if (!isTestSubmitted)
+        
+        if (!isTestSubmitted || currentSection === 0)
             return (
                 <Timer 
                 initialTimer={currentSectionObject.defaultTimer} 
