@@ -1,5 +1,6 @@
 import React, {Component} from "react";
-import {Form, FormControl, FormGroup, FormLabel, Row, Col } from "reactstrap"; 
+
+import {Form, FormGroup, FormText, Row, Col } from "reactstrap"; 
 export default class MathComponent extends Component {
     constructor(props) {
         super(props); 
@@ -46,21 +47,26 @@ export default class MathComponent extends Component {
             )
         }
     }
+
+    displayForm() {
+        return (
+            <Form>
+                <FormGroup controlId="fillInAnswer">
+                    <FormText className="text-muted">
+                        Letters are not accepted as answer
+                    </FormText>
+                </FormGroup>
+            </Form>
+        )
+    }
+
     render() {
         return (
             <div>
                 <p><b> {this.props.question} </b></p>
                 <div> 
                     {
-                        !this.props.isTestSubmitted && 
-                        <Form>
-                        <Form.Group controlId="fillInAnswer">
-                        <Form.Control onChange={(event) => this.props.onChange(event.target.value)} name="ans" type="text" />
-                        <Form.Text className="text-muted">
-                            Letters are not accepted as answer
-                        </Form.Text>
-                        </Form.Group>
-                        </Form>
+                        !this.props.isTestSubmitted && this.displayForm()
                     }
 
                     {
