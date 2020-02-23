@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 
-import {Form, FormGroup, FormText, Row, Col } from "reactstrap"; 
+import { Form, FormGroup, Label, Input, FormText , Row, Col } from "reactstrap"; 
 export default class MathComponent extends Component {
     constructor(props) {
         super(props); 
@@ -10,39 +10,28 @@ export default class MathComponent extends Component {
     displayResult() {
         const correctAnswer = this.props.correctAnswer;
         const input = this.props.input; 
+        console.log(correctAnswer)
         if (input === '' || input === correctAnswer) {
             return (
                 <Form>
-                    <Form.Group as={Row} controlId="formPlainCorrectAnswer">
-                    <Form.Label column sm="2">
-                    Correct Answer 
-                    </Form.Label>
-                    <Col sm="10">
-                    <Form.Control plaintext readOnly defaultValue={correctAnswer} />
-                    </Col>
-                    </Form.Group>
+                    <FormGroup as={Row} controlId="formPlainCorrectAnswer">
+                    <Label >Correct Answer</Label>
+                    <Input plaintext value ={correctAnswer} />
+                    </FormGroup>
                 </Form>
             )
         } else {
             return (
                 <Form>
-                    <Form.Group as={Row} controlId="formPlainCorrectAnswer">
-                    <Form.Label column sm="2">
-                    Correct Answer 
-                    </Form.Label>
-                    <Col sm="10">
-                    <Form.Control plaintext readOnly defaultValue={correctAnswer} />
-                    </Col>
-                    </Form.Group>
+                    <FormGroup as={Row} controlId="formPlainCorrectAnswer">
+                    <Label >Correct Answer</Label>
+                    <Input plaintext value ={correctAnswer} />
+                    </FormGroup>
 
-                    <Form.Group as={Row} controlId="formPlainIncorrectAnswer">
-                    <Form.Label column sm="2">
-                    Your Incorrect Answer 
-                    </Form.Label>
-                    <Col sm="10">
-                    <Form.Control plaintext readOnly defaultValue={input} />
-                    </Col>
-                    </Form.Group>
+                    <FormGroup as={Row} controlId="formPlainCorrectAnswer">
+                    <Label >Your Incorrect Answer</Label>
+                    <Input plaintext value ={input} />
+                    </FormGroup>
                 </Form>
             )
         }
@@ -52,6 +41,7 @@ export default class MathComponent extends Component {
         return (
             <Form>
                 <FormGroup controlId="fillInAnswer">
+                <Input type="text" onChange={(event) => this.props.onChange(event.target.value)} name="ans"  required  />
                     <FormText className="text-muted">
                         Letters are not accepted as answer
                     </FormText>
