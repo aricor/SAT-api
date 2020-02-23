@@ -1,4 +1,3 @@
-
 import React, { Component } from "react";
 import {Button } from "reactstrap"; 
 import './button.css';
@@ -61,7 +60,5 @@ export default class ButtonComponent extends Component {
       );
     }
 }
-
-
 
 

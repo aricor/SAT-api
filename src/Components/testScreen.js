@@ -4981,56 +4981,6 @@ export default class TestScreen extends React.Component {
         })
     }
 
-    renderReview() {
-        const {sections, currentSection, isTestSubmitted} = this.state; 
-        const section = sections[currentSection];
-        if (section.sectionType === 'READING' || section.sectionType === 'WRITING AND LANGUAGE' ) {
-            return (
-                <div>
-                    <h4> Section: {section.sectionType}</h4> 
-                    {
-                        section.questions.map((subquestion) => {
-                            return (
-                                <ButtonComponent
-                                question={subquestion.question}
-                                choices={subquestion.choices}
-                                />
-                            )
-                        })
-                    }
-                </div>
-            )
-        } else {
-            return (
-                <div>
-                    <h4> Section: {section.sectionType}</h4> 
-                    {
-                        section.questions.map((subquestion) => {
-                            return (
-                                <ButtonComponent
-                                question={subquestion.question}
-                                choices={subquestion.choices}
-                                />
-                            )
-                        })
-                    }
-                    {
-                        section.fillInQuestions.map((subfillInQuestion, index)=> {
-                            return (
-                                <MathComponent
-                                question={subfillInQuestion.question}
-                                onChange={(text) => {
-                                    subfillInQuestion.correctAnswer = text;
-                                }}
-                                />
-                            )
-                        })
-
-                    }
-                </div>
-            )
-        }
-    }
     isTestInReview() {
         const {isTestInReview} = this.state;
         return (isTestInReview === true)
