@@ -4237,15 +4237,14 @@ export default class TestScreen extends React.Component {
         return (<button className="btn btn-dark m-2" onClick={() => this.checkingAllQuestions()}>{buttonText}</button>);
 
     }
-    displayRightButton() {
+    displayRightButtonBackToResultPage() {
         const {
             currentSection,
             sections,
             isTestInReview
         } = this.state;
-        const section = sections[currentSection];
-        if (!isTestInReview && section.sectionType !== 'MATH (WITH CALCULATOR)') {
-            return this.renderRightButton()
+        if (isTestInReview) {
+            return (<button className="btn btn-dark"  onClick={() => {this.setState({ isTestSubmitted: true, isTestInReview: false})} } >Go Back To Result Page</button>)
         }
     }
 
@@ -5028,7 +5027,7 @@ export default class TestScreen extends React.Component {
          * 
          */
 
-       if(isTestSubmitted && !isTestInReview) {
+       if(isTestSubmitted && !isTestInReview ) {
             
             return (
                 <div className="appContainer">
@@ -5077,8 +5076,11 @@ export default class TestScreen extends React.Component {
             </div>
             <div className="progressGeneral">
             <div className = "progressNum">
-                <div>
+                <div className="numbers">
                     <ProgressNum currentSection={currentSection} sections={sections}/>
+                </div>
+                <div className="backToResult">
+                    {this.displayRightButtonBackToResultPage()}
                 </div>
             </div>
             <div className = "progressBar">

@@ -101,6 +101,17 @@
     background-color: #333;
     color:white; 
 }
+.progressNum div {
+    display:inline-block;
+}
+.numbers {
+    margin-right: 60%;
+    margin-left: 0%;
+}
+.backToResult {
+    margin-left: 70%; 
+    width: 400px;
+}
 @media screen and (max-width: 2560px) {
     .testContainer {
         width: 100%;
@@ -196,7 +207,7 @@
             height: 750px; 
         }
 
-          .progressNum div  {
+          .numbers  {
               margin-top:1.25px; 
           }
           .questionSection {
