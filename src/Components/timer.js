@@ -9,7 +9,6 @@ export default class Timer extends Component {
             minutes: props.initialTimer, 
             seconds: 0, 
             sectionType: props.sectionType,
-            isTestInReview: props.isTestInReview
         }
     }
 
@@ -71,43 +70,11 @@ export default class Timer extends Component {
         }
 
     }
-    displayTimer() {
-        return (
-            <div className="timerContainer">
-            <div className="sectionType">
-            <h2>{this.props.sectionType}</h2>
-            </div>
-            <div className="eliteGeneral">
-            <a href="https://www.facebook.com/eliteprepvn/" className="elite">ELITE PREP VIETNAM</a>
-            </div>
-            <div className="timer">
-            {this.renderTimerText()}
-            </div>
-        </div>
-        )
-    }
-    notDisplayTimer() {
-        return (
-            <div className="timerContainer">
-            <div className="sectionType">
-            <h2>{this.props.sectionType}</h2>
-            </div>
-            <div className="eliteGeneral">
-            <a href="https://www.facebook.com/eliteprepvn/" className="elite">ELITE PREP VIETNAM</a>
-            </div>
-            </div>
-        )
-    }
+
     render() {
-        const {isTestInReview} = this.state;
         return (
             <div >
-                {
-                    !isTestInReview && this.displayTimer()
-                }
-                                {
-                    isTestInReview && this.notDisplayTimer()
-                }
+            {this.renderTimerText()}
             </div>
         )
     };

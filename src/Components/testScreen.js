@@ -4239,12 +4239,21 @@ export default class TestScreen extends React.Component {
     }
     displayRightButtonBackToResultPage() {
         const {
-            currentSection,
-            sections,
             isTestInReview
         } = this.state;
         if (isTestInReview) {
             return (<button className="btn btn-dark"  onClick={() => {this.setState({ isTestSubmitted: true, isTestInReview: false})} } >Go Back To Result Page</button>)
+        }
+    }
+    displayRightButtonOrNot() {
+        const {
+            isTestInReview,
+            currentSection,
+            sections,
+        } = this.state;
+        const section = sections[currentSection];
+        if (!isTestInReview && section.sectionType !== 'MATH (WITH CALCULATOR)') {
+            return (this.renderRightButton())
         }
     }
 
@@ -5054,13 +5063,27 @@ export default class TestScreen extends React.Component {
         const currentSectionObject = sections[currentSection];
 
         return <div className="appContainer">
-            <div className= "header">
-            <Timer 
-                initialTimer={currentSectionObject.defaultTimer} 
-                sectionType={currentSectionObject.sectionType}
-                onTimeEnd={() => this.moveToAnotherSubject()}
-                isTestInReview={isTestInReview}
-            />               
+            <div className= "header"> 
+                <div className="timerContainer">
+                    <div className="sectionType">
+                    <h2>{currentSectionObject.sectionType}</h2>
+                    </div>
+                    <div className="eliteGeneral">
+                    <a href="https://www.facebook.com/eliteprepvn/" className="elite">ELITE PREP VIETNAM</a>
+                    </div>
+                    <div className="timer">
+                        {
+                            (!isTestInReview && currentSection !== 0) && 
+                            <Timer 
+                            initialTimer={currentSectionObject.defaultTimer} 
+                            sectionType={currentSectionObject.sectionType}
+                            onTimeEnd={() => this.moveToAnotherSubject()}
+                            /> 
+                        }
+
+                    </div>
+                </div>
+              
             </div>
             <div className="testContainer">
 
@@ -5069,7 +5092,7 @@ export default class TestScreen extends React.Component {
                 <div className="questionSection">
                     <div className="article2">
                     {this.renderAllQuestions()}
-                    {!this.IsTheFirstSectionType() || (this.isTestInReview() && this.IsNotTheFirstPage())  ?  <button className="btn btn-dark"  onClick={() => this.setState({ currentSection: currentSection - 1})}> Back</button> : '' }
+                    {!this.IsTheFirstSectionType() || (this.isTestInReview() && this.IsNotTheFirstPage() && !this.IsTheFirstSectionType())  ?  <button className="btn btn-dark"  onClick={() => this.setState({ currentSection: currentSection - 1})}> Back</button> : '' }
                     {this.renderRightButton()}
                     </div>
                 </div>
