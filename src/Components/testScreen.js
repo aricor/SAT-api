@@ -5095,7 +5095,7 @@ export default class TestScreen extends React.Component {
                 <div className="questionSection">
                     <div className="article2">
                     {this.renderAllQuestions()}
-                    {(!this.IsTheFirstSectionType() && !this.isTestInReview())|| (this.isTestInReview() && this.IsNotTheFirstPage())  ?  <button className="btn btn-dark"  onClick={() => this.setState({ currentSection: currentSection - 1})}> Back</button> : '' }
+                    {((!this.IsTheFirstSectionType() && !this.isTestInReview())|| (this.isTestInReview() && currentSection!==1 ))  ?  <button className="btn btn-dark"  onClick={() => this.setState({ currentSection: currentSection - 1})}> Back</button> : '' }
                     {this.displayRightButtonOrNot()}
                     </div>
                 </div>
