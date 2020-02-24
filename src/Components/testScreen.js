@@ -4261,8 +4261,9 @@ export default class TestScreen extends React.Component {
     }
 
     checkingAllQuestions() {
-        const {currentSection, sections, isTestSubmitted, correctWriting, correctmathNoCal, correctmathWithCal} = this.state; 
+        const {currentSection, sections, isTestInReview, isTestSubmitted, correctWriting, correctmathNoCal, correctmathWithCal} = this.state; 
         const section = sections[currentSection]
+        if (!isTestInReview) {
             if  (this.IsLastElementOfSectionsArray() && this.IsLastSection()) {
                 sections.map(section => {
                     if (section.sectionType === 'READING') {
@@ -4363,8 +4364,38 @@ export default class TestScreen extends React.Component {
                 }
 
             }
+            
+        } else {
+            if (currentSection === 5 || currentSection === 11) {
+                this.setState({
+                    currentSection: currentSection + 2,
+                });
+            } else {
+                this.setState({
+                    currentSection: currentSection + 1,
+                });
+            }
+
+        }
+
     }
 
+    renderBackButton() {
+        const {
+            currentSection, isTestInReview
+        } = this.state;
+        if (!this.IsTheFirstSectionType() && !isTestInReview) {
+            return ( <button className="btn btn-dark"  onClick={() => this.setState({ currentSection: currentSection - 1})}> Back</button>)
+        }
+        else if (isTestInReview) {
+            if (currentSection !== 1 && currentSection !== 7  && currentSection !== 13) {
+            return ( <button className="btn btn-dark"  onClick={() => this.setState({ currentSection: currentSection - 1})}> Back</button>)
+            } else if (currentSection === 7 || currentSection === 13) {
+                return ( <button className="btn btn-dark"  onClick={() => this.setState({ currentSection: currentSection - 2})}> Back</button>)
+            }
+        }
+
+    }
     CalculateScores() {
 
         const { correctReading, correctWriting, correctmathNoCal, correctmathWithCal} = this.state; 
@@ -5017,6 +5048,10 @@ export default class TestScreen extends React.Component {
         const {isTestInReview} = this.state;
         return (isTestInReview === true)
     }
+
+    skipSection() {
+        
+    }
     render() {
         const {
             isTestSubmitted,
@@ -5094,8 +5129,8 @@ export default class TestScreen extends React.Component {
 
                 <div className="questionSection">
                     <div className="article2">
-                    {this.renderAllQuestions()}
-                    {((!this.IsTheFirstSectionType() && !this.isTestInReview())|| (this.isTestInReview() && currentSection!==1 ))  ?  <button className="btn btn-dark"  onClick={() => this.setState({ currentSection: currentSection - 1})}> Back</button> : '' }
+                    {this.renderAllQuestions()} 
+                    {this.renderBackButton()}
                     {this.displayRightButtonOrNot()}
                     </div>
                 </div>
