@@ -4092,6 +4092,8 @@ export default class TestScreen extends React.Component {
                             isTestSubmitted={isTestSubmitted}
                                 key = {subfillInQuestion.id}
                                 question={subfillInQuestion.question}
+                                input={subfillInQuestion.input}
+                                correctAnswer = {subfillInQuestion.correctAnswer}
                                 onChange={(text) => {
                                     subfillInQuestion.input = text;
                                     this.setState({

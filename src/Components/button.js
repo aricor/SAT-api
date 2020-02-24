@@ -10,7 +10,8 @@ export default class ButtonComponent extends Component {
     render() {
       return (
         <div>
-          <p><b>  {this.props.question} </b></p>
+
+          <p className="question"><b>  {this.props.question} </b></p>
     
           <div className="choice">
             <div className='mb-2' >

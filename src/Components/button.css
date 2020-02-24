@@ -4,3 +4,18 @@
     text-align: center;
     border-width: 2px;
 }
+
+span.m-2 {
+  list-style-position: outside;
+
+}
+
+.question {
+
+  margin-top: 20px;
+  background: #f9c652;
+  outline-width: thick;
+  padding: 2% 5% 2% 5%;
+
+
+}

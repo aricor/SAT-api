@@ -21,7 +21,8 @@
     height: 200px; 
 }
 .passageSection {
-    background-color: #F4D293;
+    background-color: #f9c652
+    ;
     overflow-y: auto;
     overflow-x: auto; 
     width: 50%;

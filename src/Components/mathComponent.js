@@ -53,7 +53,7 @@ export default class MathComponent extends Component {
     render() {
         return (
             <div>
-                <p><b> {this.props.question} </b></p>
+                <p className="question"><b> {this.props.question} </b></p>
                 <div> 
                     {
                         !this.props.isTestSubmitted && this.displayForm()
