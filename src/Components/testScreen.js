@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from "./testScreen.css"
+import styles from './testScreen.css'
 import Timer from './timer'
 import Highlight from './getHighlight'
 import ButtonComponent from './button'
@@ -5077,19 +5077,31 @@ export default class TestScreen extends React.Component {
        if(isTestSubmitted && !isTestInReview ) {
             
             return (
-                <div className="appContainer">
-                    <h1>results</h1>
-                    <h2>Reading Score: {readingScore}</h2>
-                    <h2>Writing and Language Score: {writingScore}</h2>
-                    <h2>verbal Score: {verbal}</h2>
-                    <h2>Math Score: {mathScore}</h2>
-                    <h2>Total Score: {total} </h2>
-                    <h2>Number of correct Reading section: {correctReading} (out of 52)</h2>
-                    <h2>Number of correct Writing and Language section: {correctWriting} (out of 44)</h2>
-                    <h2>Number of correct Math (No Calculator) section: {correctmathNoCal} (out of 20)</h2>
-                    <h2>Number of correct Math (With Calculator) section: {correctmathWithCal} (out of 38)</h2>
+                <div className="resultPage">
 
-                    <button className="btn btn-dark"  onClick={() => {this.setState({ currentSection: 1, isTestInReview: true})} } >Go Back To Review</button>
+                    <h1 className="results">Results</h1>
+                    <svg height="80" width="300">
+                    <g fill="none">
+                        <path stroke="yellow" d="M5 20 l215000 0" />
+                    </g>
+                    </svg>
+
+                        <div className="score">
+                            <div ClassName="totalScore">Total Score: {total} </div>
+                            <div>Reading Score: {readingScore}</div>
+                            <div>Writing and Language Score: {writingScore}</div>
+                            <div>verbal Score: {verbal}</div>
+                            <div>Math Score: {mathScore}</div>
+                        </div>
+                        <div className="numberOfQuestionsAnswered">
+                            <div>Number of correct Reading section: {correctReading} (out of 52)</div>
+                            <div>Number of correct Writing and Language section: {correctWriting} (out of 44)</div>
+                            <div>Number of correct Math (No Calculator) section: {correctmathNoCal} (out of 20)</div>
+                            <div>Number of correct Math (With Calculator) section: {correctmathWithCal} (out of 38)</div>
+                        </div>
+
+
+                    <button id="reviewButton" className="btn btn-warning"  onClick={() => {this.setState({ currentSection: 1, isTestInReview: true})} } >Go Back To Review</button>
                 </div>
             );
         }
