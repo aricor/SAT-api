@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/SAT-api/static/css/main.b0069f7a.chunk.css",
-    "main.js": "/SAT-api/static/js/main.255be0f1.chunk.js",
-    "main.js.map": "/SAT-api/static/js/main.255be0f1.chunk.js.map",
+    "main.js": "/SAT-api/static/js/main.0316d14f.chunk.js",
+    "main.js.map": "/SAT-api/static/js/main.0316d14f.chunk.js.map",
     "runtime-main.js": "/SAT-api/static/js/runtime-main.97872712.js",
     "runtime-main.js.map": "/SAT-api/static/js/runtime-main.97872712.js.map",
     "static/js/2.df496c3e.chunk.js": "/SAT-api/static/js/2.df496c3e.chunk.js",
     "static/js/2.df496c3e.chunk.js.map": "/SAT-api/static/js/2.df496c3e.chunk.js.map",
     "index.html": "/SAT-api/index.html",
-    "precache-manifest.9932ec4474166c50e495e3bfa9ee02de.js": "/SAT-api/precache-manifest.9932ec4474166c50e495e3bfa9ee02de.js",
+    "precache-manifest.9ab2e4364abf5dac1abe7b14ca698331.js": "/SAT-api/precache-manifest.9ab2e4364abf5dac1abe7b14ca698331.js",
     "service-worker.js": "/SAT-api/service-worker.js",
     "static/css/main.b0069f7a.chunk.css.map": "/SAT-api/static/css/main.b0069f7a.chunk.css.map",
     "static/media/readingSection2a.png": "/SAT-api/static/media/readingSection2a.46919234.png",
@@ -20,6 +20,6 @@
     "static/js/runtime-main.97872712.js",
     "static/js/2.df496c3e.chunk.js",
     "static/css/main.b0069f7a.chunk.css",
-    "static/js/main.255be0f1.chunk.js"
+    "static/js/main.0316d14f.chunk.js"
   ]
 }
