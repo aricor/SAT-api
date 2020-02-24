@@ -4251,10 +4251,11 @@ export default class TestScreen extends React.Component {
         const {
             isTestInReview,
             currentSection,
+            isTestSubmitted, 
             sections,
         } = this.state;
         const section = sections[currentSection];
-        if (!isTestInReview && section.sectionType !== 'MATH (WITH CALCULATOR)') {
+        if (!isTestInReview || (isTestInReview && section.sectionType !== 'MATH (WITH CALCULATOR)')) {
             return (this.renderRightButton())
         }
     }
@@ -5094,8 +5095,8 @@ export default class TestScreen extends React.Component {
                 <div className="questionSection">
                     <div className="article2">
                     {this.renderAllQuestions()}
-                    {!this.IsTheFirstSectionType() || (this.isTestInReview() && this.IsNotTheFirstPage() && !this.IsTheFirstSectionType())  ?  <button className="btn btn-dark"  onClick={() => this.setState({ currentSection: currentSection - 1})}> Back</button> : '' }
-                    {this.renderRightButton()}
+                    {(!this.IsTheFirstSectionType() && !this.isTestInReview())|| (this.isTestInReview() && this.IsNotTheFirstPage())  ?  <button className="btn btn-dark"  onClick={() => this.setState({ currentSection: currentSection - 1})}> Back</button> : '' }
+                    {this.displayRightButtonOrNot()}
                     </div>
                 </div>
             </div>
