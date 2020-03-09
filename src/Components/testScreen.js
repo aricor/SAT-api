@@ -5119,7 +5119,7 @@ export default class TestScreen extends React.Component {
                     <h2>{currentSectionObject.sectionType}</h2>
                     </div>
                     <div className="eliteGeneral">
-                    <a href="https://www.facebook.com/eliteprepvn/" className="elite">ELITE PREP VIETNAM</a>
+                    <span className="elite">SAT MOCK TEST</span>
                     </div>
                     <div className="timer">
                         {

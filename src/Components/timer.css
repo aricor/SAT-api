@@ -5,6 +5,7 @@
    top: 0;
    background: #191409;
    width:100%;
+   position: sticky; 
  }
 
  .elite {
